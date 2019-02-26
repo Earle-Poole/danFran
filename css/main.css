@@ -191,7 +191,7 @@ li {
 	padding: 8px 25px 0 25px;
 	background-color: #009FFF;
 	border: 1px solid transparent;
-	margin-top: 30px;
+	margin-top: 70px;
 	color: #fff;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -207,7 +207,6 @@ li {
     content: "";
     height: 100%;
     width: 0;
-    background-color: #111111;
     top: 0;
     right: 0;
     -webkit-transition: .5s;
@@ -1144,8 +1143,20 @@ textarea.input_field {
 }
 
 button.button {
-    outline: 0;
-    margin-top: 0;
+	outline: 0;
+	margin-top: 70px;
+    cursor: pointer;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+
+button.button:hover {
+	outline: 0;
+	background: #FF45B5;
+	color: #FF45B5;
     cursor: pointer;
     transition: .3s;
     -webkit-transition: .3s;
@@ -1225,7 +1236,7 @@ footer {
 }
 
 .go_top:hover {
-    background: #009FFF;
+    background: #FF45B5;
     color: #fff;
 	line-height: 70px;
 }
