@@ -54,18 +54,18 @@
 
         /* 02. ProjectFilter Init
         ============================ */
-		function projectFilter() {
-			var $gridt = $('.works');
-			$gridt.isotope();
-			$('.filter-buttons').on('click', 'button', function () {
-				var filterValue = $(this).attr('data-filter');
-				$gridt.isotope({
-					filter: filterValue
-				});
-				$(this).addClass('active').siblings().removeClass('active');
-			});
-		};
-		projectFilter();
+		// function projectFilter() {
+		// 	var $gridt = $('.works');
+		// 	$gridt.isotope();
+		// 	$('.filter-buttons').on('click', 'button', function () {
+		// 		var filterValue = $(this).attr('data-filter');
+		// 		$gridt.isotope({
+		// 			filter: filterValue
+		// 		});
+		// 		$(this).addClass('active').siblings().removeClass('active');
+		// 	});
+		// };
+		// projectFilter();
 
 
     });
