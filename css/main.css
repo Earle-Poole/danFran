@@ -175,7 +175,7 @@ li {
 	background: #009FFF;
 	background: linear-gradient(180deg, #009FFF 0%, #FF45B5 100%);
 	left: 50%;
-	margin-left: -6px;
+	margin-left: -4px;
 	z-index: -1;
 	top: calc(100% + 25px);
 	border-bottom-left-radius: 50%;
@@ -597,7 +597,7 @@ header {
 
 .email-text{ padding-bottom: 20px; text-align: center; font-size: 20px;}
 
-.submit-btn{ font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-weight: bold;}
+.submit-btn{ font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-weight: bold; border: 0px;}
 
 /* ==========================================================================
    06. SERVICE WRAPPER
@@ -1207,7 +1207,8 @@ button.button:hover {
 a.button {
 	outline: 0;
 	margin-top: 20px;
-    cursor: pointer;
+	cursor: pointer;
+	border: 0px;
     transition: .3s;
     -webkit-transition: .3s;
     -moz-transition: .3s;
@@ -1218,7 +1219,8 @@ a.button {
 a.button:hover {
 	outline: 0;
 	background: #FF45B5;
-    cursor: pointer;
+	cursor: pointer;
+	border: 0px;
     transition: .3s;
     -webkit-transition: .3s;
     -moz-transition: .3s;
