@@ -80,6 +80,14 @@
   transition: transform 0.1s cubic-bezier(0.9, 0, 0.2, 1), -webkit-transform 0.5s cubic-bezier(0.9, 0, 0.2, 1);
   transition-delay: calc( 0.1s + ( 0.02s * ( var(--char-index)) ) );
 }
+
+.landing_wrapper .slide-vertical .char:before, 
+.landing_wrapper .slide-vertical .char:after,
+.landing_wrapper .slide-horizontal .char:before,
+.landing_wrapper .slide-horizontal .char:after {
+	text-shadow: 1px 1px 2px black, 0 0 0.1em black, 0 0 0.2em black;
+}
+
 .slide-vertical .char:before,
 .slide-horizontal .char:before {
   transition-delay: calc( 0.01s * ( var(--char-index)) );
@@ -237,6 +245,10 @@
   -webkit-animation-delay: calc(1.3s * var(--char-percent));
           animation-delay: calc(1.3s * var(--char-percent));
   opacity: 1;
+}
+
+.home_wrapper .title-slide-in .char {
+	text-shadow: 1px 1px 2px black, 0 0 0.02em black, 0 0 0.03em black;
 }
 @-webkit-keyframes slide-in {
   0% {

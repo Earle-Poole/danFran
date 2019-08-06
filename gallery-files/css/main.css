@@ -310,8 +310,8 @@ header {
 }
 
 .menu_items .menu_item.active::after {
-	top: 34%;
-	background: #009FFF;
+	top: 50%;
+	background: rgba(0, 159, 255, 0.5);
 	transform: scale(1);
 	-webkit-transform: scale(1);
 	-moz-transform: scale(1);
