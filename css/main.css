@@ -89,12 +89,14 @@ a {
 	display: inline-block;
 	-webkit-transition: .25s;
 	transition: .25s;
+	color: inherit;
 }
 
 a:hover,
 a:active {
 	text-decoration: none;
 	outline: 0;
+	color: inherit;
 }
 
 ul {
@@ -523,6 +525,7 @@ header {
 
 .menu_items {
 	text-align: right;
+	white-space: nowrap;
 }
 
 .menu_items li {
@@ -834,7 +837,6 @@ header {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	width: 40%
 }
 
 .email-input-area .email-input {
@@ -1600,6 +1602,7 @@ footer {
 	position: relative;
 	text-align: center;
 	padding: 80px 15px;
+	margin-bottom: 15px;
 }
 
 .go_top {
@@ -1636,6 +1639,22 @@ footer p span {
 	color: #fff;
 }
 
-footer p span:hover {
-	color: #009FFF
+.rainbow {
+	font-size: 24px;
+	background: linear-gradient(to right, #9400D3, #4B0082 , #0000FF, #00FF00, #FFFF00, #FF7F00, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #9400D3);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	animation: rainbow_animation 45s ease-in-out infinite;
+	background-size: 300% 100%;
+}
+
+@keyframes rainbow_animation {
+	0%,100% {
+			background-position: 0 0;
+	}
+
+	50% {
+			background-position: 400% 0;
+	}
 }
