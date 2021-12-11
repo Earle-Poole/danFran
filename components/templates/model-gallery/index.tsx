@@ -1,1 +1,1 @@
-export { default } from './ModellingTemplate'
+export { default } from './ModellingGalleryTemplate'

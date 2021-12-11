@@ -1,1 +1,1 @@
-export { default } from './VideoTemplate'
+export { default } from './VideoGalleryTemplate'
