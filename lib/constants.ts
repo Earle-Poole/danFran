@@ -35,4 +35,14 @@ const urls = {
     'https://calendar.google.com/calendar/u/0/embed?src=e3r32cmfjlotisaphdbua6t3lo@group.calendar.google.com&showTitle=1&showPrint=0&showTz=0&height=720&wkst=1&bgcolor=%23FFFFFF&color=%23853104&ctz=America/Chicago',
 } as const
 
-export { slugs, urls }
+const breakpoints = {
+  sm: '(max-width: 767px)',
+  md: '(min-width: 768px)',
+  lg: '(min-width: 992px)',
+  xl: '(min-width: 1200px)',
+} as const
+
+type BreakPointValues = typeof breakpoints[keyof typeof breakpoints]
+
+export type { BreakPointValues }
+export { slugs, urls, breakpoints }
