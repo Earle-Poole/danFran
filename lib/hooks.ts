@@ -6,6 +6,7 @@ import { BreakPointValues } from './constants'
 export const useMediaQuery = (query: BreakPointValues) => {
   const [isMatch, setIsMatch] = useState(false)
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     const media = window.matchMedia(query)
 
