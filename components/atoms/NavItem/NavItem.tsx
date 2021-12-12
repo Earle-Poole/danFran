@@ -1,11 +1,29 @@
-type NavItemProps = {name: string}
+import { SlugsValue, URLsValue } from 'lib/constants'
+import Link from 'next/link'
+import { FC } from 'react'
 
-const NavItem = (props: NavItemProps) => {
-return (
-    <div className="text-2xl font-light p-3 self-center hover:text-pink-700 transition duration-150 hover:underline">
-        {props.name}
-    </div>
-)
-} 
+type NavItemProps = {
+  name: string
+  isExternal?: boolean
+  href: SlugsValue | URLsValue
+}
 
-export default NavItem;
+const NavItem: FC<NavItemProps> = ({ isExternal, name, href }) => {
+  const optionalAnchorProps = isExternal
+    ? { target: '_blank', rel: 'noopener noreferrer' }
+    : {}
+
+  return (
+    <Link href={href} passHref>
+      <a
+        className='flex odd:hover:text-pink-500 even:hover:text-cyan-400'
+        {...optionalAnchorProps}>
+        <div className='text-2xl font-light p-3 self-center transition duration-150 hover:underline'>
+          {name}
+        </div>
+      </a>
+    </Link>
+  )
+}
+
+export default NavItem

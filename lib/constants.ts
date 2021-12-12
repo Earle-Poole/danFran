@@ -3,7 +3,8 @@ interface SlugsConst {
   PRESS_KIT: '/press-kit'
   MODELLING_GALLERY: '/modelling-gallery'
   HOME: '/home'
-  toLabel(slug: SlugsValue): string
+  ABOUT: '/#about'
+  CONTACT: '/#contact'
 }
 
 type SlugsValue = typeof slugs[keyof typeof slugs]
@@ -13,22 +14,30 @@ const slugs: SlugsConst = {
   PRESS_KIT: '/press-kit',
   MODELLING_GALLERY: '/modelling-gallery',
   HOME: '/home',
-  toLabel: (slug: SlugsValue) => {
-    switch (slug) {
-      case slugs.VIDEO_GALLERY:
-        return 'Video Gallery'
-      case slugs.PRESS_KIT:
-        return 'Press Kit'
-      case slugs.MODELLING_GALLERY:
-        return 'Modelling Gallery'
-      case slugs.HOME:
-        return 'Home'
-      default:
-        return ''
-    }
-  },
+  ABOUT: '/#about',
+  CONTACT: '/#contact',
 } as const
 
+const slugToLabel = (slug: SlugsValue) => {
+  switch (slug) {
+    case slugs.VIDEO_GALLERY:
+      return 'Video Gallery'
+    case slugs.PRESS_KIT:
+      return 'Press Kit'
+    case slugs.MODELLING_GALLERY:
+      return 'Modelling Gallery'
+    case slugs.HOME:
+      return 'Home'
+    case slugs.ABOUT:
+      return 'About'
+    case slugs.CONTACT:
+      return 'Contact'
+    default:
+      return ''
+  }
+}
+
+type URLsValue = typeof urls[keyof typeof urls]
 const urls = {
   STORE: 'https://whatsupdanny.creator-spring.com/',
   CALENDAR:
@@ -44,5 +53,5 @@ const breakpoints = {
 
 type BreakPointValues = typeof breakpoints[keyof typeof breakpoints]
 
-export type { BreakPointValues }
-export { slugs, urls, breakpoints }
+export type { SlugsValue, BreakPointValues, URLsValue }
+export { slugs, urls, breakpoints, slugToLabel }
