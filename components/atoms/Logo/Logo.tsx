@@ -6,7 +6,7 @@ import Link from 'next/link'
 const Logo = () => {
   return (
     <Link href={slugs.HOME} passHref>
-      <a className="p-2">
+      <a className='flex'>
         <Image src={logo} height={96} width={96} alt={'Daniel Franzese logo'} />
       </a>
     </Link>

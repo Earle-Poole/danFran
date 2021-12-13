@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { ReactElement, useEffect, useRef, useState } from 'react'
 import { BreakPointValues } from './constants'
 
 // See
@@ -31,4 +31,26 @@ export const useMediaQuery = (query: BreakPointValues) => {
   }, [isMatch, query])
 
   return isMatch
+}
+
+export const useScrollPosition = (element: HTMLElement | null) => {
+  const [position, setPosition] = useState<number>(0)
+  const elem = useRef<HTMLElement>(element)
+
+  const onScroll = (e: HTMLElement) => () => {
+    setPosition(e.scrollTop)
+  }
+
+  useEffect(() => {
+    const elemRef = elem.current
+    if (elemRef) {
+      elemRef.addEventListener('scroll', onScroll(elemRef))
+
+      return () => {
+        elemRef.removeEventListener('scroll', onScroll(elemRef))
+      }
+    }
+  }, [])
+
+  return position
 }
