@@ -7,7 +7,7 @@ const CommonLayout: FC = ({ children }) => {
     <div className='flex h-screen w-screen bg-black text-white overflow-hidden'>
       <div className='mx-auto w-full max-w-7xl relative'>
         <Header />
-        <div id='layout-body' className='overflow-y-auto h-screen'>
+        <div id='layout-body' className='overflow-y-auto overflow-x-visible h-screen z-10'>
           {children}
           <Footer />
         </div>
