@@ -1,6 +1,22 @@
+import Menu from "@/components/atoms/Icons/Menu";
+import { useState } from "react";
+import Navigation from "./Navigation";
+
 const HamburgerNavigation = () => {
+  const [hamNavOpen, setHamNavOpen] = useState(false);
 
-    return <div>Hamburger</div>
-}
+  const handleToggle = () => {
+    setHamNavOpen((prev) => !prev);
+  };
 
-export default HamburgerNavigation
+  return (
+    <>
+      <button className="absolute top-10 right-4" onClick={handleToggle}>
+        <Menu isOpen={hamNavOpen} />
+      </button>
+      {hamNavOpen ? <Navigation /> : ""}
+    </>
+  );
+};
+
+export default HamburgerNavigation;

@@ -5,7 +5,7 @@ import Header from '@/components/organisms/Header'
 const CommonLayout: FC = ({ children }) => {
   return (
     <div className='flex h-screen w-screen bg-black text-white'>
-      <div className='mx-auto w-full max-w-7xl'>
+      <div className='mx-auto w-full max-w-7xl relative pt-32'>
         <Header />
         {children}
         <Footer />

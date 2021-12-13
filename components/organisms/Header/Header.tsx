@@ -12,7 +12,7 @@ const Header = () => {
     console.log('isMobile: ', isMobile)
   }, [isMobile])
   return (
-    <div className='bg-opacity-50 bg-gray-800 flex text-shadow justify-between'>
+    <div className='bg-opacity-50 bg-gray-800 flex text-shadow md:justify-between absolute top-0 right-0 left-0 md:h-32'>
       <Logo />
       {isMobile ? <HamburgerNavigation /> : <Navigation />}
     </div>
