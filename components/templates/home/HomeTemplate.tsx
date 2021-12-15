@@ -14,7 +14,7 @@ const HomeTemplate = () => {
           <SocialMediaLinks />
         </div>
         <div className="h-96 w-full">
-          <p>Sign up now to get early notifications of what I'm doing!</p>
+          <p>Sign up now to get early notifications of what I&apos;m doing!</p>
           <MyButton href={urls.MAILCHIMP} name="Subscribe to Me" />
         </div>
         <div className="h-96 w-full">
