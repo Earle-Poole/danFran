@@ -1,5 +1,7 @@
+import MyButton from "@/components/atoms/Button/Button";
 import CoverPhoto from "@/components/atoms/CoverPhoto/CoverPhoto";
 import SocialMediaLinks from "@/components/atoms/Icons/SocialMediaLinks";
+import BookMeNow from "@/components/molecule/BusinessContactCard/BusinessContactCard";
 
 const HomeTemplate = () => {
   return (
@@ -10,11 +12,13 @@ const HomeTemplate = () => {
           About Me Section
           <SocialMediaLinks />
         </div>
+        <div className="h-96 w-full">Newsletter Sign up Section</div>
         <div className="h-96 w-full">
-          Newsletter Sign up Section
+          <BookMeNow />
+          <p>Book your personalized video shoutout from me now!</p>
+          <MyButton />
         </div>
-        <div className="h-96 w-full">
-          Book Me Section
+        <div>
           <SocialMediaLinks />
         </div>
       </div>
