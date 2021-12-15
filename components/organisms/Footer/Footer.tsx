@@ -1,5 +1,13 @@
-const Footer = () => {
-  return <div className='bg-opacity-50 bg-gray-800'>Footer</div>
-}
+import SocialMediaLinks from "@/components/atoms/Icons/SocialMediaLinks";
 
-export default Footer
+const Footer = () => {
+  return (
+    <div>
+      <SocialMediaLinks />
+      <p>© 2021 Daniel Franzese All Rights Reserved</p>
+      <p>Website by Margarita Poole</p>
+    </div>
+  );
+};
+
+export default Footer;

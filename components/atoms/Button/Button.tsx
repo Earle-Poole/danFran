@@ -1,25 +1,22 @@
+import { URLsValue } from "lib/constants";
+import Link from "next/link";
 import { FC } from "react";
 
 type MyButtonProps = {
-    links = href;
-    label = string;
-}
+  name: string;
+  href: URLsValue;
+};
 
 
+const MyButton: FC<MyButtonProps> = ({ name, href }) => {
+    const onClickHandler = () => {
+      window.open(href);
+    };
+  return (
+    <button type="button" onClick={onClickHandler}>
+      {name}
+    </button>
+  );
+};
 
-const MyButton: FC<MyButtonProps> = ({
-    links, 
-    label
-}) => {
-
-  
-    
-    return (
-        <button></button> 
-    )
-}
-
-export default MyButton; 
-
-// click function -> passable links
-// label
+export default MyButton;
