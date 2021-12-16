@@ -16,8 +16,8 @@ const ContactCard: FC<ContactCardProps> = ({
   return (
     <div>
       <ul>
-        <li>{handles}</li>
-        <li>{name}</li>
+        <li className="font-extrabold text-xl">{handles}</li>
+        <li className="">{name}</li>
         <li>{email}</li>
         {phoneNumbers.map((phoneNumber) => {
           return <li key={phoneNumber}>{phoneNumber}</li>;

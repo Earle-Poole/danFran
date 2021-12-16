@@ -14,13 +14,19 @@ const HomeTemplate = () => {
           <SocialMediaLinks />
         </div>
         <div className="h-96 w-full">
-          <p>Sign up now to get early notifications of what I&apos;m doing!</p>
+          <p className="text-center text-3xl">
+            Sign up now to get early notifications of what I&apos;m doing!
+          </p>
           <MyButton href={urls.MAILCHIMP} name="Subscribe to Me" />
         </div>
         <div className="h-96 w-full">
           <BookMeNow />
-          <p>Book your personalized video shoutout from me now!</p>
-          <MyButton href={urls.CAMEO} name="Find Me On Cameo" />
+          <div className="text-center text-2xl my-20">
+            <p >
+              Book your personalized video shoutout from me now!
+            </p>
+            <MyButton href={urls.CAMEO} name="Find Me On Cameo" />
+          </div>
         </div>
       </div>
     </div>
