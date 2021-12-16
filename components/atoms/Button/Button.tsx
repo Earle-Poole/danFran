@@ -7,15 +7,19 @@ type MyButtonProps = {
   href: URLsValue;
 };
 
-
 const MyButton: FC<MyButtonProps> = ({ name, href }) => {
-    const onClickHandler = () => {
-      window.open(href);
-    };
+  const onClickHandler = () => {
+    window.open(href);
+  };
   return (
-    <button type="button" onClick={onClickHandler}>
-      {name}
-    </button>
+    <Link href={href} passHref>
+      <a className="flex odd:hover:text-pink-500 even:hover:text-cyan-400">
+        <div className="font-light p-3 self-center transition duration-150 hover:underline">
+          onClick={onClickHandler}
+          {name}
+        </div>
+      </a>
+    </Link>
   );
 };
 
