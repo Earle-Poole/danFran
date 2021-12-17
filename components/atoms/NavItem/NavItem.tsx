@@ -1,6 +1,6 @@
-import { SlugsValue, URLsValue } from 'lib/constants'
 import Link from 'next/link'
 import { FC } from 'react'
+import { SlugsValue, URLsValue } from './'
 
 type NavItemProps = {
   name: string
