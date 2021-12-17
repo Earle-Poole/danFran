@@ -1,5 +1,8 @@
+import MyButton from "@/components/atoms/Button/Button";
 import CoverPhoto from "@/components/atoms/CoverPhoto/CoverPhoto";
 import SocialMediaLinks from "@/components/atoms/Icons/SocialMediaLinks";
+import BookMeNow from "@/components/molecule/BusinessContactCard/BusinessContactCard";
+import { urls, URLsValue } from "lib/constants";
 
 const HomeTemplate = () => {
   return (
@@ -11,11 +14,19 @@ const HomeTemplate = () => {
           <SocialMediaLinks />
         </div>
         <div className="h-96 w-full">
-          Newsletter Sign up Section
+          <p className="text-center text-3xl">
+            Sign up now to get early notifications of what I&apos;m doing!
+          </p>
+          <MyButton href={urls.MAILCHIMP} name="Subscribe to Me" />
         </div>
         <div className="h-96 w-full">
-          Book Me Section
-          <SocialMediaLinks />
+          <BookMeNow />
+          <div className="text-center text-2xl my-20">
+            <p >
+              Book your personalized video shoutout from me now!
+            </p>
+            <MyButton href={urls.CAMEO} name="Find Me On Cameo" />
+          </div>
         </div>
       </div>
     </div>

@@ -42,6 +42,8 @@ const urls = {
   STORE: 'https://whatsupdanny.creator-spring.com/',
   CALENDAR:
     'https://calendar.google.com/calendar/u/0/embed?src=e3r32cmfjlotisaphdbua6t3lo@group.calendar.google.com&showTitle=1&showPrint=0&showTz=0&height=720&wkst=1&bgcolor=%23FFFFFF&color=%23853104&ctz=America/Chicago',
+  MAILCHIMP: 'https://udsterleads.us10.list-manage.com/subscribe/post?u=c97ea1160f134dbeb8cbe8bd6&id=66c6445cca',
+  CAMEO:'https://www.cameo.com/whatsupdanny'
 } as const
 
 const breakpoints = {
