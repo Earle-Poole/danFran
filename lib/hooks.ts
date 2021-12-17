@@ -1,5 +1,5 @@
-import React, { ReactElement, useEffect, useRef, useState } from 'react'
-import { BreakPointValues } from './constants'
+import { BreakPointValues } from '@/components/atoms/NavItem'
+import { useEffect, useRef, useState } from 'react'
 
 // See
 // https://www.netlify.com/blog/2020/12/05/building-a-custom-react-media-query-hook-for-more-responsive-apps/
