@@ -1,4 +1,4 @@
-import { URLsValue } from "lib/constants";
+import { URLsValue } from "@/components/atoms/NavItem";
 import Link from "next/link";
 import { FC } from "react";
 
