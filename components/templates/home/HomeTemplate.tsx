@@ -9,17 +9,17 @@ const HomeTemplate = () => {
     <div className='w-full flex flex-col items-center'>
       <CoverPhoto />
       <div className='w-full max-w-7xl flex flex-col items-center'>
-        <div className='h-96 w-full'>
+        <div className='w-full'>
           About Me Section
           <SocialMediaLinks />
         </div>
-        <div className='h-96 w-full'>
+        <div className='w-full'>
           <p className='text-center text-3xl'>
             Sign up now to get early notifications of what I&apos;m doing!
           </p>
           <MyButton href={urls.MAILCHIMP} name='Subscribe to Me' />
         </div>
-        <div className='h-96 w-full'>
+        <div className='w-full'>
           <BookMeNow />
           <div className='text-center text-2xl my-20'>
             <p>Book your personalized video shoutout from me now!</p>
