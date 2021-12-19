@@ -1,34 +1,50 @@
-import MyButton from '@/components/atoms/Button/Button'
-import CoverPhoto from '@/components/atoms/CoverPhoto/CoverPhoto'
-import SocialMediaLinks from '@/components/atoms/Icons/SocialMediaLinks'
-import BookMeNow from '@/components/molecule/BusinessContactCard/BusinessContactCard'
-import { urls } from 'lib/constants'
+import MyButton from '@/components/atoms/Button/Button';
+import ContentSectionWrapper from '@/components/atoms/ContentSectionWrapper/ContentSectionWrapper';
+import CoverPhoto from '@/components/atoms/CoverPhoto/CoverPhoto';
+import SocialMediaLinks from '@/components/atoms/Icons/SocialMediaLinks';
+import AboutDanny from '@/components/molecule/AboutDanny/AboutDanny';
+import BookMeNow from '@/components/molecule/BusinessContactCard/BusinessContactCard';
+import { urls } from 'lib/constants';
 
 const HomeTemplate = () => {
   return (
     <div className='w-full flex flex-col items-center'>
       <CoverPhoto />
       <div className='w-full max-w-7xl flex flex-col items-center'>
-        <div className='w-full'>
-          About Me Section
-          <SocialMediaLinks />
-        </div>
-        <div className='w-full'>
-          <p className='text-center text-3xl'>
-            Sign up now to get early notifications of what I&apos;m doing!
-          </p>
-          <MyButton href={urls.MAILCHIMP} name='Subscribe to Me' />
-        </div>
-        <div className='w-full'>
-          <BookMeNow />
-          <div className='text-center text-2xl my-20'>
-            <p>Book your personalized video shoutout from me now!</p>
-            <MyButton href={urls.CAMEO} name='Find Me On Cameo' />
+        <ContentSectionWrapper wrapperBackgroundColor='bg-white/5'>
+          <div className='w-full'>
+            <AboutDanny />
           </div>
-        </div>
+        </ContentSectionWrapper>
+        <ContentSectionWrapper wrapperBackgroundColor='bg-black'>
+          <div className='w-full'>
+            <p className='text-center text-2xl'>
+              Sign up now to get early notifications of what I&apos;m doing!
+            </p>
+            <div className='flex mx-auto w-fit my-4'>
+              <input
+                type='email'
+                placeholder='email'
+                className='w-80 text-black text-xl p-2'
+              ></input>
+              <MyButton href={urls.MAILCHIMP} name='Subscribe to Me' />
+            </div>
+          </div>
+        </ContentSectionWrapper>
+        <ContentSectionWrapper wrapperBackgroundColor='bg-white/5'>
+          <div className='w-full'>
+            <BookMeNow />
+            <div className='flex flex-col items-center mx-auto text-2xl my-20 w-fit'>
+              <p className='my-4'>
+                Book your personalized video shoutout from me now!
+              </p>
+              <MyButton href={urls.CAMEO} name='Find Me On Cameo' />
+            </div>
+          </div>
+        </ContentSectionWrapper>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HomeTemplate
+export default HomeTemplate;
