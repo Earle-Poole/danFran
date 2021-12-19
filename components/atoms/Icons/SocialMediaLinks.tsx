@@ -43,7 +43,7 @@ const SocialMediaLinks = () => {
     'odd:hover:text-pink-500 even:hover:text-cyan-400 transition duration-150 mx-4';
 
   return (
-    <div className='flex w-fit mx-auto'>
+    <div className='flex w-fit mx-auto my-6'>
       {socialMediaLinks.map((socialMediaLink) => {
         return (
           <div className={socialMediaClassName} key={socialMediaLink.name}>
