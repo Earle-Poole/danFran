@@ -9,6 +9,19 @@ module.exports = {
         26: '6.5rem',
         220: '55rem',
       },
+      keyframes: {
+        'fast-flip': {
+          from: {
+            transform: 'rotateY(0deg)',
+          },
+          to: {
+            transform: 'rotateY(720deg)',
+          },
+        },
+      },
+      animation: {
+        'fast-flip': 'fast-flip 1s',
+      },
     },
   },
   plugins: [],
