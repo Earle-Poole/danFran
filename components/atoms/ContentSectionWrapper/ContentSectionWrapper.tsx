@@ -1,7 +1,24 @@
-import { Children, FC } from 'react';
+import classNames from 'classnames';
+import { FC } from 'react';
 
-const ContentSectionWrapper: FC = ({ children }) => {
-  return <div className='flex bg-gray-800 w-full p-24 rounded-md my-24'>{children}</div>;
+type ContentSectionWrapperProps = {
+  wrapperBackgroundColor: string;
+};
+
+const ContentSectionWrapper: FC<ContentSectionWrapperProps> = ({
+  children,
+  wrapperBackgroundColor,
+}) => {
+  return (
+    <div
+      className={classNames(
+        wrapperBackgroundColor,
+        'flex w-full p-24 rounded-md my-14'
+      )}
+    >
+      {children}
+    </div>
+  );
 };
 
 export default ContentSectionWrapper;
