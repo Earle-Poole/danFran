@@ -40,7 +40,7 @@ const socialMediaLinks = [
 
 const SocialMediaLinks = () => {
   const socialMediaClassName =
-    'odd:hover:text-pink-500 even:hover:text-cyan-400 transition duration-150 mx-4';
+    'odd:hover:text-pink-500 even:hover:text-cyan-400 transition duration-150 mx-4 hover:animate-fast-flip';
 
   return (
     <div className='flex w-fit mx-auto my-6'>
