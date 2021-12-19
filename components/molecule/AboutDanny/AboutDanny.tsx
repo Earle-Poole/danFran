@@ -15,11 +15,11 @@ const AboutDanny = () => {
         <p className='text-4xl'>Actor, Writer, Director, Comedian & Activist.</p>
         <Image src={design} alt='zigzag' className='my-6'></Image>
         <p className=''>
-          Best known for his roles in Larry Clark's "Bully", and as Damian in
+          {`Best known for his roles in Larry Clark's "Bully", and as Damian in
           Tina Fey's "Mean Girls". Danny is the creator of several live comedy
           shows including rock opera "Jersey Shoresical: A Frickin' Rock
           Opera!", and his one-man stand-up performances "I've Never Really Made
-          the Kind of Money to Become a Mess" and "Yass! You're Amazing!"
+          the Kind of Money to Become a Mess" and "Yass! You're Amazing!"`}
         </p>
         <SocialMediaLinks />
       </div>

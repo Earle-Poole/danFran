@@ -1,5 +1,5 @@
 import MyButton from '@/components/atoms/Button/Button';
-import ContentSectionWrapper from '@/components/atoms/ContentSectionWrapper/ContentSectionWrapper';
+import ContentSectionWrapper from '@/components/organisms/ContentSectionWrapper/ContentSectionWrapper';
 import CoverPhoto from '@/components/atoms/CoverPhoto/CoverPhoto';
 import SocialMediaLinks from '@/components/atoms/Icons/SocialMediaLinks';
 import AboutDanny from '@/components/molecule/AboutDanny/AboutDanny';
