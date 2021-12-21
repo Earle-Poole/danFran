@@ -5,7 +5,7 @@ import SocialMediaLinks from '@/components/atoms/Icons/SocialMediaLinks';
 
 const AboutDanny = () => {
   return (
-    <div className='flex'>
+    <div id='about' className='flex'>
       <Image
         src={photo}
         alt='about_me_photo1'

@@ -24,7 +24,7 @@ const contacts = [
 
 const BookMeNow = () => {
   return (
-    <div className='text-center text-3xl'>
+    <div id='contact' className='text-center text-3xl'>
       <h2 className='p-3'>Book Me Now</h2>
       <Stripes />
       <div className='grid grid-cols-3 p-2 text-lg'>
