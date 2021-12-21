@@ -3,15 +3,20 @@ import SocialMediaLinks from '@/components/atoms/Icons/SocialMediaLinks';
 import { slugs } from 'lib/constants';
 
 const Footer = () => {
- 
- 
+  const scrollToTop = () => {
+  const pageLocation = document.getElementById('layout-body')
+  if (pageLocation) {
+    pageLocation.scrollTo({top: 0,behavior:'smooth'});
+  }
+    };
+
   return (
-    <div className='bg-white/5 flex flex-col w-full items-center mt-12 py-16 text-lg font-sans'>
+    <div className='bg-white/5 relative flex flex-col w-full items-center mt-12 py-16 text-lg font-sans'>
       <a
-        className='flex text-2xl hover:bg-pink-500 bg-cyan-400 transition duration-150 w-fit font-light p-3 self-center hover:underline'
-        onClick={() => {}}
+        className='absolute flex text-4xl hover:bg-pink-500 bg-cyan-400 transition duration-150 w-fit font-light p-3 self-center hover:underline -top-8'
+        onClick={scrollToTop}
       >
-        UP
+        &uarr;
       </a>
       <SocialMediaLinks />
       <p className='mt-3'>
