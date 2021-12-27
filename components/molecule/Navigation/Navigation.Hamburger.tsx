@@ -1,10 +1,16 @@
 import Menu from '@/components/atoms/Icons/Menu'
-import { useState } from 'react'
+import { Dispatch, FC, SetStateAction, useState } from 'react'
 import Navigation from './Navigation'
 
-const HamburgerNavigation = () => {
-  const [hamNavOpen, setHamNavOpen] = useState(false)
+interface HamburgerNavigationProps {
+  hamNavOpen: boolean
+  setHamNavOpen: Dispatch<SetStateAction<boolean>>
+}
 
+const HamburgerNavigation: FC<HamburgerNavigationProps> = ({
+  hamNavOpen,
+  setHamNavOpen,
+}) => {
   const handleToggle = () => {
     setHamNavOpen((prev) => !prev)
   }
