@@ -1,21 +1,26 @@
-import MyButton from '@/components/atoms/Button/Button';
-import SocialMediaLinks from '@/components/atoms/Icons/SocialMediaLinks';
-import { slugs } from 'lib/constants';
+import SocialMediaLinks from '@/components/atoms/Icons/SocialMediaLinks'
+import { urls } from 'lib/constants'
+import { classNameByBreakpoint } from 'lib/toolbox'
 
 const Footer = () => {
   const scrollToTop = () => {
-  const pageLocation = document.getElementById('layout-body')
-  if (pageLocation) {
-    pageLocation.scrollTo({top: 0,behavior:'smooth'});
+    const pageLocation = document.getElementById('layout-body')
+    if (pageLocation) {
+      pageLocation.scrollTo({ top: 0, behavior: 'smooth' })
+    }
   }
-    };
+
+  const footerClassName = classNameByBreakpoint({
+    sm: 'bg-white/5 relative flex flex-col w-full items-center mt-12 py-16 text-lg font-sans',
+  })
+  const upArrowClassName = classNameByBreakpoint({
+    sm: 'absolute flex text-4xl bg-cyan-400 transition duration-150 w-fit font-light p-3 self-center -top-8',
+    manual: 'hover:bg-pink-500 hover:underline',
+  })
 
   return (
-    <div className='bg-white/5 relative flex flex-col w-full items-center mt-12 py-16 text-lg font-sans'>
-      <a
-        className='absolute flex text-4xl hover:bg-pink-500 bg-cyan-400 transition duration-150 w-fit font-light p-3 self-center hover:underline -top-8'
-        onClick={scrollToTop}
-      >
+    <div className={footerClassName}>
+      <a className={upArrowClassName} onClick={scrollToTop}>
         &uarr;
       </a>
       <SocialMediaLinks />
@@ -26,13 +31,13 @@ const Footer = () => {
       </p>
       <p>
         Website by
-        <a href='https://github.com/margarita-poole' className='font-bold'>
+        <a href={urls.MP_GITHUB} className='font-bold'>
           {' '}
           Margarita Poole
         </a>
       </p>
     </div>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

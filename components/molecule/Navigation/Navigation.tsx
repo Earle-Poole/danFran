@@ -1,9 +1,16 @@
 import NavItem from '@/components/atoms/NavItem'
 import { navList } from 'lib/constants'
+import { classNameByBreakpoint } from 'lib/toolbox'
 
 const Navigation = () => {
+  const className = classNameByBreakpoint({
+    sm: 'flex justify-items-center mx-auto items-stretch flex-col text-md',
+    md: 'flex-row justify-end flex-wrap w-full text-lg',
+    lg: 'text-xl ',
+  })
+
   return (
-    <nav className='flex justify-items-center mx-auto items-stretch flex-col text-md  md:flex-row md:justify-end md:flex-wrap md:w-full lg:text-xl md:text-lg'>
+    <nav className={className}>
       {navList.map((navItem) => {
         return <NavItem key={navItem.href} {...navItem} />
       })}

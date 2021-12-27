@@ -1,5 +1,6 @@
 import ContactCard from '@/components/atoms/Cards/ContactCard'
 import Stripes from '@/components/atoms/Icons/Stripes'
+import { classNameByBreakpoint } from 'lib/toolbox'
 
 const contacts = [
   {
@@ -22,12 +23,16 @@ const contacts = [
   },
 ]
 
+const contactsListClassName = classNameByBreakpoint({
+  sm: 'grid grid-cols-3 p-2 text-lg',
+})
+
 const BookMeNow = () => {
   return (
     <div id='contact' className='text-center text-3xl'>
       <h2 className='p-3'>Book Me Now</h2>
       <Stripes />
-      <div className='grid grid-cols-3 p-2 text-lg'>
+      <div className={contactsListClassName}>
         {contacts.map((contact) => {
           return <ContactCard key={contact.handles} {...contact} />
         })}
