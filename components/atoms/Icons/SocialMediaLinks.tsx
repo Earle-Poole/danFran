@@ -1,15 +1,14 @@
-import Facebook from '@/assets/svg/facebook'
-import Instagram from '@/assets/svg/instagram'
-import LinkedIn from '@/assets/svg/linkedin'
-import Twitter from '@/assets/svg/twitter'
-import IMDB from '@/assets/svg/imdb'
-import { classNameByBreakpoint } from 'lib/toolbox'
+import Facebook from '@/assets/svg/facebook';
+import Instagram from '@/assets/svg/instagram';
+import LinkedIn from '@/assets/svg/linkedin';
+import Twitter from '@/assets/svg/twitter';
+import IMDB from '@/assets/svg/imdb';
 
 const commonSVGProps = {
   color: '#fff',
   width: 20,
   height: 20,
-}
+};
 
 const socialMediaLinks = [
   {
@@ -37,14 +36,11 @@ const socialMediaLinks = [
     icon: <IMDB {...commonSVGProps} />,
     name: 'IMDB',
   },
-]
+];
 
 const SocialMediaLinks = () => {
-  const socialMediaClassName = classNameByBreakpoint({
-    sm: 'transition duration-150 mx-4',
-    manual:
-      'odd:hover:text-pink-500 even:hover:text-cyan-400 hover:animate-fast-flip',
-  })
+  const socialMediaClassName =
+    'odd:hover:text-pink-500 even:hover:text-cyan-400 transition duration-150 mx-4 hover:animate-fast-flip';
 
   return (
     <div className='flex w-fit mx-auto my-6'>
@@ -53,10 +49,10 @@ const SocialMediaLinks = () => {
           <div className={socialMediaClassName} key={socialMediaLink.name}>
             <a href={socialMediaLink.url}>{socialMediaLink.icon}</a>
           </div>
-        )
+        );
       })}
     </div>
-  )
-}
+  );
+};
 
-export default SocialMediaLinks
+export default SocialMediaLinks;

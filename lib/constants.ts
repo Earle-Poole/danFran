@@ -38,21 +38,13 @@ const urls = {
   MAILCHIMP:
     'https://udsterleads.us10.list-manage.com/subscribe/post?u=c97ea1160f134dbeb8cbe8bd6&id=66c6445cca',
   CAMEO: 'https://www.cameo.com/whatsupdanny',
-  MP_GITHUB: 'https://github.com/margarita-poole',
 } as const
 
-const breakpointNames = {
-  SM: 'sm',
-  MD: 'md',
-  LG: 'lg',
-  XL: 'xl',
-}
-
 const breakpoints = {
-  [breakpointNames.SM]: '(max-width: 767px)',
-  [breakpointNames.MD]: '(min-width: 768px)',
-  [breakpointNames.LG]: '(min-width: 992px)',
-  [breakpointNames.XL]: '(min-width: 1200px)',
+  sm: '(max-width: 767px)',
+  md: '(min-width: 768px)',
+  lg: '(min-width: 992px)',
+  xl: '(min-width: 1200px)',
 } as const
 
 const navList = [
@@ -98,4 +90,4 @@ const navList = [
   },
 ]
 
-export { slugs, urls, breakpoints, breakpointNames, slugToLabel, navList }
+export { slugs, urls, breakpoints, slugToLabel, navList }
