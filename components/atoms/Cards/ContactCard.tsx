@@ -13,14 +13,22 @@ const ContactCard: FC<ContactCardProps> = ({
   email,
   phoneNumbers,
 }) => {
+  const splitEmail = email.split("@");
   return (
     <div>
       <ul>
         <li className="font-extrabold text-xl">{handles}</li>
         <li className="">{name}</li>
-        <li>{email}</li>
+        <li>
+          <strong>{splitEmail[0]}</strong>@{splitEmail[1]}
+        </li>
         {phoneNumbers.map((phoneNumber) => {
-          return <li key={phoneNumber}>{phoneNumber}</li>;
+          const splitNumber = phoneNumber.split(":");
+          return (
+            <li key={phoneNumber}>
+              {splitNumber[0]}:<strong>{splitNumber[1]}</strong>
+            </li>
+          );
         })}
       </ul>
     </div>
