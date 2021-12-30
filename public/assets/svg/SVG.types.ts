@@ -1,7 +1,7 @@
 interface SVGProps {
-  color: string
-  width: number
-  height: number
+  width: number;
+  height: number;
+  className?: string;
 }
 
-export type { SVGProps }
+export type { SVGProps };

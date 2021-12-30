@@ -1,13 +1,14 @@
-import MyButton from '@/components/atoms/Button/Button'
-import ContentSectionWrapper from '@/components/organisms/ContentSectionWrapper/ContentSectionWrapper'
-import CoverPhoto from '@/components/atoms/CoverPhoto/CoverPhoto'
-import AboutDanny from '@/components/molecule/AboutDanny/AboutDanny'
-import BookMeNow from '@/components/molecule/BusinessContactCard/BusinessContactCard'
-import { urls } from 'lib/constants'
+import MyButton from '@/components/atoms/Button/Button';
+import ContentSectionWrapper from '@/components/organisms/ContentSectionWrapper/ContentSectionWrapper';
+import CoverPhoto from '@/components/atoms/CoverPhoto/CoverPhoto';
+import SocialMediaLinks from '@/components/atoms/Icons/SocialMediaLinks';
+import AboutDanny from '@/components/molecule/AboutDanny/AboutDanny';
+import BookMeNow from '@/components/molecule/BookMeNowContacts/BookMeNowContacts';
+import { urls } from 'lib/constants';
 
 const HomeTemplate = () => {
   return (
-    <div className='w-full flex flex-col items-center'>
+    <div id='home' className='w-full flex flex-col items-center'>
       <CoverPhoto />
       <div className='w-full max-w-7xl flex flex-col items-center'>
         <div id='about' className='h-26'></div>

@@ -1,46 +1,67 @@
-import Facebook from '@/assets/svg/facebook';
-import Instagram from '@/assets/svg/instagram';
-import LinkedIn from '@/assets/svg/linkedin';
-import Twitter from '@/assets/svg/twitter';
-import IMDB from '@/assets/svg/imdb';
+import Facebook from "@/assets/svg/facebook";
+import Instagram from "@/assets/svg/instagram";
+import LinkedIn from "@/assets/svg/linkedin";
+import Twitter from "@/assets/svg/twitter";
+import IMDB from "@/assets/svg/imdb";
 
 const commonSVGProps = {
-  color: '#fff',
   width: 20,
   height: 20,
 };
 
 const socialMediaLinks = [
   {
-    url: 'https://www.facebook.com/profile.php?id=659344013',
-    icon: <Facebook {...commonSVGProps} />,
-    name: 'Facebook',
+    url: "https://www.facebook.com/profile.php?id=659344013",
+    icon: (
+      <Facebook
+        {...commonSVGProps}
+        className={"fill-white hover:fill-pink-500"}
+      />
+    ),
+    name: "Facebook",
   },
   {
-    url: 'https://www.instagram.com/whatsupdanny/',
-    icon: <Instagram {...commonSVGProps} />,
-    name: 'Instagram',
+    url: "https://www.instagram.com/whatsupdanny/",
+    icon: (
+      <Instagram
+        {...commonSVGProps}
+        className={"fill-white hover:fill-cyan-400"}
+      />
+    ),
+    name: "Instagram",
   },
   {
-    url: 'https://www.linkedin.com/in/daniel-franzese-84126a57/',
-    icon: <LinkedIn {...commonSVGProps} />,
-    name: 'LinkedIn',
+    url: "https://www.linkedin.com/in/daniel-franzese-84126a57/",
+    icon: (
+      <LinkedIn
+        {...commonSVGProps}
+        className={"fill-white hover:fill-pink-500"}
+      />
+    ),
+    name: "LinkedIn",
   },
   {
-    url: 'https://www.twitter.com/WhatsupDanny',
-    icon: <Twitter {...commonSVGProps} />,
-    name: 'Twitter',
+    url: "https://www.twitter.com/WhatsupDanny",
+    icon: (
+      <Twitter
+        {...commonSVGProps}
+        className={"fill-white hover:fill-cyan-400"}
+      />
+    ),
+    name: "Twitter",
   },
   {
-    url: 'https://www.imdb.com/name/nm0291881/',
-    icon: <IMDB {...commonSVGProps} />,
-    name: 'IMDB',
+    url: "https://www.imdb.com/name/nm0291881/",
+    icon: (
+      <IMDB {...commonSVGProps} className={"fill-white hover:fill-pink-500"} />
+    ),
+    name: "IMDB",
   },
 ];
 
 const SocialMediaLinks = () => {
   const socialMediaClassName =
-    'odd:hover:text-pink-500 even:hover:text-cyan-400 transition duration-150 mx-4 hover:animate-fast-flip';
+    "transition duration-150 mx-4 hover:animate-fast-flip";
 
   return (
     <div className='flex w-fit my-6'>
