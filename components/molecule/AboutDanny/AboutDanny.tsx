@@ -1,19 +1,22 @@
-import Image from 'next/image';
-import photo from '@/assets/about_me_photo1.jpg';
-import design from '@/assets/zigzag.svg';
-import SocialMediaLinks from '@/components/atoms/Icons/SocialMediaLinks';
+import Image from 'next/image'
+import photo from '@/assets/about_me_photo1.jpg'
+import design from '@/assets/zigzag.svg'
+import SocialMediaLinks from '@/components/atoms/Icons/SocialMediaLinks'
 
 const AboutDanny = () => {
   return (
     <div className='flex'>
-      <Image
-        src={photo}
-        alt='about_me_photo1'
-        className='flex-1'
-      />
+      <Image src={photo} alt='about_me_photo1' className='flex-1' />
       <div className='flex flex-col w-220 ml-9'>
         <p className='text-4xl'>{`Actor, Writer, Director, Comedian & Activist.`}</p>
-        <Image src={design} alt='zigzag'></Image>
+        <div className='pt-4'>
+          <Image
+            src={design}
+            alt='zigzag'
+            layout='fixed'
+            
+          ></Image>
+        </div>
         <p className='text-2xl my-3 leading-relaxed '>
           {`Best known for his roles in Larry Clark's "Bully", and as Damian in
           Tina Fey's "Mean Girls". Danny is the creator of several live comedy
@@ -24,7 +27,7 @@ const AboutDanny = () => {
         <SocialMediaLinks />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AboutDanny;
+export default AboutDanny
