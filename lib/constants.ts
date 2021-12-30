@@ -7,9 +7,9 @@ const slugs: SlugsConst = {
   VIDEO_GALLERY: '/video-gallery',
   PRESS_KIT: '/press-kit',
   MODELLING_GALLERY: '/modelling-gallery',
-  HOME: '/home',
-  ABOUT: '/#about',
-  CONTACT: '/#contact',
+  HOME: '/home#home',
+  ABOUT: '/home#about',
+  CONTACT: '/home#contact',
 } as const
 
 const slugToLabel = (slug: SlugsValue) => {
