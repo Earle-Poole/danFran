@@ -1,6 +1,8 @@
 import MyButton from '@/components/atoms/Button/Button'
 import SocialMediaLinks from '@/components/atoms/Icons/SocialMediaLinks'
+import classNames from 'classnames'
 import { slugs } from 'lib/constants'
+import styles from './footer.module.css'
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -21,15 +23,16 @@ const Footer = () => {
       <SocialMediaLinks />
       <p className='mt-3'>
         © 2021
-        <span className='text-orange-400 text-3xl'> Daniel Franzese </span>
+        <span className={classNames('text-3xl mx-1', styles.name)}>
+          Daniel Franzese
+        </span>
         All Rights Reserved
       </p>
       <p>
-        Website by: 
-        {' '}
+        Website by{' '}
         <a
           href='https://github.com/margarita-poole'
-          className='text-fuchsia-700 hover:underline underline-offset-2'
+          className='text-fuchsia-700 hover:underline underline-offset-2 '
         >
           Margarita Poole
         </a>
