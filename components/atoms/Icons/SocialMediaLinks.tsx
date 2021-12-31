@@ -64,7 +64,7 @@ const SocialMediaLinks = () => {
     "transition duration-150 mx-4 hover:animate-fast-flip";
 
   return (
-    <div className="flex w-fit mx-auto my-6">
+    <div className='flex w-fit my-6'>
       {socialMediaLinks.map((socialMediaLink) => {
         return (
           <div className={socialMediaClassName} key={socialMediaLink.name}>

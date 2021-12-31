@@ -11,10 +11,14 @@ const HomeTemplate = () => {
     <div id='home' className='w-full flex flex-col items-center'>
       <CoverPhoto />
       <div className='w-full max-w-7xl flex flex-col items-center'>
+        <div id='about' className='h-26'></div>
         <ContentSectionWrapper wrapperBackgroundColor='bg-white/5'>
           <AboutDanny />
         </ContentSectionWrapper>
-        <ContentSectionWrapper wrapperBackgroundColor='bg-black' classNameOverride='!py-1 my-10'>
+        <ContentSectionWrapper
+          wrapperBackgroundColor='bg-black'
+          classNameOverride='!py-1 my-10'
+        >
           <div className='flex flex-col w-full mx-auto'>
             <p className='text-center text-2xl'>
               Sign up now to get early notifications of what I&apos;m doing!
@@ -29,6 +33,7 @@ const HomeTemplate = () => {
             </div>
           </div>
         </ContentSectionWrapper>
+        <div id='contact'></div>
         <ContentSectionWrapper wrapperBackgroundColor='bg-white/5'>
           <div className='flex flex-col w-full'>
             <BookMeNow />
@@ -42,7 +47,7 @@ const HomeTemplate = () => {
         </ContentSectionWrapper>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default HomeTemplate;
+export default HomeTemplate
