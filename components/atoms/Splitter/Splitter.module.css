@@ -1,0 +1,56 @@
+.splitterWrapper > span {
+  position: relative;
+  opacity: 0;
+  animation: move-text 0.25s forwards;
+}
+
+.splitterWrapper:hover > span {
+  animation: move-text 0.75s infinite ease-in;
+}
+
+@keyframes move-text {
+  0% {
+    bottom: 0;
+    opacity: 1;
+  }
+  10% {
+    bottom: -0.1em;
+    opacity: 1;
+  }
+  20% {
+    bottom: -0.2em;
+    opacity: 1;
+  }
+  30% {
+    bottom: -0.2em;
+    opacity: 1;
+  }
+  40% {
+    bottom: -0.1em;
+    opacity: 1;
+  }
+  50% {
+    bottom: 0;
+    opacity: 1;
+  }
+  60% {
+    bottom: 0.1em;
+    opacity: 1;
+  }
+  70% {
+    bottom: 0.2em;
+    opacity: 1;
+  }
+  80% {
+    bottom: 0.2em;
+    opacity: 1;
+  }
+  90% {
+    bottom: 0.1em;
+    opacity: 1;
+  }
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { FC } from 'react'
+import Splitter from '../Splitter/Splitter'
 import { SlugsValue, URLsValue } from './'
 
 type NavItemProps = {
@@ -18,8 +19,8 @@ const NavItem: FC<NavItemProps> = ({ isExternal, name, href }) => {
       <a
         className='flex odd:hover:text-pink-500 even:hover:text-cyan-400'
         {...optionalAnchorProps}>
-        <div className='font-light p-3 self-center transition duration-150 hover:underline'>
-          {name}
+        <div className='font-light p-3 self-center transition duration-150'>
+          <Splitter str={name} />
         </div>
       </a>
     </Link>
