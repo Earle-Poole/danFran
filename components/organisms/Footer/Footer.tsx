@@ -13,15 +13,15 @@ const Footer = () => {
   }
 
   return (
-    <div className='bg-white/5 relative flex flex-col w-full items-center mt-12 py-16 text-lg font-sans'>
+    <div className="bg-white/5 relative flex flex-col w-full items-center mt-12 py-16 text-lg font-sans">
       <a
-        className='absolute flex text-4xl hover:bg-pink-500 bg-cyan-400 transition duration-150 w-fit font-light p-3 self-center hover:underline -top-8'
+        className="absolute flex text-4xl hover:bg-pink-500 bg-cyan-400 transition duration-150 w-fit font-light p-3 self-center hover:underline -top-8"
         onClick={scrollToTop}
       >
         &uarr;
       </a>
       <SocialMediaLinks />
-      <p className='mt-3'>
+      <p className="mt-3">
         © 2021
         <span className={classNames('text-3xl mx-1', styles.name)}>
           Daniel Franzese
@@ -31,8 +31,8 @@ const Footer = () => {
       <p>
         Website by{' '}
         <a
-          href='https://github.com/margarita-poole'
-          className='text-fuchsia-700 hover:underline underline-offset-2 '
+          href="https://github.com/margarita-poole"
+          className="text-fuchsia-700 hover:underline underline-offset-2 "
         >
           Margarita Poole
         </a>

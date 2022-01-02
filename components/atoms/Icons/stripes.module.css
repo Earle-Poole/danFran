@@ -1,25 +1,23 @@
 .stripes {
-    position: relative;
+  position: relative;
 }
 
 .stripes::after,
 .stripes::before {
-    position: absolute;
-    content: "";
-    height: 50px;
-    width: 2px;
-    background: #009FFF;
-    background: linear-gradient(
-180deg, #009FFF 0%, #FF45B5 100%);
-    left: 50%;
-    margin-left: -4px;
-    z-index: -1;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
+  position: absolute;
+  content: '';
+  height: 50px;
+  width: 2px;
+  background: #009fff;
+  background: linear-gradient(180deg, #009fff 0%, #ff45b5 100%);
+  left: 50%;
+  margin-left: -4px;
+  z-index: -1;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
 }
 
 .stripes::before {
-    height: 35px;
-    left: calc(50% + 6px);
+  height: 35px;
+  left: calc(50% + 6px);
 }
-

@@ -1,12 +1,11 @@
-import classNames from "classnames";
-import { FC } from "react";
+import { FC } from 'react'
 
 interface MenuProps {
-  isOpen: boolean;
+  isOpen: boolean
 }
 
 const Menu: FC<MenuProps> = ({ isOpen }) => {
-    const pattyClass = "w-4/5 border rounded-full my-1 self-center bg-white"
+  const pattyClass = 'w-4/5 border rounded-full my-1 self-center bg-white'
   return (
     <div className="flex flex-col w-10 box-border">
       {isOpen ? (
@@ -19,7 +18,7 @@ const Menu: FC<MenuProps> = ({ isOpen }) => {
         </>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Menu;
+export default Menu

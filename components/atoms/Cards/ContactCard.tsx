@@ -1,11 +1,11 @@
-import { FC } from "react";
+import { FC } from 'react'
 
 type ContactCardProps = {
-  handles: string;
-  name: string;
-  email: string;
-  phoneNumbers: string[];
-};
+  handles: string
+  name: string
+  email: string
+  phoneNumbers: string[]
+}
 
 const ContactCard: FC<ContactCardProps> = ({
   handles,
@@ -13,7 +13,7 @@ const ContactCard: FC<ContactCardProps> = ({
   email,
   phoneNumbers,
 }) => {
-  const splitEmail = email.split("@");
+  const splitEmail = email.split('@')
   return (
     <div>
       <ul>
@@ -23,16 +23,16 @@ const ContactCard: FC<ContactCardProps> = ({
           <strong>{splitEmail[0]}</strong>@{splitEmail[1]}
         </li>
         {phoneNumbers.map((phoneNumber) => {
-          const splitNumber = phoneNumber.split(":");
+          const splitNumber = phoneNumber.split(':')
           return (
             <li key={phoneNumber}>
               {splitNumber[0]}:<strong>{splitNumber[1]}</strong>
             </li>
-          );
+          )
         })}
       </ul>
     </div>
-  );
-};
+  )
+}
 
-export default ContactCard;
+export default ContactCard

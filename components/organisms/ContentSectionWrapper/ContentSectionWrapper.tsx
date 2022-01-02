@@ -1,15 +1,15 @@
-import classNames from 'classnames';
-import { FC } from 'react';
+import classNames from 'classnames'
+import { FC } from 'react'
 
 type ContentSectionWrapperProps = {
-  wrapperBackgroundColor: string;
-  classNameOverride?: string;
-};
+  wrapperBackgroundColor: string
+  classNameOverride?: string
+}
 
 const ContentSectionWrapper: FC<ContentSectionWrapperProps> = ({
   children,
   wrapperBackgroundColor,
-  classNameOverride
+  classNameOverride,
 }) => {
   return (
     <div
@@ -21,7 +21,7 @@ const ContentSectionWrapper: FC<ContentSectionWrapperProps> = ({
     >
       {children}
     </div>
-  );
-};
+  )
+}
 
-export default ContentSectionWrapper;
+export default ContentSectionWrapper

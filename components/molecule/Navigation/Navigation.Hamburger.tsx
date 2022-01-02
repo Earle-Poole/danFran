@@ -17,7 +17,7 @@ const HamburgerNavigation: FC<HamburgerNavigationProps> = ({
 
   return (
     <>
-      <button className='absolute top-10 right-4' onClick={handleToggle}>
+      <button className="absolute top-10 right-4" onClick={handleToggle}>
         <Menu isOpen={hamNavOpen} />
       </button>
       {hamNavOpen ? <Navigation /> : ''}
