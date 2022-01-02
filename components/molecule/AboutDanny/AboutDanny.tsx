@@ -4,8 +4,7 @@ import photo2 from '@/assets/about_photo_2.jpg'
 import photo3 from '@/assets/dot-light.png'
 import design from '@/assets/zigzag.svg'
 import SocialMediaLinks from '@/components/atoms/Icons/SocialMediaLinks'
-import handler from 'pages/api/hello'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import classNames from 'classnames'
 
 const AboutDanny = () => {

@@ -46,7 +46,7 @@ const MailChimpInput = () => {
                   value="Subscribe"
                   name="subscribe"
                   id="mc-embedded-subscribe"
-                  className="flex text-2xl hover:bg-pink-500 bg-cyan-400 transition duration-150 w-fit font-light p-3 self-center hover:underline"
+                  className="flex text-2xl hover:bg-pink-500 bg-cyan-400 transition duration-150 w-fit font-light p-3 self-center hover:underline text-shadow-xs"
                 />
               </div>
             </div>

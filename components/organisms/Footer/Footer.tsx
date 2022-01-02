@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <div className="bg-white/5 relative flex flex-col w-full items-center mt-12 py-16 text-lg font-sans">
       <a
-        className="absolute flex text-4xl hover:bg-pink-500 bg-cyan-400 transition duration-150 w-fit font-light p-3 self-center hover:underline -top-8"
+        className="absolute flex text-4xl hover:bg-pink-500 bg-cyan-400 transition duration-150 w-fit font-light p-3 self-center hover:underline -top-8 text-shadow-xs"
         onClick={scrollToTop}
       >
         &uarr;
