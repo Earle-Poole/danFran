@@ -5,6 +5,7 @@ import SocialMediaLinks from '@/components/atoms/Icons/SocialMediaLinks'
 import AboutDanny from '@/components/molecule/AboutDanny/AboutDanny'
 import BookMeNow from '@/components/molecule/BookMeNowContacts/BookMeNowContacts'
 import { urls } from 'lib/constants'
+import MailChimpInput from '@/components/molecule/MailChimpInput/MailChimpInput'
 
 const HomeTemplate = () => {
   return (
@@ -24,12 +25,7 @@ const HomeTemplate = () => {
               Sign up now to get early notifications of what I&apos;m doing!
             </p>
             <div className="flex mx-auto w-fit my-8">
-              <input
-                type="email"
-                placeholder="email"
-                className="w-80 text-black text-xl p-2"
-              ></input>
-              <MyButton href={urls.MAILCHIMP} name="Subscribe to Me" />
+              <MailChimpInput />
             </div>
           </div>
         </ContentSectionWrapper>

@@ -1,11 +1,11 @@
+*:hover > .splitterWrapper > span {
+  animation: move-text 0.75s infinite ease-in;
+}
+
 .splitterWrapper > span {
   position: relative;
   opacity: 0;
   animation: move-text 0.25s forwards;
-}
-
-.splitterWrapper:hover > span {
-  animation: move-text 0.75s infinite ease-in;
 }
 
 @keyframes move-text {

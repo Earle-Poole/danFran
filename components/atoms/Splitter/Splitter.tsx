@@ -9,7 +9,7 @@ const Splitter: FC<{ str: string }> = ({ str }) => {
       {stringSplit.map((char, index) => {
         const style = { animationDelay: index / 20 + 's' }
         return (
-          <span style={style} key={`split-char-${char}`}>
+          <span style={style} key={`split-char-${str}-${char}-${index}`}>
             {char}
           </span>
         )
