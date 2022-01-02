@@ -32,7 +32,7 @@ const Footer = () => {
         Website by{' '}
         <a
           href="https://github.com/margarita-poole"
-          className="text-fuchsia-700 hover:underline underline-offset-2 "
+          className="text-fuchsia-500 hover:underline underline-offset-2 "
         >
           Margarita Poole
         </a>
