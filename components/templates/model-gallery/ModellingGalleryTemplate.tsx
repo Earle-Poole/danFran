@@ -8,7 +8,6 @@ const ModellingGalleryTemplate = () => {
       </p>
       <p className="text-left text-xl indent-14 italic">{`"You are you. Now, isn't that pleasant?" -Dr. Seuss`}</p>
       <ModelGalleryComponent />
-      <div></div>
     </div>
   )
 }

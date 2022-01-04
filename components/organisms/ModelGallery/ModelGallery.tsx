@@ -35,6 +35,9 @@ import DanFranThumbnail14 from '/public/assets/modelling_gallery/thumbnails/dani
 import DanFranThumbnail15 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-15.jpg'
 import DanFranThumbnail16 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-16.jpg'
 import DanFranThumbnail17 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-17.jpg'
+import { useEffect, useState } from 'react'
+import Image from 'next/image'
+import SelectedGalleryImage from '@/components/molecule/SelectedGalleryImage/SelectedGalleryImage'
 
 const ModelGalleryComponent = () => {
   const galleryList = [
@@ -58,11 +61,27 @@ const ModelGalleryComponent = () => {
     { main: DanFranPhoto17, thumb: DanFranThumbnail17 },
   ]
 
+  const [selectedBigImage, setSelectedBigImage] =
+    useState<StaticImageData | null>(null)
+
+  useEffect(() => {
+    console.log('selectedBigImage', selectedBigImage)
+    return () => {}
+  }, [])
+
   return (
-    <div className='flex flex-wrap'>
+    <div className="flex flex-wrap">
       {galleryList.map((pictureSetup, i) => (
-        <Picture key={pictureSetup.main.src} pictureObj={pictureSetup} index={i} />
+        <Picture
+          key={pictureSetup.main.src}
+          pictureObj={pictureSetup}
+          index={i}
+          setSelectedBigImage={setSelectedBigImage}
+        />
       ))}
+      {selectedBigImage ? (
+        <SelectedGalleryImage selectedBigImage={selectedBigImage} />
+      ) : null}
     </div>
   )
 }
