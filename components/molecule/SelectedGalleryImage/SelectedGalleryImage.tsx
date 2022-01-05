@@ -20,10 +20,31 @@ const SelectedGalleryImage: FC<SelectedGalleryImageProps> = ({
         setSelectedBigImage(null)
       }}
     >
-      <Image
-        src={selectedBigImage}
-        alt={`Selected Picture`}
-      />
+      <div className="w-9/12 h-full items-center flex">
+        <button
+          className="absolute left-6 border-slate-600 border-2  z-30 text-4xl text-white"
+          type="button"
+          title="Previous Picture"
+        >
+          &#8592;
+        </button>
+        <div className="relative w-full h-5/6">
+          <Image
+            layout="fill"
+            objectFit="contain"
+            src={selectedBigImage}
+            alt={`Selected Picture`}
+          />
+        </div>
+
+        <button
+          className="absolute right-6 border-slate-600 border-2  z-30 text-4xl text-white"
+          type="button"
+          title="Next Picture"
+        >
+          &#8594;
+        </button>
+      </div>
     </div>,
     portalTarget
   )
