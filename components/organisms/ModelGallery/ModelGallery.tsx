@@ -36,7 +36,6 @@ import DanFranThumbnail15 from '/public/assets/modelling_gallery/thumbnails/dani
 import DanFranThumbnail16 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-16.jpg'
 import DanFranThumbnail17 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-17.jpg'
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
 import SelectedGalleryImage from '@/components/molecule/SelectedGalleryImage/SelectedGalleryImage'
 
 const ModelGalleryComponent = () => {

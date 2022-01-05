@@ -1,7 +1,6 @@
-import galleryList from '@/components/organisms/ModelGallery/ModelGallery'
 import classNames from 'classnames'
 import Image from 'next/image'
-import { Dispatch, FC, SetStateAction, useState } from 'react'
+import { Dispatch, FC, SetStateAction } from 'react'
 import styles from './Picture.module.css'
 
 type PictureProps = {
