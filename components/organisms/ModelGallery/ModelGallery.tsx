@@ -67,7 +67,7 @@ const ModelGalleryComponent = () => {
   useEffect(() => {
     console.log('selectedBigImage', selectedBigImage)
     return () => {}
-  }, [])
+  })
 
   return (
     <div className="flex flex-wrap">
@@ -80,7 +80,10 @@ const ModelGalleryComponent = () => {
         />
       ))}
       {selectedBigImage ? (
-        <SelectedGalleryImage selectedBigImage={selectedBigImage} />
+        <SelectedGalleryImage
+          selectedBigImage={selectedBigImage}
+          setSelectedBigImage={setSelectedBigImage}
+        />
       ) : null}
     </div>
   )
