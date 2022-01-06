@@ -1,4 +1,4 @@
-import ModelGalleryComponent from '@/components/organisms/ModelGallery/ModelGallery'
+import ModelGallery from '@/components/organisms/ModelGallery/ModelGallery'
 
 const ModellingGalleryTemplate = () => {
   return (
@@ -7,7 +7,7 @@ const ModellingGalleryTemplate = () => {
         Daniel Franzese - Modelling Gallery
       </p>
       <p className="text-left text-xl indent-14 italic">{`"You are you. Now, isn't that pleasant?" -Dr. Seuss`}</p>
-      <ModelGalleryComponent />
+      <ModelGallery />
     </div>
   )
 }

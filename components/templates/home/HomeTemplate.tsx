@@ -29,8 +29,9 @@ const HomeTemplate = () => {
             </div>
           </div>
         </ContentSectionWrapper>
+        <div id="contact"></div>
         <ContentSectionWrapper wrapperBackgroundColor="bg-white/5">
-          <div id="contact" className="flex flex-col w-full">
+          <div className="flex flex-col w-full">
             <BookMeNow />
             <div className="flex flex-col items-center mx-auto text-2xl mt-20 w-fit">
               <p className="flex flex-col my-4">

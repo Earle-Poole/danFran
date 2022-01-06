@@ -3,7 +3,7 @@ import Head from 'next/head'
 import CommonLayout from '@/components/layouts/CommonLayout'
 import ModellingGalleryTemplate from '@/components/templates/model-gallery'
 
-const ModelingGallery: NextPage = () => {
+const ModellingGallery: NextPage = () => {
   return (
     <>
       <Head>
@@ -19,4 +19,4 @@ const ModelingGallery: NextPage = () => {
   )
 }
 
-export default ModelingGallery
+export default ModellingGallery

@@ -36,10 +36,9 @@ import DanFranThumbnail15 from '/public/assets/modelling_gallery/thumbnails/dani
 import DanFranThumbnail16 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-16.jpg'
 import DanFranThumbnail17 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-17.jpg'
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
 import SelectedGalleryImage from '@/components/molecule/SelectedGalleryImage/SelectedGalleryImage'
 
-const ModelGalleryComponent = () => {
+const ModelGallery = () => {
   const galleryList = [
     { main: DanFranPhoto0, thumb: DanFranThumbnail0 },
     { main: DanFranPhoto1, thumb: DanFranThumbnail1 },
@@ -69,6 +68,33 @@ const ModelGalleryComponent = () => {
     return () => {}
   })
 
+  const whatIsMyIndex = (picture: {
+    main: StaticImageData
+    thumb: StaticImageData
+  }) => {
+    return picture.main.src === selectedBigImage?.src
+  }
+
+  const previousPicture = () => {
+    const currentIndex = galleryList.findIndex(whatIsMyIndex)
+    if (currentIndex - 1 < 0) {
+      setSelectedBigImage(galleryList[galleryList.length - 1].main)
+    } else {
+      setSelectedBigImage(galleryList[currentIndex - 1].main)
+    }
+  }
+
+  const nextPicture = () => {
+    const currentIndex = galleryList.findIndex(whatIsMyIndex)
+    if (currentIndex + 1 === galleryList.length) {
+      setSelectedBigImage(galleryList[0].main)
+    } else {
+      setSelectedBigImage(
+        galleryList[galleryList.findIndex(whatIsMyIndex) + 1].main
+      )
+    }
+  }
+
   return (
     <div className="flex flex-wrap">
       {galleryList.map((pictureSetup, i) => (
@@ -83,10 +109,12 @@ const ModelGalleryComponent = () => {
         <SelectedGalleryImage
           selectedBigImage={selectedBigImage}
           setSelectedBigImage={setSelectedBigImage}
+          previousPicture={previousPicture}
+          nextPicture={nextPicture}
         />
       ) : null}
     </div>
   )
 }
 
-export default ModelGalleryComponent
+export default ModelGallery
