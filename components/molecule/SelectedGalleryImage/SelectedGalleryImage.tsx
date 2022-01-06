@@ -1,26 +1,23 @@
 import Image from 'next/image'
 import { Dispatch, FC, SetStateAction } from 'react'
 import ReactDom from 'react-dom'
-import galleryList from '@/components/organisms/ModelGallery/ModelGallery';
+import galleryList from '@/components/organisms/ModelGallery/ModelGallery'
 
 type SelectedGalleryImageProps = {
   selectedBigImage: StaticImageData
   setSelectedBigImage: Dispatch<SetStateAction<StaticImageData | null>>
+  previousPicture: () => void
+  nextPicture: () => void
 }
 
 const SelectedGalleryImage: FC<SelectedGalleryImageProps> = ({
   selectedBigImage,
   setSelectedBigImage,
+  previousPicture,
+  nextPicture,
 }) => {
   const portalTarget = document.body
 
-//   const previousPictureHandler = (Index) => {
-//      return ()}
-
-//   const nextPictureHandler = () => {
-//     return <> </>
-//   }
-  
   return ReactDom.createPortal(
     <div
       className="absolute top-0 h-screen w-screen z-20 bg-black/80 overflow-hidden justify-center items-center flex"
@@ -33,7 +30,10 @@ const SelectedGalleryImage: FC<SelectedGalleryImageProps> = ({
           className="absolute left-6 border-slate-600 border-2  z-30 text-4xl text-white"
           type="button"
           title="Previous Picture"
-        //   onClick={previousPictureHandler}
+          onClick={(e) => {
+            e.stopPropagation()
+            previousPicture()
+          }}
         >
           &#8592;
         </button>
@@ -50,7 +50,10 @@ const SelectedGalleryImage: FC<SelectedGalleryImageProps> = ({
           className="absolute right-6 border-slate-600 border-2  z-30 text-4xl text-white"
           type="button"
           title="Next Picture"
-        //   onClick={nextPictureHandler}
+          onClick={(e) => {
+            e.stopPropagation()
+            nextPicture()
+          }}
         >
           &#8594;
         </button>

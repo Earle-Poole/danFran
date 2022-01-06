@@ -69,16 +69,31 @@ const ModelGallery = () => {
   })
 
   const whatIsMyIndex = (picture: {
-    main: StaticImageData;
-    thumb: StaticImageData;
-}) => {
-    console.log('picture', picture)
-    console.log('selectedBigImage', selectedBigImage)
-    return picture.main.src === selectedBigImage?.src;
-  } 
+    main: StaticImageData
+    thumb: StaticImageData
+  }) => {
+    return picture.main.src === selectedBigImage?.src
+  }
 
-  console.log('current index', galleryList.findIndex(whatIsMyIndex))
+  const previousPicture = () => {
+    const currentIndex = galleryList.findIndex(whatIsMyIndex)
+    if (currentIndex - 1 < 0) {
+      setSelectedBigImage(galleryList[galleryList.length - 1].main)
+    } else {
+      setSelectedBigImage(galleryList[currentIndex - 1].main)
+    }
+  }
 
+  const nextPicture = () => {
+    const currentIndex = galleryList.findIndex(whatIsMyIndex)
+    if (currentIndex + 1 === galleryList.length) {
+      setSelectedBigImage(galleryList[0].main)
+    } else {
+      setSelectedBigImage(
+        galleryList[galleryList.findIndex(whatIsMyIndex) + 1].main
+      )
+    }
+  }
 
   return (
     <div className="flex flex-wrap">
@@ -94,6 +109,8 @@ const ModelGallery = () => {
         <SelectedGalleryImage
           selectedBigImage={selectedBigImage}
           setSelectedBigImage={setSelectedBigImage}
+          previousPicture={previousPicture}
+          nextPicture={nextPicture}
         />
       ) : null}
     </div>
