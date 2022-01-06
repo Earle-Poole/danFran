@@ -38,7 +38,7 @@ import DanFranThumbnail17 from '/public/assets/modelling_gallery/thumbnails/dani
 import { useEffect, useState } from 'react'
 import SelectedGalleryImage from '@/components/molecule/SelectedGalleryImage/SelectedGalleryImage'
 
-const ModelGalleryComponent = () => {
+const ModelGallery = () => {
   const galleryList = [
     { main: DanFranPhoto0, thumb: DanFranThumbnail0 },
     { main: DanFranPhoto1, thumb: DanFranThumbnail1 },
@@ -68,6 +68,18 @@ const ModelGalleryComponent = () => {
     return () => {}
   })
 
+  const whatIsMyIndex = (picture: {
+    main: StaticImageData;
+    thumb: StaticImageData;
+}) => {
+    console.log('picture', picture)
+    console.log('selectedBigImage', selectedBigImage)
+    return picture.main.src === selectedBigImage?.src;
+  } 
+
+  console.log('current index', galleryList.findIndex(whatIsMyIndex))
+
+
   return (
     <div className="flex flex-wrap">
       {galleryList.map((pictureSetup, i) => (
@@ -88,4 +100,4 @@ const ModelGalleryComponent = () => {
   )
 }
 
-export default ModelGalleryComponent
+export default ModelGallery

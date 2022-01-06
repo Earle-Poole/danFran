@@ -1,6 +1,7 @@
 import Image from 'next/image'
-import { Dispatch, FC, SetStateAction} from 'react'
+import { Dispatch, FC, SetStateAction } from 'react'
 import ReactDom from 'react-dom'
+import galleryList from '@/components/organisms/ModelGallery/ModelGallery';
 
 type SelectedGalleryImageProps = {
   selectedBigImage: StaticImageData
@@ -13,6 +14,13 @@ const SelectedGalleryImage: FC<SelectedGalleryImageProps> = ({
 }) => {
   const portalTarget = document.body
 
+//   const previousPictureHandler = (Index) => {
+//      return ()}
+
+//   const nextPictureHandler = () => {
+//     return <> </>
+//   }
+  
   return ReactDom.createPortal(
     <div
       className="absolute top-0 h-screen w-screen z-20 bg-black/80 overflow-hidden justify-center items-center flex"
@@ -25,6 +33,7 @@ const SelectedGalleryImage: FC<SelectedGalleryImageProps> = ({
           className="absolute left-6 border-slate-600 border-2  z-30 text-4xl text-white"
           type="button"
           title="Previous Picture"
+        //   onClick={previousPictureHandler}
         >
           &#8592;
         </button>
@@ -41,6 +50,7 @@ const SelectedGalleryImage: FC<SelectedGalleryImageProps> = ({
           className="absolute right-6 border-slate-600 border-2  z-30 text-4xl text-white"
           type="button"
           title="Next Picture"
+        //   onClick={nextPictureHandler}
         >
           &#8594;
         </button>
