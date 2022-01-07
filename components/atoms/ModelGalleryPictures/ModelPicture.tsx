@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import Image from 'next/image'
 import { Dispatch, FC, SetStateAction } from 'react'
-import styles from './Picture.module.css'
+import styles from './modelPicture.module.css'
 
 type ModelPictureProps = {
   pictureObj: { main: StaticImageData; thumb: StaticImageData }

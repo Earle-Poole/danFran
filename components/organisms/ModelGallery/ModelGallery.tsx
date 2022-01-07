@@ -1,4 +1,4 @@
-import Picture from '@/components/atoms/GalleryPictures/Picture'
+import ModelPicture from '@/components/atoms/ModelGalleryPictures/ModelPicture'
 import DanFranPhoto0 from '/public/assets/modelling_gallery/daniel-franzese-gallery-0.jpg'
 import DanFranPhoto1 from '/public/assets/modelling_gallery/daniel-franzese-gallery-1.jpg'
 import DanFranPhoto2 from '/public/assets/modelling_gallery/daniel-franzese-gallery-2.jpg'
@@ -72,7 +72,7 @@ const ModelGallery = () => {
   return (
     <div className="flex flex-wrap">
       {modelGalleryList.map((pictureSetup, i) => (
-        <Picture
+        <ModelPicture
           key={pictureSetup.main.src}
           pictureObj={pictureSetup}
           index={i}
