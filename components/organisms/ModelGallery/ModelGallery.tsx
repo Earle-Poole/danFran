@@ -37,10 +37,10 @@ import DanFranThumbnail16 from '/public/assets/modelling_gallery/thumbnails/dani
 import DanFranThumbnail17 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-17.jpg'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import SelectedGalleryImage from '@/components/molecule/SelectedGalleryImage/SelectedGalleryImage'
+import SelectedModelGalleryImage from '@/components/molecule/SelectedModelGalleryImage/SelectedModelGalleryImage'
 
-const ModelGalleryComponent = () => {
-  const galleryList = [
+const ModelGallery = () => {
+  const modelGalleryList = [
     { main: DanFranPhoto0, thumb: DanFranThumbnail0 },
     { main: DanFranPhoto1, thumb: DanFranThumbnail1 },
     { main: DanFranPhoto2, thumb: DanFranThumbnail2 },
@@ -71,7 +71,7 @@ const ModelGalleryComponent = () => {
 
   return (
     <div className="flex flex-wrap">
-      {galleryList.map((pictureSetup, i) => (
+      {modelGalleryList.map((pictureSetup, i) => (
         <Picture
           key={pictureSetup.main.src}
           pictureObj={pictureSetup}
@@ -80,7 +80,7 @@ const ModelGalleryComponent = () => {
         />
       ))}
       {selectedBigImage ? (
-        <SelectedGalleryImage
+        <SelectedModelGalleryImage
           selectedBigImage={selectedBigImage}
           setSelectedBigImage={setSelectedBigImage}
         />
@@ -89,4 +89,4 @@ const ModelGalleryComponent = () => {
   )
 }
 
-export default ModelGalleryComponent
+export default ModelGallery

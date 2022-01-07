@@ -2,12 +2,12 @@ import Image from 'next/image'
 import { Dispatch, FC, SetStateAction, useState } from 'react'
 import ReactDom from 'react-dom'
 
-type SelectedGalleryImageProps = {
+type SelectedModelGalleryImageProps = {
   selectedBigImage: StaticImageData
   setSelectedBigImage: Dispatch<SetStateAction<StaticImageData | null>>
 }
 
-const SelectedGalleryImage: FC<SelectedGalleryImageProps> = ({
+const SelectedModelGalleryImage: FC<SelectedModelGalleryImageProps> = ({
   selectedBigImage,
   setSelectedBigImage,
 }) => {
@@ -20,13 +20,10 @@ const SelectedGalleryImage: FC<SelectedGalleryImageProps> = ({
         setSelectedBigImage(null)
       }}
     >
-      <Image
-        src={selectedBigImage}
-        alt={`Selected Picture`}
-      />
+      <Image src={selectedBigImage} alt={`Selected Picture`} />
     </div>,
     portalTarget
   )
 }
 
-export default SelectedGalleryImage
+export default SelectedModelGalleryImage
