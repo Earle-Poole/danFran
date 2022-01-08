@@ -15,7 +15,7 @@ const ContactCard: FC<ContactCardProps> = ({
 }) => {
   const splitEmail = email.split('@')
   return (
-    <div>
+    <div className="py-5 md:py-0">
       <ul>
         <li className="font-extrabold text-xl">{handles}</li>
         <li className="">{name}</li>

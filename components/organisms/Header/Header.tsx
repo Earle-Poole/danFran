@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <div
       className={classNames(
-        'bg-black flex md:items-center text-shadow md:justify-between absolute top-0 right-0 left-0 p-4 md:h-26 transition duration-300 z-20',
+        'bg-black flex items-center text-shadow md:justify-between absolute top-0 right-0 left-0 p-4 transition duration-300 z-20',
         layoutBodyScrollPosition > 0 || hamNavOpen
           ? 'bg-opacity-70'
           : 'bg-opacity-0'

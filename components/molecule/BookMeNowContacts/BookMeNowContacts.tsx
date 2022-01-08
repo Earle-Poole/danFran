@@ -27,8 +27,7 @@ const BookMeNow = () => {
     <div className="text-center text-3xl">
       <h2 className="p-3">Book Me Now</h2>
       <Stripes />
-      <div className="flex flex-row justify-evenly mx-auto text-xl ">
-        {/* 'grid grid-cols-3 p-2 text-lg' */}
+      <div className="flex flex-col md:flex-row md:flex-wrap md:gap-10 justify-evenly mx-auto text-xl">
         {contacts.map((contact) => {
           return <ContactCard key={contact.handles} {...contact} />
         })}
