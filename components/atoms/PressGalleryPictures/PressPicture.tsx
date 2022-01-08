@@ -14,12 +14,12 @@ const PressPicture: FC<PressPictureProps> = ({ pressPhoto, index }) => {
       className="basis-1/3 hover:cursor relative"
       // onClick={() => downloads file}
     >
-      <div className='m-2'>
+      <div className="m-4">
         <Image
           src={pressPhoto}
           alt={`galleryPicture ${index}`}
-          width="600"
-          height="600"
+          width="340"
+          height="460"
         />
       </div>
     </div>

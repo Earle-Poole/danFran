@@ -31,8 +31,16 @@ const PressGallery = () => {
 
   return (
     <div className="flex flex-col my-8">
-      <div className="border-8 border-red-700 w-full">
-        <div className='text-center'>
+      <div className="flex w-full basis-3/6 justify-center gap-10 my-auto">
+        <div className="my-auto">
+          <Image
+            src={DanFranzese}
+            alt="Daniel Franzese"
+            width={360}
+            height={50}
+          />
+        </div>
+        <div className="">
           <Image
             src={YassComedyTour}
             alt="Daniel Franzese YASS Comedy Tour"
@@ -40,26 +48,18 @@ const PressGallery = () => {
             height={500}
           />
         </div>
-        <div className='border-8 border-red-700 basis-1/2'>
-          <Image
-            src={DanFranzese}
-            alt="Daniel Franzese"
-            width={500}
-            height={250}
-          />
+        <div className="my-auto">
           <Image
             src={MeanGirls}
             alt="Mean Girls Banner"
-            width={400}
-            height={300}
+            width={360}
+            height={57}
           />
         </div>
       </div>
 
-      <div className="my-8 border-8 border-red-700">
-          PDFs need to go here
-      </div>
-      
+      <div className="my-8 border-8 border-red-700">PDFs need to go here</div>
+
       <div className="flex flex-wrap border-8 border-red-700">
         {pressGalleryList.map((pressPhoto, i) => (
           <PressPicture
