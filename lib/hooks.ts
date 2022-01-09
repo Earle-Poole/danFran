@@ -35,22 +35,20 @@ export const useMediaQuery = (query: BreakPointValues) => {
 
 export const useScrollPosition = (element: HTMLElement | null) => {
   const [position, setPosition] = useState<number>(0)
-  const elem = useRef<HTMLElement>(element)
 
   const onScroll = (e: HTMLElement) => () => {
     setPosition(e.scrollTop)
   }
 
   useEffect(() => {
-    const elemRef = elem.current
-    if (elemRef) {
-      elemRef.addEventListener('scroll', onScroll(elemRef))
+    if (element) {
+      element.addEventListener('scroll', onScroll(element))
 
       return () => {
-        elemRef.removeEventListener('scroll', onScroll(elemRef))
+        element.removeEventListener('scroll', onScroll(element))
       }
     }
-  }, [])
+  }, [element])
 
   return position
 }

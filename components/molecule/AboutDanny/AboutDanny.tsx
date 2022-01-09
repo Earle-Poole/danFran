@@ -6,6 +6,7 @@ import design from '@/assets/zigzag.svg'
 import SocialMediaLinks from '@/components/atoms/Icons/SocialMediaLinks'
 import { useState } from 'react'
 import classNames from 'classnames'
+import styles from './AboutDanny.module.css'
 
 const AboutDanny = () => {
   const [pictureSwapped, setPictureSwapped] = useState(false)
@@ -19,17 +20,9 @@ const AboutDanny = () => {
 
   return (
     <div className="flex flex-col md:flex-row md:items-center">
-      <style>
-        {`#pictureWrapper > div:first-child:hover ~ div:last-child  {
-          --tw-scale-x: .95;
-          --tw-scale-y: .95;
-          transform: var(--tw-transform);
-        }`}
-      </style>
       <div
-        className="relative basis-2/5 mr-4 cursor-pointer scale-"
+        className={classNames('relative basis-2/5 mr-4 cursor-pointer')}
         onClick={pictureClickHandler}
-        id="pictureWrapper"
       >
         <div
           className={classNames(
