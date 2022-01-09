@@ -15,13 +15,21 @@ const AboutDanny = () => {
   }
 
   const frontPicture = 'z-30 relative'
-  const backPicture = 'absolute -top-12 z-10 scale-90 hover:scale-95'
+  const backPicture = 'absolute -top-16 md:-top-12 z-10 scale-90 hover:scale-95'
 
   return (
     <div className="flex flex-col md:flex-row md:items-center">
+      <style>
+        {`#pictureWrapper > div:first-child:hover ~ div:last-child  {
+          --tw-scale-x: .95;
+          --tw-scale-y: .95;
+          transform: var(--tw-transform);
+        }`}
+      </style>
       <div
-        className="relative basis-2/5 mr-4 cursor-pointer"
+        className="relative basis-2/5 mr-4 cursor-pointer scale-"
         onClick={pictureClickHandler}
+        id="pictureWrapper"
       >
         <div
           className={classNames(
