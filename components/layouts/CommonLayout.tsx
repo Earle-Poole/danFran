@@ -4,8 +4,8 @@ import Header from '@/components/organisms/Header'
 
 const CommonLayout: FC = ({ children }) => {
   return (
-    <div className="flex h-screen w-screen bg-black text-white overflow-hidden">
-      <div className="flex mx-auto w-full relative justify-center overflow-hidden">
+    <div className="flex h-screen w-screen bg-black text-white">
+      <div className="flex mx-auto w-full relative justify-center">
         <Header />
         <div
           id="layout-body"
