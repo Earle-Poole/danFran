@@ -7,7 +7,7 @@ import DanFranPressPhoto2 from '/public/assets/press_kit/pressPhotos/DanFranPres
 import DanFranPressPhoto3 from '/public/assets/press_kit/pressPhotos/DanFranPressPhoto3.jpg'
 import DanFranPressPhoto4 from '/public/assets/press_kit/pressPhotos/DanFranPressPhoto4.jpg'
 import DanFranPressPhoto5 from '/public/assets/press_kit/pressPhotos/DanFranPressPhoto5.jpg'
-import YassComedyTour from '/public/assets/press_kit/pressPhotos/DanFranPress_YASS_comedyTour.jpg'
+import YassComedyTourPoster from '/public/assets/press_kit/pressPhotos/DanFranPress_YASS_comedyTour.jpg'
 import DanFranzese from '/public/assets/press_kit/pressPhotos/DanFranPress_DanFran.png'
 import MeanGirls from '/public/assets/press_kit/pressPhotos/DanFranPress_MeanGirls.png'
 
@@ -42,7 +42,7 @@ const PressGallery = () => {
         </div>
         <div className="">
           <Image
-            src={YassComedyTour}
+            src={YassComedyTourPoster}
             alt="Daniel Franzese YASS Comedy Tour"
             width={500}
             height={500}
@@ -58,9 +58,26 @@ const PressGallery = () => {
         </div>
       </div>
 
-      <div className="my-8 border-8 border-red-700">PDFs need to go here</div>
+      <div className="my-8 p-8 list-disc border-8 border-red-700">
+        <div>
+          <a
+            href="/public/assets/press_kit/df-biography.pdf"
+            className="text-xl underline underline-offset-2"
+          >
+            Download Biography PDF
+          </a>
+        </div>
+        <div>
+          <a
+            href="/public/assets/press_kit/yass-comedy-tour-description.pdf"
+            className="text-xl underline underline-offset-2"
+          >
+            Download Comedy Tour Description PDF
+          </a>
+        </div>
+      </div>
 
-      <div className='flex flex-wrap'>
+      <div className="flex flex-wrap">
         {pressGalleryList.map((pressPhoto, i) => (
           <PressPicture
             key={pressPhoto.src}
