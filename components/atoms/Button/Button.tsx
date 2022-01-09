@@ -15,7 +15,7 @@ const MyButton: FC<MyButtonProps> = ({ name, href }) => {
   return (
     <Link href={href} passHref>
       <a
-        className="flex text-2xl hover:bg-pink-500 bg-cyan-400 transition duration-150 w-fit font-light p-3 self-center hover:underline text-shadow-xs"
+        className="flex text-2xl hover:bg-pink-500 bg-cyan-400 transition duration-150 w-fit font-light p-3 self-center  text-shadow-xs"
         onClick={onClickHandler}
       >
         {name}

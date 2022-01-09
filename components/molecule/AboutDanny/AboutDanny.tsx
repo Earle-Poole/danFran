@@ -14,14 +14,22 @@ const AboutDanny = () => {
     setPictureSwapped((prev) => !prev)
   }
 
-  const frontPicture = 'z-30 absolute'
-  const backPicture = 'absolute -top-8 z-10 scale-90 hover:scale-95'
+  const frontPicture = 'z-30 relative'
+  const backPicture = 'absolute -top-16 md:-top-12 z-10 scale-90 hover:scale-95'
 
   return (
-    <div className="flex">
+    <div className="flex flex-col md:flex-row md:items-center">
+      <style>
+        {`#pictureWrapper > div:first-child:hover ~ div:last-child  {
+          --tw-scale-x: .95;
+          --tw-scale-y: .95;
+          transform: var(--tw-transform);
+        }`}
+      </style>
       <div
-        className="basis-2/5 relative pt-10 cursor-pointer"
+        className="relative basis-2/5 mr-4 cursor-pointer scale-"
         onClick={pictureClickHandler}
+        id="pictureWrapper"
       >
         <div
           className={classNames(
@@ -39,7 +47,7 @@ const AboutDanny = () => {
             backgroundImage: `url(${photo3.src})`,
             left: `${(1 / 24) * 100}%`,
           }}
-          className="z-20 absolute -top-14 scale-90 h-32 w-11/12 pointer-events-none"
+          className="z-20 absolute -top-16 scale-90 h-32 w-11/12 pointer-events-none"
         />
         <div
           className={classNames(
@@ -53,7 +61,7 @@ const AboutDanny = () => {
           <Image src={photo2} alt="about_photo_2" />
         </div>
       </div>
-      <div className="flex basis-3/5 flex-col ml-9">
+      <div className="flex flex-col flex-1 ml-4">
         <p className="text-4xl">{`Actor, Writer, Director, Comedian & Activist.`}</p>
         <div className="pt-4">
           <Image src={design} alt="zigzag" layout="fixed"></Image>

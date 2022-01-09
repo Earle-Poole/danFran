@@ -36,8 +36,8 @@ import DanFranThumbnail15 from '/public/assets/modelling_gallery/thumbnails/dani
 import DanFranThumbnail16 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-16.jpg'
 import DanFranThumbnail17 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-17.jpg'
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
 import SelectedModelGalleryImage from '@/components/molecule/SelectedModelGalleryImage/SelectedModelGalleryImage'
+
 
 const ModelGallery = () => {
   const modelGalleryList = [
@@ -69,6 +69,33 @@ const ModelGallery = () => {
     return () => {}
   })
 
+  const whatIsMyIndex = (picture: {
+    main: StaticImageData
+    thumb: StaticImageData
+  }) => {
+    return picture.main.src === selectedBigImage?.src
+  }
+
+  const previousPicture = () => {
+    const currentIndex = modelGalleryList.findIndex(whatIsMyIndex)
+    if (currentIndex - 1 < 0) {
+      setSelectedBigImage(modelGalleryList[modelGalleryList.length - 1].main)
+    } else {
+      setSelectedBigImage(modelGalleryList[currentIndex - 1].main)
+    }
+  }
+
+  const nextPicture = () => {
+    const currentIndex = modelGalleryList.findIndex(whatIsMyIndex)
+    if (currentIndex + 1 === modelGalleryList.length) {
+      setSelectedBigImage(modelGalleryList[0].main)
+    } else {
+      setSelectedBigImage(
+        modelGalleryList[modelGalleryList.findIndex(whatIsMyIndex) + 1].main
+      )
+    }
+  }
+
   return (
     <div className="flex flex-wrap">
       {modelGalleryList.map((pictureSetup, i) => (
@@ -83,6 +110,8 @@ const ModelGallery = () => {
         <SelectedModelGalleryImage
           selectedBigImage={selectedBigImage}
           setSelectedBigImage={setSelectedBigImage}
+          previousPicture={previousPicture}
+          nextPicture={nextPicture}
         />
       ) : null}
     </div>

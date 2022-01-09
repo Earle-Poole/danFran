@@ -25,8 +25,8 @@ const MailChimpInput = () => {
               type="email"
               name="EMAIL"
               id="mce-EMAIL"
-              placeholder="email address"
-              className="w-80 text-black text-xl p-2"
+              placeholder="Your e-mail address"
+              className="w-auto text-black text-base md:text-2xl p-2"
               required
             />
             <div
@@ -46,7 +46,7 @@ const MailChimpInput = () => {
                   value="Subscribe"
                   name="subscribe"
                   id="mc-embedded-subscribe"
-                  className="flex text-2xl hover:bg-pink-500 bg-cyan-400 transition duration-150 w-fit font-light p-3 self-center hover:underline text-shadow-xs"
+                  className="flex text-base md:text-2xl hover:bg-pink-500 bg-cyan-400 transition duration-150 w-fit font-light p-3 self-center text-shadow-xs cursor-pointer"
                 />
               </div>
             </div>
