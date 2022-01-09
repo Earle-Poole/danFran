@@ -32,9 +32,12 @@ const PressGallery = () => {
   })
 
   return (
-    <div className="flex flex-col my-8">
-      <div className="flex w-full basis-3/6 justify-center gap-10 my-auto">
-        <div className="my-auto">
+    <div className="flex flex-col w-full my-10">
+      <div
+        id="banner section"
+        className="flex w-full basis-3/6 justify-center gap-10 my-auto"
+      >
+        <div className="my-auto ml-10 ">
           <Image
             src={DanFranzese}
             alt="Daniel Franzese"
@@ -50,7 +53,7 @@ const PressGallery = () => {
             height={500}
           />
         </div>
-        <div className="my-auto">
+        <div className="my-auto mr-10">
           <Image
             src={MeanGirls}
             alt="Mean Girls Banner"
@@ -60,42 +63,45 @@ const PressGallery = () => {
         </div>
       </div>
 
-      <div className="flex flex-col my-8 p-8">
-        <div className=''>
+      <div
+        id="pdf section"
+        className="flex w-full justify-evenly my-14 mx-auto"
+      >
+        <div className="flex flex-col">
           <Image
             src={BiographyThumbnail}
             alt="BioThumbnail"
-            width={250}
+            width={225}
             height={300}
           />
           <a
             href="/assets/press_kit/df-biography.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex text-xl underline underline-offset-2 text-center"
+            className="flex flex-col text-xl underline underline-offset-2 justify-center"
           >
             Daniel Franzese Biography PDF
           </a>
         </div>
-        <div className='mt-2'>
+        <div className="flex flex-wrap flex-col">
           <Image
             src={ComedyTourDescriptionThumbnail}
             alt="YassComedyTourDescriptionThumbnail"
-            width={250}
+            width={225}
             height={300}
           />
           <a
             href="/assets/press_kit/yass-comedy-tour-description.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xl underline underline-offset-2"
+            className="flex flex-col text-xl underline underline-offset-2 justify-center"
           >
-            Yass! That's Amazing!! Comedy Tour Description PDF
+            {'Comedy Tour Description PDF'}
           </a>
         </div>
       </div>
 
-      <div className="flex flex-wrap">
+      <div id="press photo section" className="flex flex-wrap">
         {pressGalleryList.map((pressPhoto, i) => (
           <PressPicture
             key={pressPhoto.src}
