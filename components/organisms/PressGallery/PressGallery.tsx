@@ -10,6 +10,8 @@ import DanFranPressPhoto5 from '/public/assets/press_kit/pressPhotos/DanFranPres
 import YassComedyTourPoster from '/public/assets/press_kit/pressPhotos/DanFranPress_YASS_comedyTour.jpg'
 import DanFranzese from '/public/assets/press_kit/pressPhotos/DanFranPress_DanFran.png'
 import MeanGirls from '/public/assets/press_kit/pressPhotos/DanFranPress_MeanGirls.png'
+import BiographyThumbnail from '/public/assets/press_kit/df-biographyThumbnail.png'
+import ComedyTourDescriptionThumbnail from '/public/assets/press_kit/yass-comedy-tour-description-Thumbnail.png'
 
 const PressGallery = () => {
   const pressGalleryList = [
@@ -58,21 +60,37 @@ const PressGallery = () => {
         </div>
       </div>
 
-      <div className="my-8 p-8 list-disc border-8 border-red-700">
-        <div>
+      <div className="flex flex-col my-8 p-8">
+        <div className=''>
+          <Image
+            src={BiographyThumbnail}
+            alt="BioThumbnail"
+            width={250}
+            height={300}
+          />
           <a
-            href="/public/assets/press_kit/df-biography.pdf"
-            className="text-xl underline underline-offset-2"
+            href="/assets/press_kit/df-biography.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex text-xl underline underline-offset-2 text-center"
           >
-            Download Biography PDF
+            Daniel Franzese Biography PDF
           </a>
         </div>
-        <div>
+        <div className='mt-2'>
+          <Image
+            src={ComedyTourDescriptionThumbnail}
+            alt="YassComedyTourDescriptionThumbnail"
+            width={250}
+            height={300}
+          />
           <a
-            href="/public/assets/press_kit/yass-comedy-tour-description.pdf"
+            href="/assets/press_kit/yass-comedy-tour-description.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-xl underline underline-offset-2"
           >
-            Download Comedy Tour Description PDF
+            Yass! That's Amazing!! Comedy Tour Description PDF
           </a>
         </div>
       </div>
