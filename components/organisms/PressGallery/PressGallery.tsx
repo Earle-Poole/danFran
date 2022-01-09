@@ -60,7 +60,7 @@ const PressGallery = () => {
 
       <div className="my-8 border-8 border-red-700">PDFs need to go here</div>
 
-      <div className="flex flex-wrap border-8 border-red-700">
+      <div className='flex flex-wrap'>
         {pressGalleryList.map((pressPhoto, i) => (
           <PressPicture
             key={pressPhoto.src}
