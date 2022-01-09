@@ -1,6 +1,6 @@
 import PressPicture from '@/components/atoms/PressGalleryPictures/PressPicture'
 import Image from 'next/image'
-import { FC, useEffect, useState } from 'react'
+import { useState } from 'react'
 import DanFranPressPhoto0 from '/public/assets/press_kit/pressPhotos/DanFranPressPhoto0.jpg'
 import DanFranPressPhoto1 from '/public/assets/press_kit/pressPhotos/DanFranPressPhoto1.png'
 import DanFranPressPhoto2 from '/public/assets/press_kit/pressPhotos/DanFranPressPhoto2.png'
@@ -26,12 +26,7 @@ const PressGallery = () => {
   const [selectedPressImage, setSelectedPressImage] =
     useState<StaticImageData | null>(null)
 
-  useEffect(() => {
-    console.log('selectedPressImage', selectedPressImage)
-    return () => {}
-  })
-
-  return (
+   return (
     <div className="flex flex-col w-full my-10">
       <div
         id="banner section"
