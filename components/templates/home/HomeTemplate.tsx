@@ -37,7 +37,7 @@ const HomeTemplate = () => {
               <p className="flex flex-col my-4">
                 Book your personalized video shoutout from me now!
               </p>
-              <MyButton href={urls.CAMEO} name="Find Me On Cameo" />
+              <MyButton href={urls.CAMEO} name="Find Me On Cameo" isExternal />
             </div>
           </div>
         </ContentSectionWrapper>
