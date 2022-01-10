@@ -8,6 +8,9 @@ const PressKitTemplate = () => {
       </p>
       <p className="text-left text-xl italic flex-wrap w-2/5 ml-14">{`"Tolerance is the positive and cordial effort to understand another's beliefs, practices, and habits without necessarily sharing or accepting them. " -Joshua Liebman`}</p>
       <PressGallery />
+      <div>
+        
+      </div>
     </div>
   )
 }
