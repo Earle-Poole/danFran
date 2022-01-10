@@ -26,8 +26,11 @@ const PressGallery = () => {
   const [selectedPressImage, setSelectedPressImage] =
     useState<StaticImageData | null>(null)
 
+  const h2Styles = 'text-left text-4xl indent-14 mt-8'
+
    return (
     <div className="flex flex-col w-full my-10">
+      <h2 className={h2Styles}>Banner Posters</h2>
       <div
         id="banner section"
         className="flex w-full basis-3/6 justify-center gap-10 my-auto"
@@ -57,10 +60,10 @@ const PressGallery = () => {
           />
         </div>
       </div>
-
+      <h2 className={h2Styles}>{'Bio & Tour Flyer'}</h2>
       <div
         id="pdf section"
-        className="flex w-full justify-evenly my-14 mx-auto"
+        className="flex w-full justify-evenly my-10 mx-auto"
       >
         <div className="flex flex-col">
           <Image
@@ -95,7 +98,7 @@ const PressGallery = () => {
           </a>
         </div>
       </div>
-
+      <h2 className={h2Styles}>Photo Gallery</h2>
       <div id="press photo section" className="flex flex-wrap">
         {pressGalleryList.map((pressPhoto, i) => (
           <PressPicture
@@ -106,6 +109,7 @@ const PressGallery = () => {
           />
         ))}
       </div>
+      <h2 className={h2Styles}>Crowd Reactions</h2>
     </div>
   )
 }
