@@ -28,7 +28,7 @@ const PressGallery = () => {
 
   const h2Styles = 'text-left text-4xl indent-14 mt-8'
 
-   return (
+  return (
     <div className="flex flex-col w-full my-10">
       <h2 className={h2Styles}>Banner Posters</h2>
       <div
@@ -109,7 +109,6 @@ const PressGallery = () => {
           />
         ))}
       </div>
-      <h2 className={h2Styles}>Crowd Reactions</h2>
     </div>
   )
 }
