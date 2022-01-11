@@ -1,10 +1,9 @@
 import Image from 'next/image'
-import { Dispatch, FC, SetStateAction } from 'react'
+import { FC } from 'react'
 
 type PressPictureProps = {
   pressPhoto: StaticImageData
   index: number
-  setSelectedPressImage: Dispatch<SetStateAction<StaticImageData | null>>
 }
 
 const PressPicture: FC<PressPictureProps> = ({ pressPhoto, index }) => {
