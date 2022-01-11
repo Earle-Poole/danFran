@@ -1,20 +1,13 @@
-import React from 'react'
-import YouTube from 'react-youtube'
+import VideoPlayer from '@/components/atoms/VideoPlayer/VideoPlayer'
 
 const VideoGalleryTemplate = () => {
   return (
-    <div>
-      <div className="flex justify-center">
-        <h3>Video Galley</h3>
-        <iframe
-          width="600"
-          height="400"
-          src="https://www.youtube.com/embed/eac91tZsZMw"
-          title="YouTube video player"
-          frameBorder="50"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        ></iframe>
-      </div>
+    <div className="w-full flex-col mt-36 ">
+      <p className="text-left text-5xl indent-14 pb-3">
+        Daniel Franzese - Video Gallery
+      </p>
+      <p className="text-left text-xl italic flex-wrap w-2/5 ml-14">{`""Be the change that you wish to see in the world." -Mahatma Gandhi`}</p>
+      <VideoPlayer />
     </div>
   )
 }
