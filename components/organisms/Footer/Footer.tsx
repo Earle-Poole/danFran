@@ -23,7 +23,7 @@ const Footer = () => {
       </button>
       <SocialMediaLinks />
       <p className="mt-3 flex flex-col items-center md:flex-row">
-        © 2021
+        © 2022
         <span className={classNames('text-3xl mx-1', styles.name)}>
           Daniel Franzese
         </span>

@@ -12,8 +12,7 @@ const HomeTemplate = () => {
     <div id="home" className="w-full flex flex-col items-center">
       <CoverPhoto />
       <div className="w-full max-w-7xl flex flex-col items-center">
-        <div id="about" className="h-26"></div>
-        <ContentSectionWrapper wrapperBackgroundColor="bg-white/5">
+        <ContentSectionWrapper wrapperBackgroundColor="bg-white/5" id="about">
           <AboutDanny />
         </ContentSectionWrapper>
         <ContentSectionWrapper
