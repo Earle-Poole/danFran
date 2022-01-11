@@ -3,13 +3,14 @@ import Navigation from '@/components/molecule/Navigation/Navigation'
 import HamburgerNavigation from '@/components/molecule/Navigation/Navigation.Hamburger'
 import classNames from 'classnames'
 import { breakpoints } from 'lib/constants'
-import { useMediaQuery, useScrollPosition } from 'lib/hooks'
+import { useMediaQuery, useOnClickOutside, useScrollPosition } from 'lib/hooks'
 import { isClient } from 'lib/toolbox'
 import { useEffect, useRef, useState } from 'react'
 
 const Header = () => {
   const isMobile = useMediaQuery(breakpoints.sm)
 
+  const [hamNavOpen, setHamNavOpen] = useState(false)
   const [layoutBody, setLayoutBody] = useState(
     isClient ? document.getElementById('layout-body') : null
   )
@@ -21,21 +22,29 @@ const Header = () => {
     setLayoutBody(document.getElementById('layout-body'))
   }, [])
 
-  const [hamNavOpen, setHamNavOpen] = useState(false)
-
   useEffect(() => {
     if (hamNavOpen && !isMobile) {
       setHamNavOpen(false)
     }
   }, [hamNavOpen, isMobile])
 
+  const headerRef = useRef<HTMLDivElement>(null!)
+
+  useOnClickOutside(headerRef, () => {
+    if (hamNavOpen) {
+      setHamNavOpen(false)
+    }
+  })
+
   return (
     <div
+      ref={headerRef}
       className={classNames(
-        'bg-black flex md:items-center text-shadow md:justify-between absolute top-0 right-0 left-0 p-4 md:h-26 transition duration-300 z-20',
-        layoutBodyScrollPosition > 0 || hamNavOpen
-          ? 'bg-opacity-70'
-          : 'bg-opacity-0'
+        'flex absolute bg-black transition duration-300 z-20 text-shadow top-0 right-0 left-0 md:justify-between md:h-26 md:items-center',
+        {
+          ['bg-opacity-70']: layoutBodyScrollPosition > 0 || hamNavOpen,
+          ['bg-opacity-0']: layoutBodyScrollPosition === 0 && !hamNavOpen,
+        }
       )}
     >
       <Logo />
