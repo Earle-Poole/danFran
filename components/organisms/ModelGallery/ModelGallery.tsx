@@ -1,4 +1,4 @@
-import Picture from '@/components/atoms/GalleryPictures/Picture'
+import ModelPicture from '@/components/atoms/ModelGalleryPictures/ModelPicture'
 import DanFranPhoto0 from '/public/assets/modelling_gallery/daniel-franzese-gallery-0.jpg'
 import DanFranPhoto1 from '/public/assets/modelling_gallery/daniel-franzese-gallery-1.jpg'
 import DanFranPhoto2 from '/public/assets/modelling_gallery/daniel-franzese-gallery-2.jpg'
@@ -36,10 +36,11 @@ import DanFranThumbnail15 from '/public/assets/modelling_gallery/thumbnails/dani
 import DanFranThumbnail16 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-16.jpg'
 import DanFranThumbnail17 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-17.jpg'
 import { useEffect, useState } from 'react'
-import SelectedGalleryImage from '@/components/molecule/SelectedGalleryImage/SelectedGalleryImage'
+import SelectedModelGalleryImage from '@/components/molecule/SelectedModelGalleryImage/SelectedModelGalleryImage'
+
 
 const ModelGallery = () => {
-  const galleryList = [
+  const modelGalleryList = [
     { main: DanFranPhoto0, thumb: DanFranThumbnail0 },
     { main: DanFranPhoto1, thumb: DanFranThumbnail1 },
     { main: DanFranPhoto2, thumb: DanFranThumbnail2 },
@@ -76,29 +77,29 @@ const ModelGallery = () => {
   }
 
   const previousPicture = () => {
-    const currentIndex = galleryList.findIndex(whatIsMyIndex)
+    const currentIndex = modelGalleryList.findIndex(whatIsMyIndex)
     if (currentIndex - 1 < 0) {
-      setSelectedBigImage(galleryList[galleryList.length - 1].main)
+      setSelectedBigImage(modelGalleryList[modelGalleryList.length - 1].main)
     } else {
-      setSelectedBigImage(galleryList[currentIndex - 1].main)
+      setSelectedBigImage(modelGalleryList[currentIndex - 1].main)
     }
   }
 
   const nextPicture = () => {
-    const currentIndex = galleryList.findIndex(whatIsMyIndex)
-    if (currentIndex + 1 === galleryList.length) {
-      setSelectedBigImage(galleryList[0].main)
+    const currentIndex = modelGalleryList.findIndex(whatIsMyIndex)
+    if (currentIndex + 1 === modelGalleryList.length) {
+      setSelectedBigImage(modelGalleryList[0].main)
     } else {
       setSelectedBigImage(
-        galleryList[galleryList.findIndex(whatIsMyIndex) + 1].main
+        modelGalleryList[modelGalleryList.findIndex(whatIsMyIndex) + 1].main
       )
     }
   }
 
   return (
     <div className="flex flex-wrap">
-      {galleryList.map((pictureSetup, i) => (
-        <Picture
+      {modelGalleryList.map((pictureSetup, i) => (
+        <ModelPicture
           key={pictureSetup.main.src}
           pictureObj={pictureSetup}
           index={i}
@@ -106,7 +107,7 @@ const ModelGallery = () => {
         />
       ))}
       {selectedBigImage ? (
-        <SelectedGalleryImage
+        <SelectedModelGalleryImage
           selectedBigImage={selectedBigImage}
           setSelectedBigImage={setSelectedBigImage}
           previousPicture={previousPicture}

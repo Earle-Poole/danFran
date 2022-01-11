@@ -1,15 +1,15 @@
 import classNames from 'classnames'
 import Image from 'next/image'
 import { Dispatch, FC, SetStateAction } from 'react'
-import styles from './Picture.module.css'
+import styles from './modelPicture.module.css'
 
-type PictureProps = {
+type ModelPictureProps = {
   pictureObj: { main: StaticImageData; thumb: StaticImageData }
   index: number
   setSelectedBigImage: Dispatch<SetStateAction<StaticImageData | null>>
 }
 
-const Picture: FC<PictureProps> = ({
+const ModelPicture: FC<ModelPictureProps> = ({
   pictureObj,
   index,
   setSelectedBigImage,
@@ -37,4 +37,4 @@ const Picture: FC<PictureProps> = ({
   )
 }
 
-export default Picture
+export default ModelPicture

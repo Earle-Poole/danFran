@@ -3,14 +3,14 @@ import { Dispatch, FC, SetStateAction } from 'react'
 import ReactDom from 'react-dom'
 import galleryList from '@/components/organisms/ModelGallery/ModelGallery'
 
-type SelectedGalleryImageProps = {
+type SelectedModelGalleryImageProps = {
   selectedBigImage: StaticImageData
   setSelectedBigImage: Dispatch<SetStateAction<StaticImageData | null>>
   previousPicture: () => void
   nextPicture: () => void
 }
 
-const SelectedGalleryImage: FC<SelectedGalleryImageProps> = ({
+const SelectedModelGalleryImage: FC<SelectedModelGalleryImageProps> = ({
   selectedBigImage,
   setSelectedBigImage,
   previousPicture,
@@ -63,4 +63,4 @@ const SelectedGalleryImage: FC<SelectedGalleryImageProps> = ({
   )
 }
 
-export default SelectedGalleryImage
+export default SelectedModelGalleryImage
