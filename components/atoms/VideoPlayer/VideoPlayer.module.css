@@ -75,11 +75,11 @@
   background: #eee;
 }
 
-.container .videoList .vid active {
+.container .videoList .vid .active {
   background: #2980b9;
 }
 
-.container .videoList .vidActive .title {
+.container .videoList .vid .active .title {
   color: #fff;
 }
 
