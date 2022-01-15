@@ -17,7 +17,7 @@ const ModelPicture: FC<ModelPictureProps> = ({
   return (
     <div
       className={classNames(
-        'basis-1/3 hover:cursor-zoom-in relative',
+        'basis-1/1 sm:basis-1/2 md:basis-1/3 hover:cursor-zoom-in relative',
         styles.pictureWrapper
       )}
       onClick={() => {
