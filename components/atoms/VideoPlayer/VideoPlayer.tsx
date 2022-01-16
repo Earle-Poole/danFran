@@ -93,7 +93,7 @@ const VideoPlayer = () => {
         className="rounded-md h-[29rem] overflow-y-scroll scroll-smooth scroll-px-2 scroll-w-4 border-solid border-2 border-white"
       >
         {/* comedy video list */}
-        <span className="text-left text-3xl indent-14 my-10">
+        <span className="flex justify-center text-left text-3xl my-4">
           Comedy Videos
         </span>
         {comedyVideoList.map((videoSetup: videoSetupProps, i) => {
@@ -104,24 +104,24 @@ const VideoPlayer = () => {
             <div
               key={videoSetup.id}
               onClick={onClickHandler}
-              className="flex-col align-center gap-4 rounded-md m-2 p-2 cursor-pointer hover:bg-cyan-400 transition duration-150"
+              className="flex align-center gap-4 rounded-md m-2 p-2 cursor-pointer hover:bg-cyan-400 transition duration-150"
             >
               <Image
-                width="150"
-                height="75"
+                width="125"
+                height="100"
                 src={`https://img.youtube.com/vi/${videoSetup.id}/0.jpg`}
                 title={videoSetup.videoTitle}
                 alt="videoThumbnail"
                 className="rounded-md hover:text-cyan-400 transition duration-150"
               />
-              <span className="flex text-lg text-pink-500">{`0${i + 1}. ${
+              <span className="flex my-auto text-lg text-pink-500">{`0${i + 1}. ${
                 videoSetup.videoTitle
               }`}</span>
             </div>
           )
         })}
         {/* press videos list */}
-        <span className="text-left text-3xl indent-14 my-10">Press Videos</span>
+        <span className="flex justify-center text-left text-3xl my-4">Press Videos</span>
         {pressVideoList.map((videoSetup: videoSetupProps, i) => {
           const onClickHandler = () => {
             setSelectedMainVideo(videoSetup)
@@ -130,17 +130,17 @@ const VideoPlayer = () => {
             <div
               key={videoSetup.id}
               onClick={onClickHandler}
-              className="flex-col align-center gap-4 rounded-md m-2 p-2 cursor-pointer hover:bg-cyan-400 transition duration-150"
+              className="flex align-center gap-4 rounded-md m-2 p-2 cursor-pointer hover:bg-cyan-400 transition duration-150"
             >
               <Image
-                width="150"
-                height="75"
+                width="125"
+                height="100"
                 src={`https://img.youtube.com/vi/${videoSetup.id}/0.jpg`}
                 title={videoSetup.videoTitle}
                 alt="videoThumbnail"
                 className="rounded-md hover:text-cyan-400 transition duration-150"
               />
-              <span className="flex text-lg text-pink-500">{`0${i + 1}. ${
+              <span className="flex my-auto text-lg text-pink-500">{`0${i + 1}. ${
                 videoSetup.videoTitle
               }`}</span>
             </div>
