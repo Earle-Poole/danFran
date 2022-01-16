@@ -66,11 +66,14 @@ const VideoPlayer = () => {
   const h2Styles = 'text-left text-3xl indent-14 mt-8'
 
   return (
-    <div data-id="video container" className="flex w-full my-10">
+    <div
+      data-id="video container"
+      className="flex w-full  justify-center gap-6 my-14"
+    >
       {/* main video */}
       <div
         data-id="main video"
-        className="flex rounded-md p-3 border-solid border-2 border-sky-500"
+        className="flex rounded-md p-3 border-solid border-2 border-white"
       >
         <div key={selectedMainVideo.id}>
           <iframe
@@ -87,7 +90,7 @@ const VideoPlayer = () => {
 
       <div
         data-id="video list"
-        className="rounded-md h-96 overflow-y-scroll scroll-smooth scroll-px-2 scroll-w-4"
+        className="rounded-md h-[29rem] overflow-y-scroll scroll-smooth scroll-px-2 scroll-w-4 border-solid border-2 border-white"
       >
         {/* comedy video list */}
         <span className="text-left text-3xl indent-14 my-10">
@@ -137,9 +140,9 @@ const VideoPlayer = () => {
                 alt="videoThumbnail"
                 className="rounded-md hover:text-cyan-400 transition duration-150"
               />
-              <span className="flex text-lg text-pink-500">{`0${
-                i + 1
-              }. ${videoSetup.videoTitle}`}</span>
+              <span className="flex text-lg text-pink-500">{`0${i + 1}. ${
+                videoSetup.videoTitle
+              }`}</span>
             </div>
           )
         })}
