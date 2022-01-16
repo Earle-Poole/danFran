@@ -68,7 +68,7 @@ const VideoPlayer = () => {
   return (
     <div
       data-id="video container"
-      className="flex w-full  justify-center gap-6 my-14"
+      className="flex w-full justify-center gap-6 mt-36"
     >
       {/* main video */}
       <div
