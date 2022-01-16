@@ -1,43 +1,9 @@
-.heading {
-  color: #444;
-  font-size: 40px;
-  text-align: center;
-  padding: 10px;
-}
-
 .container {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 15px;
   align-items: flex-start;
   padding: 5px 5%;
-}
-
-.container .mainVideo {
-  background: #fff;
-  border-radius: 5px;
-  padding: 10px;
-}
-
-.container .mainVideo .iframe {
-  width: fit-content;
-  justify-content: center;
-  
-  border-radius: 5px;
-}
-
-.container .mainVideo .title {
-  color: #333;
-  font-size: 23px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-.container .videoList {
-  background: #fff;
-  border-radius: 5px;
-  height: 520px;
-  overflow-y: scroll;
 }
 
 .container .videoList::-webkit-scrollbar {
@@ -52,40 +18,6 @@
 .container .videoList::-webkit-scrollbar-thumb {
   background: #666;
   border-radius: 50px;
-}
-
-.container .videoList .vid video {
-  width: 100px;
-  border-radius: 5px;
-}
-
-.container .videoList .vid {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  background: #f7f7f7;
-  border-radius: 5px;
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-}
-
-.container .videoList .vid:hover {
-  background: #eee;
-}
-
-.container .videoList .vid .active {
-  background: #2980b9;
-}
-
-.container .videoList .vid .active .title {
-  color: #fff;
-}
-
-.container .videoList .vid .title {
-  color: #333;
-  font-size: 17px;
 }
 
 @media (max-width: 991px) {
