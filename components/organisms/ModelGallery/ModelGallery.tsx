@@ -97,7 +97,7 @@ const ModelGallery = () => {
   }
 
   return (
-    <div className="flex flex-wrap">
+    <div className="flex flex-wrap my-10">
       {modelGalleryList.map((pictureSetup, i) => (
         <ModelPicture
           key={pictureSetup.main.src}
