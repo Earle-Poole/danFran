@@ -1,5 +1,17 @@
+import VideoPlayer from '@/components/atoms/VideoPlayer/VideoPlayer'
+import styles from '@/components/layouts/commonLayout.module.css'
+import classnames from 'classnames'
+
 const VideoGalleryTemplate = () => {
-  return <div>Video Template</div>
+  return (
+    <div className={classnames("w-full flex-col mt-36", styles.pageHeight)}>
+      <p className="text-left text-5xl indent-14 pb-5">
+        Daniel Franzese - Video Gallery
+      </p>
+      <p className="text-left text-xl italic flex-wrap w-2/5 ml-14">{`"Be the change that you wish to see in the world." -Mahatma Gandhi`}</p>
+      <VideoPlayer />
+    </div>
+  )
 }
 
 export default VideoGalleryTemplate
