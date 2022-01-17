@@ -56,11 +56,6 @@ const VideoPlayer = () => {
     comedyVideoList[0]
   )
 
-  useEffect(() => {
-    console.log('selectedMainVideo', selectedMainVideo)
-    return () => {}
-  })
-
   type videoSetupProps = { id: string; videoTitle: string }
 
   const h2Styles = 'text-left text-3xl indent-14 mt-8'
