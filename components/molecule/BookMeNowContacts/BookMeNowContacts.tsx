@@ -6,19 +6,19 @@ const contacts = [
     handles: 'Theatrical & Public Appearances',
     name: 'Gary Ousdahl',
     email: 'Gary@AdvancedManagement.tv',
-    phoneNumbers: ['Mobile: (424)333-1500'],
+    phoneNumbers: ['Mobile: (424) 333-1500'],
   },
   {
     handles: 'College & Speaking Engagements',
     name: 'Barb Holliday',
     email: 'BHolliday@FlappersComedy.com',
-    phoneNumbers: ['Mobile: (818)679-2272', 'Office: (818)845-9721'],
+    phoneNumbers: ['Mobile: (818) 679-2272', 'Office: (818) 845-9721'],
   },
   {
     handles: 'Press & Invites',
     name: 'Nick Ponisi',
     email: 'Nick@PressHerePublicity.com',
-    phoneNumbers: ['Office: (323)556-9752'],
+    phoneNumbers: ['Office: (323) 556-9752'],
   },
 ]
 
