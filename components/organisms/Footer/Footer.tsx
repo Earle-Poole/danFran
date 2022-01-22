@@ -24,13 +24,13 @@ const Footer = () => {
         &uarr;
       </button>
       <SocialMediaLinks />
-      <p className="mt-3 flex flex-col items-center md:items-end md:flex-row leading-tight">
+      <div className="mt-3 flex flex-col items-center md:items-end md:flex-row leading-tight">
         <span>© {currentYear}</span>
         <div className={classNames('text-3xl px-2', styles.name)}>
           Daniel Franzese
         </div>
         <span>All Rights Reserved</span>
-      </p>
+      </div>
       <p>
         Website by{' '}
         <a

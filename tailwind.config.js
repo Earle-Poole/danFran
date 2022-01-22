@@ -12,10 +12,10 @@ module.exports = {
       keyframes: {
         'fast-flip': {
           from: {
-            transform: 'rotateY(0deg)',
+            transform: 'rotateY(0deg) rotateZ(0deg)',
           },
           to: {
-            transform: 'rotateY(720deg)',
+            transform: 'rotateY(720deg) rotateZ(45deg)',
           },
         },
       },

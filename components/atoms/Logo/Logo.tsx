@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import logo from '@/assets/logo.png'
+import logo from '@/assets/logo.webp'
 import { breakpoints, slugs } from 'lib/constants'
 import Link from 'next/link'
 import { useMediaQuery } from 'lib/hooks'

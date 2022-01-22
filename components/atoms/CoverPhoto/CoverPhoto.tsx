@@ -1,4 +1,4 @@
-import photo from '@/assets/home_cover.jpg'
+import photo from '@/assets/home_cover.webp'
 
 const CoverPhoto = () => {
   return (
