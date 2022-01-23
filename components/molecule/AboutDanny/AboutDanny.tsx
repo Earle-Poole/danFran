@@ -6,7 +6,6 @@ import design from '@/assets/zigzag.svg'
 import SocialMediaLinks from '@/components/atoms/Icons/SocialMediaLinks'
 import { useState } from 'react'
 import classNames from 'classnames'
-import styles from './AboutDanny.module.css'
 
 const AboutDanny = () => {
   const [pictureSwapped, setPictureSwapped] = useState(false)

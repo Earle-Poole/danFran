@@ -1,43 +1,42 @@
 import ModelPicture from '@/components/atoms/ModelGalleryPictures/ModelPicture'
-import DanFranPhoto0 from '/public/assets/modelling_gallery/daniel-franzese-gallery-0.jpg'
-import DanFranPhoto1 from '/public/assets/modelling_gallery/daniel-franzese-gallery-1.jpg'
-import DanFranPhoto2 from '/public/assets/modelling_gallery/daniel-franzese-gallery-2.jpg'
-import DanFranPhoto3 from '/public/assets/modelling_gallery/daniel-franzese-gallery-3.jpg'
-import DanFranPhoto4 from '/public/assets/modelling_gallery/daniel-franzese-gallery-4.jpg'
-import DanFranPhoto5 from '/public/assets/modelling_gallery/daniel-franzese-gallery-5.jpg'
-import DanFranPhoto6 from '/public/assets/modelling_gallery/daniel-franzese-gallery-6.jpg'
-import DanFranPhoto7 from '/public/assets/modelling_gallery/daniel-franzese-gallery-7.jpg'
-import DanFranPhoto8 from '/public/assets/modelling_gallery/daniel-franzese-gallery-8.jpg'
-import DanFranPhoto9 from '/public/assets/modelling_gallery/daniel-franzese-gallery-9.jpg'
-import DanFranPhoto10 from '/public/assets/modelling_gallery/daniel-franzese-gallery-10.jpg'
-import DanFranPhoto11 from '/public/assets/modelling_gallery/daniel-franzese-gallery-11.jpg'
-import DanFranPhoto12 from '/public/assets/modelling_gallery/daniel-franzese-gallery-12.jpg'
-import DanFranPhoto13 from '/public/assets/modelling_gallery/daniel-franzese-gallery-13.jpg'
-import DanFranPhoto14 from '/public/assets/modelling_gallery/daniel-franzese-gallery-14.jpg'
-import DanFranPhoto15 from '/public/assets/modelling_gallery/daniel-franzese-gallery-15.jpg'
-import DanFranPhoto16 from '/public/assets/modelling_gallery/daniel-franzese-gallery-16.jpg'
-import DanFranPhoto17 from '/public/assets/modelling_gallery/daniel-franzese-gallery-17.jpg'
-import DanFranThumbnail0 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-0.jpg'
-import DanFranThumbnail1 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-1.jpg'
-import DanFranThumbnail2 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-2.jpg'
-import DanFranThumbnail3 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-3.jpg'
-import DanFranThumbnail4 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-4.jpg'
-import DanFranThumbnail5 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-5.jpg'
-import DanFranThumbnail6 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-6.jpg'
-import DanFranThumbnail7 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-7.jpg'
-import DanFranThumbnail8 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-8.jpg'
-import DanFranThumbnail9 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-9.jpg'
-import DanFranThumbnail10 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-10.jpg'
-import DanFranThumbnail11 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-11.jpg'
-import DanFranThumbnail12 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-12.jpg'
-import DanFranThumbnail13 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-13.jpg'
-import DanFranThumbnail14 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-14.jpg'
-import DanFranThumbnail15 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-15.jpg'
-import DanFranThumbnail16 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-16.jpg'
-import DanFranThumbnail17 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-17.jpg'
-import { useEffect, useState } from 'react'
+import DanFranPhoto0 from '/public/assets/modelling_gallery/daniel-franzese-gallery-0.webp'
+import DanFranPhoto1 from '/public/assets/modelling_gallery/daniel-franzese-gallery-1.webp'
+import DanFranPhoto2 from '/public/assets/modelling_gallery/daniel-franzese-gallery-2.webp'
+import DanFranPhoto3 from '/public/assets/modelling_gallery/daniel-franzese-gallery-3.webp'
+import DanFranPhoto4 from '/public/assets/modelling_gallery/daniel-franzese-gallery-4.webp'
+import DanFranPhoto5 from '/public/assets/modelling_gallery/daniel-franzese-gallery-5.webp'
+import DanFranPhoto6 from '/public/assets/modelling_gallery/daniel-franzese-gallery-6.webp'
+import DanFranPhoto7 from '/public/assets/modelling_gallery/daniel-franzese-gallery-7.webp'
+import DanFranPhoto8 from '/public/assets/modelling_gallery/daniel-franzese-gallery-8.webp'
+import DanFranPhoto9 from '/public/assets/modelling_gallery/daniel-franzese-gallery-9.webp'
+import DanFranPhoto10 from '/public/assets/modelling_gallery/daniel-franzese-gallery-10.webp'
+import DanFranPhoto11 from '/public/assets/modelling_gallery/daniel-franzese-gallery-11.webp'
+import DanFranPhoto12 from '/public/assets/modelling_gallery/daniel-franzese-gallery-12.webp'
+import DanFranPhoto13 from '/public/assets/modelling_gallery/daniel-franzese-gallery-13.webp'
+import DanFranPhoto14 from '/public/assets/modelling_gallery/daniel-franzese-gallery-14.webp'
+import DanFranPhoto15 from '/public/assets/modelling_gallery/daniel-franzese-gallery-15.webp'
+import DanFranPhoto16 from '/public/assets/modelling_gallery/daniel-franzese-gallery-16.webp'
+import DanFranPhoto17 from '/public/assets/modelling_gallery/daniel-franzese-gallery-17.webp'
+import DanFranThumbnail0 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-0.webp'
+import DanFranThumbnail1 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-1.webp'
+import DanFranThumbnail2 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-2.webp'
+import DanFranThumbnail3 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-3.webp'
+import DanFranThumbnail4 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-4.webp'
+import DanFranThumbnail5 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-5.webp'
+import DanFranThumbnail6 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-6.webp'
+import DanFranThumbnail7 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-7.webp'
+import DanFranThumbnail8 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-8.webp'
+import DanFranThumbnail9 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-9.webp'
+import DanFranThumbnail10 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-10.webp'
+import DanFranThumbnail11 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-11.webp'
+import DanFranThumbnail12 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-12.webp'
+import DanFranThumbnail13 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-13.webp'
+import DanFranThumbnail14 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-14.webp'
+import DanFranThumbnail15 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-15.webp'
+import DanFranThumbnail16 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-16.webp'
+import DanFranThumbnail17 from '/public/assets/modelling_gallery/thumbnails/daniel-franzese-thumbnail-17.webp'
+import { useState } from 'react'
 import SelectedModelGalleryImage from '@/components/molecule/SelectedModelGalleryImage/SelectedModelGalleryImage'
-
 
 const ModelGallery = () => {
   const modelGalleryList = [
@@ -64,12 +63,7 @@ const ModelGallery = () => {
   const [selectedBigImage, setSelectedBigImage] =
     useState<StaticImageData | null>(null)
 
-  useEffect(() => {
-    console.log('selectedBigImage', selectedBigImage)
-    return () => {}
-  })
-
-  const whatIsMyIndex = (picture: {
+  const findIndexCallback = (picture: {
     main: StaticImageData
     thumb: StaticImageData
   }) => {
@@ -77,7 +71,7 @@ const ModelGallery = () => {
   }
 
   const previousPicture = () => {
-    const currentIndex = modelGalleryList.findIndex(whatIsMyIndex)
+    const currentIndex = modelGalleryList.findIndex(findIndexCallback)
     if (currentIndex - 1 < 0) {
       setSelectedBigImage(modelGalleryList[modelGalleryList.length - 1].main)
     } else {
@@ -86,12 +80,12 @@ const ModelGallery = () => {
   }
 
   const nextPicture = () => {
-    const currentIndex = modelGalleryList.findIndex(whatIsMyIndex)
+    const currentIndex = modelGalleryList.findIndex(findIndexCallback)
     if (currentIndex + 1 === modelGalleryList.length) {
       setSelectedBigImage(modelGalleryList[0].main)
     } else {
       setSelectedBigImage(
-        modelGalleryList[modelGalleryList.findIndex(whatIsMyIndex) + 1].main
+        modelGalleryList[modelGalleryList.findIndex(findIndexCallback) + 1].main
       )
     }
   }

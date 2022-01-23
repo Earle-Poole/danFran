@@ -1,4 +1,4 @@
-*:hover > .splitterWrapper > span {
+*:hover > .splitterWrapper.hoverAnimation > span {
   animation: move-text 0.75s infinite ease-in;
 }
 

@@ -17,7 +17,7 @@ const ModelPicture: FC<ModelPictureProps> = ({
   return (
     <div
       className={classNames(
-        'basis-1/1 sm:basis-1/2 md:basis-1/3 hover:cursor-zoom-in relative',
+        'basis-full sm:basis-1/2 md:basis-1/3 hover:cursor-zoom-in relative',
         styles.pictureWrapper
       )}
       onClick={() => {
@@ -31,7 +31,8 @@ const ModelPicture: FC<ModelPictureProps> = ({
         src={pictureObj.thumb}
         alt={`galleryPicture ${index}`}
         width="600"
-        height="500"
+        height="480"
+        layout="responsive"
       />
     </div>
   )

@@ -21,7 +21,7 @@ const NavItem: FC<NavItemProps> = ({ isExternal, name, href }) => {
         {...optionalAnchorProps}
       >
         <div className="font-light p-3 self-center transition duration-150">
-          <Splitter str={name} />
+          <Splitter str={name} hoverAnimation />
         </div>
       </a>
     </Link>
