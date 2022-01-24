@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { Dispatch, FC, SetStateAction } from 'react'
 import ReactDom from 'react-dom'
-import galleryList from '@/components/organisms/ModelGallery/ModelGallery'
 
 type SelectedModelGalleryImageProps = {
   selectedBigImage: StaticImageData
@@ -27,7 +26,7 @@ const SelectedModelGalleryImage: FC<SelectedModelGalleryImageProps> = ({
     >
       <div className="w-9/12 h-full items-center flex">
         <button
-          className="absolute left-6 border-slate-600 border-2  z-30 text-4xl text-white"
+          className="absolute left-6 border-black bg-gray-600 h-12 w-12 rounded border-2 z-30 text-4xl text-white"
           type="button"
           title="Previous Picture"
           onClick={(e) => {
@@ -47,7 +46,7 @@ const SelectedModelGalleryImage: FC<SelectedModelGalleryImageProps> = ({
         </div>
 
         <button
-          className="absolute right-6 border-slate-600 border-2  z-30 text-4xl text-white"
+          className="absolute right-6 border-black bg-gray-600 h-12 w-12 rounded border-2 z-30 text-4xl text-white"
           type="button"
           title="Next Picture"
           onClick={(e) => {
