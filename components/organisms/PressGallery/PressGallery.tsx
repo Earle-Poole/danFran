@@ -6,6 +6,8 @@ import MeanGirls from '/public/assets/press_kit/pressPhotos/DanFranPress_MeanGir
 import classNames from 'classnames'
 import styles from './PressGallery.module.css'
 import pressPhotos from './PressGallery.Photos'
+import ContentSectionWrapper from '../ContentSectionWrapper/ContentSectionWrapper'
+import design from '@/assets/zigzag.svg'
 
 const PressGallery = () => {
   const h2Styles = 'text-left text-4xl indent-14 mt-8'
@@ -32,46 +34,20 @@ const PressGallery = () => {
           </div>
         </div>
       </div>
-      {/* <h2 className={h2Styles}>{'Bio & Tour Flyer'}</h2>
-      <div
-        data-name="pdf section"
-        className="flex w-full justify-evenly my-10 mx-auto"
+      <ContentSectionWrapper
+        wrapperBackgroundColor="bg-gray-500/[15%]"
+        id="Press_Bio"
       >
-        <div className="flex flex-col">
-          <a
-            href="/assets/press_kit/df-biography.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              src={BiographyThumbnail}
-              alt="BioThumbnail"
-              width={225}
-              height={300}
-            />
-            <span className="flex flex-col text-xl underline underline-offset-2 justify-center">
-              Daniel Franzese Biography PDF
-            </span>
-          </a>
+        <div className="flex flex-col mt-8 md:mt-0 md:ml-4">
+          <p className="text-4xl text-center">{`Press Bio`}</p>
+          <div className="pt-4 text-center">
+            <Image src={design} alt="zigzag" layout="fixed"></Image>
+          </div>
+          <p className="text-xl md:text-2xl my-3 leading-relaxed indent-14">
+            {`Best known for his role as Damian in Mean Girls, Daniel Franzese was also the lead of other indie cult classics Bully & I Spit On Your Grave. He was most recently a series regular on Mark Gordon's ABC series, Conviction. Prior to that he was a series regular on the Freeform series Recovery Road. Originally from Brooklyn, Daniel has become a well-known proponent and speaker for the LGBT Community. He reached 8 million views on his YouTube video series Sh*t Italian Moms Say. A self-proclaimed momma’s boy, his upbeat high-energy stand up comedy act, “Yass! You’re Amazing! Comedy Tour” captures his amazing and quirky life in the entertainment industry, as well as hilarious stories about his New York parents.`}
+          </p>
         </div>
-        <div className="flex flex-wrap flex-col">
-          <a
-            href="/assets/press_kit/yass-comedy-tour-description.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              src={ComedyTourDescriptionThumbnail}
-              alt="YassComedyTourDescriptionThumbnail"
-              width={225}
-              height={300}
-            />
-            <span className="flex flex-col text-xl underline underline-offset-2 justify-center">
-              {'Comedy Tour Description PDF'}
-            </span>
-          </a>
-        </div>
-      </div> */}
+      </ContentSectionWrapper>
       <h2 className={h2Styles}>Photo Gallery</h2>
       <div
         data-name="press photo section"
