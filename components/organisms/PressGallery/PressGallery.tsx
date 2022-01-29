@@ -13,7 +13,7 @@ const PressGallery = () => {
   const h2Styles = 'text-left text-4xl indent-14 mt-8'
 
   return (
-    <div className="flex flex-col my-10">
+    <div className="flex flex-col">
       <ContentSectionWrapper
         wrapperBackgroundColor="bg-gray-500/[15%]"
         id="Press_Bio"

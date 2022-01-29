@@ -4,7 +4,7 @@ const PressKitTemplate = () => {
   return (
     <div id="press-kit" className="w-full flex justify-center">
       <div className="w-full max-w-7xl flex flex-col items-center">
-        <div className="mt-20 p-10">
+        <div className="mt-20 pt-10">
           <p className="text-4xl md:text-5xl pb-5">
             Daniel Franzese - Press Kit
           </p>
