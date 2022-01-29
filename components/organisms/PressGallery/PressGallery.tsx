@@ -5,7 +5,7 @@ import DanFranzese from '/public/assets/press_kit/pressPhotos/DanFranPress_DanFr
 import MeanGirls from '/public/assets/press_kit/pressPhotos/DanFranPress_MeanGirls.png'
 import classNames from 'classnames'
 import styles from './PressGallery.module.css'
-import * as pressPhotos from './PressGallery.Photos'
+import pressPhotos from './PressGallery.Photos'
 
 const PressGallery = () => {
   const h2Styles = 'text-left text-4xl indent-14 mt-8'
@@ -77,7 +77,7 @@ const PressGallery = () => {
         data-name="press photo section"
         className={classNames(styles.container)}
       >
-        {Object.values(pressPhotos).map((pressPhoto, i) => (
+        {pressPhotos.map((pressPhoto, i) => (
           <PressPicture
             key={pressPhoto.src}
             pressPhoto={pressPhoto}

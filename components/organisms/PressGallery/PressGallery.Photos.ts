@@ -16,8 +16,7 @@ import PK15 from '/public/assets/press_kit/pressPhotos/pk15.webp'
 import PK16 from '/public/assets/press_kit/pressPhotos/pk16.webp'
 
 // This file is where we add photos to the Press Gallery
-
-export {
+const arr = [
   PK1,
   PK2,
   PK3,
@@ -34,4 +33,6 @@ export {
   PK14,
   PK15,
   PK16,
-}
+]
+
+export default arr
