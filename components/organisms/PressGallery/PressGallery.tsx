@@ -1,4 +1,4 @@
-import PressPicture from '@/components/atoms/PressGalleryPictures/PressPicture'
+import PressPicture from '@/components/atoms/PressPicture/PressPicture'
 import Image from 'next/image'
 import DanFranPressPhoto0 from '/public/assets/press_kit/pressPhotos/DanFranPressPhoto0.jpg'
 import DanFranPressPhoto1 from '/public/assets/press_kit/pressPhotos/DanFranPressPhoto1.png'
@@ -11,6 +11,8 @@ import DanFranzese from '/public/assets/press_kit/pressPhotos/DanFranPress_DanFr
 import MeanGirls from '/public/assets/press_kit/pressPhotos/DanFranPress_MeanGirls.png'
 import BiographyThumbnail from '/public/assets/press_kit/df-biographyThumbnail.png'
 import ComedyTourDescriptionThumbnail from '/public/assets/press_kit/yass-comedy-tour-description-Thumbnail.png'
+import classNames from 'classnames'
+import styles from './PressGallery.module.css'
 
 const PressGallery = () => {
   const pressGalleryList = [
@@ -25,26 +27,28 @@ const PressGallery = () => {
   const h2Styles = 'text-left text-4xl indent-14 mt-8'
 
   return (
-    <div className="flex flex-col w-full my-10">
+    <div className="flex flex-col my-10">
       <h2 className={h2Styles}>Banner Posters</h2>
       <div
         data-name="banner section"
-        className="flex flex-col flex-wrap md:flex-row p-10"
+        className="flex flex-col md:flex-row p-10"
       >
-        <div className="basis-full md:basis-4/12">
+        <div className="basis-full md:basis-5/12">
           <Image
             src={YassComedyTourPoster}
             alt="Daniel Franzese YASS Comedy Tour"
           />
         </div>
-        <div className="flex justify-center my-auto basis-4/12">
-          <Image src={DanFranzese} alt="Daniel Franzese" />
-        </div>
-        <div className="flex justify-center my-auto basis-4/12">
-          <Image src={MeanGirls} alt="Mean Girls Banner" />
+        <div className="flex flex-col basis-full justify-center md:basis-7/12">
+          <div className="flex basis-4/12 md:px-6 md:py-3">
+            <Image src={DanFranzese} alt="Daniel Franzese" />
+          </div>
+          <div className="flex basis-4/12 md:px-6 md:py-3">
+            <Image src={MeanGirls} alt="Mean Girls Banner" />
+          </div>
         </div>
       </div>
-      <h2 className={h2Styles}>{'Bio & Tour Flyer'}</h2>
+      {/* <h2 className={h2Styles}>{'Bio & Tour Flyer'}</h2>
       <div
         data-name="pdf section"
         className="flex w-full justify-evenly my-10 mx-auto"
@@ -83,9 +87,12 @@ const PressGallery = () => {
             </span>
           </a>
         </div>
-      </div>
+      </div> */}
       <h2 className={h2Styles}>Photo Gallery</h2>
-      <div data-name="press photo section" className="flex flex-wrap">
+      <div
+        data-name="press photo section"
+        className={classNames(styles.container)}
+      >
         {pressGalleryList.map((pressPhoto, i) => (
           <PressPicture
             key={pressPhoto.src}
