@@ -1,29 +1,13 @@
 import PressPicture from '@/components/atoms/PressPicture/PressPicture'
 import Image from 'next/image'
-import DanFranPressPhoto0 from '/public/assets/press_kit/pressPhotos/DanFranPressPhoto0.jpg'
-import DanFranPressPhoto1 from '/public/assets/press_kit/pressPhotos/DanFranPressPhoto1.png'
-import DanFranPressPhoto2 from '/public/assets/press_kit/pressPhotos/DanFranPressPhoto2.png'
-import DanFranPressPhoto3 from '/public/assets/press_kit/pressPhotos/DanFranPressPhoto3.jpg'
-import DanFranPressPhoto4 from '/public/assets/press_kit/pressPhotos/DanFranPressPhoto4.jpg'
-import DanFranPressPhoto5 from '/public/assets/press_kit/pressPhotos/DanFranPressPhoto5.jpg'
 import YassComedyTourPoster from '/public/assets/press_kit/pressPhotos/DanFranPress_YASS_comedyTour.jpg'
 import DanFranzese from '/public/assets/press_kit/pressPhotos/DanFranPress_DanFran.png'
 import MeanGirls from '/public/assets/press_kit/pressPhotos/DanFranPress_MeanGirls.png'
-import BiographyThumbnail from '/public/assets/press_kit/df-biographyThumbnail.png'
-import ComedyTourDescriptionThumbnail from '/public/assets/press_kit/yass-comedy-tour-description-Thumbnail.png'
 import classNames from 'classnames'
 import styles from './PressGallery.module.css'
+import * as pressPhotos from './PressGallery.Photos'
 
 const PressGallery = () => {
-  const pressGalleryList = [
-    DanFranPressPhoto0,
-    DanFranPressPhoto1,
-    DanFranPressPhoto2,
-    DanFranPressPhoto3,
-    DanFranPressPhoto4,
-    DanFranPressPhoto5,
-  ]
-
   const h2Styles = 'text-left text-4xl indent-14 mt-8'
 
   return (
@@ -93,7 +77,7 @@ const PressGallery = () => {
         data-name="press photo section"
         className={classNames(styles.container)}
       >
-        {pressGalleryList.map((pressPhoto, i) => (
+        {Object.values(pressPhotos).map((pressPhoto, i) => (
           <PressPicture
             key={pressPhoto.src}
             pressPhoto={pressPhoto}
