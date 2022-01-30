@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import ContentSectionWrapper from '@/components/organisms/ContentSectionWrapper/ContentSectionWrapper'
 
 const VideoPlayer = () => {
   const comedyVideoList = [
@@ -58,90 +59,94 @@ const VideoPlayer = () => {
 
   type videoSetupProps = { id: string; videoTitle: string }
 
-  const h2Styles = 'text-left text-3xl indent-14 mt-8'
-
   return (
-    <div
-      data-id="video container"
-      className="flex w-full justify-center gap-6 mt-36"
-    >
-      {/* main video */}
-      <div
-        data-id="main video"
-        className="flex rounded-md p-3 border-solid border-2 border-white"
+    <div className="w-full max-w-7xl flex items-center mx-auto">
+      <ContentSectionWrapper
+        wrapperBackgroundColor="bg-gray-500/[15%]"
+        id="videoPlayList"
       >
-        <div key={selectedMainVideo.id}>
-          <iframe
-            width="600"
-            height="400"
-            src={`https://www.youtube.com/embed/${selectedMainVideo.id}`}
-            title={selectedMainVideo.videoTitle}
-            allow="autoplay"
-            className="flex rounded-md justify-center"
-          ></iframe>
-          <span className={h2Styles}>{`${selectedMainVideo.videoTitle}`}</span>
-        </div>
-      </div>
+        <div
+          data-id="video container"
+          className="flex w-full justify-center gap-16"
+        >
+          {/* main video */}
+          <div data-id="main video" className="flex rounded-md">
+            <div key={selectedMainVideo.id}>
+              <iframe
+                width="600"
+                height="400"
+                src={`https://www.youtube.com/embed/${selectedMainVideo.id}`}
+                title={selectedMainVideo.videoTitle}
+                allow="autoplay"
+                className="flex rounded-md justify-center"
+              ></iframe>
+              <span className="flex text-left text-3xl mt-6">{`${selectedMainVideo.videoTitle}`}</span>
+            </div>
+          </div>
 
-      <div
-        data-id="video list"
-        className="rounded-md h-[29rem] overflow-y-scroll scroll-smooth scroll-px-2 scroll-w-4 border-solid border-2 border-white"
-      >
-        {/* comedy video list */}
-        <span className="flex justify-center text-left text-3xl my-4">
-          Comedy Videos
-        </span>
-        {comedyVideoList.map((videoSetup: videoSetupProps, i) => {
-          const onClickHandler = () => {
-            setSelectedMainVideo(videoSetup)
-          }
-          return (
-            <div
-              key={videoSetup.id}
-              onClick={onClickHandler}
-              className="flex align-center gap-4 rounded-md m-2 p-2 cursor-pointer hover:bg-cyan-400 transition duration-150"
-            >
-              <Image
-                width="125"
-                height="100"
-                src={`https://img.youtube.com/vi/${videoSetup.id}/0.jpg`}
-                title={videoSetup.videoTitle}
-                alt="videoThumbnail"
-                className="rounded-md hover:text-cyan-400 transition duration-150"
-              />
-              <span className="flex my-auto text-lg text-pink-500">{`0${i + 1}. ${
-                videoSetup.videoTitle
-              }`}</span>
-            </div>
-          )
-        })}
-        {/* press videos list */}
-        <span className="flex justify-center text-left text-3xl my-4">Press Videos</span>
-        {pressVideoList.map((videoSetup: videoSetupProps, i) => {
-          const onClickHandler = () => {
-            setSelectedMainVideo(videoSetup)
-          }
-          return (
-            <div
-              key={videoSetup.id}
-              onClick={onClickHandler}
-              className="flex align-center gap-4 rounded-md m-2 p-2 cursor-pointer hover:bg-cyan-400 transition duration-150"
-            >
-              <Image
-                width="125"
-                height="100"
-                src={`https://img.youtube.com/vi/${videoSetup.id}/0.jpg`}
-                title={videoSetup.videoTitle}
-                alt="videoThumbnail"
-                className="rounded-md hover:text-cyan-400 transition duration-150"
-              />
-              <span className="flex my-auto text-lg text-pink-500">{`0${i + 1}. ${
-                videoSetup.videoTitle
-              }`}</span>
-            </div>
-          )
-        })}
-      </div>
+          <div
+            data-id="video list"
+            className="rounded-md h-[29rem] overflow-y-scroll scroll-smooth scroll-px-2 scroll-w-4"
+          >
+            {/* comedy video list */}
+            <span className="flex justify-center text-left text-3xl my-4">
+              Comedy Videos
+            </span>
+            {comedyVideoList.map((videoSetup: videoSetupProps, i) => {
+              const onClickHandler = () => {
+                setSelectedMainVideo(videoSetup)
+              }
+              return (
+                <div
+                  key={videoSetup.id}
+                  onClick={onClickHandler}
+                  className="flex align-center gap-4 rounded-md m-2 p-2 cursor-pointer hover:bg-cyan-400 transition duration-150"
+                >
+                  <Image
+                    width="125"
+                    height="100"
+                    src={`https://img.youtube.com/vi/${videoSetup.id}/0.jpg`}
+                    title={videoSetup.videoTitle}
+                    alt="videoThumbnail"
+                    className="rounded-md hover:text-cyan-400 transition duration-150"
+                  />
+                  <span className="flex my-auto text-lg text-pink-500">{`0${
+                    i + 1
+                  }. ${videoSetup.videoTitle}`}</span>
+                </div>
+              )
+            })}
+            {/* press videos list */}
+            <span className="flex justify-center text-left text-3xl my-4">
+              Press Videos
+            </span>
+            {pressVideoList.map((videoSetup: videoSetupProps, i) => {
+              const onClickHandler = () => {
+                setSelectedMainVideo(videoSetup)
+              }
+              return (
+                <div
+                  key={videoSetup.id}
+                  onClick={onClickHandler}
+                  className="flex align-center gap-4 rounded-md m-2 p-2 cursor-pointer hover:bg-cyan-400 transition duration-150"
+                >
+                  <Image
+                    width="125"
+                    height="100"
+                    src={`https://img.youtube.com/vi/${videoSetup.id}/0.jpg`}
+                    title={videoSetup.videoTitle}
+                    alt="videoThumbnail"
+                    className="rounded-md hover:text-cyan-400 transition duration-150"
+                  />
+                  <span className="flex my-auto text-lg text-pink-500">{`0${
+                    i + 1
+                  }. ${videoSetup.videoTitle}`}</span>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </ContentSectionWrapper>
     </div>
   )
 }
