@@ -24,7 +24,7 @@ const PressGallery = () => {
             <Image src={design} alt="zigzag" layout="fixed"></Image>
           </div>
           <p className="text-xl md:text-2xl my-3 leading-relaxed indent-14">
-            {`Best known for his role as Damian in Mean Girls, Daniel Franzese was also the lead of other indie cult classics Bully & I Spit On Your Grave. He was most recently a series regular on Mark Gordon's ABC series, Conviction. Prior to that he was a series regular on the Freeform series Recovery Road. Originally from Brooklyn, Daniel has become a well-known proponent and speaker for the LGBT Community. He reached 8 million views on his YouTube video series Sh*t Italian Moms Say. A self-proclaimed momma’s boy, his upbeat high-energy stand up comedy act, “Yass! You’re Amazing! Comedy Tour” captures his amazing and quirky life in the entertainment industry, as well as hilarious stories about his New York parents.`}
+            {`Best known for his role as Damian in Mean Girls, Daniel Franzese was also the lead of other indie cult classics, such as 'Bully' & 'I Spit On Your Grave'. He was most recently a series regular on Mark Gordon's ABC series, 'Conviction'. Prior to that he was a series regular on the Freeform series 'Recovery Road'. Originally from Brooklyn, Daniel has become a well-known proponent and speaker for the LGBT Community. He reached 8 million views on his YouTube video series 'Sh*t Italian Moms Say'. A self-proclaimed momma’s boy, his upbeat high-energy stand up comedy act, 'Yass! You’re Amazing! Comedy Tour' captures his amazing and quirky life in the entertainment industry, as well as hilarious stories about his New York parents.`}
           </p>
         </div>
       </ContentSectionWrapper>
