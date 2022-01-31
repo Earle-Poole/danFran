@@ -72,6 +72,7 @@ const VideoPlayer = () => {
           {/* main video */}
           <div data-id="main video" className="flex rounded-md">
             <div key={selectedMainVideo.id}>
+              <span className="flex text-left text-3xl mb-6">{`${selectedMainVideo.videoTitle}`}</span>
               <iframe
                 width="600"
                 height="400"
@@ -80,7 +81,6 @@ const VideoPlayer = () => {
                 allow="autoplay"
                 className="flex rounded-md justify-center"
               ></iframe>
-              <span className="flex text-left text-3xl mt-6">{`${selectedMainVideo.videoTitle}`}</span>
             </div>
           </div>
 
