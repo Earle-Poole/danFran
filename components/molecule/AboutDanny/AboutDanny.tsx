@@ -60,7 +60,7 @@ const AboutDanny = () => {
         <div className="pt-4">
           <Image src={design} alt="zigzag" layout="fixed"></Image>
         </div>
-        <p className="text-xl md:text-2xl my-3 leading-relaxed ">
+        <p className="text-xl md:text-2xl my-3 leading-relaxed">
           {`Best known for his roles in Larry Clark's "Bully", and as Damian in
           Tina Fey's "Mean Girls". Danny is the creator of several live comedy
           shows including rock opera "Jersey Shoresical: A Frickin' Rock

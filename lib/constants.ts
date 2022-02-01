@@ -38,6 +38,7 @@ const urls = {
   MAILCHIMP:
     'https://udsterleads.us10.list-manage.com/subscribe/post?u=c97ea1160f134dbeb8cbe8bd6&id=66c6445cca',
   CAMEO: 'https://www.cameo.com/whatsupdanny',
+  PODCAST: 'https://www.yassjesuspod.com/',
 } as const
 
 const breakpoints = {
