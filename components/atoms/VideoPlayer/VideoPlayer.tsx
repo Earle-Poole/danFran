@@ -67,12 +67,12 @@ const VideoPlayer = () => {
       >
         <div
           data-id="video container"
-          className="flex w-full justify-center gap-16"
+          className="flex w-full justify-center gap-16 flex-col md:flex-row"
         >
           {/* main video */}
           <div data-id="main video" className="flex rounded-md">
             <div key={selectedMainVideo.id}>
-              <span className="flex text-left text-3xl mb-6">{`${selectedMainVideo.videoTitle}`}</span>
+              <span className="flex flex-wrap text-2xl mb-4 w-4/5 md:text-3xl md:w-full">{`${selectedMainVideo.videoTitle}`}</span>
               <iframe
                 width="600"
                 height="400"
@@ -89,7 +89,7 @@ const VideoPlayer = () => {
             className="rounded-md h-[29rem] overflow-y-scroll scroll-smooth scroll-px-2 scroll-w-4"
           >
             {/* comedy video list */}
-            <span className="flex justify-center text-left text-3xl my-4">
+            <span className="flex justify-center text-left text-2xl md:text-3xl my-4">
               Comedy Videos
             </span>
             {comedyVideoList.map((videoSetup: videoSetupProps, i) => {
@@ -117,7 +117,7 @@ const VideoPlayer = () => {
               )
             })}
             {/* press videos list */}
-            <span className="flex justify-center text-left text-3xl my-4">
+            <span className="flex justify-center text-left text-2xl md:text-3xl my-4">
               Press Videos
             </span>
             {pressVideoList.map((videoSetup: videoSetupProps, i) => {
