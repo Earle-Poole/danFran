@@ -1,11 +1,11 @@
 import MyButton from '@/components/atoms/Button/Button'
 import ContentSectionWrapper from '@/components/organisms/ContentSectionWrapper/ContentSectionWrapper'
 import CoverPhoto from '@/components/atoms/CoverPhoto/CoverPhoto'
-import SocialMediaLinks from '@/components/atoms/Icons/SocialMediaLinks'
 import AboutDanny from '@/components/molecule/AboutDanny/AboutDanny'
 import BookMeNow from '@/components/molecule/BookMeNowContacts/BookMeNowContacts'
 import { urls } from 'lib/constants'
 import MailChimpInput from '@/components/molecule/MailChimpInput/MailChimpInput'
+import Podcast from '@/components/molecule/Podcast/Podcast'
 
 const HomeTemplate = () => {
   return (
@@ -31,16 +31,25 @@ const HomeTemplate = () => {
             </div>
           </div>
         </ContentSectionWrapper>
+        <ContentSectionWrapper
+          wrapperBackgroundColor="bg-gray-500/[15%]"
+          id="podcast"
+        >
+          <Podcast />
+        </ContentSectionWrapper>
+        <ContentSectionWrapper wrapperBackgroundColor="bg-black" id="cameo">
+          <div className="flex flex-col items-center text-center mx-auto text-2xl w-fit">
+            <p className="flex flex-col mb-4">
+              Book your personalized video shout out from me now!
+            </p>
+            <MyButton href={urls.CAMEO} name="Find Me On Cameo" isExternal />
+          </div>
+        </ContentSectionWrapper>
+
         <div id="contact"></div>
         <ContentSectionWrapper wrapperBackgroundColor="bg-gray-500/[15%]">
           <div className="flex flex-col w-full">
             <BookMeNow />
-            <div className="flex flex-col items-center text-center mx-auto text-2xl mt-20 w-fit">
-              <p className="flex flex-col my-4">
-                Book your personalized video shout out from me now!
-              </p>
-              <MyButton href={urls.CAMEO} name="Find Me On Cameo" isExternal />
-            </div>
           </div>
         </ContentSectionWrapper>
       </div>
