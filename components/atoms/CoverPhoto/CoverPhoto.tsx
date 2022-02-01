@@ -1,8 +1,10 @@
 import photo from '@/assets/home_cover.webp'
 import { useScrollPosition } from 'lib/hooks'
 import { isClient } from 'lib/toolbox'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Splitter from '../Splitter'
+import { slugs } from 'lib/constants'
 
 const CoverPhoto = () => {
   const [isAtTopOfPage, setIsAtTopOfPage] = useState(true)
@@ -35,11 +37,13 @@ const CoverPhoto = () => {
         <Splitter str="Daniel Franzese" />
       </div>
       {isAtTopOfPage ? (
-        <div className="absolute h-10 w-10 hidden md:block bottom-2 right-4 text-shadow opacity-60 font-extrabold text-5xl md:text-7xl md:bottom-4 md:right-4 animate-bounce pointer-events-none">
-          <span className="absolute bottom-0 right-0">&#8964;</span>
-          <span className="absolute bottom-7 right-0">&#8964;</span>
-          <span className="absolute bottom-14 right-0">&#8964;</span>
-        </div>
+        <Link href={slugs.ABOUT} passHref>
+          <a className="absolute h-10 w-10 hidden md:block bottom-2 right-4 text-shadow opacity-60 font-extrabold text-5xl md:text-7xl md:bottom-4 md:right-4 animate-bounce">
+            <span className="absolute bottom-0 right-0">&#8964;</span>
+            <span className="absolute bottom-7 right-0">&#8964;</span>
+            <span className="absolute bottom-14 right-0">&#8964;</span>
+          </a>
+        </Link>
       ) : null}
     </div>
   )
