@@ -35,7 +35,7 @@ const HomeTemplate = () => {
         <ContentSectionWrapper wrapperBackgroundColor="bg-gray-500/[15%]">
           <div className="flex flex-col w-full">
             <BookMeNow />
-            <div className="flex flex-col items-center mx-auto text-2xl mt-20 w-fit">
+            <div className="flex flex-col items-center text-center mx-auto text-2xl mt-20 w-fit">
               <p className="flex flex-col my-4">
                 Book your personalized video shout out from me now!
               </p>
