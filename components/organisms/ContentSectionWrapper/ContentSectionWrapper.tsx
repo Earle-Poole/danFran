@@ -18,7 +18,7 @@ const ContentSectionWrapper: FC<ContentSectionWrapperProps> = ({
       id={id}
       className={classNames(
         wrapperBackgroundColor,
-        'flex w-full p-10 md:p-24 rounded-md my-14',
+        'flex w-full px-10 py-6 md:px-24 md:py-14 rounded-md my-14',
         classNameOverride
       )}
     >

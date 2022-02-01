@@ -3,15 +3,17 @@ import { FC } from 'react'
 
 type PressPictureProps = {
   pressPhoto: StaticImageData
-  index: number
 }
 
-const PressPicture: FC<PressPictureProps> = ({ pressPhoto, index }) => {
+const PressPicture: FC<PressPictureProps> = ({ pressPhoto }) => {
+  const photoSrcSplit = pressPhoto.src.split('/')
+  const filename = photoSrcSplit[photoSrcSplit.length - 1].split('.')[0]
+
   return (
     <div className={'flex-col relative'}>
       <Image
         src={pressPhoto}
-        alt={`galleryPicture ${index}`}
+        alt={`Press Photo: ${filename}`}
         layout="responsive"
       />
     </div>
