@@ -35,7 +35,7 @@ const ModelGallery = () => {
   }
 
   return (
-    <div className="flex flex-wrap my-10">
+    <div className="flex flex-wrap my-10 justify-center">
       {modelGalleryList.map((pictureSetup, i) => (
         <ModelPicture
           key={pictureSetup.main.src}
