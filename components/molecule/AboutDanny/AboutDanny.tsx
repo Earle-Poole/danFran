@@ -56,7 +56,7 @@ const AboutDanny = () => {
         </div>
       </div>
       <div className="flex flex-col flex-1 mt-8 md:mt-0 md:ml-4">
-        <p className="text-4xl">{`Actor, Writer, Director, Comedian & Activist.`}</p>
+        <p className="text-4xl">{`Actor, Writer, Director, Comedian & Activist`}</p>
         <div className="pt-4">
           <Image src={design} alt="zigzag" layout="fixed"></Image>
         </div>

@@ -26,7 +26,7 @@ const ModelPicture: FC<ModelPictureProps> = ({
       }}
     >
       <div className="hidden absolute z-30 bg-black/40 top-0 bottom-0 right-0 left-0 justify-center items-center text-2xl pointer-events-none">
-        Click to Enlarge
+        Click to enlarge
       </div>
       <Image
         src={pictureObj.thumb}

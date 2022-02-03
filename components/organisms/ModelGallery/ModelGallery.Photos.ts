@@ -22,7 +22,6 @@ import DanFranPhoto21 from '/public/assets/modelling_gallery/mg (21).webp'
 import DanFranPhoto22 from '/public/assets/modelling_gallery/mg (22).webp'
 import DanFranPhoto23 from '/public/assets/modelling_gallery/mg (23).webp'
 import DanFranPhoto24 from '/public/assets/modelling_gallery/mg (24).webp'
-import DanFranPhoto25 from '/public/assets/modelling_gallery/mg (25).webp'
 import DanFranThumbnail1 from '/public/assets/modelling_gallery/thumbnails/mg thumb (1).webp'
 import DanFranThumbnail2 from '/public/assets/modelling_gallery/thumbnails/mg thumb (2).webp'
 import DanFranThumbnail3 from '/public/assets/modelling_gallery/thumbnails/mg thumb (3).webp'
@@ -47,7 +46,6 @@ import DanFranThumbnail21 from '/public/assets/modelling_gallery/thumbnails/mg t
 import DanFranThumbnail22 from '/public/assets/modelling_gallery/thumbnails/mg thumb (22).webp'
 import DanFranThumbnail23 from '/public/assets/modelling_gallery/thumbnails/mg thumb (23).webp'
 import DanFranThumbnail24 from '/public/assets/modelling_gallery/thumbnails/mg thumb (24).webp'
-import DanFranThumbnail25 from '/public/assets/modelling_gallery/thumbnails/mg thumb (25).webp'
 
 // This file is where we add photos to the Model Gallery
 const modelGalleryList = [
@@ -75,7 +73,6 @@ const modelGalleryList = [
   { main: DanFranPhoto22, thumb: DanFranThumbnail22 },
   { main: DanFranPhoto23, thumb: DanFranThumbnail23 },
   { main: DanFranPhoto24, thumb: DanFranThumbnail24 },
-  { main: DanFranPhoto25, thumb: DanFranThumbnail25 },
 ]
 
 export default modelGalleryList
