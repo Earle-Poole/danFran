@@ -41,7 +41,7 @@ const AboutDanny = () => {
             backgroundImage: `url(${photo3.src})`,
             left: `${(1 / 24) * 100}%`,
           }}
-          className="z-20 absolute -top-16 scale-90 h-32 w-11/12 pointer-events-none"
+          className="z-20 absolute -top-14 scale-90 h-32 w-11/12 pointer-events-none"
         />
         <div
           className={classNames(

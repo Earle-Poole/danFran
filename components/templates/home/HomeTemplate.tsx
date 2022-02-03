@@ -6,6 +6,7 @@ import BookMeNow from '@/components/molecule/BookMeNowContacts/BookMeNowContacts
 import { urls } from 'lib/constants'
 import MailChimpInput from '@/components/molecule/MailChimpInput/MailChimpInput'
 import Podcast from '@/components/molecule/Podcast/Podcast'
+import classNames from 'classnames'
 
 const HomeTemplate = () => {
   return (
@@ -14,6 +15,7 @@ const HomeTemplate = () => {
       <div className="w-full max-w-7xl flex flex-col items-center">
         <ContentSectionWrapper
           wrapperBackgroundColor="bg-gray-500/[15%]"
+          classNameOverride="scroll-m-28"
           id="about"
         >
           <AboutDanny />
@@ -37,7 +39,11 @@ const HomeTemplate = () => {
         >
           <Podcast />
         </ContentSectionWrapper>
-        <ContentSectionWrapper wrapperBackgroundColor="bg-black" id="cameo">
+        <ContentSectionWrapper
+          wrapperBackgroundColor="bg-black"
+          id="cameo"
+          classNameOverride="!py-1 my-10"
+        >
           <div className="flex flex-col items-center text-center mx-auto text-2xl w-fit">
             <p className="flex flex-col mb-4">
               Book your personalized video shout out from me now!

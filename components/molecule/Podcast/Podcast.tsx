@@ -3,6 +3,7 @@ import { urls } from 'lib/constants'
 import MyButton from '../../atoms/Button/Button'
 import podcastCover from '@/assets/podcast_cover.webp'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Podcast = () => {
   return (
@@ -10,8 +11,12 @@ const Podcast = () => {
       <div className="flex flex-col basis-5/7 mt-8 md:mt-0 md:ml-4">
         <span className="text-center text-3xl pb-3">Check Out My Podcast</span>
         <Stripes />
-        <Image src={podcastCover} alt="podcast_cover" />
-        <div className='flex mx-auto mt-4 md:mt-10'>
+        <Link href={urls.PODCAST}>
+          <a>
+            <Image src={podcastCover} alt="podcast_cover" />
+          </a>
+        </Link>
+        <div className="flex mx-auto mt-4 md:mt-10">
           <MyButton href={urls.PODCAST} name="Listen Here" isExternal />
         </div>
       </div>
