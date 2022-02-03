@@ -6,7 +6,6 @@ import BookMeNow from '@/components/molecule/BookMeNowContacts/BookMeNowContacts
 import { urls } from 'lib/constants'
 import MailChimpInput from '@/components/molecule/MailChimpInput/MailChimpInput'
 import Podcast from '@/components/molecule/Podcast/Podcast'
-import classNames from 'classnames'
 
 const HomeTemplate = () => {
   return (
