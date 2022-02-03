@@ -36,6 +36,7 @@ const Footer = () => {
         <a
           href="https://github.com/margarita-poole"
           className="text-fuchsia-500 cursor-pointer underline-offset-2"
+          target='_blank' rel='noopener noreferrer'
         >
           Margarita Poole
         </a>

@@ -26,7 +26,7 @@ const SelectedModelGalleryImage: FC<SelectedModelGalleryImageProps> = ({
     >
       <div className="w-9/12 h-full items-center flex">
         <button
-          className="absolute left-6 border-black bg-white/20 h-12 w-20 rounded border-2 z-30 text-4xl text-slate-900"
+          className="absolute left-6 border-black bg-white/20 h-12 w-20 rounded border-2 z-30 text-4xl text-black"
           type="button"
           title="Previous Picture"
           onClick={(e) => {
@@ -47,7 +47,7 @@ const SelectedModelGalleryImage: FC<SelectedModelGalleryImageProps> = ({
         </div>
 
         <button
-          className="absolute right-6 border-black bg-white/20 h-12 w-20 rounded border-2 z-30 text-4xl text-slate-900"
+          className="absolute right-6 border-black bg-white/20 h-12 w-20 rounded border-2 z-30 text-4xl text-black"
           type="button"
           title="Next Picture"
           onClick={(e) => {
