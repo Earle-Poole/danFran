@@ -85,3 +85,35 @@ export const useOnClickOutside = (
     [ref, handler]
   )
 }
+
+export const useElementSize = (element: HTMLElement | null) => {
+  // Initialize state with undefined width/height so server and client renders match
+  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+  const [elementSize, setElementSize] = useState<{
+    width: number | undefined
+    height: number | undefined
+  }>({
+    width: undefined,
+    height: undefined,
+  })
+  useEffect(() => {
+    if (!element) {
+      return
+    }
+    // Handler to call on window resize
+    function handleResize() {
+      // Set window width/height to state
+      setElementSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      })
+    }
+    // Add event listener
+    element.addEventListener('resize', handleResize)
+    // Call handler right away so state gets updated with initial element.current size
+    handleResize()
+    // Remove event listener on cleanup
+    return () => element.removeEventListener('resize', handleResize)
+  }, [element]) // Empty array ensures that effect is only run on mount
+  return elementSize
+}

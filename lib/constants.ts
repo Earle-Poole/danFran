@@ -44,7 +44,8 @@ const urls = {
 const breakpoints = {
   sm: '(max-width: 767px)',
   md: '(min-width: 768px)',
-  lg: '(min-width: 992px)',
+  upToLg: '(max-width: 1023px)',
+  lg: '(min-width: 1024px)',
   xl: '(min-width: 1200px)',
 } as const
 
