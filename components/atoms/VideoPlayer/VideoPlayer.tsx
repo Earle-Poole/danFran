@@ -100,7 +100,7 @@ const VideoPlayer = () => {
                 <div
                   key={videoSetup.id}
                   onClick={onClickHandler}
-                  className="flex align-center gap-4 rounded-md m-2 p-2 cursor-pointer hover:bg-white/10 transition duration-150"
+                  className="flex align-center gap-4 rounded-md m-2 p-2 cursor-pointer hover:bg-black/90 transition duration-150"
                 >
                   <Image
                     width="125"
@@ -128,7 +128,7 @@ const VideoPlayer = () => {
                 <div
                   key={videoSetup.id}
                   onClick={onClickHandler}
-                  className="flex align-center gap-4 rounded-md m-2 p-2 cursor-pointer hover:bg-white/10 transition duration-150"
+                  className="flex align-center gap-4 rounded-md m-2 p-2 cursor-pointer hover:bg-black/90 transition duration-150"
                 >
                   <Image
                     width="125"
@@ -138,7 +138,7 @@ const VideoPlayer = () => {
                     alt="videoThumbnail"
                     className="rounded-md"
                   />
-                  <span className="flex my-auto text-lg text-cyan-400">{`0${
+                  <span className="flex my-auto text-lg text-pink-500">{`0${
                     i + 1
                   }. ${videoSetup.videoTitle}`}</span>
                 </div>
