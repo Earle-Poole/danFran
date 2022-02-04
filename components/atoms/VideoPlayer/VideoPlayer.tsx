@@ -163,7 +163,7 @@ const VideoPlayer = () => {
                 <div
                   key={videoSetup.id}
                   onClick={onClickHandler}
-                  className="flex align-center gap-4 rounded-md m-2 p-2 cursor-pointer hover:bg-cyan-400 transition duration-150"
+                  className="flex align-center gap-4 rounded-md m-2 p-2 cursor-pointer hover:bg-black/90 transition duration-150"
                 >
                   <Image
                     width="125"
@@ -171,7 +171,7 @@ const VideoPlayer = () => {
                     src={`https://img.youtube.com/vi/${videoSetup.id}/0.jpg`}
                     title={videoSetup.videoTitle}
                     alt="videoThumbnail"
-                    className="rounded-md hover:text-cyan-400 transition duration-150"
+                    className="rounded-md"
                   />
                   <span className="flex my-auto text-lg text-pink-500">{`0${
                     i + 1
@@ -191,7 +191,7 @@ const VideoPlayer = () => {
                 <div
                   key={videoSetup.id}
                   onClick={onClickHandler}
-                  className="flex align-center gap-4 rounded-md m-2 p-2 cursor-pointer hover:bg-cyan-400 transition duration-150"
+                  className="flex align-center gap-4 rounded-md m-2 p-2 cursor-pointer hover:bg-black/90 transition duration-150"
                 >
                   <Image
                     width="125"
@@ -199,7 +199,7 @@ const VideoPlayer = () => {
                     src={`https://img.youtube.com/vi/${videoSetup.id}/0.jpg`}
                     title={videoSetup.videoTitle}
                     alt="videoThumbnail"
-                    className="rounded-md hover:text-cyan-400 transition duration-150"
+                    className="rounded-md"
                   />
                   <span className="flex my-auto text-lg text-pink-500">{`0${
                     i + 1

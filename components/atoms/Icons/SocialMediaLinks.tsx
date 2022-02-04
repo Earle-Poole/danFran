@@ -68,7 +68,7 @@ const SocialMediaLinks = () => {
       {socialMediaLinks.map((socialMediaLink) => {
         return (
           <div className={socialMediaClassName} key={socialMediaLink.name}>
-            <a href={socialMediaLink.url}>{socialMediaLink.icon}</a>
+            <a href={socialMediaLink.url} target='_blank' rel='noopener noreferrer' >{socialMediaLink.icon}</a>
           </div>
         )
       })}
