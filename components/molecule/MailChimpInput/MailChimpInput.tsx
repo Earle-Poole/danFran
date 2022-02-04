@@ -1,6 +1,21 @@
+import { isClient } from 'lib/toolbox'
 import Image from 'next/image'
 
 const MailChimpInput = () => {
+  const clearEmailBox = () => {
+    if (isClient) {
+      const emailBoxElem = document.getElementById(
+        'mce-EMAIL'
+      ) as HTMLInputElement
+      if (emailBoxElem) {
+        setTimeout(() => {
+          emailBoxElem.value = ''
+        }, 500)
+      }
+      console.log('email input field', emailBoxElem)
+    }
+  }
+
   return (
     <>
       <div
@@ -47,6 +62,7 @@ const MailChimpInput = () => {
                   name="subscribe"
                   id="mc-embedded-subscribe"
                   className="flex text-base md:text-2xl hover:bg-pink-500 bg-cyan-400 transition duration-150 w-fit font-light p-3 self-center text-shadow-xs cursor-pointer"
+                  onClick={clearEmailBox}
                 />
               </div>
             </div>
