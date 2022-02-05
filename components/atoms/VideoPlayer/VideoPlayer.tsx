@@ -137,7 +137,10 @@ const VideoPlayer = () => {
           {/* main video */}
           <div data-id="main video" className="flex rounded-md basis-1/2">
             <div key={selectedMainVideo.id} className="w-full">
-              <span className="flex flex-wrap text-2xl mb-4 md:text-3xl truncate">{`${selectedMainVideo.videoTitle}`}</span>
+              <div
+                style={{ width: iframeDimensions.width }}
+                className="text-2xl mb-4 md:text-3xl truncate"
+              >{`${selectedMainVideo.videoTitle}`}</div>
               {videoLoaded ? (
                 <iframe
                   src={`https://www.youtube.com/embed/${selectedMainVideo.id}`}
