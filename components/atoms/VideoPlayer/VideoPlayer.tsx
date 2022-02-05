@@ -59,9 +59,6 @@ const pressVideoList = [
 ]
 
 const VideoPlayer = () => {
-  const videoPlaylistElem = isClient
-    ? document.getElementById('videoPlayList')
-    : null
   const [selectedMainVideo, setSelectedMainVideo] = useState<videoSetupProps>(
     comedyVideoList[0]
   )
@@ -71,6 +68,7 @@ const VideoPlayer = () => {
     width: 0,
   })
 
+  const videoPlaylistElem = useRef<HTMLDivElement>(null!)
   const isUpToTablet = useMediaQuery(breakpoints.upToLg)
   const isMobile = useMediaQuery(breakpoints.sm)
 
@@ -78,9 +76,9 @@ const VideoPlayer = () => {
     () =>
       isClient
         ? new ResizeObserver(() => {
-            if (videoPlaylistElem) {
+            if (videoPlaylistElem.current) {
               const { height, width } =
-                videoPlaylistElem?.getBoundingClientRect()
+                videoPlaylistElem.current.getBoundingClientRect()
               if (width && height) {
                 setIframeDimensions({
                   width: isUpToTablet
@@ -90,26 +88,47 @@ const VideoPlayer = () => {
                     ? isMobile
                       ? 400
                       : 500
-                    : ((height - 112) * 3) / 4,
+                    : ((height - 142) * 3) / 4,
                 })
               }
             }
           })
         : null,
-    [videoPlaylistElem, isUpToTablet, isMobile]
+    [isUpToTablet, isMobile]
   )
 
   useEffect(() => {
-    if (resizeObserver) {
-      resizeObserver.observe(document.body)
+    // connect and disconnect the resize observer
+    if (resizeObserver && videoPlaylistElem.current) {
+      resizeObserver.observe(videoPlaylistElem.current)
       return () => {
         resizeObserver.disconnect()
       }
     }
-  }, [resizeObserver, videoPlaylistElem])
+  }, [resizeObserver])
+
+  useEffect(() => {
+    // on load, and when the screen width changes between isMobile and isUpToTablet,
+    // or neither this will update the iframe dimensions
+    if (videoPlaylistElem.current) {
+      const { width, height } =
+        videoPlaylistElem.current.getBoundingClientRect()
+      setIframeDimensions({
+        width: isUpToTablet ? width - (isMobile ? 80 : 192) : (width - 192) / 2,
+        height: isUpToTablet
+          ? isMobile
+            ? 400
+            : 500
+          : ((height - 112) * 3) / 4,
+      })
+    }
+  }, [isMobile, isUpToTablet])
 
   return (
-    <div className="w-full max-w-7xl flex items-center mx-auto lg">
+    <div
+      className="w-full max-w-7xl flex items-center mx-auto lg"
+      ref={videoPlaylistElem}
+    >
       <ContentSectionWrapper
         wrapperBackgroundColor="bg-gray-500/[15%]"
         id="videoPlayList"
@@ -163,19 +182,20 @@ const VideoPlayer = () => {
                 <div
                   key={videoSetup.id}
                   onClick={onClickHandler}
-                  className="flex align-center gap-4 rounded-md m-2 p-2 cursor-pointer hover:bg-black/90 transition duration-150"
+                  className="flex items-center gap-4 rounded-md m-2 p-2 cursor-pointer hover:bg-black/90 transition duration-150"
                 >
-                  <Image
-                    width="125"
-                    height="100"
-                    src={`https://img.youtube.com/vi/${videoSetup.id}/0.jpg`}
-                    title={videoSetup.videoTitle}
-                    alt="videoThumbnail"
-                    className="rounded-md"
-                  />
-                  <span className="flex my-auto text-lg text-pink-500">{`0${
+                  <div className="basis-1/3 h-24 md:h-36 lg:h-24 relative">
+                    <Image
+                      src={`https://img.youtube.com/vi/${videoSetup.id}/0.jpg`}
+                      title={videoSetup.videoTitle}
+                      alt="videoThumbnail"
+                      layout="fill"
+                      className="rounded-md"
+                    />
+                  </div>
+                  <div className="basis-2/3 text-lg text-pink-500">{`0${
                     i + 1
-                  }. ${videoSetup.videoTitle}`}</span>
+                  }. ${videoSetup.videoTitle}`}</div>
                 </div>
               )
             })}
@@ -191,17 +211,18 @@ const VideoPlayer = () => {
                 <div
                   key={videoSetup.id}
                   onClick={onClickHandler}
-                  className="flex align-center gap-4 rounded-md m-2 p-2 cursor-pointer hover:bg-black/90 transition duration-150"
+                  className="flex items-center gap-4 rounded-md m-2 p-2 cursor-pointer hover:bg-black/90 transition duration-150"
                 >
-                  <Image
-                    width="125"
-                    height="100"
-                    src={`https://img.youtube.com/vi/${videoSetup.id}/0.jpg`}
-                    title={videoSetup.videoTitle}
-                    alt="videoThumbnail"
-                    className="rounded-md"
-                  />
-                  <span className="flex my-auto text-lg text-pink-500">{`0${
+                  <div className="basis-1/3 h-24 md:h-36 lg:h-24 relative">
+                    <Image
+                      src={`https://img.youtube.com/vi/${videoSetup.id}/0.jpg`}
+                      title={videoSetup.videoTitle}
+                      alt="videoThumbnail"
+                      layout="fill"
+                      className="rounded-md"
+                    />
+                  </div>
+                  <span className="basis-2/3 text-lg text-pink-500">{`0${
                     i + 1
                   }. ${videoSetup.videoTitle}`}</span>
                 </div>
