@@ -184,7 +184,7 @@ const VideoPlayer = () => {
                   onClick={onClickHandler}
                   className="flex items-center gap-4 rounded-md m-2 p-2 cursor-pointer hover:bg-black/90 transition duration-150"
                 >
-                  <div className="basis-1/3 h-24 md:h-36 lg:h-24 relative">
+                  <div className="basis-1/3 h-28 md:h-40 lg:h-28 relative">
                     <Image
                       src={`https://img.youtube.com/vi/${videoSetup.id}/0.jpg`}
                       title={videoSetup.videoTitle}
@@ -213,7 +213,7 @@ const VideoPlayer = () => {
                   onClick={onClickHandler}
                   className="flex items-center gap-4 rounded-md m-2 p-2 cursor-pointer hover:bg-black/90 transition duration-150"
                 >
-                  <div className="basis-1/3 h-24 md:h-36 lg:h-24 relative">
+                  <div className="basis-1/3 h-28 md:h-40 lg:h-28 relative">
                     <Image
                       src={`https://img.youtube.com/vi/${videoSetup.id}/0.jpg`}
                       title={videoSetup.videoTitle}
