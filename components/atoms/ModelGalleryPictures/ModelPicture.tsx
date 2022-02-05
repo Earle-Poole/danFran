@@ -33,6 +33,7 @@ const ModelPicture: FC<ModelPictureProps> = ({
         alt={`galleryPicture ${index}`}
         width="600"
         height="480"
+        placeholder="blur"
         layout="responsive"
       />
     </div>

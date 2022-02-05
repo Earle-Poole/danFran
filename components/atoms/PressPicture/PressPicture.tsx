@@ -14,6 +14,7 @@ const PressPicture: FC<PressPictureProps> = ({ pressPhoto }) => {
       <Image
         src={pressPhoto}
         alt={`Press Photo: ${filename}`}
+        placeholder="blur"
         layout="responsive"
       />
     </div>

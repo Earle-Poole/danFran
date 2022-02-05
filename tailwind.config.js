@@ -15,7 +15,7 @@ module.exports = {
             transform: 'rotateY(0deg) rotateZ(0deg)',
           },
           to: {
-            transform: 'rotateY(720deg) rotateZ(45deg)',
+            transform: 'rotateY(720deg) rotateZ(360deg)',
           },
         },
       },
