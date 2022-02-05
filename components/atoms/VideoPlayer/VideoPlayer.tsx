@@ -124,6 +124,13 @@ const VideoPlayer = () => {
     }
   }, [isMobile, isUpToTablet])
 
+  const onClickHandler = (videoSetup: videoSetupProps) => {
+    if (!videoLoaded) {
+      setVideoLoaded(true)
+    }
+    setSelectedMainVideo(videoSetup)
+  }
+
   return (
     <div
       className="w-full max-w-7xl flex items-center mx-auto lg"
@@ -175,13 +182,10 @@ const VideoPlayer = () => {
               Comedy Videos
             </span>
             {comedyVideoList.map((videoSetup: videoSetupProps, i) => {
-              const onClickHandler = () => {
-                setSelectedMainVideo(videoSetup)
-              }
               return (
                 <div
                   key={videoSetup.id}
-                  onClick={onClickHandler}
+                  onClick={() => onClickHandler(videoSetup)}
                   className="flex items-center gap-4 rounded-md m-2 p-2 cursor-pointer hover:bg-black/90 transition duration-150"
                 >
                   <div className="basis-1/3 h-28 md:h-40 lg:h-28 relative">
@@ -204,13 +208,10 @@ const VideoPlayer = () => {
               Press Videos
             </span>
             {pressVideoList.map((videoSetup: videoSetupProps, i) => {
-              const onClickHandler = () => {
-                setSelectedMainVideo(videoSetup)
-              }
               return (
                 <div
                   key={videoSetup.id}
-                  onClick={onClickHandler}
+                  onClick={() => onClickHandler(videoSetup)}
                   className="flex items-center gap-4 rounded-md m-2 p-2 cursor-pointer hover:bg-black/90 transition duration-150"
                 >
                   <div className="basis-1/3 h-28 md:h-40 lg:h-28 relative">

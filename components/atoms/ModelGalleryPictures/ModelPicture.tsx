@@ -21,7 +21,6 @@ const ModelPicture: FC<ModelPictureProps> = ({
         styles.pictureWrapper
       )}
       onClick={() => {
-        console.log('pictureObj: ', pictureObj)
         setSelectedBigImage(pictureObj.main)
       }}
     >
