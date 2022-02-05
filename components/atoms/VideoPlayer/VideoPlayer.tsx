@@ -133,7 +133,7 @@ const VideoPlayer = () => {
 
   return (
     <div
-      className="w-full max-w-7xl flex items-center mx-auto lg"
+      className="w-full max-w-7xl flex items-center mx-auto"
       ref={videoPlaylistElem}
     >
       <ContentSectionWrapper

@@ -35,23 +35,25 @@ const ModelGallery = () => {
   }
 
   return (
-    <div className="flex flex-wrap my-10 justify-center">
-      {modelGalleryList.map((pictureSetup, i) => (
-        <ModelPicture
-          key={pictureSetup.main.src}
-          pictureObj={pictureSetup}
-          index={i}
-          setSelectedBigImage={setSelectedBigImage}
-        />
-      ))}
-      {selectedBigImage ? (
-        <SelectedModelGalleryImage
-          selectedBigImage={selectedBigImage}
-          setSelectedBigImage={setSelectedBigImage}
-          previousPicture={previousPicture}
-          nextPicture={nextPicture}
-        />
-      ) : null}
+    <div className="w-screen">
+      <div className="flex flex-wrap max-w-7xl my-10 mx-auto">
+        {modelGalleryList.map((pictureSetup, i) => (
+          <ModelPicture
+            key={pictureSetup.main.src}
+            pictureObj={pictureSetup}
+            index={i}
+            setSelectedBigImage={setSelectedBigImage}
+          />
+        ))}
+        {selectedBigImage ? (
+          <SelectedModelGalleryImage
+            selectedBigImage={selectedBigImage}
+            setSelectedBigImage={setSelectedBigImage}
+            previousPicture={previousPicture}
+            nextPicture={nextPicture}
+          />
+        ) : null}
+      </div>
     </div>
   )
 }
