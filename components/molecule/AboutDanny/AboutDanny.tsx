@@ -14,8 +14,8 @@ const AboutDanny = () => {
     setPictureSwapped((prev) => !prev)
   }
 
-  const frontPicture = 'z-30 relative'
-  const backPicture = 'absolute -top-14 md:-top-12 z-10 scale-90 hover:scale-95'
+  const frontPicture = 'z-30 relative top-6'
+  const backPicture = 'absolute -top-8 md:-top-7 z-10 scale-90 hover:scale-95'
 
   return (
     <div className="flex flex-col md:flex-row md:items-center">
@@ -41,7 +41,7 @@ const AboutDanny = () => {
             backgroundImage: `url(${photo3.src})`,
             left: `${(1 / 24) * 100}%`,
           }}
-          className="z-20 absolute -top-14 scale-90 h-32 w-11/12 pointer-events-none"
+          className="z-20 absolute -top-11 lg:-top-10 scale-90 h-32 w-11/12 pointer-events-none"
         />
         <div
           className={classNames(
