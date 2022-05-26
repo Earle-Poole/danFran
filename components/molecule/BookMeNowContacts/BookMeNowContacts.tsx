@@ -3,22 +3,13 @@ import Stripes from '@/components/atoms/Icons/Stripes'
 
 const contacts = [
   {
-    handles: 'Theatrical & Public Appearances',
+    handles: 
+    ["Theatrical & Public Appearances", 
+    "College & Speaking Engagements",
+    "Press & Invites"],
     name: 'Gary Ousdahl',
     email: 'Gary@AdvancedManagement.tv',
     phoneNumbers: ['Mobile: (424) 333-1500'],
-  },
-  {
-    handles: 'College & Speaking Engagements',
-    name: 'Barb Holliday',
-    email: 'BHolliday@FlappersComedy.com',
-    phoneNumbers: ['Mobile: (818) 679-2272', 'Office: (818) 845-9721'],
-  },
-  {
-    handles: 'Press & Invites',
-    name: 'Nick Ponisi',
-    email: 'Nick@PressHerePublicity.com',
-    phoneNumbers: ['Office: (323) 556-9752'],
   },
 ]
 

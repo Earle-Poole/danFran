@@ -6,7 +6,7 @@ import {
 const slugs: SlugsConst = {
   VIDEO_GALLERY: '/video-gallery',
   PRESS_KIT: '/press-kit',
-  MODELLING_GALLERY: '/modelling-gallery',
+  MODELING_GALLERY: '/modeling-gallery',
   HOME: '/home#home',
   ABOUT: '/home#about',
   CONTACT: '/home#contact',
@@ -18,8 +18,8 @@ const slugToLabel = (slug: SlugsValue) => {
       return 'Video Gallery'
     case slugs.PRESS_KIT:
       return 'Press Kit'
-    case slugs.MODELLING_GALLERY:
-      return 'Modelling Gallery'
+    case slugs.MODELING_GALLERY:
+      return 'Modeling Gallery'
     case slugs.HOME:
       return 'Home'
     case slugs.ABOUT:
@@ -66,9 +66,9 @@ const navList = [
     name: slugToLabel(slugs.PRESS_KIT),
   },
   {
-    href: slugs.MODELLING_GALLERY,
+    href: slugs.MODELING_GALLERY,
     isExternal: false,
-    name: slugToLabel(slugs.MODELLING_GALLERY),
+    name: slugToLabel(slugs.MODELING_GALLERY),
   },
   {
     href: slugs.VIDEO_GALLERY,

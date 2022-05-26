@@ -1,9 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import CommonLayout from '@/components/layouts/CommonLayout'
-import ModellingGalleryTemplate from '@/components/templates/model-gallery'
+import ModelingGalleryTemplate from '@/components/templates/model-gallery'
 
-const ModellingGallery: NextPage = () => {
+const ModelingGallery: NextPage = () => {
   return (
     <>
       <Head>
@@ -13,10 +13,10 @@ const ModellingGallery: NextPage = () => {
       </Head>
 
       <CommonLayout>
-        <ModellingGalleryTemplate />
+        <ModelingGalleryTemplate />
       </CommonLayout>
     </>
   )
 }
 
-export default ModellingGallery
+export default ModelingGallery

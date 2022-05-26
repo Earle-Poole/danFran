@@ -6,7 +6,7 @@ type BreakPointValues = typeof breakpoints[keyof typeof breakpoints]
 interface SlugsConst {
   VIDEO_GALLERY: '/video-gallery'
   PRESS_KIT: '/press-kit'
-  MODELLING_GALLERY: '/modelling-gallery'
+  MODELING_GALLERY: '/modeling-gallery'
   HOME: '/home#home'
   ABOUT: '/home#about'
   CONTACT: '/home#contact'

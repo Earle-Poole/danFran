@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 type ContactCardProps = {
-  handles: string
+  handles: string[]
   name: string
   email: string
   phoneNumbers: string[]
@@ -17,7 +17,10 @@ const ContactCard: FC<ContactCardProps> = ({
   return (
     <div className="py-12 md:py-0">
       <ul>
-        <li className="font-extrabold text-xl">{handles}</li>
+        {handles.map((handle)=>{
+         return <li className="font-extrabold text-xl justify-evenly" key={handle}>{handle}</li>
+        })}
+          
         <li className="">{name}</li>
         <li>
           <strong>{splitEmail[0]}</strong>@{splitEmail[1]}
