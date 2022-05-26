@@ -20,7 +20,7 @@ const BookMeNow = () => {
       <Stripes />
       <div className="flex flex-col md:flex-row md:flex-wrap md:gap-10 justify-evenly mx-auto text-xl">
         {contacts.map((contact) => {
-          return <ContactCard key={contact.handles} {...contact} />
+          return <ContactCard key={contact.name} {...contact} />
         })}
       </div>
     </div>
