@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import Image from 'next/image'
+import Image from "next/image";
 import { Dispatch, FC, SetStateAction } from 'react'
 import styles from './modelPicture.module.css'
 
@@ -33,10 +33,13 @@ const ModelPicture: FC<ModelPictureProps> = ({
         width="600"
         height="480"
         placeholder="blur"
-        layout="responsive"
-      />
+        sizes="100vw"
+        style={{
+          width: "100%",
+          height: "auto"
+        }} />
     </div>
-  )
+  );
 }
 
 export default ModelPicture

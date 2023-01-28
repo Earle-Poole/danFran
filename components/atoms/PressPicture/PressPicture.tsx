@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/image";
 import { FC } from 'react'
 
 type PressPictureProps = {
@@ -15,10 +15,13 @@ const PressPicture: FC<PressPictureProps> = ({ pressPhoto }) => {
         src={pressPhoto}
         alt={`Press Photo: ${filename}`}
         placeholder="blur"
-        layout="responsive"
-      />
+        sizes="100vw"
+        style={{
+          width: "100%",
+          height: "auto"
+        }} />
     </div>
-  )
+  );
 }
 
 export default PressPicture

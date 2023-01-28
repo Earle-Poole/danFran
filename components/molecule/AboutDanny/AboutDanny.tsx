@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/image";
 import photo from '@/assets/about_me_photo1.webp'
 import photo2 from '@/assets/about_photo_2.webp'
 import photo3 from '@/assets/dot-light.webp'
@@ -34,7 +34,13 @@ const AboutDanny = () => {
             'transition'
           )}
         >
-          <Image src={photo} alt="about_me_photo1" />
+          <Image
+            src={photo}
+            alt="about_me_photo1"
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
         </div>
         <div
           style={{
@@ -52,13 +58,19 @@ const AboutDanny = () => {
             'transition'
           )}
         >
-          <Image src={photo2} alt="about_photo_2" />
+          <Image
+            src={photo2}
+            alt="about_photo_2"
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
         </div>
       </div>
       <div className="flex flex-col flex-1 mt-8 md:mt-0 md:ml-4">
         <p className="text-4xl">{`Actor, Writer, Director, Comedian & Activist`}</p>
         <div className="pt-4">
-          <Image src={design} alt="zigzag" layout="fixed"></Image>
+          <Image src={design} alt="zigzag"></Image>
         </div>
         <p className="text-xl md:text-2xl my-3 leading-relaxed">
           {`Best known for his roles in Larry Clark's "Bully", and as Damian in
@@ -70,7 +82,7 @@ const AboutDanny = () => {
         <SocialMediaLinks />
       </div>
     </div>
-  )
+  );
 }
 
 export default AboutDanny

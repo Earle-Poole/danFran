@@ -13,15 +13,16 @@ const MyButton: FC<MyButtonProps> = ({ isExternal, name, href }) => {
     ? { target: '_blank', rel: 'noopener noreferrer' }
     : {}
   return (
-    <Link href={href} passHref>
-      <a
-        className="flex text-2xl hover:bg-pink-500 bg-cyan-400 transition duration-150 w-fit font-light p-3 self-center text-shadow-xs"
-        {...optionalAnchorProps}
-      >
-        {name}
-      </a>
-    </Link>
-  )
+    (<Link
+      href={href}
+      passHref
+      className="flex text-2xl hover:bg-pink-500 bg-cyan-400 transition duration-150 w-fit font-light p-3 self-center text-shadow-xs"
+      {...optionalAnchorProps}>
+
+      {name}
+
+    </Link>)
+  );
 }
 
 export default MyButton

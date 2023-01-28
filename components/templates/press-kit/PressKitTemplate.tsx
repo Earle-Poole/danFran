@@ -1,7 +1,7 @@
 import ContentSectionWrapper from '@/components/organisms/ContentSectionWrapper/ContentSectionWrapper'
 import PressGallery from '@/components/organisms/PressGallery/PressGallery'
 import zigzagIcon from '@/assets/zigzag.svg'
-import Image from 'next/image'
+import Image from "next/image";
 import SubtleLink from '@/components/atoms/SubtleLink'
 
 const PressKitTemplate = () => {
@@ -21,7 +21,7 @@ const PressKitTemplate = () => {
           <div className="flex flex-col mt-8 md:mt-0 md:ml-4">
             <p className="text-4xl text-center">{`Biography`}</p>
             <div className="pt-4 text-center">
-              <Image src={zigzagIcon} alt="zigzag" layout="fixed"></Image>
+              <Image src={zigzagIcon} alt="zigzag"></Image>
             </div>
             <p className="text-xl md:text-2xl my-3 leading-relaxed indent-14">
               Best known for his role as Damian in{' '}
@@ -67,7 +67,7 @@ const PressKitTemplate = () => {
         <PressGallery />
       </div>
     </div>
-  )
+  );
 }
 
 export default PressKitTemplate

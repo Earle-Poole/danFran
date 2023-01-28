@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import Image from 'next/image'
+import Image from "next/image";
 import ContentSectionWrapper from '@/components/organisms/ContentSectionWrapper/ContentSectionWrapper'
 import PlayButton from '../Icons/PlayButton'
 import { useElementSize, useMediaQuery } from 'lib/hooks'
@@ -40,10 +40,10 @@ const pressVideoList = [
     id: 'kgqXMpDuAA4',
     videoTitle: 'Daniel Franzese Hosts the Voice Awards',
   },
-  {
-    id: 'Li3Yl6RAcrU',
-    videoTitle: 'Daniel Franzese Joins Bootleg Fashion Photo Review',
-  },
+  // {
+  //   id: 'Li3Yl6RAcrU',
+  //   videoTitle: 'Daniel Franzese Joins Bootleg Fashion Photo Review',
+  // },
   {
     id: 'ZqtkSped3K4',
     videoTitle: 'Daniel Franzese on Hey Queen',
@@ -62,7 +62,7 @@ const VideoPlayer = () => {
   const [selectedMainVideo, setSelectedMainVideo] = useState<videoSetupProps>(
     comedyVideoList[0]
   )
-  const [videoLoaded, setVideoLoaded] = useState<boolean>(false)
+  const [videoLoaded, setVideoLoaded] = useState(false)
   const [iframeDimensions, setIframeDimensions] = useState({
     height: 0,
     width: 0,
@@ -196,15 +196,15 @@ const VideoPlayer = () => {
                       src={`https://img.youtube.com/vi/${videoSetup.id}/0.jpg`}
                       title={videoSetup.videoTitle}
                       alt="videoThumbnail"
-                      layout="fill"
                       className="rounded-md"
-                    />
+                      fill
+                      sizes="100vw" />
                   </div>
                   <div className="basis-2/3 text-lg text-pink-500">{`0${
                     i + 1
                   }. ${videoSetup.videoTitle}`}</div>
                 </div>
-              )
+              );
             })}
             {/* press videos list */}
             <span className="flex justify-center text-left text-2xl md:text-3xl my-4">
@@ -222,20 +222,20 @@ const VideoPlayer = () => {
                       src={`https://img.youtube.com/vi/${videoSetup.id}/0.jpg`}
                       title={videoSetup.videoTitle}
                       alt="videoThumbnail"
-                      layout="fill"
                       className="rounded-md"
-                    />
+                      fill
+                      sizes="100vw" />
                   </div>
                   <span className="basis-2/3 text-lg text-pink-500">{`0${
                     i + 1
                   }. ${videoSetup.videoTitle}`}</span>
                 </div>
-              )
+              );
             })}
           </div>
         </div>
       </ContentSectionWrapper>
     </div>
-  )
+  );
 }
 export default VideoPlayer

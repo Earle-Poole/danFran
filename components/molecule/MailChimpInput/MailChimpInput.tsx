@@ -1,5 +1,5 @@
 import { isClient } from 'lib/toolbox'
-import Image from 'next/image'
+import Image from "next/image";
 
 const MailChimpInput = () => {
   const clearEmailBox = () => {

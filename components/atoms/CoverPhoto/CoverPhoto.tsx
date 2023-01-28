@@ -37,16 +37,19 @@ const CoverPhoto = () => {
         <Splitter str="Daniel Franzese" />
       </div>
       {isAtTopOfPage ? (
-        <Link href={slugs.ABOUT} passHref>
-          <a className="absolute h-10 w-10 hidden md:block bottom-2 right-4 text-shadow opacity-60 font-extrabold text-5xl md:text-7xl md:bottom-4 md:right-4 animate-bounce">
-            <span className="absolute bottom-0 right-0">&#8964;</span>
-            <span className="absolute bottom-7 right-0">&#8964;</span>
-            <span className="absolute bottom-14 right-0">&#8964;</span>
-          </a>
-        </Link>
+        (<Link
+          href={slugs.ABOUT}
+          passHref
+          className="absolute h-10 w-10 hidden md:block bottom-2 right-4 text-shadow opacity-60 font-extrabold text-5xl md:text-7xl md:bottom-4 md:right-4 animate-bounce">
+
+          <span className="absolute bottom-0 right-0">&#8964;</span>
+          <span className="absolute bottom-7 right-0">&#8964;</span>
+          <span className="absolute bottom-14 right-0">&#8964;</span>
+
+        </Link>)
       ) : null}
     </div>
-  )
+  );
 }
 
 export default CoverPhoto

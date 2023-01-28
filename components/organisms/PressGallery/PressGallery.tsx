@@ -1,5 +1,5 @@
 import PressPicture from '@/components/atoms/PressPicture/PressPicture'
-import Image from 'next/image'
+import Image from "next/image";
 import YassComedyTourPoster from '/public/assets/press_kit/pressPhotos/DanFranPress_YASS_comedyTour.jpg'
 import DanFranzese from '/public/assets/press_kit/pressPhotos/DanFranPress_DanFran.png'
 import MeanGirls from '/public/assets/press_kit/pressPhotos/DanFranPress_MeanGirls.png'
@@ -22,14 +22,29 @@ const PressGallery = () => {
           <Image
             src={YassComedyTourPoster}
             alt="Daniel Franzese YASS Comedy Tour"
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
         </div>
         <div className="flex flex-col basis-full justify-center md:basis-7/12">
           <div className="flex basis-4/12 md:px-6 md:py-3">
-            <Image src={DanFranzese} alt="Daniel Franzese" />
+            <Image
+              src={DanFranzese}
+              alt="Daniel Franzese"
+              style={{
+                maxWidth: "100%",
+                height: "auto"
+              }} />
           </div>
           <div className="flex basis-4/12 md:px-6 md:py-3">
-            <Image src={MeanGirls} alt="Mean Girls Banner" />
+            <Image
+              src={MeanGirls}
+              alt="Mean Girls Banner"
+              style={{
+                maxWidth: "100%",
+                height: "auto"
+              }} />
           </div>
         </div>
       </div>
@@ -43,7 +58,7 @@ const PressGallery = () => {
         ))}
       </div>
     </div>
-  )
+  );
 }
 
 export default PressGallery

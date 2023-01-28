@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from "next/image";
 import { Dispatch, FC, SetStateAction } from 'react'
 import ReactDom from 'react-dom'
 
@@ -39,11 +39,13 @@ const SelectedModelGalleryImage: FC<SelectedModelGalleryImageProps> = ({
         </button>
         <div className="relative w-full h-5/6">
           <Image
-            layout="fill"
-            objectFit="contain"
             src={selectedBigImage}
             alt={`Selected Picture`}
-          />
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: "contain"
+            }} />
         </div>
 
         <button
@@ -61,7 +63,7 @@ const SelectedModelGalleryImage: FC<SelectedModelGalleryImageProps> = ({
       </div>
     </div>,
     portalTarget
-  )
+  );
 }
 
 export default SelectedModelGalleryImage

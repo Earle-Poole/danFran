@@ -2,7 +2,7 @@ import Stripes from '@/components/atoms/Icons/Stripes'
 import { urls } from 'lib/constants'
 import MyButton from '../../atoms/Button/Button'
 import podcastCover from '@/assets/podcast_cover.webp'
-import Image from 'next/image'
+import Image from "next/image";
 import Link from 'next/link'
 
 const Podcast = () => {
@@ -12,16 +12,22 @@ const Podcast = () => {
         <span className="text-center text-3xl pb-3">Check Out My Podcast</span>
         <Stripes />
         <Link href={urls.PODCAST}>
-          <a>
-            <Image src={podcastCover} alt="podcast_cover" />
-          </a>
+
+          <Image
+            src={podcastCover}
+            alt="podcast_cover"
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
+
         </Link>
         <div className="flex mx-auto mt-4 md:mt-10">
           <MyButton href={urls.PODCAST} name="Listen Here" isExternal />
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Podcast
