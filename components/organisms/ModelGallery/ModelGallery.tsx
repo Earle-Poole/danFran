@@ -2,6 +2,7 @@ import ModelPicture from '@/components/atoms/ModelGalleryPictures/ModelPicture'
 import modelGalleryList from '@/components/organisms/ModelGallery/ModelGallery.Photos'
 import { useState } from 'react'
 import SelectedModelGalleryImage from '@/components/molecule/SelectedModelGalleryImage/SelectedModelGalleryImage'
+import { StaticImageData } from 'next/image'
 
 const ModelGallery = () => {
   const [selectedBigImage, setSelectedBigImage] =
