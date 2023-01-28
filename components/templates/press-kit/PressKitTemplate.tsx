@@ -20,7 +20,7 @@ const PressKitTemplate = () => {
         >
           <div className="flex flex-col mt-8 md:mt-0 md:ml-4">
             <p className="text-4xl text-center">{`Biography`}</p>
-            <div className="pt-4 text-center">
+            <div className="pt-4 flex justify-center">
               <Image src={zigzagIcon} alt="zigzag"></Image>
             </div>
             <p className="text-xl md:text-2xl my-3 leading-relaxed indent-14">
