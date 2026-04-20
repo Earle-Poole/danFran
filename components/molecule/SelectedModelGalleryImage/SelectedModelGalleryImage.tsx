@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from "next/image";
-import { Dispatch, FC, SetStateAction } from 'react'
+import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react'
 import ReactDom from 'react-dom'
 
 type SelectedModelGalleryImageProps = {
@@ -16,6 +16,11 @@ const SelectedModelGalleryImage: FC<SelectedModelGalleryImageProps> = ({
   nextPicture,
 }) => {
   const portalTarget = document.body
+  const [imageLoading, setImageLoading] = useState(true)
+
+  useEffect(() => {
+    setImageLoading(true)
+  }, [selectedBigImage])
 
   return ReactDom.createPortal(
     <div
@@ -38,13 +43,27 @@ const SelectedModelGalleryImage: FC<SelectedModelGalleryImageProps> = ({
           &#8678;
         </button>
         <div className="relative w-full h-5/6">
+          {imageLoading ? (
+            <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/30">
+              <div
+                className="h-12 w-12 animate-spin rounded-full border-4 border-white/30 border-t-white"
+                aria-label="Loading image"
+                role="status"
+              />
+            </div>
+          ) : null}
           <Image
             src={selectedBigImage}
             alt={`Selected Picture`}
             fill
             sizes="100vw"
+            onLoad={() => {
+              setImageLoading(false)
+            }}
             style={{
-              objectFit: "contain"
+              objectFit: "contain",
+              opacity: imageLoading ? 0 : 1,
+              transition: 'opacity 150ms ease',
             }} />
         </div>
 

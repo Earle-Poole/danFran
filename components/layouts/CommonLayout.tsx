@@ -7,13 +7,13 @@ const CommonLayout: FC<PropsWithChildren> = ({ children }) => {
     <div className="flex h-screen w-screen bg-black text-white overflow-hidden">
       <div className="flex mx-auto w-full relative justify-center overflow-hidden">
         <Header />
-        <div
+        <main
           id="layout-body"
           className="overflow-y-auto overflow-x-hidden h-screen z-10 w-screen"
         >
           {children}
           <Footer />
-        </div>
+        </main>
       </div>
     </div>
   )

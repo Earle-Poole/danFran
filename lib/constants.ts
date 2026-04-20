@@ -76,11 +76,6 @@ const navList = [
     name: slugToLabel(slugs.VIDEO_GALLERY),
   },
   {
-    href: urls.CALENDAR,
-    isExternal: true,
-    name: 'Calendar',
-  },
-  {
     href: urls.STORE,
     isExternal: true,
     name: 'Store',
