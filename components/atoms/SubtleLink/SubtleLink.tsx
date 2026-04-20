@@ -1,7 +1,8 @@
 import Link from 'next/link'
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 
 interface SubtleLinkProps {
+  children: ReactNode
   href: string
 }
 const SubtleLink: FC<SubtleLinkProps> = ({ children, href }) => {

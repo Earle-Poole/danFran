@@ -1,11 +1,11 @@
 import classNames from 'classnames'
-import { FC } from 'react'
+import { FC, PropsWithChildren } from 'react'
 
-type ContentSectionWrapperProps = {
+type ContentSectionWrapperProps = PropsWithChildren<{
   wrapperBackgroundColor: string
   classNameOverride?: string
   id?: string
-}
+}>
 
 const ContentSectionWrapper: FC<ContentSectionWrapperProps> = ({
   children,
