@@ -1,11 +1,11 @@
 import MyButton from '@/components/atoms/Button/Button'
+import Stripes from '@/components/atoms/Icons/Stripes'
 import ContentSectionWrapper from '@/components/organisms/ContentSectionWrapper/ContentSectionWrapper'
 import CoverPhoto from '@/components/atoms/CoverPhoto/CoverPhoto'
 import AboutDanny from '@/components/molecule/AboutDanny/AboutDanny'
 import BookMeNow from '@/components/molecule/BookMeNowContacts/BookMeNowContacts'
 import { urls } from 'lib/constants'
 import MailChimpInput from '@/components/molecule/MailChimpInput/MailChimpInput'
-import Podcast from '@/components/molecule/Podcast/Podcast'
 
 const HomeTemplate = () => {
   return (
@@ -21,9 +21,9 @@ const HomeTemplate = () => {
         </ContentSectionWrapper>
         <ContentSectionWrapper
           wrapperBackgroundColor="bg-black"
-          classNameOverride="!py-1 my-10"
         >
           <div className="flex flex-col w-full mx-auto">
+            <Stripes />
             <p className="text-center text-2xl">
               Sign up now to get early notifications of what I&apos;m doing!
             </p>
@@ -34,14 +34,7 @@ const HomeTemplate = () => {
         </ContentSectionWrapper>
         <ContentSectionWrapper
           wrapperBackgroundColor="bg-gray-500/[15%]"
-          id="podcast"
-        >
-          <Podcast />
-        </ContentSectionWrapper>
-        <ContentSectionWrapper
-          wrapperBackgroundColor="bg-black"
           id="cameo"
-          classNameOverride="!py-1 my-10"
         >
           <div className="flex flex-col items-center text-center mx-auto text-2xl w-fit">
             <p className="flex flex-col mb-4">
@@ -52,7 +45,7 @@ const HomeTemplate = () => {
         </ContentSectionWrapper>
 
         <div id="contact"></div>
-        <ContentSectionWrapper wrapperBackgroundColor="bg-gray-500/[15%]">
+        <ContentSectionWrapper wrapperBackgroundColor="bg-black">
           <div className="flex flex-col w-full">
             <BookMeNow />
           </div>
