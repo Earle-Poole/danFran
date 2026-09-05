@@ -37,30 +37,38 @@ const PressKitTemplate = () => {
               <SubtleLink href="https://www.imdb.com/title/tt1242432/">
                 I Spit On Your Grave
               </SubtleLink>
-              . He was most recently a series regular on Mark Gordon&apos;s ABC
-              series,{' '}
+              . He later starred as Eddie in HBO&apos;s{' '}
+              <SubtleLink href="https://www.imdb.com/title/tt2581458/">
+                Looking
+              </SubtleLink>
+              , including{' '}
+              <SubtleLink href="https://www.imdb.com/title/tt4552118/">
+                Looking: The Movie
+              </SubtleLink>
+              , before becoming a series regular as Vern Testaverde in the
+              Freeform series{' '}
+              <SubtleLink href="https://www.imdb.com/title/tt4144890/">
+                Recovery Road
+              </SubtleLink>{' '}
+              and appearing as Jackson Morrison in ABC&apos;s legal drama{' '}
               <SubtleLink href="https://www.imdb.com/title/tt5396572/">
                 Conviction
               </SubtleLink>
-              . Prior to that he was a series regular on the Freeform series{' '}
-              <SubtleLink href="https://www.imdb.com/title/tt4144890/">
-                Recovery Road
+              . In 2022, he competed as Donna Bellissima on{' '}
+              <SubtleLink href="https://www.imdb.com/title/tt11187480/">
+                RuPaul&apos;s Secret Celebrity Drag Race
               </SubtleLink>
               .
             </p>
             <br />
             <p className="text-xl md:text-2xl my-3 leading-relaxed indent-14">
-              Originally from Brooklyn, Daniel has become a well-known proponent
-              and speaker for the LGBT Community. He reached 8 million views on
-              his YouTube video series{' '}
-              <SubtleLink href="https://www.imdb.com/title/tt2243525/">
-                Sh*t Italian Moms Say
-              </SubtleLink>
-              .&nbsp;A self-proclaimed momma&apos;s boy, his upbeat high-energy
-              stand up comedy act, &apos;Yass! You&apos;re Amazing! Comedy
-              Tour&apos; captures his amazing and quirky life in the
-              entertainment industry, as well as hilarious stories about his New
-              York parents.
+              Born in Brooklyn and raised in Fort Lauderdale, Daniel has become a
+              well-known proponent and speaker for the LGBTQ+ community, as well
+              as an ambassador for The Elizabeth Taylor AIDS Foundation. A
+              self-proclaimed momma&apos;s boy, his upbeat, high-energy stand-up
+              comedy act, &apos;Yass! You&apos;re Amazing!&apos; captures his amazing
+              and quirky life in the entertainment industry, as well as hilarious
+              stories about his New York parents.
             </p>
           </div>
         </ContentSectionWrapper>
