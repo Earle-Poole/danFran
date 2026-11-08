@@ -1,0 +1,123 @@
+.section {
+  border-top: var(--border-rule) solid var(--color-rule);
+}
+
+.content {
+  display: grid;
+  gap: var(--space-8);
+  min-inline-size: 0;
+}
+
+.content > * {
+  min-inline-size: 0;
+}
+
+.eyebrow {
+  margin: 0 0 var(--space-2);
+  color: var(--color-raspberry);
+  font-size: var(--text-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  text-transform: uppercase;
+}
+
+.heading {
+  margin: 0;
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: var(--text-section-title);
+  font-weight: 400;
+  line-height: 1.12;
+  overflow-wrap: anywhere;
+  text-transform: uppercase;
+}
+
+.benefit {
+  max-width: 34rem;
+  margin: var(--space-4) 0 0;
+  font-size: var(--text-intro);
+  overflow-wrap: anywhere;
+}
+
+.form {
+  position: relative;
+  display: grid;
+  align-items: end;
+  gap: var(--space-4);
+  inline-size: 100%;
+  min-inline-size: 0;
+  max-width: 42rem;
+  max-inline-size: 100%;
+}
+
+.form > * {
+  min-inline-size: 0;
+  max-inline-size: 100%;
+}
+
+.form label,
+.form p {
+  overflow-wrap: anywhere;
+}
+
+.input {
+  inline-size: 100%;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  min-block-size: var(--control-min-height);
+  padding: 0.75rem;
+  border: var(--border-control) solid var(--color-control-border);
+  border-radius: var(--radius-control);
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.input:focus-visible {
+  outline: 3px solid var(--color-ink);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px var(--color-paper);
+}
+
+.honeypot {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.honeypot > * {
+  position: absolute;
+  inset: 0;
+  inline-size: 1px;
+  block-size: 1px;
+  max-inline-size: 1px;
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+@media (min-width: 768px) {
+  .content {
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 1.15fr);
+    align-items: start;
+    gap: var(--space-12);
+  }
+
+  .form {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+}
+
+@media (forced-colors: active) {
+  .input {
+    border-color: ButtonText;
+  }
+}

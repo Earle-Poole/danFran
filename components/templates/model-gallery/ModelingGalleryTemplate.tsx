@@ -1,15 +1,25 @@
-import ModelGallery from '@/components/organisms/ModelGallery/ModelGallery'
+import { Container } from '@/components/ui'
+import { PhotoGallery } from '@/components/gallery'
+import { curatedModelingGalleryIds, orderedModelingGalleryPhotos } from '@/components/gallery/modelingPhotos'
+import styles from './ModelingGalleryTemplate.module.css'
 
 const ModelingGalleryTemplate = () => {
   return (
-    <div className="w-full flex-col flex items-center mt-36">
-      <div className="w-full max-w-7xl">
-        <p className="text-left text-3xl md:text-5xl ml-4 md:ml-10 pb-5">
-          Daniel Franzese - Modeling Gallery
+    <div>
+      <Container className={styles.pageHeader}>
+        <p className={styles.eyebrow}>Daniel Franzese / Portraits &amp; editorial</p>
+        <h1 className={styles.title} data-route-heading="true">In focus.</h1>
+        <p className={styles.intro}>
+          A considered collection of original portraits. Start with a curated opening, then browse all 24 modeling photographs in their source order.
         </p>
-        <p className="text-left text-xl ml-4 md:ml-10 italic">{`"You are you. Now, isn't that pleasant?" -Dr. Seuss`}</p>
-      </div>
-      <ModelGallery />
+      </Container>
+      <PhotoGallery
+        photos={orderedModelingGalleryPhotos}
+        heading="Portraits &amp; editorial"
+        description="Select any image to view the complete uncropped original. Downloads remain deliberate actions, while the collection stays in a predictable reading order."
+        featuredIds={curatedModelingGalleryIds}
+        id="modeling-collection"
+      />
     </div>
   )
 }

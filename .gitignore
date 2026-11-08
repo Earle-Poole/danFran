@@ -7,6 +7,9 @@
 
 # testing
 /coverage
+/test-results/
+/playwright-report/
+/tests/fixtures/ui/.vite/
 
 # next.js
 /.next/
@@ -25,13 +28,23 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env*
+!.env.example
 
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
+__pycache__/
+
+# local planning and generated review artifacts
+/docs/IMPLEMENTATION_PLAN.md
+/docs/AGENT_PLAYBOOK.md
+/docs/planning/
+/docs/reports/*
+!/docs/reports/PERF-M5/
+/docs/reports/PERF-M5/*
+!/docs/reports/PERF-M5/press-previews-manifest.json
+/output/
+/tmp/

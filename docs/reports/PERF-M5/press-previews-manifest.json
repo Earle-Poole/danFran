@@ -1,0 +1,407 @@
+{
+  "schemaVersion": 1,
+  "generatedBy": "scripts/performance/generate-press-previews.mjs",
+  "targetBytes": 122880,
+  "entries": [
+    {
+      "id": "download-press-dan-fran",
+      "sourcePath": "/assets/press_kit/pressPhotos/DanFranPress_DanFran.webp",
+      "sourceSha256": "2379b97a9c4c8879f0e8288487e62236bd7286ea62ff88be5a04998a4dda4832",
+      "sourceBytes": 8278,
+      "sourceDimensions": {
+        "width": 854,
+        "height": 138
+      },
+      "previewPath": "/assets/derived/press/download-press-dan-fran.webp",
+      "previewSha256": "fb8224e29031bfb995cc67e7e76449de6f1444dbbed66ac7d8bfaa848b26d682",
+      "previewBytes": 5056,
+      "previewDimensions": {
+        "width": 854,
+        "height": 138
+      },
+      "format": "webp",
+      "quality": 72,
+      "resizeWidth": 1200
+    },
+    {
+      "id": "download-press-dan-fran-1",
+      "sourcePath": "/assets/press_kit/pressPhotos/DanFranPress_DanFran1.webp",
+      "sourceSha256": "616bddb4e2514a6b9a19cd75bf6ca9a01b452bd0b668697b64c1e6deca30ca1a",
+      "sourceBytes": 6614,
+      "sourceDimensions": {
+        "width": 854,
+        "height": 138
+      },
+      "previewPath": "/assets/derived/press/download-press-dan-fran-1.webp",
+      "previewSha256": "f24b52e95d3c8ca91c30a707a135fa0a15defbedaa8c0c3c1c4a36e9574f7508",
+      "previewBytes": 5354,
+      "previewDimensions": {
+        "width": 854,
+        "height": 138
+      },
+      "format": "webp",
+      "quality": 72,
+      "resizeWidth": 1200
+    },
+    {
+      "id": "download-press-mean-girls",
+      "sourcePath": "/assets/press_kit/pressPhotos/DanFranPress_MeanGirls.webp",
+      "sourceSha256": "ef4326a59e04bccb168c0797f24f294d12403108a27e964426366aca4df48a8f",
+      "sourceBytes": 21472,
+      "sourceDimensions": {
+        "width": 800,
+        "height": 127
+      },
+      "previewPath": "/assets/derived/press/download-press-mean-girls.webp",
+      "previewSha256": "fe6c5816b8767f153d3973525c6fc4b6c789f63e335ed631af9ee7d98499faec",
+      "previewBytes": 16412,
+      "previewDimensions": {
+        "width": 800,
+        "height": 127
+      },
+      "format": "webp",
+      "quality": 72,
+      "resizeWidth": 1200
+    },
+    {
+      "id": "download-press-yass",
+      "sourcePath": "/assets/press_kit/pressPhotos/DanFranPress_YASS_comedyTour.webp",
+      "sourceSha256": "3bba68ca4a3464c4593046a040d1d54684f101e408275282ad0062e16789a1ff",
+      "sourceBytes": 220264,
+      "sourceDimensions": {
+        "width": 3300,
+        "height": 2550
+      },
+      "previewPath": "/assets/derived/press/download-press-yass.webp",
+      "previewSha256": "9996ee8f4f6b293a4ac6e9f1716c1f521256d5b0c8a0c1d3d042d803043b2a11",
+      "previewBytes": 56920,
+      "previewDimensions": {
+        "width": 1200,
+        "height": 927
+      },
+      "format": "webp",
+      "quality": 72,
+      "resizeWidth": 1200
+    },
+    {
+      "id": "download-press-pk-01",
+      "sourcePath": "/assets/press_kit/pressPhotos/pk1.webp",
+      "sourceSha256": "4351c225181d70779a4c83aa41060fe1b9fcae0550177cdc25e76c4f2356c674",
+      "sourceBytes": 4256710,
+      "sourceDimensions": {
+        "width": 4016,
+        "height": 6016
+      },
+      "previewPath": "/assets/derived/press/download-press-pk-01.webp",
+      "previewSha256": "8c0def48e9dda2fe9002e1063580b0aec9e830f52df002d9286b935acd10c71d",
+      "previewBytes": 46056,
+      "previewDimensions": {
+        "width": 1200,
+        "height": 1798
+      },
+      "format": "webp",
+      "quality": 72,
+      "resizeWidth": 1200
+    },
+    {
+      "id": "download-press-pk-02",
+      "sourcePath": "/assets/press_kit/pressPhotos/pk2.webp",
+      "sourceSha256": "43433cb028415ee28ec36d7cf7a7b9c0074d934cf971ec5602995a67443dd6ff",
+      "sourceBytes": 26326,
+      "sourceDimensions": {
+        "width": 1024,
+        "height": 683
+      },
+      "previewPath": "/assets/derived/press/download-press-pk-02.webp",
+      "previewSha256": "cbf63b57812a8bc9a243df9ef909aeeebd4f9ed977342cfab1acbed673ad443b",
+      "previewBytes": 17726,
+      "previewDimensions": {
+        "width": 1024,
+        "height": 683
+      },
+      "format": "webp",
+      "quality": 72,
+      "resizeWidth": 1200
+    },
+    {
+      "id": "download-press-pk-03",
+      "sourcePath": "/assets/press_kit/pressPhotos/pk3.webp",
+      "sourceSha256": "958801621ed642dc8e941a56c97488eb5f6a04106c9453d844fc975648e2be88",
+      "sourceBytes": 17926,
+      "sourceDimensions": {
+        "width": 542,
+        "height": 540
+      },
+      "previewPath": "/assets/derived/press/download-press-pk-03.webp",
+      "previewSha256": "2b9c2448c3e210803eafcb69822268c45853c692b0b02055a9d3557b79d73673",
+      "previewBytes": 13274,
+      "previewDimensions": {
+        "width": 542,
+        "height": 540
+      },
+      "format": "webp",
+      "quality": 72,
+      "resizeWidth": 1200
+    },
+    {
+      "id": "download-press-pk-04",
+      "sourcePath": "/assets/press_kit/pressPhotos/pk4.webp",
+      "sourceSha256": "024738e74a389eed465eb2c005b7afa9ccea72c8d5a2247374c47f65cf66b845",
+      "sourceBytes": 396914,
+      "sourceDimensions": {
+        "width": 3840,
+        "height": 5760
+      },
+      "previewPath": "/assets/derived/press/download-press-pk-04.webp",
+      "previewSha256": "d5253df72b8f9fbdee2f913f4e777ec6c2a5b774628b4ad02b5abd8e7447b4ee",
+      "previewBytes": 36886,
+      "previewDimensions": {
+        "width": 1200,
+        "height": 1800
+      },
+      "format": "webp",
+      "quality": 72,
+      "resizeWidth": 1200
+    },
+    {
+      "id": "download-press-pk-05",
+      "sourcePath": "/assets/press_kit/pressPhotos/pk5.webp",
+      "sourceSha256": "f245b09432a2f945c1cef1687201ca9ecbc8ba8b5605edda1ac3784ff78ef29e",
+      "sourceBytes": 478038,
+      "sourceDimensions": {
+        "width": 3824,
+        "height": 5168
+      },
+      "previewPath": "/assets/derived/press/download-press-pk-05.webp",
+      "previewSha256": "b328971f4830ba217faecbf2fac10e99b1986c8505d2e6ad013aa192f235cdeb",
+      "previewBytes": 38680,
+      "previewDimensions": {
+        "width": 1200,
+        "height": 1622
+      },
+      "format": "webp",
+      "quality": 72,
+      "resizeWidth": 1200
+    },
+    {
+      "id": "download-press-pk-06",
+      "sourcePath": "/assets/press_kit/pressPhotos/pk6.webp",
+      "sourceSha256": "7bca882aaec37845fe942e127ffe70c645068fbaca7698128756f76b10f92dfe",
+      "sourceBytes": 116568,
+      "sourceDimensions": {
+        "width": 1334,
+        "height": 2000
+      },
+      "previewPath": "/assets/derived/press/download-press-pk-06.webp",
+      "previewSha256": "4ef6a5d003cd2c0bcd5e6b6446c45dd5d041730704119de09968e1f7145d9daa",
+      "previewBytes": 52114,
+      "previewDimensions": {
+        "width": 1200,
+        "height": 1799
+      },
+      "format": "webp",
+      "quality": 72,
+      "resizeWidth": 1200
+    },
+    {
+      "id": "download-press-pk-07",
+      "sourcePath": "/assets/press_kit/pressPhotos/pk7.webp",
+      "sourceSha256": "2247e955b0cf4f24de512fe1cfb046ff19f63b575c9ca88d02f1aebd736cf541",
+      "sourceBytes": 2689480,
+      "sourceDimensions": {
+        "width": 6016,
+        "height": 4016
+      },
+      "previewPath": "/assets/derived/press/download-press-pk-07.webp",
+      "previewSha256": "2ba48b68049cb32885951d86fa62aeb52d742078ab25c5eddbd659065b773ccb",
+      "previewBytes": 40538,
+      "previewDimensions": {
+        "width": 1200,
+        "height": 801
+      },
+      "format": "webp",
+      "quality": 72,
+      "resizeWidth": 1200
+    },
+    {
+      "id": "download-press-pk-08",
+      "sourcePath": "/assets/press_kit/pressPhotos/pk8.webp",
+      "sourceSha256": "5db592eed76c813d6f43a391d27dd90e90bf7c1fe723c7118d627763b3f4e164",
+      "sourceBytes": 94202,
+      "sourceDimensions": {
+        "width": 1334,
+        "height": 2000
+      },
+      "previewPath": "/assets/derived/press/download-press-pk-08.webp",
+      "previewSha256": "773bbfe079ec5d575dae32d736816b8879cd8e8a9884fe3500abb8ba80786d34",
+      "previewBytes": 44424,
+      "previewDimensions": {
+        "width": 1200,
+        "height": 1799
+      },
+      "format": "webp",
+      "quality": 72,
+      "resizeWidth": 1200
+    },
+    {
+      "id": "download-press-pk-09",
+      "sourcePath": "/assets/press_kit/pressPhotos/pk9.webp",
+      "sourceSha256": "980fd2bc1239fd0b4d721c541bd641f400847a3cdd59b6f0adbb98bcc437f1c9",
+      "sourceBytes": 70964,
+      "sourceDimensions": {
+        "width": 1024,
+        "height": 683
+      },
+      "previewPath": "/assets/derived/press/download-press-pk-09.webp",
+      "previewSha256": "7b930c6a8fb48f63106559f63ddd119ad787584482f4a3987029c94e203b71be",
+      "previewBytes": 53366,
+      "previewDimensions": {
+        "width": 1024,
+        "height": 683
+      },
+      "format": "webp",
+      "quality": 72,
+      "resizeWidth": 1200
+    },
+    {
+      "id": "download-press-pk-10",
+      "sourcePath": "/assets/press_kit/pressPhotos/pk10.webp",
+      "sourceSha256": "a45403e07d52ea460e9a114c57896403036f93ea9c613a9d5c2c1577ba22996f",
+      "sourceBytes": 94022,
+      "sourceDimensions": {
+        "width": 1125,
+        "height": 1687
+      },
+      "previewPath": "/assets/derived/press/download-press-pk-10.webp",
+      "previewSha256": "00f6b4c89c6128d5b44c5717e9349a2633070573f0de6159adf0c52352cf5702",
+      "previewBytes": 59960,
+      "previewDimensions": {
+        "width": 1125,
+        "height": 1687
+      },
+      "format": "webp",
+      "quality": 72,
+      "resizeWidth": 1200
+    },
+    {
+      "id": "download-press-pk-11",
+      "sourcePath": "/assets/press_kit/pressPhotos/pk11.webp",
+      "sourceSha256": "b52a8cc9b1bef42a7df95be52d5c0c410e584a3a54121677b7f93988085568ae",
+      "sourceBytes": 135546,
+      "sourceDimensions": {
+        "width": 1000,
+        "height": 1000
+      },
+      "previewPath": "/assets/derived/press/download-press-pk-11.webp",
+      "previewSha256": "bbca9e0dae50e65d982b3635c8c739667434d986fecf5f8f342b024e727d61c3",
+      "previewBytes": 107054,
+      "previewDimensions": {
+        "width": 1000,
+        "height": 1000
+      },
+      "format": "webp",
+      "quality": 72,
+      "resizeWidth": 1200
+    },
+    {
+      "id": "download-press-pk-12",
+      "sourcePath": "/assets/press_kit/pressPhotos/pk12.webp",
+      "sourceSha256": "15f262c05dfb385314f9f8452bc0a55765a0dcf67a12de031f60e8f7826f2606",
+      "sourceBytes": 1690376,
+      "sourceDimensions": {
+        "width": 3833,
+        "height": 5743
+      },
+      "previewPath": "/assets/derived/press/download-press-pk-12.webp",
+      "previewSha256": "40fdd0221f483b5645ccd994d7dfefd8dafe8f52d259b08400312a60cf590779",
+      "previewBytes": 100474,
+      "previewDimensions": {
+        "width": 1200,
+        "height": 1798
+      },
+      "format": "webp",
+      "quality": 72,
+      "resizeWidth": 1200
+    },
+    {
+      "id": "download-press-pk-13",
+      "sourcePath": "/assets/press_kit/pressPhotos/pk13.webp",
+      "sourceSha256": "bdf0191edc66e7307efacb9cc286dcea31330e665fa37eb7b11f1130b181825f",
+      "sourceBytes": 12422,
+      "sourceDimensions": {
+        "width": 418,
+        "height": 450
+      },
+      "previewPath": "/assets/derived/press/download-press-pk-13.webp",
+      "previewSha256": "74bc5328851b4cc59c412c0e18913357b429fa57d894bf609284fb47221fd4d1",
+      "previewBytes": 9670,
+      "previewDimensions": {
+        "width": 418,
+        "height": 450
+      },
+      "format": "webp",
+      "quality": 72,
+      "resizeWidth": 1200
+    },
+    {
+      "id": "download-press-pk-14",
+      "sourcePath": "/assets/press_kit/pressPhotos/pk14.webp",
+      "sourceSha256": "a8e0c6d11e663239c18711d0cd88c1f74475ed05a476d5715aeee3dfb9402e04",
+      "sourceBytes": 959770,
+      "sourceDimensions": {
+        "width": 3840,
+        "height": 5760
+      },
+      "previewPath": "/assets/derived/press/download-press-pk-14.webp",
+      "previewSha256": "e90f1dad0df95bbf7d5d1b4396323c8f2ed6618827c37243ff8ecd0d14dbd99f",
+      "previewBytes": 68144,
+      "previewDimensions": {
+        "width": 1200,
+        "height": 1800
+      },
+      "format": "webp",
+      "quality": 72,
+      "resizeWidth": 1200
+    },
+    {
+      "id": "download-press-pk-15",
+      "sourcePath": "/assets/press_kit/pressPhotos/pk15.webp",
+      "sourceSha256": "017212c1e31d7b1c34a9b6e94aa66adf0c1129381d548489dc5dd8375ff6503f",
+      "sourceBytes": 2090046,
+      "sourceDimensions": {
+        "width": 6260,
+        "height": 4178
+      },
+      "previewPath": "/assets/derived/press/download-press-pk-15.webp",
+      "previewSha256": "0e0233a462f6bb7a60e8ca1835bd13eaf80aecef6994331086f4694e8cdd4174",
+      "previewBytes": 85206,
+      "previewDimensions": {
+        "width": 1200,
+        "height": 801
+      },
+      "format": "webp",
+      "quality": 72,
+      "resizeWidth": 1200
+    },
+    {
+      "id": "download-press-pk-16",
+      "sourcePath": "/assets/press_kit/pressPhotos/pk16.webp",
+      "sourceSha256": "f2ab3d3c1ffe27c8a72560bd358cbe63525a844e92fe0b79f894bafd0fb9c5b9",
+      "sourceBytes": 1019658,
+      "sourceDimensions": {
+        "width": 2848,
+        "height": 4288
+      },
+      "previewPath": "/assets/derived/press/download-press-pk-16.webp",
+      "previewSha256": "5e16246ca44d873833c80fafdf889e7267e3c0e7af2994641410be6bc11835fd",
+      "previewBytes": 118422,
+      "previewDimensions": {
+        "width": 1200,
+        "height": 1807
+      },
+      "format": "webp",
+      "quality": 60,
+      "resizeWidth": 1200
+    }
+  ]
+}

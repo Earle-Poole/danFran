@@ -1,0 +1,226 @@
+.section {
+  padding-block: var(--section-padding);
+}
+
+.section + .section {
+  border-top: 1px solid var(--color-rule);
+}
+
+.heading {
+  max-width: 48rem;
+  margin: 0;
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: var(--text-section-title);
+  font-weight: 400;
+  line-height: 1.12;
+  text-transform: uppercase;
+}
+
+.intro {
+  max-width: 48rem;
+  margin: var(--space-3) 0 0;
+  color: var(--color-muted);
+}
+
+.photoGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--grid-gap);
+  align-items: start;
+  margin-top: var(--space-8);
+}
+
+.photoCard {
+  min-width: 0;
+}
+
+.photoButton {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: var(--color-rule);
+  color: inherit;
+  cursor: zoom-in;
+  text-align: left;
+}
+
+.photoButton:focus-visible {
+  outline: 3px solid var(--color-ink);
+  outline-offset: 3px;
+}
+
+.photoButton :global(figure) {
+  margin: 0;
+}
+
+.photoButton :global(.photoFrame) {
+  overflow: hidden;
+}
+
+.photoButton :global(img) {
+  width: 100%;
+  height: auto;
+}
+
+.photoDetails {
+  display: grid;
+  gap: var(--space-2);
+  padding-top: var(--space-2);
+}
+
+.photoLabel,
+.photoMetadata {
+  margin: 0;
+}
+
+.photoLabel {
+  font-weight: 600;
+}
+
+.photoMetadata {
+  color: var(--color-muted);
+  font-size: var(--text-caption);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.downloadLink,
+.previewLink {
+  display: inline-flex;
+  min-block-size: 2.75rem;
+  align-items: center;
+  padding: 0.6rem 0.75rem;
+  border: 2px solid var(--color-ink);
+  border-radius: var(--radius-control);
+  color: var(--color-ink);
+  font-size: var(--text-caption);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.downloadLink {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.downloadLink:hover,
+.downloadLink:focus-visible {
+  border-color: var(--color-raspberry);
+  background: var(--color-raspberry);
+  color: var(--color-white);
+}
+
+.previewLink:hover,
+.previewLink:focus-visible {
+  background: var(--color-pink);
+}
+
+.resourceList {
+  display: grid;
+  gap: var(--space-4);
+  margin: var(--space-8) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.resourceRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  padding: var(--space-4);
+  border: 1px solid var(--color-rule);
+  background: var(--color-white);
+}
+
+.resourceCopy {
+  min-width: 0;
+}
+
+.resourceCopy strong,
+.resourceCopy span {
+  display: block;
+}
+
+.resourceCopy span {
+  margin-top: var(--space-1);
+  color: var(--color-muted);
+  font-size: var(--text-caption);
+}
+
+.resourceActions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.artworkGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--grid-gap);
+  margin-top: var(--space-8);
+}
+
+.artworkCard {
+  min-width: 0;
+}
+
+.artworkCard figure {
+  height: 100%;
+  margin: 0;
+  padding: var(--space-3);
+  background: var(--color-white);
+}
+
+.artworkCard img {
+  width: 100%;
+  height: auto;
+}
+
+.artworkText {
+  margin: var(--space-3) 0 0;
+  color: var(--color-muted);
+  font-size: var(--text-caption);
+}
+
+@media (max-width: 47.99rem) {
+  .photoGrid,
+  .artworkGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .resourceRow {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 30rem) {
+  .photoGrid,
+  .artworkGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (forced-colors: active) {
+  .photoButton,
+  .resourceRow,
+  .artworkCard figure {
+    border: 2px solid ButtonText;
+    background: Canvas;
+  }
+
+  .downloadLink,
+  .previewLink {
+    border-color: ButtonText;
+    background: ButtonFace;
+    color: ButtonText;
+  }
+}

@@ -1,80 +1,88 @@
-import ContentSectionWrapper from '@/components/organisms/ContentSectionWrapper/ContentSectionWrapper'
-import PressGallery from '@/components/organisms/PressGallery/PressGallery'
-import zigzagIcon from '@/assets/zigzag.svg'
-import Image from "next/image";
-import SubtleLink from '@/components/atoms/SubtleLink'
+import Link from 'next/link'
+import { ActionLink, Container } from '@/components/ui'
+import { contacts, downloadById } from 'lib/content'
+import PressGallery from '@/components/press/PressGallery'
+import PressResourceText from '@/components/press/PressResourceText'
+import styles from './PressKitTemplate.module.css'
+
+const bookingContact = contacts[0]
+const resources = [
+  { id: 'download-biography', textVersionId: 'biography-text-version' },
+  { id: 'download-yass-description', textVersionId: 'tour-text-version' },
+] as const
+
+const formatLabel = (format: string) => format.toUpperCase()
+const sizeLabel = (bytes: number) => `${new Intl.NumberFormat('en-US').format(bytes)} bytes`
 
 const PressKitTemplate = () => {
   return (
-    <div id="press-kit" className="w-full flex justify-center">
-      <div className="w-full max-w-7xl flex flex-col items-center">
-        <div className="mt-36">
-          <p className="text-left text-3xl md:text-5xl ml-4 md:ml-10 pb-5">
-            Daniel Franzese - Press Kit
+    <div id="press-kit" className={styles.pressKit}>
+      <Container className={styles.pageHeader}>
+        <p className={styles.eyebrow}>Press resources</p>
+        <h1 className={styles.title} data-route-heading="true">Press kit.</h1>
+        <p className={styles.subtitle}>Biographies, photography &amp; booking contacts.</p>
+      </Container>
+
+      <section id="press-resources" className={styles.biography} aria-labelledby="press-resources-heading">
+        <Container>
+          <h2 id="press-resources-heading" className={styles.sectionHeading}>Start with the downloads.</h2>
+          <ul className={styles.resourceList}>
+            {resources.map(({ id, textVersionId }) => {
+              const resource = downloadById(id)
+              if (!resource) return null
+              return (
+                <li key={resource.id} className={styles.resourceRow}>
+                  <div>
+                    <strong>{resource.label}</strong>
+                    <span>{`${formatLabel(resource.format)} · ${sizeLabel(resource.bytes)}`}</span>
+                  </div>
+                  <div className={styles.resourceActions}>
+                    <a href={resource.path} target="_blank" rel="noreferrer">Preview {formatLabel(resource.format)}</a>
+                    <a href={resource.path} download>Download {resource.format.toUpperCase()}</a>
+                    <a href={`#${textVersionId}`}>Read text version</a>
+                  </div>
+                </li>
+              )
+            })}
+          </ul>
+          <p className={styles.resourceNote}>
+            The original PDFs are historical source files; the HTML versions below provide a keyboard-readable alternative while preserving the original downloads.
           </p>
-          <p className="text-left text-xl ml-4 md:ml-10 italic flex-wrap md:w-3/5">{`"Tolerance is the positive and cordial effort to understand another's beliefs, practices, and habits without necessarily sharing or accepting them. " -Joshua Liebman`}</p>
-        </div>
-        <ContentSectionWrapper
-          wrapperBackgroundColor="bg-gray-500/[15%]"
-          id="Press_Bio"
-        >
-          <div className="flex flex-col mt-8 md:mt-0 md:ml-4">
-            <p className="text-4xl text-center">{`Biography`}</p>
-            <div className="pt-4 flex justify-center">
-              <Image src={zigzagIcon} alt="zigzag"></Image>
-            </div>
-            <p className="text-xl md:text-2xl my-3 leading-relaxed indent-14">
-              Best known for his role as Damian in{' '}
-              <SubtleLink href="https://www.imdb.com/title/tt0377092/">
-                Mean Girls
-              </SubtleLink>
-              , Daniel Franzese was also the lead of other indie cult classics,
-              such as{' '}
-              <SubtleLink href="https://www.imdb.com/title/tt0242193/">
-                Bully
-              </SubtleLink>{' '}
-              &{' '}
-              <SubtleLink href="https://www.imdb.com/title/tt1242432/">
-                I Spit On Your Grave
-              </SubtleLink>
-              . He later starred as Eddie in HBO&apos;s{' '}
-              <SubtleLink href="https://www.imdb.com/title/tt2581458/">
-                Looking
-              </SubtleLink>
-              , including{' '}
-              <SubtleLink href="https://www.imdb.com/title/tt4552118/">
-                Looking: The Movie
-              </SubtleLink>
-              , before becoming a series regular as Vern Testaverde in the
-              Freeform series{' '}
-              <SubtleLink href="https://www.imdb.com/title/tt4144890/">
-                Recovery Road
-              </SubtleLink>{' '}
-              and appearing as Jackson Morrison in ABC&apos;s legal drama{' '}
-              <SubtleLink href="https://www.imdb.com/title/tt5396572/">
-                Conviction
-              </SubtleLink>
-              . In 2022, he competed as Donna Bellissima on{' '}
-              <SubtleLink href="https://www.imdb.com/title/tt11187480/">
-                RuPaul&apos;s Secret Celebrity Drag Race
-              </SubtleLink>
-              .
-            </p>
-            <br />
-            <p className="text-xl md:text-2xl my-3 leading-relaxed indent-14">
-              Born in Brooklyn and raised in Fort Lauderdale, Daniel has become a
-              well-known proponent and speaker for the LGBTQ+ community, as well
-              as an ambassador for The Elizabeth Taylor AIDS Foundation. A
-              self-proclaimed momma&apos;s boy, his upbeat, high-energy stand-up
-              comedy act, &apos;Yass! You&apos;re Amazing!&apos; captures his amazing
-              and quirky life in the entertainment industry, as well as hilarious
-              stories about his New York parents.
-            </p>
+        </Container>
+      </section>
+
+      <PressResourceText />
+
+      <section className={styles.biography} aria-labelledby="press-biography-heading">
+        <Container className={styles.copy}>
+          <h2 id="press-biography-heading" className={styles.sectionHeading}>Biography</h2>
+          <p>
+            Best known for playing Damian in <a href="https://www.imdb.com/title/tt0377092/">Mean Girls</a>, Daniel Franzese has also appeared in <a href="https://www.imdb.com/title/tt0242193/">Bully</a>, <a href="https://www.imdb.com/title/tt2581458/">Looking</a>, <a href="https://www.imdb.com/title/tt4144890/">Recovery Road</a> and <a href="https://www.imdb.com/title/tt5396572/">Conviction</a>. His work spans film, television, stand-up comedy and advocacy.
+          </p>
+          <p>
+            Born in Brooklyn and raised in Fort Lauderdale, Daniel is a proponent and speaker for the LGBTQ+ community and an ambassador for The Elizabeth Taylor AIDS Foundation. His existing biography PDF carries the longer source material; see <Link href="/about">the About page</Link> for the readable site biography.
+          </p>
+        </Container>
+      </section>
+
+      <PressGallery />
+
+      <section className={styles.contact} aria-labelledby="press-contact-heading">
+        <Container>
+          <h2 id="press-contact-heading" className={styles.sectionHeading}>Press inquiries</h2>
+          <p className={styles.contactIntro}>For interviews, invites and press materials, contact the representation listed below. Current representation and usage rights should be confirmed before release.</p>
+          <div className={styles.contactDetails}>
+            <p><strong>{bookingContact.name}</strong></p>
+            <p><a href={bookingContact.email.destination}>{bookingContact.email.visible}</a></p>
+            {bookingContact.phones.map((phone) => <p key={phone.destination}><a href={phone.destination}>{phone.visible}</a></p>)}
+            <ul className={styles.categories}>
+              {bookingContact.inquiryCategories.map((category) => <li key={category}>{category}</li>)}
+            </ul>
+            <ActionLink href={`/booking#booking-details`} variant="secondary">Booking details</ActionLink>
           </div>
-        </ContentSectionWrapper>
-        <PressGallery />
+        </Container>
+      </section>
       </div>
-    </div>
   );
 }
 

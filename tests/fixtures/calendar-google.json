@@ -1,0 +1,57 @@
+{
+  "timeZone": "America/Chicago",
+  "items": [
+    {
+      "id": "qa-chicago-event-2027",
+      "status": "confirmed",
+      "eventType": "default",
+      "summary": "Chicago QA Arts Night",
+      "description": "Deterministic server-rendered event fixture.\nTicket status: sold out\nCategory: comedy\nVenue name: QA Auditorium\nStreet address: 999 QA Way\nCity: Chicago\nRegion: IL\nPostal code: 60601\nCountry: US",
+      "location": "QA Auditorium, Chicago, IL",
+      "start": { "dateTime": "2027-01-15T20:00:00-06:00", "timeZone": "America/Chicago" },
+      "end": { "dateTime": "2027-01-15T22:00:00-06:00", "timeZone": "America/Chicago" },
+      "organizer": { "email": "organizer@qa.invalid" },
+      "attendees": [{ "email": "private-attendee@qa.invalid" }]
+    },
+    {
+      "id": "qa-austin-event-2027",
+      "status": "confirmed",
+      "eventType": "default",
+      "summary": "Austin QA Storytelling Talk",
+      "description": "A fixture with an incomplete venue address.\nEvent status: postponed\nTicket status: on-sale\nVenue name: QA Stage\nCity: Austin\nRegion: TX",
+      "location": "QA Stage, Austin, TX",
+      "start": { "dateTime": "2027-02-10T19:00:00-06:00", "timeZone": "America/Chicago" },
+      "end": { "dateTime": "2027-02-10T21:00:00-06:00", "timeZone": "America/Chicago" }
+    },
+    {
+      "id": "qa-cancelled-event-2027",
+      "status": "confirmed",
+      "eventType": "default",
+      "summary": "Cancelled QA Festival Appearance",
+      "description": "Cancelled event state fixture.\nEvent status: cancelled\nTicket status: on-sale",
+      "location": "QA Festival Grounds",
+      "start": { "dateTime": "2027-03-20T19:00:00-05:00", "timeZone": "America/Chicago" },
+      "end": { "dateTime": "2027-03-20T21:00:00-05:00", "timeZone": "America/Chicago" }
+    },
+    {
+      "id": "qa-all-day-event-2027",
+      "status": "confirmed",
+      "eventType": "default",
+      "summary": "All-day QA Convention Appearance",
+      "description": "All-day date fixture.\nTicket status: coming-soon",
+      "location": "Venue to be announced",
+      "start": { "date": "2027-06-12", "timeZone": "America/Los_Angeles" },
+      "end": { "date": "2027-06-13", "timeZone": "America/Los_Angeles" }
+    },
+    {
+      "id": "qa-ended-event-2025",
+      "status": "confirmed",
+      "eventType": "default",
+      "summary": "Ended QA Event Must Not Be Published",
+      "description": "This historical event must be filtered before public rendering.\nTicket status: on-sale",
+      "location": "QA Historical Venue",
+      "start": { "dateTime": "2025-06-12T19:00:00-05:00", "timeZone": "America/Chicago" },
+      "end": { "dateTime": "2025-06-12T21:00:00-05:00", "timeZone": "America/Chicago" }
+    }
+  ]
+}

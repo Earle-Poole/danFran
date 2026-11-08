@@ -40,6 +40,8 @@ const urls = {
   CAMEO: 'https://www.cameo.com/whatsupdanny',
 } as const
 
+export const shopEnabled = false
+
 const breakpoints = {
   sm: '(max-width: 767px)',
   md: '(min-width: 768px)',
@@ -74,16 +76,47 @@ const navList = [
     isExternal: false,
     name: slugToLabel(slugs.VIDEO_GALLERY),
   },
-  {
+  ...(shopEnabled ? [{
     href: urls.STORE,
     isExternal: true,
     name: 'Store',
-  },
+  }] : []),
   {
     href: slugs.CONTACT,
     isExternal: false,
     name: 'Book Me Now!',
   },
 ]
+
+export {
+  routes as contentRoutes,
+  routeById,
+  routeByPath,
+  selectImplementedRoutes,
+  selectIndexableRoutes,
+  selectPlannedRoutes,
+} from './content/routes'
+export { contacts, contactById, socialLinks } from './content/contacts'
+export {
+  downloads,
+  downloadById,
+  mediaAssetInventory,
+} from './content/downloads'
+export {
+  photos,
+  photoById,
+  selectPhotosByCollection,
+  selectedPhotos,
+  modelingPhotos,
+  pressPhotos,
+} from './content/photos'
+export { videos, videoById, selectVideosByCategory } from './content/videos'
+export type {
+  ContactRecord,
+  DownloadRecord,
+  PhotoRecord,
+  RouteRecord,
+  VideoRecord,
+} from './content/types'
 
 export { slugs, urls, breakpoints, slugToLabel, navList }

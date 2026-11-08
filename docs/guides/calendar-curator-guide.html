@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Add an event to the website</title>
+<style>
+:root { --ink:#1F2730; --muted:#5B6670; --raspberry:#9F2E55; --paper:#F8F4EF; --blush:#F3E1E5; --line:#D9C9CC; }
+* { box-sizing:border-box; }
+html { background:#e9e1dc; }
+body { margin:0; color:var(--ink); background:var(--paper); font:16px/1.55 'Segoe UI', Arial, Helvetica, sans-serif; }
+main { max-width:980px; margin:0 auto; padding:clamp(22px,5vw,64px); background:var(--paper); min-height:100vh; }
+.masthead { border-top:9px solid var(--raspberry); padding-top:28px; margin-bottom:40px; }
+.kicker { margin:0 0 10px; color:var(--raspberry); font:700 12px/1.2 Arial, sans-serif; letter-spacing:.12em; text-transform:uppercase; }
+h1,h2,h3 { font-family:'Segoe UI', Arial, Helvetica, sans-serif; line-height:1.1; }
+h1 { max-width:760px; margin:0 0 14px; font-size:clamp(34px,5vw,58px); letter-spacing:-.04em; }
+h2 { margin:0 0 14px; font-size:clamp(25px,3vw,36px); color:var(--raspberry); }
+h3 { margin:24px 0 8px; font-size:18px; }
+p { max-width:75ch; margin:0 0 14px; }
+.intro { font-size:20px; max-width:64ch; color:#39424a; }
+.guide-section { padding:28px 0 8px; border-top:1px solid var(--line); }
+.guide-section:first-of-type { border-top:0; }
+.section-intro { font-size:18px; color:#39424a; margin-bottom:22px; }
+li { margin:.4em 0; }
+ol,ul { padding-left:1.45em; max-width:78ch; }
+.callout { background:var(--blush); border-left:5px solid var(--raspberry); padding:16px 18px 10px; margin:20px 0; }
+.callout h3 { color:var(--raspberry); margin-top:0; font-size:15px; text-transform:uppercase; letter-spacing:.06em; }
+.callout p { margin-bottom:4px; }
+.template { border:1px solid var(--line); background:#fff; margin:20px 0; padding:16px; border-radius:6px; }
+.template-head { display:flex; gap:12px; align-items:center; justify-content:space-between; }
+.template h3 { margin:0; color:var(--raspberry); }
+.template p { font-size:15px; color:var(--muted); }
+pre { white-space:pre-wrap; margin:12px 0 8px; padding:14px; border-radius:4px; background:#26313a; color:#fff; font:14px/1.55 Consolas, 'Courier New', monospace; overflow:auto; }
+button { font:700 14px Arial, sans-serif; border:2px solid var(--raspberry); background:#fff; color:var(--raspberry); border-radius:999px; padding:8px 13px; cursor:pointer; }
+.copy-button { min-height:44px; }
+button:hover,button:focus-visible { background:var(--raspberry); color:#fff; outline:3px solid #d99aae; outline-offset:2px; }
+.copy-status { min-height:1.2em; margin:0; color:var(--raspberry); font:700 13px/1.3 Arial, sans-serif; }
+.table-wrap { overflow-x:auto; margin:18px 0; }
+table { border-collapse:collapse; width:100%; min-width:560px; font-size:15px; }
+th,td { border:1px solid var(--line); text-align:left; vertical-align:top; padding:10px; }
+th { background:#ead0d7; color:#532034; font:700 13px Arial, sans-serif; }
+.checklist { list-style:none; padding-left:0; }
+.source-links a { color:var(--raspberry); }
+:focus-visible { outline:3px solid #d99aae; outline-offset:3px; }
+@media (max-width:650px) { main { padding:24px 18px; } .template-head { align-items:flex-start; flex-direction:column; } table { min-width:0; font-size:14px; } th,td { padding:8px; } }
+@media print {
+  html,body,main { background:#fff; }
+  main { max-width:none; padding:0; }
+  .masthead { margin-bottom:24px; }
+  .page-break { break-before:page; }
+  .copy-button { display:none; }
+  pre, pre code { background:#fff; color:#000; border:1px solid #888; }
+  .template { break-inside:avoid; }
+  a { color:inherit; text-decoration:none; }
+  a::after { content:' <' attr(href) '>'; font:9px Arial, sans-serif; }
+  .source-links a::after { content:none; }
+}
+</style>
+</head>
+<body>
+<main>
+  <header class="masthead">
+    <p class="kicker">Daniel Franzese / Calendar quick start</p>
+    <h1>Add an event to the website</h1>
+    <p class="intro">Create the event in the shared website calendar in Google Calendar. The website picks it up automatically.</p>
+  </header>
+  <section class="guide-section" aria-labelledby="section-0"><h2 id="section-0">1. Create the event</h2><p class="section-intro">Open the calendar below, sign in with the Google account that has access, and click Create, then Event.</p><ul class="source-links"><li><a href="https://calendar.google.com/">Open Google Calendar</a></li></ul><ol><li>Choose the shared website calendar provided by the website manager, rather than your personal calendar.</li><li>Enter the public event title, date, start and end times. Set the time zone to the venue&#x27;s local time zone.</li><li>Add the location as Venue, City, State.</li><li>Leave visibility set to Default visibility. Only include information that can appear publicly on the website.</li></ol><h3>2. Paste this into Description</h3><div class="template"><div class="template-head"><h3>Event with tickets on sale</h3><button type="button" class="copy-button" data-copy-target="template-1" aria-describedby="template-1-status">Copy template</button></div><p>Replace the bracketed text with the real public ticket link beginning with https://. Keep each setting on its own line.</p><pre id="template-1" tabindex="0"><code>Event status: Scheduled
+Ticket status: On sale
+Tickets: [PASTE REAL HTTPS TICKET LINK]
+Category: Comedy</code></pre><p id="template-1-status" class="copy-status" role="status" aria-live="polite"></p></div><p>For a different event type, change Comedy to Speaking or Appearance. You can add a short public description below these lines.</p><p>Tickets not available yet? Change Ticket status: On sale to Ticket status: Coming soon and remove the Tickets line.</p><h3>3. Save and check the website</h3><p>Click Save. Wait 1-2 minutes, then refresh the website. Check the event&#x27;s date, time, location, and ticket button.</p><aside class="callout"><h3>Not showing up?</h3><p>Check that you saved to the shared website calendar, the event is upcoming within the next year, and visibility is not Private. If you cannot create events in that calendar, ask the website manager for editing access.</p></aside></section><section class="guide-section page-break" aria-labelledby="section-1"><h2 id="section-1">Field reference</h2><p class="section-intro">These are the fields the website uses. The examples below are illustrative, not actual bookings.</p><h3>In the Google Calendar event editor</h3><div class="table-wrap"><table><thead><tr><th scope="col">Field</th><th scope="col">Example / what to enter</th></tr></thead><tbody><tr><td>Calendar</td><td>The shared website calendar, not your personal calendar.</td></tr><tr><td>Title</td><td>Daniel Franzese Live - use the public event name.</td></tr><tr><td>Date</td><td>November 20, 2026 - use the confirmed performance date.</td></tr><tr><td>Start / end time</td><td>7:30 PM to 9:00 PM. Check AM/PM; use All day only for a genuinely all-day appearance.</td></tr><tr><td>Time zone</td><td>America/Chicago for a Chicago show. Choose the venue&#x27;s local time zone.</td></tr><tr><td>Location</td><td>Example Theater, Chicago, IL - venue, city, state.</td></tr><tr><td>Visibility</td><td>Default visibility. An event set individually to Private will not appear.</td></tr><tr><td>Description</td><td>Doors at 6:30 PM. Show at 7:30 PM. Add the settings below on separate lines.</td></tr></tbody></table></div><h3>Settings typed into Description</h3><p>These are not separate Google Calendar fields. Type each label and value on its own line. When updating a setting, replace its existing line.</p><div class="table-wrap"><table><thead><tr><th scope="col">Setting</th><th scope="col">Example / supported values</th></tr></thead><tbody><tr><td>Event status</td><td>Event status: Scheduled. Other values: Postponed, Cancelled, Rescheduled. Cancelled and Postponed remove ticket buttons.</td></tr><tr><td>Ticket status</td><td>Ticket status: On sale. Other values: Presale, Sold out, Coming soon, Unknown. Update this yourself when availability changes.</td></tr><tr><td>Tickets</td><td>Tickets: [paste the real public HTTPS ticket link]. Replace all bracketed text. On sale shows Get tickets; Presale shows View presale when a valid link is present.</td></tr><tr><td>Waitlist (optional)</td><td>Waitlist: [paste the real public HTTPS waitlist link]. Used only with Ticket status: Sold out to show Join waitlist. Omit if there is no waitlist.</td></tr><tr><td>Ticket provider (optional)</td><td>Ticket provider: Ticketmaster. Use the actual provider name; this does not change the button label.</td></tr><tr><td>Category</td><td>Category: Comedy. Other values: Speaking, Appearance.</td></tr></tbody></table></div><p>Only add public information. Any ordinary description text appears on the full schedule page; the settings above are removed from that text.</p></section>
+</main>
+<script>
+function selectTemplate(pre) {
+  const range = document.createRange();
+  range.selectNodeContents(pre);
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  selection.addRange(range);
+  pre.focus();
+}
+async function copyTemplate(button) {
+  const pre = document.getElementById(button.dataset.copyTarget);
+  const status = document.getElementById(button.getAttribute('aria-describedby'));
+  const text = pre.innerText;
+  let copied = false;
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      copied = true;
+    }
+  } catch (error) { copied = false; }
+  if (!copied) {
+    selectTemplate(pre);
+    try { copied = document.execCommand('copy'); } catch (error) { copied = false; }
+  }
+  if (copied) {
+    status.textContent = 'Copied. Paste into the Google Calendar Description field.';
+  } else {
+    status.textContent = 'Copy was blocked. The template is selected; press Ctrl+C, then paste it into Description.';
+  }
+  button.focus();
+}
+document.querySelectorAll('.copy-button').forEach((button) => {
+  button.addEventListener('click', () => copyTemplate(button));
+});
+</script>
+</body>
+</html>

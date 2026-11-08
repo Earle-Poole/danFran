@@ -1,0 +1,61 @@
+name: Test
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+          cache: yarn
+
+      - name: Enable the pinned package manager
+        run: corepack enable
+
+      - name: Verify Corepack selected Yarn 1.22.22
+        run: test "$(corepack yarn --version)" = "1.22.22"
+
+      - name: Install frozen dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Typecheck
+        run: yarn typecheck
+
+      - name: Unit and component tests
+        run: yarn test
+
+      - name: Build production bundle
+        run: yarn build
+
+      - name: Install the pinned Playwright browser
+        run: yarn playwright install --with-deps chromium
+
+      - name: Browser tests
+        env:
+          RUN_M3_ACCEPTANCE: '1'
+          RUN_M4_ACCEPTANCE: '1'
+          RUN_M5_ACCEPTANCE: '1'
+          RUN_CALENDAR_ACCEPTANCE: '1'
+          M3_SITE_ORIGIN: https://qa.invalid
+          M4_SITE_ORIGIN: https://qa.invalid
+          NEXT_PUBLIC_SITE_URL: https://qa.invalid
+          NEXT_PUBLIC_DEPLOYMENT_ENV: production
+        run: yarn test:e2e
+
+      - name: Deterministic event SSR and SEO browser gate
+        run: node scripts/qa/run-modernization.mjs

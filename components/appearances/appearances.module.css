@@ -1,0 +1,223 @@
+.appearancesSection {
+  border-top: 10px solid var(--color-pink);
+  padding-block: 2.8125rem 2.375rem;
+}
+
+.calendarSection { padding-block: 3.5rem 5rem; }
+
+.sectionHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.calendarHeader { max-width: 52rem; }
+
+.eyebrow {
+  margin: 0 0 0.625rem;
+  color: var(--color-raspberry);
+  font-size: 0.6875rem;
+  font-weight: 750;
+  letter-spacing: 0.1125rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.sectionHeading,
+.calendarHeader h1,
+.calendarState h1 {
+  margin: 0;
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: clamp(2.75rem, 5vw, 3.875rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.sectionIntro,
+.calendarHeader > p,
+.calendarState > p {
+  max-width: 15rem;
+  margin: 0 0 0.1875rem;
+  color: var(--color-muted);
+  font-size: 0.8125rem;
+}
+
+.calendarHeader h1 { font-size: var(--text-page-title); }
+.calendarHeader > p { max-width: 38rem; margin-top: 1rem; font-size: var(--text-intro); }
+.calendarHeader .lookahead { font-size: var(--text-caption); }
+
+.delayedNotice {
+  margin: 1.5rem 0 0;
+  padding: 0.75rem 1rem;
+  border-inline-start: 0.25rem solid var(--color-raspberry);
+  background: color-mix(in srgb, var(--color-raspberry) 10%, var(--color-paper));
+  color: var(--color-ink);
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.625rem 0 1rem;
+  border-bottom: 1.5px solid var(--color-ink);
+}
+
+.filters { display: flex; gap: 0.5rem; min-height: 2.625rem; }
+
+.filter {
+  min-height: 2.625rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-control);
+  background: transparent;
+  color: var(--color-muted);
+  font-size: 0.75rem;
+  font-weight: 650;
+}
+
+.filterSelected { border-color: var(--color-ink); background: var(--color-ink); color: var(--color-paper); }
+
+.listCount,
+.timezoneNote { margin: 0; color: var(--color-muted); font-size: 0.75rem; }
+
+.eventList { display: grid; margin: 0; border-top: 0; }
+
+.eventRow {
+  display: grid;
+  grid-template-columns: 5.625rem minmax(11.25rem, 1.05fr) minmax(15rem, 1.2fr) 8.125rem 10.625rem;
+  gap: 1.5rem;
+  align-items: center;
+  min-width: 0;
+  min-height: 7.5rem;
+  padding: 1.4375rem 0;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.eventDate,
+.eventPrimary,
+.eventDetails,
+.eventStatus,
+.eventAction { min-width: 0; }
+
+.eventDate {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  border-inline-start: 3px solid var(--color-ink);
+  padding-inline-start: 1.125rem;
+}
+
+.eventDate time { display: flex; flex-direction: column; }
+.eventMonth { font-size: 0.6875rem; font-weight: 750; letter-spacing: 0.1125rem; }
+.eventDay { font-family: 'Anton', Impact, sans-serif; font-size: 2.6875rem; line-height: 1.1; }
+
+.eventTitle {
+  margin: 0;
+  color: var(--color-ink);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1.3125rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+}
+
+.eventTitle a { color: inherit; text-decoration-thickness: 0.08em; text-underline-offset: 0.18em; }
+.eventTitle a:hover { color: var(--color-raspberry); }
+
+.eventMeta,
+.eventVenue,
+.eventDescription { margin: 0; color: var(--color-muted); font-size: 0.75rem; }
+.eventVenue { margin-bottom: 0.25rem; color: var(--color-ink); font-size: 0.9375rem; font-weight: 600; }
+.eventDescription { max-width: 34rem; margin-top: 0.75rem; white-space: pre-line; }
+
+.eventStatus {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 0.625rem;
+  font-weight: 750;
+  letter-spacing: 0.0625rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.eventStatus[data-status='scheduled'] .statusDot { background: var(--color-raspberry); }
+.eventStatus[data-status='postponed'],
+.eventStatus[data-status='cancelled'] { color: var(--color-muted); }
+
+.statusDot {
+  display: inline-block;
+  width: 0.375rem;
+  height: 0.375rem;
+  margin: 0 0.4375rem 0.0625rem 0;
+  border-radius: 50%;
+  background: var(--color-ink);
+}
+
+.eventAction { justify-self: stretch; }
+.eventAction > * { width: 100%; }
+
+.eventActionNote {
+  display: block;
+  padding: 0.75rem 0.875rem;
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-control);
+  color: var(--color-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.sectionBottom { display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; margin-top: 1.375rem; }
+.scheduleLink { color: var(--color-ink); font-size: 0.75rem; font-weight: 700; text-underline-offset: 0.25rem; }
+.calendarState { max-width: 48rem; }
+.calendarState h1 { font-size: var(--text-page-title); }
+.calendarState > p { max-width: 38rem; margin-top: 1.5rem; font-size: var(--text-intro); }
+
+@media (max-width: 64rem) {
+  .eventRow { grid-template-columns: 4.375rem minmax(0, 1fr) minmax(0, 1.2fr) 9.0625rem; column-gap: 1.125rem; row-gap: 0.5rem; }
+  .eventStatus { grid-column: 2; grid-row: 2; }
+  .eventAction { grid-column: 4; grid-row: 1 / span 2; }
+  .eventDate { grid-row: 1 / span 2; }
+}
+
+@media (max-width: 37.5rem) {
+  .appearancesSection { border-top-width: 7px; padding-block: 1.75rem; }
+  .sectionHeader { display: block; margin-bottom: 1rem; }
+  .sectionHeading { max-width: 22rem; font-size: 2.6875rem; }
+  .sectionIntro { max-width: 20rem; margin-top: 0.75rem; font-size: 0.75rem; }
+  .toolbar { display: block; padding: 0.3125rem 0 0.875rem; }
+  .filters { gap: 0.375rem; }
+  .filter { padding: 0.5rem 0.75rem; font-size: 0.625rem; }
+  .listCount { margin-top: 0.75rem; font-size: 0.625rem; }
+  .eventRow { grid-template-columns: 3.4375rem minmax(0, 1fr); gap: 0 1.0625rem; align-items: start; min-height: 0; padding: 1.25rem 0; }
+  .eventDate { grid-column: 1; grid-row: 1 / span 4; align-self: stretch; align-items: flex-start; padding-inline-start: 0.6875rem; padding-top: 0.125rem; }
+  .eventMonth { font-size: 0.5625rem; letter-spacing: 0.0625rem; }
+  .eventDay { font-size: 2.25rem; }
+  .eventPrimary { grid-column: 2; grid-row: 1; }
+  .eventTitle { font-size: 1.25rem; }
+  .eventDetails { grid-column: 2; grid-row: 2; margin-top: 0.5625rem; }
+  .eventVenue { font-size: 0.8125rem; }
+  .eventMeta { font-size: 0.6875rem; }
+  .eventDescription { font-size: 0.75rem; }
+  .eventStatus { grid-column: 2; grid-row: 3; margin-top: 0.75rem; font-size: 0.5625rem; }
+  .eventAction { grid-column: 2; grid-row: 4; margin-top: 0.75rem; }
+  .eventActionNote { font-size: 0.6875rem; }
+  .sectionBottom { display: block; margin-top: 1.0625rem; }
+  .timezoneNote { margin-bottom: 0.875rem; font-size: 0.625rem; }
+  .scheduleLink { font-size: 0.6875rem; }
+}
+
+@media (forced-colors: active) {
+  .delayedNotice { border-color: CanvasText; background: Canvas; }
+  .filterSelected { background: Highlight; color: HighlightText; }
+  .eventActionNote { border-color: ButtonText; }
+}
