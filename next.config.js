@@ -35,6 +35,9 @@ if (process.env.VERCEL_ENV === 'production') {
 module.exports = {
   reactStrictMode: true,
   poweredByHeader: false,
+  redirects() {
+    return [{ source: '/qr', destination: '/', permanent: false }]
+  },
   images: {
     remotePatterns: [
       {
