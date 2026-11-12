@@ -5,7 +5,17 @@ import { useAppearanceFeed } from '@/components/appearances'
 import type { PhotoRecord } from 'lib/content/types'
 import styles from './home.module.css'
 
-export function HomeLiveHero({ photo: heroPhoto }: { photo: PhotoRecord }) {
+const homeHeroImageSizes = [
+  '(min-width: 80rem) 35.5rem',
+  '(min-width: 64rem) calc((100vw - 9rem) / 2)',
+  '(min-width: 48rem) calc((100vw - 7rem) / 2)',
+  'calc(100vw - 2rem)',
+].join(', ')
+
+// The compact live hero crops the square portrait to a taller frame.
+const liveHeroImageSizes = '(max-width: 22.5rem) 128px, (max-width: 48rem) 155px, (max-width: 64rem) 300px, 352px'
+
+export function HomeLiveHero({ photo: heroPhoto, srcSet }: { photo: PhotoRecord; srcSet: string }) {
   const { feed } = useAppearanceFeed()
   const hasAppearances = feed?.status === 'ready' && feed.events.length > 0
 
@@ -27,7 +37,21 @@ export function HomeLiveHero({ photo: heroPhoto }: { photo: PhotoRecord }) {
             {!hasAppearances ? <ActionLink href="/booking" variant="secondary">Booking inquiries</ActionLink> : null}
           </div>
         </div>
-        <Photo className={styles.heroPhoto} src={heroPhoto.originalPath} alt={heroPhoto.alt} width={heroPhoto.dimensions.width} height={heroPhoto.dimensions.height} crop="cover" frameRatio={hasAppearances ? '352 / 332' : undefined} objectPosition="50% 42%" sizes="(min-width: 64rem) 50vw, 100vw" loading="eager" caption={hasAppearances ? 'ACTOR. COMEDIAN. STORYTELLER.' : undefined} />
+        <Photo
+          className={styles.heroPhoto}
+          src={heroPhoto.originalPath}
+          srcSet={srcSet}
+          alt={heroPhoto.alt}
+          width={heroPhoto.dimensions.width}
+          height={heroPhoto.dimensions.height}
+          crop="cover"
+          frameRatio={hasAppearances ? '352 / 332' : undefined}
+          objectPosition="50% 42%"
+          sizes={hasAppearances ? liveHeroImageSizes : homeHeroImageSizes}
+          loading="eager"
+          fetchPriority="high"
+          caption={hasAppearances ? 'ACTOR. COMEDIAN. STORYTELLER.' : undefined}
+        />
       </Container>
     </Section>
   )

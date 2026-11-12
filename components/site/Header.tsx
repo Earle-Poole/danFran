@@ -66,7 +66,7 @@ const Header = forwardRef<HeaderHandle>(function Header(_, ref) {
         <Logo />
         <div className={styles.headerActions}>
           <Link className={styles.bookLink} href="/booking#booking-details" onClick={() => setMenuOpen(false)}>Book Daniel</Link>
-          <button ref={menuButtonRef} type="button" className={styles.menuButton} aria-expanded={menuOpen} aria-controls="compact-navigation" aria-label={menuOpen ? 'Close navigation' : 'Open navigation'} onClick={() => setMenuOpen((open) => !open)}>
+          <button ref={menuButtonRef} type="button" className={styles.menuButton} aria-expanded={menuOpen} aria-controls="compact-navigation" aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'} onClick={() => setMenuOpen((open) => !open)}>
             {menuOpen ? 'Close' : 'Menu'}
             <span className={`${styles.menuIcon} ${menuOpen ? styles.menuIconOpen : ''}`} aria-hidden="true"><span /></span>
           </button>

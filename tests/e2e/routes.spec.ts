@@ -37,7 +37,7 @@ test('supports client navigation to an existing gallery route', async ({ page })
   if (test.info().project.name === 'desktop-chrome') {
     await page.getByRole('button', { name: /^Work$/i }).click()
   } else {
-    await page.getByRole('button', { name: 'Open navigation' }).click()
+    await page.getByRole('button', { name: 'Open navigation menu' }).click()
   }
   const portraits = test.info().project.name === 'desktop-chrome'
     ? page.locator('#work-navigation').getByRole('link', { name: 'Portraits' })

@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto'
 import fs from 'node:fs'
 import path from 'node:path'
 import { expect, test } from '@playwright/test'
+import { homeImagePreviewSources } from '../../lib/content/home-images'
 import { installM4Network, pressOriginalPaths } from '../helpers/m4-acceptance'
 import {
   m5AcceptanceEnabled,
@@ -76,8 +77,11 @@ test.describe('M5 settled media and source fidelity', () => {
             expect(height, `${route} @ ${viewport.name} decoded height for ${source}`).toBe(entry?.previewDimensions.height)
           }
         } else {
+          const renderedOriginals = route === '/'
+            ? new Set(Array.from(renderedPaths, (assetPath) => homeImagePreviewSources.get(assetPath) ?? assetPath))
+            : renderedPaths
           for (const expectedPath of m5ExpectedLocalOriginals[route]) {
-            expect(renderedPaths.has(expectedPath), `${route} @ ${viewport.name} should render ${expectedPath}`).toBe(true)
+            expect(renderedOriginals.has(expectedPath), `${route} @ ${viewport.name} should render ${expectedPath} or its responsive copy`).toBe(true)
           }
         }
         expect(Array.from(renderedPaths).some((assetPath) => assetPath.includes('/output/') || assetPath.includes('concept'))).toBe(false)

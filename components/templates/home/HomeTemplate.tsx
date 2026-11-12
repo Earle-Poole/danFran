@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import Link from 'next/link'
 import { ActionLink, Container, Photo, Section } from '@/components/ui'
 import { selectedPhotos, shopEnabled, urls } from 'lib/constants'
+import { getHomeImageSrcSet, homeDestinationImageSizes } from 'lib/content/home-images'
 import { AppearancesSection } from '@/components/appearances'
 import { HomeLiveBand } from './HomeLiveBand'
 import { HomeLiveHero } from './HomeLiveHero'
@@ -17,7 +18,7 @@ const [heroPhoto, aboutPhoto, portraitPhoto, pressPhoto] = selectedPhotos
 const HomeTemplate = ({ newsletterSection }: HomeTemplateProps) => {
   return (
     <div id="home" className={styles.page}>
-      <HomeLiveHero photo={heroPhoto} />
+      <HomeLiveHero photo={heroPhoto} srcSet={getHomeImageSrcSet('hero', heroPhoto.dimensions.width)} />
       <AppearancesSection />
       <HomeLiveBand />
 
@@ -29,10 +30,11 @@ const HomeTemplate = ({ newsletterSection }: HomeTemplateProps) => {
             <Link className={styles.destinationCard} href="/about">
               <Photo
                 src={aboutPhoto.originalPath}
+                srcSet={getHomeImageSrcSet('about', aboutPhoto.dimensions.width)}
                 alt={aboutPhoto.alt}
                 width={aboutPhoto.dimensions.width}
                 height={aboutPhoto.dimensions.height}
-                sizes="(min-width: 64rem) 33vw, (min-width: 48rem) 50vw, 100vw"
+                sizes={homeDestinationImageSizes}
                 objectPosition="50% 40%"
               />
               <span className={styles.cardCopy}>
@@ -43,10 +45,11 @@ const HomeTemplate = ({ newsletterSection }: HomeTemplateProps) => {
             <Link className={styles.destinationCard} href="/modeling-gallery">
               <Photo
                 src={portraitPhoto.originalPath}
+                srcSet={getHomeImageSrcSet('portraits', portraitPhoto.dimensions.width)}
                 alt={portraitPhoto.alt}
                 width={portraitPhoto.dimensions.width}
                 height={portraitPhoto.dimensions.height}
-                sizes="(min-width: 64rem) 33vw, (min-width: 48rem) 50vw, 100vw"
+                sizes={homeDestinationImageSizes}
                 objectPosition="50% 38%"
               />
               <span className={styles.cardCopy}>
@@ -57,11 +60,12 @@ const HomeTemplate = ({ newsletterSection }: HomeTemplateProps) => {
             <Link className={styles.destinationCard} href="/press-kit">
               <Photo
                 src={pressPhoto.originalPath}
+                srcSet={getHomeImageSrcSet('press', pressPhoto.dimensions.width)}
                 alt={pressPhoto.alt}
                 width={pressPhoto.dimensions.width}
                 height={pressPhoto.dimensions.height}
                 crop="cover"
-                sizes="(min-width: 64rem) 33vw, (min-width: 48rem) 50vw, 100vw"
+                sizes={homeDestinationImageSizes}
                 objectPosition="68% 50%"
               />
               <span className={styles.cardCopy}>

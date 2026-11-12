@@ -134,7 +134,7 @@ test.describe('M3 shared shell acceptance', () => {
   test('moves focus out of a hidden compact panel when the breakpoint changes', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 })
     await page.goto('/')
-    await page.getByRole('button', { name: 'Open navigation' }).click()
+    await page.getByRole('button', { name: 'Open navigation menu' }).click()
     await page.locator('#compact-navigation').getByRole('link', { name: /Press(?: Kit)?/i }).focus()
     await page.setViewportSize({ width: 1440, height: 900 })
     await expect

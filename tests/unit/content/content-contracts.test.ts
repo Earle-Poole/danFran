@@ -14,6 +14,7 @@ import {
   videos,
 } from '../../../lib/content'
 import type { InventoryAsset, PhotoRecord, RouteRecord, VideoRecord } from '../../../lib/content'
+import { homeImagePreviewSources } from '../../../lib/content/home-images'
 
 const mediaRoot = resolve(process.cwd(), 'public/assets')
 const pressPreviewManifestPath = resolve(
@@ -68,7 +69,10 @@ describe('content contracts', () => {
     )
     const inventory = new Set(mediaAssetInventory.map((asset) => asset.path))
     const previewEntries = readPressPreviewManifest()
-    const derivedPaths = new Set(previewEntries.map((entry) => entry.previewPath))
+    const derivedPaths = new Set([
+      ...previewEntries.map((entry) => entry.previewPath),
+      ...Array.from(homeImagePreviewSources.keys()),
+    ])
     const nonPreviewAssets = new Set(
       Array.from(actual).filter((path) => !derivedPaths.has(path))
     )

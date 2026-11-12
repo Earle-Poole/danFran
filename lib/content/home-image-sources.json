@@ -1,0 +1,6 @@
+{
+  "hero": { "originalPath": "/assets/about_me_photo1.webp", "widths": [320, 600] },
+  "about": { "originalPath": "/assets/about_photo_2.webp", "widths": [400, 640] },
+  "portraits": { "originalPath": "/assets/modelling_gallery/mg (3).webp", "widths": [400, 680, 800] },
+  "press": { "originalPath": "/assets/home_cover.webp", "widths": [400, 640, 800, 1200] }
+}

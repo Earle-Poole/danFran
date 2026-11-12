@@ -82,19 +82,19 @@ describe('shared shell navigation', () => {
 
   it('exposes an in-flow compact menu with an accessible toggle', () => {
     render(<Header />)
-    const menu = screen.getByRole('button', { name: 'Open navigation' })
+    const menu = screen.getByRole('button', { name: 'Open navigation menu' })
     expect(menu).toHaveAttribute('aria-expanded', 'false')
 
     fireEvent.click(menu)
-    expect(screen.getByRole('button', { name: 'Close navigation' })).toHaveAttribute('aria-expanded', 'true')
+    expect(screen.getByRole('button', { name: 'Close navigation menu' })).toHaveAttribute('aria-expanded', 'true')
 
     fireEvent.keyDown(document, { key: 'Escape' })
-    expect(screen.getByRole('button', { name: 'Open navigation' })).toHaveFocus()
+    expect(screen.getByRole('button', { name: 'Open navigation menu' })).toHaveFocus()
   })
 
   it('moves focus out of navigation that becomes hidden at a breakpoint', () => {
     render(<Header />)
-    const menu = screen.getByRole('button', { name: 'Open navigation' })
+    const menu = screen.getByRole('button', { name: 'Open navigation menu' })
     fireEvent.click(menu)
     within(document.getElementById('compact-navigation')!).getByRole('link', { name: 'About' }).focus()
     act(() => mediaChange?.({ matches: true } as MediaQueryListEvent))
@@ -104,7 +104,7 @@ describe('shared shell navigation', () => {
     fireEvent.click(work)
     screen.getByRole('link', { name: 'Selected screen work' }).focus()
     act(() => mediaChange?.({ matches: false } as MediaQueryListEvent))
-    expect(screen.getByRole('button', { name: 'Open navigation' })).toHaveFocus()
+    expect(screen.getByRole('button', { name: 'Open navigation menu' })).toHaveFocus()
     expect(work).toHaveAttribute('aria-expanded', 'false')
   })
 })
