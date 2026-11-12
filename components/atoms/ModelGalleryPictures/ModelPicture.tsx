@@ -1,5 +1,4 @@
-import classNames from 'classnames'
-import Image, { StaticImageData } from "next/image";
+import Image, { StaticImageData } from 'next/image'
 import { Dispatch, FC, SetStateAction } from 'react'
 import styles from './modelPicture.module.css'
 
@@ -15,21 +14,16 @@ const ModelPicture: FC<ModelPictureProps> = ({
   setSelectedBigImage,
 }) => {
   return (
-    <div
-      className={classNames(
-        'basis-full sm:basis-1/2 md:basis-1/3 hover:cursor-zoom-in relative',
-        styles.pictureWrapper
-      )}
+    <button
+      type="button"
+      className={styles.pictureButton}
       onClick={() => {
         setSelectedBigImage(pictureObj.main)
       }}
     >
-      <div className="hidden absolute z-30 bg-black/40 top-0 bottom-0 right-0 left-0 justify-center items-center text-2xl pointer-events-none">
-        Click to enlarge
-      </div>
       <Image
         src={pictureObj.thumb}
-        alt={`galleryPicture ${index}`}
+        alt={`Open gallery photo ${index + 1}`}
         width="600"
         height="480"
         placeholder="blur"
@@ -38,7 +32,7 @@ const ModelPicture: FC<ModelPictureProps> = ({
           width: "100%",
           height: "auto"
         }} />
-    </div>
+    </button>
   );
 }
 

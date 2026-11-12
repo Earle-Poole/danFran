@@ -1,0 +1,181 @@
+.page {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.introGrid,
+.contactGrid,
+.inquiriesGrid,
+.cameoBlock {
+  display: grid;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.introGrid > *,
+.contactGrid > *,
+.inquiriesGrid > *,
+.cameoBlock > *,
+.contactCard,
+.categoryList {
+  min-width: 0;
+}
+
+.eyebrow {
+  margin: 0 0 var(--space-2);
+  color: var(--color-raspberry);
+  font-size: var(--text-eyebrow);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.pageHeading,
+.sectionHeading {
+  margin: 0;
+  font-family: 'Anton', Impact, sans-serif;
+  font-weight: 400;
+  line-height: 1.08;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.pageHeading {
+  max-width: 10ch;
+  font-size: var(--text-page-title);
+}
+
+.sectionHeading {
+  max-width: 22ch;
+  font-size: var(--text-section-title);
+}
+
+.introCopy,
+.contactIntro,
+.cameoBlock p:not(.eyebrow) {
+  max-width: 40rem;
+  margin: var(--space-6) 0 0;
+  font-size: var(--text-intro);
+}
+
+.introNote {
+  max-width: 34rem;
+  margin: var(--space-4) 0 0;
+  color: var(--color-muted);
+  font-size: var(--text-caption);
+}
+
+.contactSection {
+  border-block: var(--border-rule) solid var(--color-rule);
+  scroll-margin-top: var(--shell-anchor-offset, 6rem);
+}
+
+.contactCard {
+  min-width: 0;
+  padding: var(--space-6);
+  border: var(--border-control) solid var(--color-ink);
+  background: var(--color-paper);
+  overflow-wrap: anywhere;
+}
+
+.contactName {
+  margin: 0;
+  font-size: var(--text-card-title);
+  font-weight: 600;
+}
+
+.contactActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+  margin-top: var(--space-4);
+}
+
+.contactLink {
+  max-width: 100%;
+  color: var(--color-raspberry);
+  font-size: var(--text-intro);
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.18em;
+}
+
+.contactLink:hover,
+.contactLink:focus-visible {
+  color: var(--color-ink);
+}
+
+.copyStatus {
+  min-height: 1.5rem;
+  margin: var(--space-3) 0 0;
+  color: var(--color-success);
+  font-size: var(--text-caption);
+}
+
+.categoryList {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--text-intro);
+}
+
+.categoryList li {
+  min-width: 0;
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--color-rule);
+  overflow-wrap: anywhere;
+}
+
+.cameoBlock {
+  color: var(--color-paper);
+}
+
+.cameoBlock .eyebrow {
+  color: var(--color-pink);
+}
+
+.cameoBlock .sectionHeading {
+  color: var(--color-paper);
+}
+
+.cameoBlock p:not(.eyebrow) {
+  color: var(--color-paper);
+}
+
+@media (min-width: 48rem) {
+  .introGrid,
+  .contactGrid,
+  .inquiriesGrid,
+  .cameoBlock {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-12);
+  }
+}
+
+@media (max-width: 30rem) {
+  .pageHeading {
+    font-size: 3.5rem;
+  }
+
+  .contactActions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .contactActions > * {
+    width: 100%;
+  }
+}
+
+@media (forced-colors: active) {
+  .contactCard,
+  .categoryList li,
+  .contactSection {
+    border-color: CanvasText;
+  }
+}

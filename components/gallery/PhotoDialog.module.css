@@ -1,0 +1,188 @@
+.dialog {
+  width: min(100vw - 2rem, 90rem);
+  max-width: none;
+  max-height: calc(100dvh - 2rem);
+  margin: auto;
+  padding: 0;
+  border: 0;
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.dialog::backdrop {
+  background: rgb(24 24 24 / 92%);
+}
+
+.dialogBody {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  max-height: calc(100dvh - 2rem);
+  min-height: min(30rem, calc(100dvh - 2rem));
+}
+
+.toolbar,
+.captionBar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-ink);
+}
+
+.toolbar {
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(246 241 232 / 35%);
+}
+
+.toolbarGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.toolbar button,
+.toolbar a {
+  min-block-size: var(--control-min-height);
+  padding: 0.65rem 0.85rem;
+  border: 2px solid var(--color-paper);
+  border-radius: var(--radius-control);
+  background: transparent;
+  color: var(--color-paper);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.toolbar button:hover:not(:disabled),
+.toolbar button:focus-visible,
+.toolbar a:hover,
+.toolbar a:focus-visible {
+  background: var(--color-pink);
+  color: var(--color-ink);
+}
+
+.toolbar button:disabled {
+  border-color: rgb(246 241 232 / 45%);
+  color: rgb(246 241 232 / 65%);
+  cursor: not-allowed;
+}
+
+.imageRegion {
+  display: grid;
+  min-height: 0;
+  place-items: center;
+  padding: var(--space-4);
+  overflow: auto;
+  background: var(--color-ink);
+}
+
+.image {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: min(68dvh, 52rem);
+  height: auto;
+  object-fit: contain;
+}
+
+.loading,
+.error {
+  display: grid;
+  gap: var(--space-3);
+  justify-items: center;
+  max-width: 34rem;
+  padding: var(--space-8);
+  text-align: center;
+}
+
+.loading p,
+.error p {
+  margin: 0;
+}
+
+.errorActions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.errorActions button,
+.errorActions a {
+  min-block-size: var(--control-min-height);
+  padding: 0.65rem 0.85rem;
+  border: 2px solid var(--color-paper);
+  border-radius: var(--radius-control);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.captionBar {
+  align-items: flex-start;
+  justify-content: space-between;
+  border-top: 1px solid rgb(246 241 232 / 35%);
+}
+
+.caption {
+  max-width: 54rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.caption strong {
+  display: block;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 30rem) {
+  .dialog {
+    width: 100vw;
+    max-height: 100dvh;
+  }
+
+  .dialogBody {
+    max-height: 100dvh;
+  }
+
+  .imageRegion {
+    padding: var(--space-2);
+  }
+
+  .image {
+    max-height: 60dvh;
+  }
+}
+
+@media (forced-colors: active) {
+  .dialog,
+  .dialog::backdrop,
+  .toolbar,
+  .imageRegion,
+  .captionBar {
+    background: Canvas;
+    color: CanvasText;
+  }
+
+  .toolbar button,
+  .toolbar a,
+  .errorActions button,
+  .errorActions a {
+    border-color: ButtonText;
+    background: ButtonFace;
+    color: ButtonText;
+  }
+}

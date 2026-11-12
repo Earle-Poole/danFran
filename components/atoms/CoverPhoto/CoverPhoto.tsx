@@ -1,25 +1,13 @@
 import photo from '@/assets/home_cover.webp'
 import { useScrollPosition } from 'lib/hooks'
-import { isClient } from 'lib/toolbox'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
 import Splitter from '../Splitter'
 import { slugs } from 'lib/constants'
 
 const CoverPhoto = () => {
-  const [isAtTopOfPage, setIsAtTopOfPage] = useState(true)
-  const [layoutBody, setLayoutBody] = useState(
-    isClient ? document.getElementById('layout-body') : null
-  )
-  const scrollPosition = useScrollPosition(isClient ? layoutBody : null)
+  const scrollPosition = useScrollPosition('layout-body')
 
-  useEffect(() => {
-    setLayoutBody(document.getElementById('layout-body'))
-  }, [])
-
-  useEffect(() => {
-    scrollPosition > 100 ? setIsAtTopOfPage(false) : setIsAtTopOfPage(true)
-  }, [scrollPosition])
+  const isAtTopOfPage = scrollPosition <= 100
 
   return (
     <div className="relative">

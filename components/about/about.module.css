@@ -1,0 +1,177 @@
+.page {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.introGrid,
+.readingLayout,
+.advocacyGrid {
+  display: grid;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.introGrid > *,
+.readingLayout > *,
+.advocacyGrid > *,
+.workList,
+.prose {
+  min-width: 0;
+}
+
+.eyebrow {
+  margin: 0 0 var(--space-2);
+  color: var(--color-raspberry);
+  font-size: var(--text-eyebrow);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.pageHeading,
+.bandHeading,
+.sectionHeading {
+  margin: 0;
+  font-family: 'Anton', Impact, sans-serif;
+  font-weight: 400;
+  line-height: 1.08;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.pageHeading {
+  max-width: 11ch;
+  font-size: var(--text-page-title);
+}
+
+.introCopy,
+.proseLead {
+  max-width: 40rem;
+  margin: var(--space-6) 0;
+  font-size: var(--text-intro);
+}
+
+.identityBand {
+  padding-block: var(--space-8);
+}
+
+.bandHeading {
+  max-width: 28ch;
+  font-size: var(--text-section-title);
+}
+
+.sectionHeading {
+  max-width: 22ch;
+  font-size: var(--text-section-title);
+}
+
+.prose {
+  max-width: 44rem;
+  font-size: var(--text-body);
+  overflow-wrap: anywhere;
+}
+
+.prose p {
+  margin: 0 0 var(--space-6);
+}
+
+.prose a,
+.workList a {
+  color: var(--color-raspberry);
+  text-decoration: underline;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.18em;
+}
+
+.prose a:hover,
+.prose a:focus-visible,
+.workList a:hover,
+.workList a:focus-visible {
+  color: var(--color-ink);
+}
+
+.selectedWork {
+  border-block: var(--border-rule) solid var(--color-rule);
+  scroll-margin-top: var(--shell-anchor-offset, 6rem);
+}
+
+.workList {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workList li {
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.workList a {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  min-width: 0;
+  padding-block: var(--space-3);
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.workList a:hover,
+.workList a:focus-visible {
+  color: var(--color-raspberry);
+  text-decoration: underline;
+}
+
+.workTitle {
+  font-weight: 600;
+}
+
+.workDetail {
+  color: var(--color-muted);
+  text-align: right;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+@media (min-width: 48rem) {
+  .introGrid,
+  .readingLayout,
+  .advocacyGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-12);
+  }
+}
+
+@media (max-width: 30rem) {
+  .pageHeading {
+    font-size: 3.5rem;
+  }
+
+  .workList a {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .workDetail {
+    text-align: left;
+  }
+
+  .actions > * {
+    flex: 1 1 100%;
+  }
+}
+
+@media (forced-colors: active) {
+  .selectedWork,
+  .workList li {
+    border-color: CanvasText;
+  }
+}

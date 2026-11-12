@@ -1,53 +1,72 @@
 import { BreakPointValues } from '@/components/atoms/NavItem'
-import { MutableRefObject, useEffect, useState } from 'react'
+import {
+  MutableRefObject,
+  useCallback,
+  useEffect,
+  useState,
+  useSyncExternalStore,
+} from 'react'
 
 // See
 // https://www.netlify.com/blog/2020/12/05/building-a-custom-react-media-query-hook-for-more-responsive-apps/
-export const useMediaQuery = (query: BreakPointValues) => {
-  const [isMatch, setIsMatch] = useState(false)
+export const useMediaQuery = (
+  query: BreakPointValues,
+  onChange?: (matches: boolean) => void
+) => {
+  const subscribe = useCallback(
+    (onStoreChange: () => void) => {
+      if (typeof window === 'undefined') {
+        return () => undefined
+      }
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  useEffect(() => {
-    const media = window.matchMedia(query)
+      const media = window.matchMedia(query)
+      const listener = () => {
+        onStoreChange()
+        onChange?.(media.matches)
+      }
 
-    if (media.matches !== isMatch) {
-      setIsMatch(media.matches)
-    }
-
-    const listener = () => {
-      setIsMatch(media.matches)
-    }
-
-    // TODO: older Safari versions don't support addEventListener
-    // https://stackoverflow.com/questions/35719526/safari-ignore-window-matchmedia
-    if (media.addEventListener) {
-      media.addEventListener('change', listener)
-    } else if (media.addListener) {
-      // @ts-ignore
-      media.addListener(listener)
-    }
-
-    return () => media.removeEventListener?.('change', listener)
-  }, [isMatch, query])
-
-  return isMatch
-}
-
-export const useScrollPosition = (element: HTMLElement | null) => {
-  const [position, setPosition] = useState<number>(0)
-
-  const onScroll = (e: HTMLElement) => () => {
-    setPosition(e.scrollTop)
-  }
-
-  useEffect(() => {
-    if (element) {
-      element.addEventListener('scroll', onScroll(element))
+      if (media.addEventListener) {
+        media.addEventListener('change', listener)
+      } else {
+        media.addListener(listener)
+      }
 
       return () => {
-        element.removeEventListener('scroll', onScroll(element))
+        if (media.removeEventListener) {
+          media.removeEventListener('change', listener)
+        } else {
+          media.removeListener(listener)
+        }
       }
+    },
+    [onChange, query]
+  )
+
+  const getSnapshot = useCallback(
+    () => (typeof window === 'undefined' ? false : window.matchMedia(query).matches),
+    [query]
+  )
+
+  return useSyncExternalStore(subscribe, getSnapshot, () => false)
+}
+
+export const useScrollPosition = (element: HTMLElement | null | string) => {
+  const [position, setPosition] = useState<number>(0)
+
+  useEffect(() => {
+    const scrollElement = typeof element === 'string'
+      ? document.getElementById(element) ?? document.scrollingElement
+      : element
+
+    if (!scrollElement) {
+      return
     }
+
+    const handleScroll = () => setPosition(scrollElement.scrollTop)
+    scrollElement.addEventListener('scroll', handleScroll)
+    handleScroll()
+
+    return () => scrollElement.removeEventListener('scroll', handleScroll)
   }, [element])
 
   return position

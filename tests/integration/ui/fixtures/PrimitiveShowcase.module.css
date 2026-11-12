@@ -1,0 +1,74 @@
+.showcase {
+  min-width: 0;
+  padding: var(--space-8) var(--gutter);
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.header,
+.section {
+  width: 100%;
+  max-width: var(--content-max);
+  margin-inline: auto;
+}
+
+.header {
+  display: grid;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.section {
+  display: grid;
+  gap: var(--space-6);
+  margin-top: var(--space-12);
+}
+
+.section h2 {
+  margin: 0;
+  font-family: Anton, Impact, sans-serif;
+  font-size: var(--text-section-title);
+  font-weight: 400;
+  line-height: 1.12;
+}
+
+.controls,
+.photoGrid,
+.stateGrid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.controls {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  align-items: start;
+}
+
+.stateGrid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+}
+
+.photoGrid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+}
+
+.photoCard {
+  display: grid;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.photoCard h3 {
+  margin: 0;
+  font-size: var(--text-card-title);
+}
+
+.longEmail {
+  overflow-wrap: anywhere;
+}
+
+.note {
+  max-width: 45rem;
+  margin: 0;
+  color: var(--color-muted);
+}

@@ -7,6 +7,9 @@
 
 # testing
 /coverage
+/test-results/
+/playwright-report/
+/tests/fixtures/ui/.vite/
 
 # next.js
 /.next/
@@ -25,13 +28,21 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env*
+!.env.example
 
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
+__pycache__/
+
+# local planning and generated review artifacts
+/CLAUDE.md
+/docs/*.md
+/docs/guides/
+/docs/planning/
+/docs/reports/
+/output/
+/tmp/
