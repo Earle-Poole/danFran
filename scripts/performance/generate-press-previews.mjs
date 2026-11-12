@@ -6,7 +6,7 @@ import sharp from 'sharp'
 const repoRoot = process.cwd()
 const sourceRoot = path.join(repoRoot, 'public', 'assets', 'press_kit', 'pressPhotos')
 const outputRoot = path.join(repoRoot, 'public', 'assets', 'derived', 'press')
-const manifestPath = path.join(repoRoot, 'docs', 'reports', 'PERF-M5', 'press-previews-manifest.json')
+const manifestPath = path.join(repoRoot, 'tests', 'fixtures', 'press-previews-manifest.json')
 const targetBytes = 120 * 1024
 const widths = [1200, 1000, 800]
 const qualities = [72, 68, 64, 60, 56, 52, 48, 44, 40]

@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { Container, Section } from '@/components/ui'
+import { qrCodePath } from 'lib/content/downloads'
 import { QrActions } from './QrActions'
 
-const qrImage = '/assets/qr/daniel-franzese-qr.png'
 const qrDestination = 'https://www.whatsupdanny.com/qr'
 
 export const metadata: Metadata = {
@@ -37,13 +37,13 @@ export default function QrSharePage() {
           <div className="flex flex-col items-center gap-6 bg-[repeating-conic-gradient(from_8deg_at_50%_44%,transparent_0deg_12deg,rgba(24,24,24,0.065)_12deg_24deg)] px-4 py-6 text-center medium:px-8 medium:py-8">
             <Image
               className="h-auto w-full max-w-[22rem] border-2 border-ink bg-white shadow-[8px_8px_0_var(--color-pink)]"
-              src={qrImage}
+              src={qrCodePath}
               alt="QR code with Daniel Franzese’s laughing logo in the center"
               width={1230}
               height={1230}
               loading="eager"
             />
-            <QrActions imageUrl={qrImage} filename="daniel-franzese-qr.png" />
+            <QrActions imageUrl={qrCodePath} filename="daniel-franzese-qr.png" />
           </div>
         </div>
       </Container>

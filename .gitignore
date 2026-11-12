@@ -39,12 +39,10 @@ yarn-error.log*
 __pycache__/
 
 # local planning and generated review artifacts
-/docs/IMPLEMENTATION_PLAN.md
-/docs/AGENT_PLAYBOOK.md
+/CLAUDE.md
+/docs/*.md
+/docs/guides/
 /docs/planning/
-/docs/reports/*
-!/docs/reports/PERF-M5/
-/docs/reports/PERF-M5/*
-!/docs/reports/PERF-M5/press-previews-manifest.json
+/docs/reports/
 /output/
 /tmp/

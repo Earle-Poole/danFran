@@ -150,6 +150,7 @@ export type InventoryAssetKind =
   | 'download'
   | 'download-preview'
   | 'decorative'
+  | 'qr-code'
 
 export type InventoryAsset = {
   readonly path: `/${string}`

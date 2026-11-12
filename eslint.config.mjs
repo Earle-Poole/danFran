@@ -7,6 +7,8 @@ const config = [
     'test-results/**',
     'coverage/**',
     '.qa-output/**',
+    'output/**',
+    'tmp/**',
   ]),
   ...nextVitals,
 ]

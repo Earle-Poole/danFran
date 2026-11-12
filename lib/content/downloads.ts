@@ -94,6 +94,8 @@ export const downloads = [
 export const downloadById = (id: string): DownloadRecord | undefined =>
   downloads.find((download) => download.id === id)
 
+export const qrCodePath = '/assets/qr/daniel-franzese-qr.png'
+
 export const mediaAssetInventory = [
   { path: '/assets/about_me_photo1.webp', kind: 'photo-original', ownerId: 'selected-about-me' },
   { path: '/assets/about_me_photo1.jpg', kind: 'download', ownerId: 'download-about-me-photo' },
@@ -105,6 +107,7 @@ export const mediaAssetInventory = [
   { path: '/assets/dot-light.webp', kind: 'decorative' },
   { path: '/assets/logo.png', kind: 'decorative' },
   { path: '/assets/logo.webp', kind: 'decorative' },
+  { path: qrCodePath, kind: 'qr-code' },
   ...Array.from({ length: 24 }, (_, index) => ({
     path: `/assets/modelling_gallery/mg (${index + 1}).webp` as `/${string}`,
     kind: 'download' as const,

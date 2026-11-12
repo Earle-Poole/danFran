@@ -18,7 +18,7 @@ import type { InventoryAsset, PhotoRecord, RouteRecord, VideoRecord } from '../.
 const mediaRoot = resolve(process.cwd(), 'public/assets')
 const pressPreviewManifestPath = resolve(
   process.cwd(),
-  'docs/reports/PERF-M5/press-previews-manifest.json'
+  'tests/fixtures/press-previews-manifest.json'
 )
 
 type PressPreviewManifestEntry = {
@@ -69,13 +69,12 @@ describe('content contracts', () => {
     const inventory = new Set(mediaAssetInventory.map((asset) => asset.path))
     const previewEntries = readPressPreviewManifest()
     const derivedPaths = new Set(previewEntries.map((entry) => entry.previewPath))
-    const originalAssets = new Set(
+    const nonPreviewAssets = new Set(
       Array.from(actual).filter((path) => !derivedPaths.has(path))
     )
 
-    expect(mediaAssetInventory).toHaveLength(82)
-    expect(inventory.size).toBe(82)
-    expect(originalAssets).toEqual(inventory)
+    expect(inventory.size).toBe(mediaAssetInventory.length)
+    expect(nonPreviewAssets).toEqual(inventory)
     expect(actual).toEqual(
       new Set([...Array.from(inventory), ...Array.from(derivedPaths)])
     )

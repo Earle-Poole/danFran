@@ -27,7 +27,7 @@ export type M5PressPreviewManifestEntry = {
 }
 
 export function readM5PressPreviewManifest(): M5PressPreviewManifestEntry[] {
-  const manifestPath = path.resolve(process.cwd(), 'docs/reports/PERF-M5/press-previews-manifest.json')
+  const manifestPath = path.resolve(process.cwd(), 'tests/fixtures/press-previews-manifest.json')
   const manifest = JSON.parse(readFileSync(manifestPath, 'utf8')) as { entries?: M5PressPreviewManifestEntry[] }
   if (!Array.isArray(manifest.entries)) throw new Error(`Press preview manifest has no entries: ${manifestPath}`)
   return manifest.entries
