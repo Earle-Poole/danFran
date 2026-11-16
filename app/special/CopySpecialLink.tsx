@@ -17,8 +17,9 @@ export function CopySpecialLink({ url, label }: { url: string; label: string }) 
   }
 
   return (
-    <div className="mt-4 border-t border-[#dfc6cd] pt-2 [html:not([data-js-enabled=true])_&]:hidden">
-      <Button variant="text" onClick={copy}>{label}</Button>
+    <div className="mt-4 border-t border-[#dfc6cd] pt-3">
+      <p className="text-caption text-muted">Send it to a friend. If you post it, tag @whatsupdanny.</p>
+      <Button className="[html:not([data-js-enabled=true])_&]:hidden" variant="text" onClick={copy}>{label}</Button>
       <p className="text-caption text-muted" role="status">
         {result === 'copied' ? 'Link copied.' : result === 'manual' ? 'Copy the link below to share.' : null}
       </p>

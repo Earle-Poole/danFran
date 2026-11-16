@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import Link from 'next/link'
 import { ActionLink, Container, Photo, Section } from '@/components/ui'
 import { selectedPhotos, shopEnabled, urls } from 'lib/constants'
+import { cameoProfile } from 'lib/content/contacts'
 import { getHomeImageSrcSet, homeDestinationImageSizes } from 'lib/content/home-images'
 import { AppearancesSection } from '@/components/appearances'
 import { HomeLiveBand } from './HomeLiveBand'
@@ -80,17 +81,17 @@ const HomeTemplate = ({ newsletterSection }: HomeTemplateProps) => {
       <Section id="about" tone="paper" className={styles.aboutPreview} aria-labelledby="about-preview-heading">
         <Container className={styles.aboutGrid}>
           <div>
-            <p className={styles.eyebrow}>A little more Daniel</p>
+            <p className={styles.eyebrow}>Actor, writer, director, comedian &amp; activist</p>
             <h2 id="about-preview-heading" className={styles.sectionHeading}>More than a familiar face.</h2>
           </div>
           <div className={styles.readingColumn}>
             <p>
-              Daniel Franzese is an actor, comedian, writer, director, and activist known for bringing a big-hearted energy to every room. You may know him as Damian in Mean Girls, or from Bully, Looking, Recovery Road, and his live comedy.
+              Hi, I’m Daniel Franzese! (That’s Fran-ZAY-see, thankyouverymuch.) I’m best known as Damian, the gay bestie you always wanted, in Tina Fey’s cult classic “Mean Girls,” and as Eddie in HBO’s “Looking.”
             </p>
             <p>
-              Read the full biography, selected screen work, and advocacy story on the About page.
+              I’ve taken my stand-up all over the country and created “Jersey Shoresical: A Frickin’ Rock Opera!” My newest is the stand-up special “It’s Not Easy,” all about dating, fame, and growing up with my outspoken Italian mother.
             </p>
-            <ActionLink href="/about">Read Daniel&apos;s story</ActionLink>
+            <ActionLink href="/about">Read my full story</ActionLink>
           </div>
         </Container>
       </Section>
@@ -99,11 +100,11 @@ const HomeTemplate = ({ newsletterSection }: HomeTemplateProps) => {
         <Container className={styles.fanServicesInner}>
           <div>
             <p className={styles.eyebrow}>For fans</p>
-            <h2 id="cameo-heading" className={styles.sectionHeading}>A message, just for you.</h2>
-            <p>{shopEnabled ? 'Find personalized videos on Cameo and merch in the shop.' : 'Get a personalized video from Daniel on Cameo.'}</p>
+            <h2 id="cameo-heading" className={styles.sectionHeading}>A message, just for them.</h2>
+            <p>{cameoProfile.giftCopy}</p>
           </div>
           <div className={styles.actions}>
-            <ActionLink href={urls.CAMEO} variant="inverse">Find Daniel on Cameo</ActionLink>
+            <ActionLink href={urls.CAMEO} variant="inverse">{cameoProfile.giftLabel}</ActionLink>
             {shopEnabled ? <ActionLink href={urls.STORE} variant="inverse-text">Visit the shop</ActionLink> : null}
           </div>
         </Container>

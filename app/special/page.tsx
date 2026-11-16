@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { ActionLink, Container, Section } from '@/components/ui'
-import { urls } from 'lib/constants'
+import { cameoProfile } from 'lib/content/contacts'
 import { specialTeaserPosterPath } from 'lib/content/downloads'
 import { getConfiguredOrigin, getDeploymentEnvironment } from 'lib/seo/origin'
 import { CopySpecialLink } from './CopySpecialLink'
@@ -11,6 +11,7 @@ import styles from './special.module.css'
 const title = 'It’s Not Easy | Daniel Franzese'
 const description = 'Watch the opening number from It’s Not Easy, a comedy special by Daniel Franzese.'
 const specialUrl = 'https://www.whatsupdanny.com/special'
+const officialSignupUrl = 'https://chroniclecinema.com/its-not-easy/'
 const vimeoUrl = 'https://vimeo.com/1232382902/2668cca1d1'
 const vimeoPlayerUrl = 'https://player.vimeo.com/video/1232382902?h=2668cca1d1&autoplay=1'
 const origin = getConfiguredOrigin()
@@ -44,7 +45,7 @@ function publicLink(value: string | undefined) {
 
 export default function SpecialPage() {
   const youtubeUrl = publicLink(process.env.SPECIAL_YOUTUBE_URL)
-  const signupUrl = publicLink(process.env.SPECIAL_SIGNUP_URL)
+  const signupUrl = publicLink(process.env.SPECIAL_SIGNUP_URL) ?? officialSignupUrl
   const photosUrl = publicLink(process.env.SPECIAL_PHOTOS_URL)
 
   return (
@@ -88,21 +89,25 @@ export default function SpecialPage() {
             <aside className={styles.releaseCard} aria-labelledby="release-title">
               <p className={`${styles.overline} text-raspberry`}>{youtubeUrl ? 'Now on YouTube' : 'Coming to YouTube'}</p>
               <h3 id="release-title" className="mb-2 mt-3 font-display text-[clamp(1.9rem,3vw,2.75rem)] leading-tight">
-                {youtubeUrl ? 'Watch the full special' : signupUrl ? 'Get the release link' : 'The full special'}
+                {youtubeUrl ? 'Watch the full special' : 'Get the release link'}
               </h3>
               {youtubeUrl ? (
                 <ActionLink className="mt-3 self-start" href={youtubeUrl}>Watch on YouTube</ActionLink>
-              ) : signupUrl ? (
+              ) : (
                 <>
-                  <p className="text-muted">Get an email when the full special is available to watch.</p>
+                  <p className="text-muted">Sign up with Chronicle Cinema for an email when the full special is available.</p>
                   <ActionLink className="mt-4 self-start" href={signupUrl}>Notify me</ActionLink>
                 </>
-              ) : (
-                <p className="text-muted">Check back here for the link to watch.</p>
               )}
               <CopySpecialLink url={youtubeUrl ?? specialUrl} label={youtubeUrl ? 'Copy video link' : 'Copy page link'} />
             </aside>
           </div>
+          <section className="mt-6 max-w-[48rem]" aria-labelledby="about-special-title">
+            <h2 id="about-special-title" className={styles.extraTitle}>About the special</h2>
+            <p className="mt-2 text-muted">
+              In his debut comedy special, Danny mixes stand-up with two original songs. He riffs on his Italian mother’s vocabulary, living on Hollywood residuals, coming out after playing Damian, and why Pompeii scares him more than any horror movie. Filmed in front of a sold-out audience.
+            </p>
+          </section>
         </Container>
       </Section>
 
@@ -117,9 +122,9 @@ export default function SpecialPage() {
             )}
           </section>
           <section className="py-6 medium:pl-8" aria-labelledby="cameo-title">
-            <h2 id="cameo-title" className={styles.extraTitle}>Make Someone’s Day</h2>
-            <p className="mt-2 text-muted">Send someone a personalized video from Daniel.</p>
-            <ActionLink variant="text" href={urls.CAMEO}>Find Daniel on Cameo</ActionLink>
+            <h2 id="cameo-title" className={styles.extraTitle}>A Cameo from Danny</h2>
+            <p className="mt-2 text-muted">{cameoProfile.giftCopy}</p>
+            <ActionLink variant="text" href={cameoProfile.url}>{cameoProfile.giftLabel}</ActionLink>
           </section>
         </div>
       </Container>

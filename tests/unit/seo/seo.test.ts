@@ -66,6 +66,17 @@ describe('truthful structured data', () => {
       origin: 'https://example.invalid',
       schema: { type: 'Person', name: '</script><script>alert("&")</script>' },
     })
+    expect(jsonLd).toEqual(expect.arrayContaining([expect.objectContaining({
+      '@id': 'https://example.invalid/#person',
+      name: 'Daniel Franzese',
+      alternateName: 'Danny Franzese',
+      sameAs: [
+        'https://www.facebook.com/profile.php?id=659344013',
+        'https://www.instagram.com/whatsupdanny/',
+        'https://www.imdb.com/name/nm0291881/',
+        'https://www.cameo.com/whatsupdanny',
+      ],
+    })]))
     const serialized = serializeJsonLd(jsonLd!)
     expect(serialized).not.toContain('<script')
     expect(serialized).toContain('\\u003c/script\\u003e')

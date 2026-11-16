@@ -1,4 +1,4 @@
-import { photos, selectedPhotos, socialLinks } from '../content'
+import { cameoProfile, photos, selectedPhotos, socialLinks, type SocialLink } from '../content'
 import { parsePublicOrigin } from './origin'
 
 export type SeoSchemaInput =
@@ -39,6 +39,11 @@ const isVerifiedHttpsUrl = (value: unknown): value is `https://${string}` => {
 const hasOnlyKeys = (value: Record<string, unknown>, allowed: readonly string[]): boolean =>
   Object.keys(value).every((key) => allowed.includes(key))
 
+const isConfirmedProfile = ({ verification }: SocialLink): boolean =>
+  verification === 'verified' || verification === 'source-confirmed'
+
+const personProfileUrls = [...socialLinks.filter(isConfirmedProfile).map(({ url }) => url), cameoProfile.url]
+
 /**
  * Runtime allowlist for the small set of schema types this site can support.
  * Unknown fields and unsupported schema types are rejected rather than copied
@@ -61,7 +66,7 @@ export const validateSeoSchema = (value: unknown): SeoSchemaInput | null => {
         !candidate.sameAs.every(
           (url) =>
             isVerifiedHttpsUrl(url) &&
-            socialLinks.some((social) => String(social.verification) === 'verified' && social.url === url),
+            personProfileUrls.some((profileUrl) => profileUrl === url),
         )
       ) return null
     }
@@ -102,19 +107,17 @@ export const buildSeoJsonLd = ({
   const validImagePath = isOriginalPhotoPath(imagePath) ? imagePath : null
   if (!validOrigin || !validImagePath) return null
 
-  const personSameAs = socialLinks
-    .filter((social) => String(social.verification) === 'verified')
-    .map((social) => social.url)
-
   const values: JsonLdObject[] = [
     {
       '@context': 'https://schema.org',
       '@type': 'Person',
       '@id': `${validOrigin}/#person`,
       name: 'Daniel Franzese',
+      alternateName: 'Danny Franzese',
+      jobTitle: ['Actor', 'Writer', 'Director', 'Comedian', 'Activist'],
       url: `${validOrigin}/`,
       image: absoluteAssetUrl(validOrigin, validImagePath),
-      ...(personSameAs.length ? { sameAs: personSameAs } : {}),
+      sameAs: personProfileUrls,
     },
     {
       '@context': 'https://schema.org',

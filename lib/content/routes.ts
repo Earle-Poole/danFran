@@ -1,14 +1,16 @@
 import type { RouteRecord, RouteId } from './types'
 
 const preservedHomeFragments = ['#home', '#about', '#cameo', '#contact'] as const
+const homeTitle = 'Daniel Franzese (Danny) | Actor & Comedian, Mean Girls’ Damian'
+const homeDescription = 'Official site of Daniel Franzese, Damian in Mean Girls and Eddie in HBO’s Looking. His latest stand-up special is It’s Not Easy.'
 
 export const routes = [
   {
     id: 'home',
     path: '/',
     label: 'Home',
-    title: 'Daniel Franzese | Actor, Comedian & Activist',
-    description: 'Explore Daniel Franzese’s work, videos, press materials, and booking information.',
+    title: homeTitle,
+    description: homeDescription,
     canonicalPath: '/',
     indexable: true,
     availability: 'available',
@@ -19,8 +21,8 @@ export const routes = [
     id: 'legacy-home',
     path: '/home',
     label: 'Home',
-    title: 'Daniel Franzese | Actor, Comedian & Activist',
-    description: 'The legacy home route for Daniel Franzese, with preserved home fragment destinations.',
+    title: homeTitle,
+    description: homeDescription,
     canonicalPath: '/',
     indexable: false,
     availability: 'available',

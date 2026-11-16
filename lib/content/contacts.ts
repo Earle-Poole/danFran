@@ -1,5 +1,11 @@
 import type { ContactRecord, SocialLink } from './types'
 
+export const cameoProfile = {
+  url: 'https://www.cameo.com/whatsupdanny',
+  giftLabel: 'Make Someone’s Day',
+  giftCopy: 'Send someone you love a personal Cameo of me, made just for them. I got you!',
+} as const
+
 export const socialLinks = [
   {
     id: 'facebook',
@@ -11,18 +17,6 @@ export const socialLinks = [
     id: 'instagram',
     label: 'Instagram',
     url: 'https://www.instagram.com/whatsupdanny/',
-    verification: 'source-confirmed',
-  },
-  {
-    id: 'linkedin',
-    label: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/daniel-franzese-84126a57/',
-    verification: 'source-confirmed',
-  },
-  {
-    id: 'twitter',
-    label: 'Twitter',
-    url: 'https://www.twitter.com/WhatsupDanny',
     verification: 'source-confirmed',
   },
   {

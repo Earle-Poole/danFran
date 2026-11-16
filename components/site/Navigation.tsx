@@ -85,6 +85,14 @@ const Navigation = forwardRef<NavigationHandle, NavigationProps>(function Naviga
     onNavigate?.()
   }
 
+  const fanLink = shopEnabled ? (
+    <a className={styles.navLink} href={urls.STORE} onClick={navigate}>Shop</a>
+  ) : (
+    <a className={styles.navLink} href={urls.CAMEO} target="_blank" rel="noopener noreferrer" onClick={navigate}>
+      Cameo<span className="sr-only"> (opens in a new tab)</span>
+    </a>
+  )
+
   if (compact) {
     return (
       <nav aria-label="Primary" className={styles.compactMenu}>
@@ -98,7 +106,7 @@ const Navigation = forwardRef<NavigationHandle, NavigationProps>(function Naviga
           <li><Link className={`${styles.navLink} ${aboutActive ? styles.navLinkActive : ''}`} href="/about" aria-current={aboutActive ? 'page' : undefined} onClick={navigate}>About</Link></li>
           {appearancesAvailable ? <li><Link className={styles.navLink} href="/calendar" onClick={navigate}>Live dates</Link></li> : null}
           <li><Link className={`${styles.navLink} ${pressActive ? styles.navLinkActive : ''}`} href={pressPath} aria-current={pressActive ? 'page' : undefined} onClick={navigate}>Press</Link></li>
-          {shopEnabled ? <li><a className={styles.navLink} href={urls.STORE} onClick={navigate}>Shop</a></li> : null}
+          <li>{fanLink}</li>
           <li><Link className={`${styles.navLink} ${bookingActive ? styles.navLinkActive : ''}`} href="/booking#booking-details" aria-current={bookingActive ? 'page' : undefined} onClick={navigate}>Book Daniel</Link></li>
         </ul>
       </nav>
@@ -122,7 +130,7 @@ const Navigation = forwardRef<NavigationHandle, NavigationProps>(function Naviga
         <li><Link className={`${styles.navLink} ${aboutActive ? styles.navLinkActive : ''}`} href="/about" aria-current={aboutActive ? 'page' : undefined} onClick={navigate}>About</Link></li>
         {appearancesAvailable ? <li><Link className={styles.navLink} href="/calendar" onClick={navigate}>Live dates</Link></li> : null}
         <li><Link className={`${styles.navLink} ${pressActive ? styles.navLinkActive : ''}`} href={pressPath} aria-current={pressActive ? 'page' : undefined} onClick={navigate}>Press</Link></li>
-        {shopEnabled ? <li><a className={styles.navLink} href={urls.STORE} onClick={navigate}>Shop</a></li> : null}
+        <li>{fanLink}</li>
         <li><Link className={`${styles.bookLink} ${bookingActive ? styles.navLinkActive : ''}`} href="/booking#booking-details" aria-current={bookingActive ? 'page' : undefined} onClick={navigate}>Book Daniel</Link></li>
       </ul>
     </nav>

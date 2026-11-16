@@ -24,7 +24,9 @@ describe('main visitor pages', () => {
     expect(document.getElementById('home')).toBeInTheDocument()
     expect(document.getElementById('about')).toBeInTheDocument()
     expect(document.getElementById('cameo')).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'Find Daniel on Cameo' })).toHaveAttribute('href', 'https://www.cameo.com/whatsupdanny')
+    expect(screen.getByText(/Fran-ZAY-see/)).toBeInTheDocument()
+    expect(screen.getByText(/My newest is the stand-up special “It’s Not Easy,”/)).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Make Someone’s Day' })).toHaveAttribute('href', 'https://www.cameo.com/whatsupdanny')
   })
 
   it('composes the VIDEO-owned newsletter contract once on the App Router Home page', async () => {
