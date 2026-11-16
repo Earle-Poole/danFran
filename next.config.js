@@ -69,7 +69,7 @@ module.exports = {
               "img-src 'self' data: https://img.youtube.com",
               "font-src 'self'",
               "connect-src 'self' https://vitals.vercel-insights.com",
-              "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com",
+              "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com",
               "form-action 'self' https://udsterleads.us10.list-manage.com",
               "frame-ancestors 'self'",
             ].join('; '),
