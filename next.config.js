@@ -33,6 +33,9 @@ if (process.env.VERCEL_ENV === 'production') {
 
 /** @type {import('next').NextConfig} */
 module.exports = {
+  experimental: {
+    agentUpgrade: 'security',
+  },
   reactStrictMode: true,
   poweredByHeader: false,
   redirects() {
