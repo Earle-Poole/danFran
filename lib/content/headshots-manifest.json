@@ -1,0 +1,110 @@
+[
+  {
+    "id": "headshot-2026-striped-shirt",
+    "filename": "daniel-franzese-striped-shirt.webp",
+    "source": "Daniel Franzese-Headshot.jpeg",
+    "alt": "Daniel Franzese leaning forward in a navy striped shirt and white tank top",
+    "width": 1600,
+    "height": 2400,
+    "bytes": 196130,
+    "previewWidth": 640,
+    "previewHeight": 960,
+    "previewBytes": 36908
+  },
+  {
+    "id": "headshot-2026-city-portrait",
+    "filename": "daniel-franzese-city-portrait.webp",
+    "source": "fall-2026/6I3A5241.jpg",
+    "alt": "Daniel Franzese standing on a city sidewalk in a black T-shirt, jeans, and white sneakers",
+    "width": 1600,
+    "height": 1066,
+    "bytes": 145682,
+    "previewWidth": 640,
+    "previewHeight": 427,
+    "previewBytes": 22828
+  },
+  {
+    "id": "headshot-2026-night-portrait",
+    "filename": "daniel-franzese-night-portrait.webp",
+    "source": "fall-2026/6I3A5254.jpg",
+    "alt": "Daniel Franzese in a checked jacket beside a lit theater entrance at night",
+    "width": 1600,
+    "height": 1067,
+    "bytes": 202918,
+    "previewWidth": 640,
+    "previewHeight": 427,
+    "previewBytes": 41146
+  },
+  {
+    "id": "headshot-2026-brick-wall",
+    "filename": "daniel-franzese-brick-wall.webp",
+    "source": "fall-2026/6I3A5256.jpg",
+    "alt": "Daniel Franzese smiling in a black T-shirt against a red brick wall",
+    "width": 1600,
+    "height": 1067,
+    "bytes": 84572,
+    "previewWidth": 640,
+    "previewHeight": 427,
+    "previewBytes": 19518
+  },
+  {
+    "id": "headshot-2026-patterned-shirt-smile",
+    "filename": "daniel-franzese-patterned-shirt-smile.webp",
+    "source": "fall-2026/Edit_Danny_L1330539.jpg",
+    "alt": "Daniel Franzese smiling in a patterned shirt and a colorful neck scarf",
+    "width": 1600,
+    "height": 2400,
+    "bytes": 272538,
+    "previewWidth": 640,
+    "previewHeight": 960,
+    "previewBytes": 55284
+  },
+  {
+    "id": "headshot-2026-patterned-shirt",
+    "filename": "daniel-franzese-patterned-shirt.webp",
+    "source": "fall-2026/Edit_Danny_L1330547.jpg",
+    "alt": "Daniel Franzese in a patterned shirt and neck scarf against a dark red backdrop",
+    "width": 1600,
+    "height": 2400,
+    "bytes": 308762,
+    "previewWidth": 640,
+    "previewHeight": 960,
+    "previewBytes": 59220
+  },
+  {
+    "id": "headshot-2026-camouflage-cap",
+    "filename": "daniel-franzese-camouflage-cap.webp",
+    "source": "fall-2026/Edit_Danny_L1340535.jpg",
+    "alt": "Daniel Franzese in a camouflage cap and white tank top against a red wall",
+    "width": 1600,
+    "height": 2400,
+    "bytes": 230800,
+    "previewWidth": 640,
+    "previewHeight": 960,
+    "previewBytes": 39536
+  },
+  {
+    "id": "headshot-2026-flat-cap",
+    "filename": "daniel-franzese-flat-cap.webp",
+    "source": "fall-2026/Edit_Danny_L1340981.jpg",
+    "alt": "Daniel Franzese wearing a brown flat cap and orange and tan jacket against a blue wall",
+    "width": 1600,
+    "height": 2400,
+    "bytes": 195990,
+    "previewWidth": 640,
+    "previewHeight": 960,
+    "previewBytes": 35188
+  },
+  {
+    "id": "headshot-2026-white-blazer",
+    "filename": "daniel-franzese-white-blazer.webp",
+    "source": "fall-2026/Edit_Danny_L1350062.jpg",
+    "alt": "Daniel Franzese in a white blazer and gold chain against a weathered brick wall",
+    "width": 1600,
+    "height": 2000,
+    "bytes": 150972,
+    "previewWidth": 640,
+    "previewHeight": 800,
+    "previewBytes": 25246
+  }
+]

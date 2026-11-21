@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { ActionLink, Container, Section } from '@/components/ui'
 import { cameoProfile } from 'lib/content/contacts'
 import { specialTeaserPosterPath } from 'lib/content/downloads'
+import { featuredHeadshots } from 'lib/content/photos'
 import { getConfiguredOrigin, getDeploymentEnvironment } from 'lib/seo/origin'
 import { CopySpecialLink } from './CopySpecialLink'
 import { TeaserPlayer } from './TeaserPlayer'
@@ -71,7 +72,7 @@ export default function SpecialPage() {
           <div className={styles.portrait}>
             <picture>
               <source media="(max-width: 24rem)" srcSet="/assets/derived/home/hero-320.webp" />
-              <Image className={styles.portraitImage} src="/assets/derived/home/hero-600.webp" width={600} height={600} loading="eager" fetchPriority="high" alt="Daniel Franzese in a blue suit, lit in pink and blue" />
+              <Image className={styles.portraitImage} src="/assets/derived/home/hero-600.webp" width={600} height={900} loading="eager" fetchPriority="high" alt={featuredHeadshots.hero.alt} />
             </picture>
           </div>
         </Container>

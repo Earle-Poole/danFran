@@ -10,6 +10,7 @@ export type PhotoGalleryProps = {
   photos: readonly PhotoRecord[]
   heading?: string
   description?: string
+  downloadLabel?: string
   id?: string
 }
 
@@ -17,6 +18,7 @@ export default function PhotoGallery({
   photos,
   heading = 'The collection',
   description = 'Browse every original photograph in this ordered collection. Select a photo to view the uncropped source or download it.',
+  downloadLabel = 'Download original',
   id = 'photo-collection',
 }: PhotoGalleryProps) {
   const [selectedId, setSelectedId] = useState<string | null>(null)
@@ -35,7 +37,7 @@ export default function PhotoGallery({
             <h2 id={`${id}-heading`}>{heading}</h2>
             <p>{description}</p>
           </div>
-          <p className={styles.count}>{photos.length} original photos</p>
+          <p className={styles.count}>{photos.length} photos</p>
         </div>
         <div className={styles.grid}>
           {photos.map((photo, index) => (
@@ -49,6 +51,9 @@ export default function PhotoGallery({
                 <div className={styles.photoFrame}>
                   <Photo
                     src={photo.originalPath}
+                    srcSet={photo.collection === 'headshots' && photo.previewPath
+                      ? `${photo.previewPath} 640w, ${photo.originalPath} ${photo.dimensions.width}w`
+                      : undefined}
                     alt=""
                     width={photo.dimensions.width}
                     height={photo.dimensions.height}
@@ -60,11 +65,11 @@ export default function PhotoGallery({
                 </div>
               </button>
               <div className={styles.cardMeta} aria-hidden="true">
-                <span>{photo.assetKind === 'press-photo' ? 'Press photo' : 'Portrait'}</span>
+                <span>{photo.collection === 'headshots' ? 'Headshot' : photo.assetKind === 'press-photo' ? 'Press photo' : 'Portrait'}</span>
                 <span>{String(index + 1).padStart(2, '0')}</span>
               </div>
               <a className={styles.downloadLink} href={photo.originalPath} download>
-                Download original
+                {downloadLabel}
               </a>
             </article>
           ))}

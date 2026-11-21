@@ -45,8 +45,8 @@ export function HomeLiveHero({ photo: heroPhoto, srcSet }: { photo: PhotoRecord;
           width={heroPhoto.dimensions.width}
           height={heroPhoto.dimensions.height}
           crop="cover"
-          frameRatio={hasAppearances ? '352 / 332' : undefined}
-          objectPosition="50% 42%"
+          frameRatio={hasAppearances ? '352 / 332' : 1}
+          objectPosition="50% 15%"
           sizes={hasAppearances ? liveHeroImageSizes : homeHeroImageSizes}
           loading="eager"
           fetchPriority="high"

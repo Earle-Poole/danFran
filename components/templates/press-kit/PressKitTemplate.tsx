@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { ActionLink, Container } from '@/components/ui'
 import { contacts, downloadById } from 'lib/content'
 import PressGallery from '@/components/press/PressGallery'
+import { PhotoGallery } from '@/components/gallery'
+import { headshotPhotos } from 'lib/content/photos'
 import PressResourceText from '@/components/press/PressResourceText'
 import styles from './PressKitTemplate.module.css'
 
@@ -22,6 +24,14 @@ const PressKitTemplate = () => {
         <h1 className={styles.title} data-route-heading="true">Press kit.</h1>
         <p className={styles.subtitle}>Biographies, photography &amp; booking contacts.</p>
       </Container>
+
+      <PhotoGallery
+        photos={headshotPhotos}
+        heading="Current headshots"
+        description="Daniel’s Fall 2026 headshots, ready to view and download."
+        downloadLabel="Download photo"
+        id="current-headshots"
+      />
 
       <section id="press-resources" className={styles.biography} aria-labelledby="press-resources-heading">
         <Container>

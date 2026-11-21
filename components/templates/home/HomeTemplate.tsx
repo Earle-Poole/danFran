@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react'
 import Link from 'next/link'
 import { ActionLink, Container, Photo, Section } from '@/components/ui'
-import { selectedPhotos, shopEnabled, urls } from 'lib/constants'
+import { shopEnabled, urls } from 'lib/constants'
+import { featuredHeadshots } from 'lib/content/photos'
 import { cameoProfile } from 'lib/content/contacts'
 import { getHomeImageSrcSet, homeDestinationImageSizes } from 'lib/content/home-images'
 import { AppearancesSection } from '@/components/appearances'
@@ -14,7 +15,7 @@ export type HomeTemplateProps = {
   newsletterSection?: ReactNode
 }
 
-const [heroPhoto, aboutPhoto, portraitPhoto, pressPhoto] = selectedPhotos
+const { hero: heroPhoto, about: aboutPhoto, portraits: portraitPhoto, press: pressPhoto } = featuredHeadshots
 
 const HomeTemplate = ({ newsletterSection }: HomeTemplateProps) => {
   return (
@@ -62,7 +63,7 @@ const HomeTemplate = ({ newsletterSection }: HomeTemplateProps) => {
                 width={pressPhoto.dimensions.width}
                 height={pressPhoto.dimensions.height}
                 sizes={homeDestinationImageSizes}
-                objectPosition="68% 50%"
+                objectPosition="50% 40%"
               />
               <span className={styles.cardTitle}>Press kit</span>
               <span className={styles.cardDescription}>Find biographies, photography, and contacts.</span>

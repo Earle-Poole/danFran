@@ -152,7 +152,7 @@
 
   .title { font-size: clamp(5rem, 9.3vw, 8.5rem); }
   .portrait { --frame-offset: 0.875rem; }
-  .portraitImage { aspect-ratio: 1.06; object-position: center 39%; }
+  .portraitImage { aspect-ratio: 1.06; }
   .screeningLayout { grid-template-columns: minmax(0, 2fr) minmax(16.5rem, 1fr); }
 }
 

@@ -61,7 +61,7 @@ export type ContactRecord = {
   readonly socialLinks: readonly SocialLink[]
 }
 
-export type PhotoCollection = 'selected' | 'modeling' | 'press'
+export type PhotoCollection = 'selected' | 'modeling' | 'press' | 'headshots'
 export type PhotoAssetKind = 'portrait' | 'press-photo' | 'poster'
 export type Aspect = 'portrait' | 'landscape' | 'square'
 

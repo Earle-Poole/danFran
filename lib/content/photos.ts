@@ -1,5 +1,6 @@
 import { downloadById } from './downloads'
 import type { Aspect, PhotoRecord } from './types'
+import headshots from './headshots-manifest.json'
 
 const focal = (x = 0.5, y = 0.5) => ({ x, y, unit: 'fraction' as const })
 
@@ -133,7 +134,28 @@ export const pressPhotos = pressPhotoIds.map((downloadId, index) => {
   })
 })
 
-export const photos = [...selectedPhotos, ...modelingPhotos, ...pressPhotos] as const
+export const headshotPhotos = headshots.map((image) => photo({
+  id: image.id,
+  collection: 'headshots',
+  assetKind: 'portrait',
+  originalPath: `/assets/headshots-2026/${image.filename}`,
+  previewPath: `/assets/headshots-2026/preview-${image.filename}`,
+  downloadId: `download-${image.id}`,
+  dimensions: { width: image.width, height: image.height, unit: 'px' },
+  alt: image.alt,
+  aspect: aspectFor(image.width, image.height),
+  focal: { compact: focal(0.5, 0.35), wide: focal(0.5, 0.4) },
+  caption: 'Fall 2026 headshots',
+}, 'source-confirmed'))
+
+export const featuredHeadshots = {
+  hero: headshotPhotos[0],
+  about: headshotPhotos[4],
+  portraits: headshotPhotos[7],
+  press: headshotPhotos[8],
+} as const
+
+export const photos = [...selectedPhotos, ...modelingPhotos, ...pressPhotos, ...headshotPhotos] as const
 
 export const photoById = (id: string): PhotoRecord | undefined =>
   photos.find((photoRecord) => photoRecord.id === id)

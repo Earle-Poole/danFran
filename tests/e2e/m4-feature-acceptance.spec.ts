@@ -34,16 +34,16 @@ test.describe('M4 Home, About and Booking journeys', () => {
     await expect(page.getByRole('link', { name: /watch daniel/i })).toHaveAttribute('href', '/video-gallery')
     await expect(page.getByRole('link', { name: /booking inquiries/i })).toHaveAttribute('href', '/booking')
     const homeAssets = originalAssetReferences(await imageAttributeValues(page))
-    expect(homeAssets).toContain('/assets/about_me_photo1.webp')
-    expect(homeAssets).toContain('/assets/about_photo_2.webp')
-    expect(homeAssets).toContain('/assets/modelling_gallery/mg (3).webp')
-    expect(homeAssets).toContain('/assets/home_cover.webp')
+    expect(homeAssets).toContain('/assets/headshots-2026/daniel-franzese-striped-shirt.webp')
+    expect(homeAssets).toContain('/assets/headshots-2026/daniel-franzese-patterned-shirt-smile.webp')
+    expect(homeAssets).toContain('/assets/headshots-2026/daniel-franzese-flat-cap.webp')
+    expect(homeAssets).toContain('/assets/headshots-2026/daniel-franzese-white-blazer.webp')
     expect(homeAssets.every((asset) => !asset.includes('/output/') && !asset.includes('concept'))).toBe(true)
 
     await page.goto('/about')
     await expect(page.getByRole('heading', { name: 'More than a familiar face.', level: 1 })).toHaveCount(1)
     await expect(page.locator('#selected-work')).toBeVisible()
-    expect(originalAssetReferences(await imageAttributeValues(page))).toContain('/assets/about_photo_2.webp')
+    expect(originalAssetReferences(await imageAttributeValues(page))).toContain('/assets/headshots-2026/daniel-franzese-patterned-shirt-smile.webp')
     await expect(page.getByRole('link', { name: /speaking.*appearances/i })).toHaveAttribute(
       'href',
       '/booking#booking-details',
@@ -107,7 +107,7 @@ test.describe('M4 modeling gallery and press resources', () => {
     })
     await page.goto('/modeling-gallery')
     const downloadReferences = originalAssetReferences(
-      await page.locator('main a[download]').evaluateAll((links) =>
+      await page.locator('#modeling-collection a[download]').evaluateAll((links) =>
         links.map((link) => link.getAttribute('href')).filter((href): href is string => Boolean(href)),
       ),
     )
@@ -125,7 +125,7 @@ test.describe('M4 modeling gallery and press resources', () => {
 
   test('opens, navigates and closes the photo dialog with focus containment and return', async ({ page }) => {
     await page.goto('/modeling-gallery')
-    const initiatingThumbnail = page.locator('main button:has(img)').first()
+    const initiatingThumbnail = page.locator('#modeling-collection button:has(img)').first()
     await expect(initiatingThumbnail).toBeVisible()
     await initiatingThumbnail.click()
     const dialog = page.getByRole('dialog')
@@ -159,7 +159,7 @@ test.describe('M4 modeling gallery and press resources', () => {
     await page.unrouteAll()
     await installM4Network(page, { failGalleryPath: '/assets/modelling_gallery/mg (3).webp' })
     await page.goto('/modeling-gallery')
-    await page.locator('main button:has(img)').first().click()
+    await page.locator('#modeling-collection button:has(img)').first().click()
     const dialog = page.getByRole('dialog')
     await expect(dialog.getByText(/Photo couldn’t load/i)).toBeVisible()
     await expect(dialog.getByRole('button', { name: /retry/i })).toBeVisible()

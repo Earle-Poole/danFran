@@ -1,4 +1,5 @@
 import type { DownloadRecord, InventoryAsset } from './types'
+import headshots from './headshots-manifest.json'
 
 const imageDownload = (
   id: string,
@@ -40,6 +41,15 @@ const pdfDownload = (
 })
 
 export const downloads = [
+  ...headshots.map((image) => imageDownload(
+    `download-${image.id}`,
+    `/assets/headshots-2026/${image.filename}`,
+    `${image.alt} · Fall 2026`,
+    image.bytes,
+    image.width,
+    image.height,
+    'webp',
+  )),
   imageDownload('download-about-me-photo', '/assets/about_me_photo1.jpg', 'About portrait source', 585125, 800, 800, 'jpg'),
   imageDownload('download-about-photo-2', '/assets/about_photo_2.jpg', 'About portrait source', 79293, 800, 800, 'jpg'),
   imageDownload('download-home-cover', '/assets/home_cover.jpg', 'Home cover portrait source', 1572873, 1918, 1080, 'jpg'),
@@ -98,6 +108,10 @@ export const qrCodePath = '/assets/qr/daniel-franzese-qr.png'
 export const specialTeaserPosterPath = '/assets/special/its-not-easy-teaser.jpg'
 
 export const mediaAssetInventory = [
+  ...headshots.flatMap((image) => [
+    { path: `/assets/headshots-2026/${image.filename}` as const, kind: 'download' as const, ownerId: `download-${image.id}` },
+    { path: `/assets/headshots-2026/preview-${image.filename}` as const, kind: 'photo-preview' as const, ownerId: image.id },
+  ]),
   { path: '/assets/about_me_photo1.webp', kind: 'photo-original', ownerId: 'selected-about-me' },
   { path: '/assets/about_me_photo1.jpg', kind: 'download', ownerId: 'download-about-me-photo' },
   { path: '/assets/about_photo_2.webp', kind: 'photo-original', ownerId: 'selected-about-2' },

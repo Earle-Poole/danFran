@@ -1,4 +1,4 @@
-import { photos, selectedPhotos } from '../content'
+import { featuredHeadshots, photos } from '../content'
 import { routeById } from '../content/routes'
 import type { RouteId } from '../content/types'
 import { getConfiguredOrigin, getDeploymentEnvironment, type DeploymentEnvironment } from './origin'
@@ -16,7 +16,7 @@ export type SeoMetadata = {
   readonly jsonLd: string | null
 }
 
-export const defaultSeoImagePath = selectedPhotos[0].originalPath
+export const defaultSeoImagePath = featuredHeadshots.hero.originalPath
 
 export const isOriginalSeoImage = (path: string): boolean =>
   photos.some((photo) => photo.originalPath === path)

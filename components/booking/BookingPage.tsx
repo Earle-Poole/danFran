@@ -1,10 +1,11 @@
 import { ActionLink, Container, Photo, Section } from '@/components/ui'
-import { contactById, selectedPhotos, urls } from 'lib/constants'
+import { contactById, urls } from 'lib/constants'
+import { featuredHeadshots } from 'lib/content/photos'
 import { BookingContactActions } from './BookingContactActions'
 import styles from './booking.module.css'
 
 const bookingContact = contactById('advanced-management-booking')
-const bookingPhoto = selectedPhotos[0]
+const bookingPhoto = featuredHeadshots.press
 
 export default function BookingPage() {
   const phone = bookingContact?.phones[0]
@@ -25,9 +26,11 @@ export default function BookingPage() {
           </div>
           <Photo
             src={bookingPhoto.originalPath}
+            srcSet={`${bookingPhoto.previewPath} 640w, ${bookingPhoto.originalPath} ${bookingPhoto.dimensions.width}w`}
             alt={bookingPhoto.alt}
             width={bookingPhoto.dimensions.width}
             height={bookingPhoto.dimensions.height}
+            frameRatio={1}
             sizes="(min-width: 48rem) 50vw, 100vw"
             objectPosition="50% 42%"
             loading="eager"

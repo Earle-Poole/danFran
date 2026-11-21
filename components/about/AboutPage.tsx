@@ -1,9 +1,11 @@
 import { ActionLink, Container, Photo, Section } from '@/components/ui'
 import { downloadById, selectedPhotos } from 'lib/constants'
+import { featuredHeadshots } from 'lib/content/photos'
 import styles from './about.module.css'
 
 const biographyDownload = downloadById('download-biography')
-const [blueJacket, whiteShirt] = selectedPhotos
+const [blueJacket] = selectedPhotos
+const aboutPhoto = featuredHeadshots.about
 
 const screenWork = [
   { title: 'Mean Girls', detail: 'Damian', href: 'https://www.imdb.com/title/tt0377092/' },
@@ -30,10 +32,12 @@ export default function AboutPage() {
             <ActionLink href="#selected-work">Explore his work</ActionLink>
           </div>
           <Photo
-            src={whiteShirt.originalPath}
-            alt={whiteShirt.alt}
-            width={whiteShirt.dimensions.width}
-            height={whiteShirt.dimensions.height}
+            src={aboutPhoto.originalPath}
+            srcSet={`${aboutPhoto.previewPath} 640w, ${aboutPhoto.originalPath} ${aboutPhoto.dimensions.width}w`}
+            alt={aboutPhoto.alt}
+            width={aboutPhoto.dimensions.width}
+            height={aboutPhoto.dimensions.height}
+            frameRatio={1}
             sizes="(min-width: 48rem) 50vw, 100vw"
             objectPosition="48% 40%"
             loading="eager"
