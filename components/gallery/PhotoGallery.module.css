@@ -37,23 +37,17 @@
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: var(--grid-gap);
-  align-items: start;
+  column-count: 3;
+  column-gap: var(--grid-gap);
 }
 
 .card {
+  display: inline-block;
+  width: 100%;
   min-width: 0;
-}
-
-.cardFeatured:nth-child(1) {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-.cardFeatured:nth-child(2) {
-  grid-column: span 2;
+  margin-bottom: var(--space-8);
+  break-inside: avoid;
+  vertical-align: top;
 }
 
 .trigger {
@@ -130,24 +124,13 @@
   }
 
   .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .cardFeatured:nth-child(1),
-  .cardFeatured:nth-child(2) {
-    grid-column: span 2;
-    grid-row: auto;
+    column-count: 2;
   }
 }
 
 @media (max-width: 30rem) {
   .grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .cardFeatured:nth-child(1),
-  .cardFeatured:nth-child(2) {
-    grid-column: auto;
+    column-count: 1;
   }
 }
 

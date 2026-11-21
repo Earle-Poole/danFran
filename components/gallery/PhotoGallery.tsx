@@ -10,7 +10,6 @@ export type PhotoGalleryProps = {
   photos: readonly PhotoRecord[]
   heading?: string
   description?: string
-  featuredIds?: readonly string[]
   id?: string
 }
 
@@ -18,12 +17,10 @@ export default function PhotoGallery({
   photos,
   heading = 'The collection',
   description = 'Browse every original photograph in this ordered collection. Select a photo to view the uncropped source or download it.',
-  featuredIds = [],
   id = 'photo-collection',
 }: PhotoGalleryProps) {
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const returnFocusRef = useRef<HTMLElement | null>(null)
-  const featured = new Set(featuredIds)
 
   const openPhoto = (id: string, trigger: HTMLElement) => {
     returnFocusRef.current = trigger
@@ -42,7 +39,7 @@ export default function PhotoGallery({
         </div>
         <div className={styles.grid}>
           {photos.map((photo, index) => (
-            <article key={photo.id} className={`${styles.card} ${featured.has(photo.id) ? styles.cardFeatured : ''}`}>
+            <article key={photo.id} className={styles.card}>
               <button
                 type="button"
                 className={styles.trigger}
@@ -51,13 +48,13 @@ export default function PhotoGallery({
               >
                 <div className={styles.photoFrame}>
                   <Photo
-                    src={photo.previewPath ?? photo.originalPath}
+                    src={photo.originalPath}
                     alt=""
                     width={photo.dimensions.width}
                     height={photo.dimensions.height}
                     crop="contain"
                     objectPosition={`${photo.focal.wide.x * 100}% ${photo.focal.wide.y * 100}%`}
-                    sizes="(max-width: 30rem) 100vw, (max-width: 48rem) 50vw, 25vw"
+                    sizes="(max-width: 30rem) 100vw, (max-width: 48rem) 50vw, 33vw"
                     loading={index < 4 ? 'eager' : 'lazy'}
                   />
                 </div>

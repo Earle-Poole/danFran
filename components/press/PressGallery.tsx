@@ -51,27 +51,25 @@ export default function PressGallery() {
                       loading="lazy"
                     />
                   </button>
-                  <div className={styles.photoDetails}>
-                    <p className={styles.photoLabel}>{pressPhotoLabel(photo)}</p>
-                    <p className={styles.photoMetadata}>
-                      {`Photo ${String(index + 1).padStart(2, '0')} · ${download ? bytesLabel(download.bytes) : 'File metadata unavailable'}`}
-                    </p>
-                    <div className={styles.actions}>
-                      <button
-                        type="button"
-                        className={styles.previewLink}
-                        onClick={(event) => openPhoto(photo.id, event.currentTarget)}
-                      >
-                        Preview
-                      </button>
-                      {download ? (
-                        <a className={styles.downloadLink} href={download.path} download>
-                          Download photo
-                        </a>
-                      ) : (
-                        <span>File unavailable</span>
-                      )}
-                    </div>
+                  <p className={styles.photoLabel}>{pressPhotoLabel(photo)}</p>
+                  <p className={styles.photoMetadata}>
+                    {`Photo ${String(index + 1).padStart(2, '0')} · ${download ? bytesLabel(download.bytes) : 'File metadata unavailable'}`}
+                  </p>
+                  <div className={styles.actions}>
+                    <button
+                      type="button"
+                      className={styles.previewLink}
+                      onClick={(event) => openPhoto(photo.id, event.currentTarget)}
+                    >
+                      Preview
+                    </button>
+                    {download ? (
+                      <a className={styles.downloadLink} href={download.path} download>
+                        Download photo
+                      </a>
+                    ) : (
+                      <span>File unavailable</span>
+                    )}
                   </div>
                 </article>
               )

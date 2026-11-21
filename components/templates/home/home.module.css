@@ -183,34 +183,36 @@
 }
 
 .destinationCard {
-  display: block;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  row-gap: var(--space-1);
   color: inherit;
   text-decoration: none;
 }
 
-.destinationCard :global(.photoFrame) {
-  aspect-ratio: 1;
+.destinationCard > figure { align-self: end; }
+
+@supports (grid-template-rows: subgrid) {
+  .destinationCard {
+    grid-row: span 3;
+    grid-template-rows: subgrid;
+  }
 }
 
-.destinationCard:hover :global(.photoImage),
-.destinationCard:focus-visible :global(.photoImage) {
+.destinationCard:hover img,
+.destinationCard:focus-visible img {
   outline: 3px solid var(--color-ink);
   outline-offset: -3px;
 }
 
-.cardCopy {
-  display: grid;
-  gap: var(--space-1);
-  margin-top: var(--space-3);
-  min-width: 0;
-  color: var(--color-muted);
-}
-
 .cardTitle {
+  margin-top: var(--space-2);
   color: var(--color-ink);
   font-size: var(--text-card-title);
   font-weight: 600;
 }
+
+.cardDescription { color: var(--color-muted); }
 
 .aboutPreview {
   border-top: var(--border-rule) solid var(--color-rule);
@@ -349,8 +351,8 @@
 }
 
 @media (forced-colors: active) {
-  .destinationCard:hover :global(.photoImage),
-  .destinationCard:focus-visible :global(.photoImage) {
+  .destinationCard:hover img,
+  .destinationCard:focus-visible img {
     outline-color: CanvasText;
   }
 }

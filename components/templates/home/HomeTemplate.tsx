@@ -38,10 +38,8 @@ const HomeTemplate = ({ newsletterSection }: HomeTemplateProps) => {
                 sizes={homeDestinationImageSizes}
                 objectPosition="50% 40%"
               />
-              <span className={styles.cardCopy}>
-                <span className={styles.cardTitle}>About Daniel</span>
-                <span>Explore the story behind the familiar face.</span>
-              </span>
+              <span className={styles.cardTitle}>About Daniel</span>
+              <span className={styles.cardDescription}>Explore the story behind the familiar face.</span>
             </Link>
             <Link className={styles.destinationCard} href="/modeling-gallery">
               <Photo
@@ -53,10 +51,8 @@ const HomeTemplate = ({ newsletterSection }: HomeTemplateProps) => {
                 sizes={homeDestinationImageSizes}
                 objectPosition="50% 38%"
               />
-              <span className={styles.cardCopy}>
-                <span className={styles.cardTitle}>Portrait gallery</span>
-                <span>See Daniel in focus, frame by frame.</span>
-              </span>
+              <span className={styles.cardTitle}>Portrait gallery</span>
+              <span className={styles.cardDescription}>See Daniel in focus, frame by frame.</span>
             </Link>
             <Link className={styles.destinationCard} href="/press-kit">
               <Photo
@@ -65,14 +61,11 @@ const HomeTemplate = ({ newsletterSection }: HomeTemplateProps) => {
                 alt={pressPhoto.alt}
                 width={pressPhoto.dimensions.width}
                 height={pressPhoto.dimensions.height}
-                crop="cover"
                 sizes={homeDestinationImageSizes}
                 objectPosition="68% 50%"
               />
-              <span className={styles.cardCopy}>
-                <span className={styles.cardTitle}>Press kit</span>
-                <span>Find biographies, photography, and contacts.</span>
-              </span>
+              <span className={styles.cardTitle}>Press kit</span>
+              <span className={styles.cardDescription}>Find biographies, photography, and contacts.</span>
             </Link>
           </div>
         </Container>

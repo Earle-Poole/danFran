@@ -1,6 +1,6 @@
 import { Container } from '@/components/ui'
 import { PhotoGallery } from '@/components/gallery'
-import { curatedModelingGalleryIds, orderedModelingGalleryPhotos } from '@/components/gallery/modelingPhotos'
+import { orderedModelingGalleryPhotos } from '@/components/gallery/modelingPhotos'
 import styles from './ModelingGalleryTemplate.module.css'
 
 const ModelingGalleryTemplate = () => {
@@ -17,7 +17,6 @@ const ModelingGalleryTemplate = () => {
         photos={orderedModelingGalleryPhotos}
         heading="Portraits &amp; editorial"
         description="Select any image to view the complete uncropped original. Downloads remain deliberate actions, while the collection stays in a predictable reading order."
-        featuredIds={curatedModelingGalleryIds}
         id="modeling-collection"
       />
     </div>

@@ -26,16 +26,19 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--grid-gap);
-  align-items: start;
   margin-top: var(--space-8);
 }
 
 .photoCard {
+  display: grid;
+  grid-template-rows: auto 1fr auto auto;
+  row-gap: var(--space-2);
   min-width: 0;
 }
 
 .photoButton {
   display: block;
+  align-self: end;
   width: 100%;
   padding: 0;
   border: 0;
@@ -50,27 +53,9 @@
   outline-offset: 3px;
 }
 
-.photoButton :global(figure) {
-  margin: 0;
-}
-
-.photoButton :global(.photoFrame) {
-  overflow: hidden;
-}
-
-.photoButton :global(img) {
-  width: 100%;
-  height: auto;
-}
-
-.photoDetails {
-  display: grid;
-  gap: var(--space-2);
-  padding-top: var(--space-2);
-}
-
 .photoLabel,
 .photoMetadata {
+  align-self: start;
   margin: 0;
 }
 
@@ -84,6 +69,7 @@
 }
 
 .actions {
+  align-self: start;
   display: flex;
   gap: var(--space-2);
   flex-wrap: wrap;
@@ -169,11 +155,14 @@
 }
 
 .artworkCard {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  row-gap: var(--space-3);
   min-width: 0;
 }
 
 .artworkCard figure {
-  height: 100%;
+  align-self: end;
   margin: 0;
   padding: var(--space-3);
   background: var(--color-white);
@@ -185,9 +174,22 @@
 }
 
 .artworkText {
-  margin: var(--space-3) 0 0;
+  align-self: start;
+  margin: 0;
   color: var(--color-muted);
   font-size: var(--text-caption);
+}
+
+@supports (grid-template-rows: subgrid) {
+  .photoCard {
+    grid-row: span 4;
+    grid-template-rows: subgrid;
+  }
+
+  .artworkCard {
+    grid-row: span 2;
+    grid-template-rows: subgrid;
+  }
 }
 
 @media (max-width: 47.99rem) {
