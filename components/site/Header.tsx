@@ -3,6 +3,7 @@
 import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
+import { trackEvent } from 'lib/analytics'
 import Logo from './Logo'
 import Navigation, { NavigationHandle } from './Navigation'
 import styles from './site.module.css'
@@ -64,9 +65,12 @@ const Header = forwardRef<HeaderHandle>(function Header(_, ref) {
     <header className={styles.header} data-site-header>
       <div className={styles.headerInner}>
         <Logo />
-        <div className={styles.headerActions}>
+        <div className={styles.headerActions} data-analytics-placement="mobile-header">
           <Link className={styles.bookLink} href="/booking#booking-details" onClick={() => setMenuOpen(false)}>Book Daniel</Link>
-          <button ref={menuButtonRef} type="button" className={styles.menuButton} aria-expanded={menuOpen} aria-controls="compact-navigation" aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'} onClick={() => setMenuOpen((open) => !open)}>
+          <button ref={menuButtonRef} type="button" className={styles.menuButton} aria-expanded={menuOpen} aria-controls="compact-navigation" aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'} onClick={() => {
+            if (!menuOpen) trackEvent('navigation_menu_opened', { menu: 'mobile' })
+            setMenuOpen(!menuOpen)
+          }}>
             {menuOpen ? 'Close' : 'Menu'}
             <span className={`${styles.menuIcon} ${menuOpen ? styles.menuIconOpen : ''}`} aria-hidden="true"><span /></span>
           </button>

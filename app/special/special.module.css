@@ -96,21 +96,32 @@
   gap: var(--grid-gap);
 }
 
-.playButton {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: end;
-  width: 100%;
-  padding: clamp(0.65rem, 2vw, 1.25rem);
+.playerStage {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  min-height: 10rem;
+  background: #100d11;
 }
 
-.playCaption {
+.playerFrame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.playerFrame:focus-visible { outline: 3px solid var(--color-paper); outline-offset: -4px; }
+
+.playButton {
+  position: absolute;
+  inset: auto auto clamp(0.6rem, 2vw, 1.15rem) clamp(0.6rem, 2vw, 1.15rem);
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
   min-height: var(--control-min-height);
-  border: 1px solid var(--color-control-border);
+  border: 1px solid var(--color-paper);
   border-radius: var(--radius-control);
   padding: var(--space-2) var(--space-3);
   color: var(--color-paper);
@@ -124,8 +135,29 @@
   border-inline-start: 0.55rem solid var(--color-pink);
 }
 
-.playButton:hover .playCaption { background: var(--color-paper); color: var(--color-ink); }
+.playButton:hover { background: var(--color-paper); color: var(--color-ink); }
 .playButton:hover .playIcon { border-inline-start-color: var(--color-raspberry); }
+.playButton:focus-visible { outline-color: var(--color-paper); }
+
+.playerStage[data-playing='true'] .playerArtwork {
+  --disc-offset: 24%;
+  --disc-angle: 32deg;
+  visibility: hidden;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .playerStage[data-playing='true'] .playerArtwork { animation: artwork-out 440ms ease-out both; }
+}
+
+@keyframes artwork-out {
+  0%, 32% { opacity: 1; visibility: visible; }
+  99% { visibility: visible; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+@media (forced-colors: active) {
+  .playIcon { border-inline-start-color: ButtonText; }
+}
 
 .releaseCard {
   display: flex;

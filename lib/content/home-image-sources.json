@@ -2,5 +2,8 @@
   "hero": { "originalPath": "/assets/headshots-2026/daniel-franzese-striped-shirt.webp", "widths": [320, 600] },
   "about": { "originalPath": "/assets/headshots-2026/daniel-franzese-patterned-shirt-smile.webp", "widths": [400, 640] },
   "portraits": { "originalPath": "/assets/headshots-2026/daniel-franzese-flat-cap.webp", "widths": [400, 680, 800] },
-  "press": { "originalPath": "/assets/headshots-2026/daniel-franzese-white-blazer.webp", "widths": [400, 640, 800, 1200] }
+  "press": { "originalPath": "/assets/headshots-2026/daniel-franzese-white-blazer.webp", "widths": [400, 640, 800, 1200] },
+  "card-about": { "originalPath": "/assets/headshots-2026/daniel-franzese-brick-wall.webp", "widths": [400, 680, 800] },
+  "card-portraits": { "originalPath": "/assets/headshots-2026/daniel-franzese-night-portrait.webp", "widths": [400, 680, 800] },
+  "card-press": { "originalPath": "/assets/headshots-2026/daniel-franzese-patterned-shirt.webp", "widths": [400, 680, 800] }
 }

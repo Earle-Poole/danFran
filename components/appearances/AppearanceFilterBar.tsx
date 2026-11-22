@@ -1,4 +1,5 @@
 import type { AppearanceCategory, AppearanceEvent } from 'lib/calendar/types'
+import { trackEvent } from 'lib/analytics'
 import { formatEventDate } from './helpers'
 import styles from './appearances.module.css'
 
@@ -31,14 +32,18 @@ export function AppearanceFilterBar({
   const count = countedEvents.length
   const year = countedEvents.length ? ` · ${formatEventDate(countedEvents[0]).year}` : ''
   const countLabel = `${count} upcoming appearance${count === 1 ? '' : 's'}${year}`
+  const selectFilter = (category: AppearanceFilter) => {
+    if (activeValue !== category) trackEvent('appearances_filter_changed', { category })
+    onChange(category)
+  }
 
   return (
     <div className={styles.toolbar}>
       <div className={styles.filters} role={meaningfulFilters ? 'group' : undefined} aria-label={meaningfulFilters ? 'Filter appearances' : undefined}>
         {meaningfulFilters ? (
           <>
-            <button type="button" className={`${styles.filter} ${activeValue === 'all' ? styles.filterSelected : ''}`} aria-pressed={activeValue === 'all'} onClick={() => onChange('all')}>All appearances</button>
-            {categories.map((category) => <button key={category} type="button" className={`${styles.filter} ${activeValue === category ? styles.filterSelected : ''}`} aria-pressed={activeValue === category} onClick={() => onChange(category)}>{categoryLabels[category]}</button>)}
+            <button type="button" className={`${styles.filter} ${activeValue === 'all' ? styles.filterSelected : ''}`} aria-pressed={activeValue === 'all'} onClick={() => selectFilter('all')}>All appearances</button>
+            {categories.map((category) => <button key={category} type="button" className={`${styles.filter} ${activeValue === category ? styles.filterSelected : ''}`} aria-pressed={activeValue === category} onClick={() => selectFilter(category)}>{categoryLabels[category]}</button>)}
           </>
         ) : <button type="button" className={`${styles.filter} ${styles.filterSelected}`} aria-pressed="true" onClick={() => onChange('all')}>All appearances</button>}
       </div>

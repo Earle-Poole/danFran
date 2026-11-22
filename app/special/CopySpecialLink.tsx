@@ -2,8 +2,9 @@
 
 import { useState } from 'react'
 import { Button } from '@/components/ui'
+import { trackEvent } from 'lib/analytics'
 
-export function CopySpecialLink({ url, label }: { url: string; label: string }) {
+export function CopySpecialLink({ url, label, target }: { url: string; label: string; target: 'page' | 'video' }) {
   const [result, setResult] = useState<'copied' | 'manual' | null>(null)
 
   async function copy() {
@@ -11,6 +12,7 @@ export function CopySpecialLink({ url, label }: { url: string; label: string }) 
     try {
       await navigator.clipboard.writeText(url)
       setResult('copied')
+      trackEvent('special_link_copied', { target })
     } catch {
       setResult('manual')
     }

@@ -9,6 +9,22 @@ test.beforeEach(async ({ page }) => {
 })
 
 test.describe('M4 compact-only acceptance', () => {
+  test('fits the full homepage name on one line at 320px', async ({ page }) => {
+    await page.goto('/')
+    const heading = page.getByRole('heading', { level: 1, name: 'Daniel Franzese' })
+    await expect(heading).toBeVisible()
+    const fit = await heading.evaluate(async (element) => {
+      await document.fonts.ready
+      const text = document.createRange()
+      text.selectNodeContents(element)
+      return {
+        lines: text.getClientRects().length,
+        fits: text.getBoundingClientRect().right <= element.getBoundingClientRect().right + 1,
+      }
+    })
+    expect(fit).toEqual({ lines: 1, fits: true })
+  })
+
   test('keeps compact navigation state truthful at 320px', async ({ page }) => {
     await page.goto('/')
     const panel = page.locator('#compact-navigation')

@@ -5,13 +5,18 @@ import { ActionLink } from '@/components/ui'
 import { formatEventDate, getEventStatusLabel, getLocationLabel, getNeutralActionLabel, getTicketAction } from './helpers'
 import styles from './appearances.module.css'
 
-export function AppearanceEventRow({ event, delayed = false, showDescription = false }: { event: AppearanceEvent; delayed?: boolean; showDescription?: boolean }) {
+export function AppearanceEventRow({ event, delayed = false, showDescription = false, featured = false }: {
+  event: AppearanceEvent
+  delayed?: boolean
+  showDescription?: boolean
+  featured?: boolean
+}) {
   const display = formatEventDate(event)
   const action = getTicketAction(event, delayed)
   const eventPath = getAppearanceEventPath(event)
 
   return (
-    <article className={styles.eventRow}>
+    <article className={featured ? `${styles.eventRow} ${styles.eventTicket}` : styles.eventRow}>
       <div className={styles.eventDate} aria-label={`${display.date} ${display.year}`}>
         <time dateTime={event.start}>
           <span className={styles.eventMonth}>{display.month}</span>
@@ -19,6 +24,7 @@ export function AppearanceEventRow({ event, delayed = false, showDescription = f
         </time>
       </div>
       <div className={styles.eventPrimary}>
+        {featured && <p className={styles.ticketLabel}>Next appearance</p>}
         <h3 className={styles.eventTitle}>
           {eventPath ? <Link href={eventPath}>{event.title}</Link> : event.title}
         </h3>
@@ -34,7 +40,7 @@ export function AppearanceEventRow({ event, delayed = false, showDescription = f
       </p>
       <div className={styles.eventAction}>
         {action ? (
-          <ActionLink href={action.href} aria-label={`${action.label}: ${event.title}`}>
+          <ActionLink href={action.href} aria-label={`${action.label}: ${event.title}`} data-analytics-ticket-id={event.id} data-analytics-ticket-status={event.ticketStatus}>
             {action.label}
           </ActionLink>
         ) : <span className={styles.eventActionNote}>{getNeutralActionLabel(event, delayed)}</span>}

@@ -23,35 +23,40 @@ export function HomeLiveHero({ photo: heroPhoto, srcSet }: { photo: PhotoRecord;
     <Section className={`${styles.hero} ${hasAppearances ? styles.heroPositive : ''}`} aria-labelledby="home-heading">
       <Container className={`${styles.heroGrid} ${hasAppearances ? styles.heroGridPositive : ''}`}>
         <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>Actor / Comedian / Activist</p>
-          <h1 id="home-heading" data-route-heading className={styles.homeName}>
-            {hasAppearances ? <>Daniel<br />Franzese</> : 'Daniel Franzese'}
-          </h1>
-          <p className={styles.tagline}>Big heart. Bigger personality.</p>
-          <p className={styles.intro}>
-            {hasAppearances ? 'From the screen to the stage. Come spend an evening with Daniel.' : 'From Mean Girls to the comedy stage. Meet the many sides of Daniel.'}
-          </p>
-          <div className={styles.actions}>
+          <div className={styles.heroIdentity}>
+            <p className={styles.eyebrow}>Actor / Comedian / Activist</p>
+            <h1 id="home-heading" data-route-heading className={styles.homeName}>Daniel Franzese</h1>
+          </div>
+          <div className={styles.heroDetails}>
+            <p className={styles.tagline}>Big heart. Bigger personality.</p>
+            <p className={styles.intro}>
+              {hasAppearances ? 'From the screen to the stage. Come spend an evening with Daniel.' : 'From Mean Girls to the comedy stage. Meet the many sides of Daniel.'}
+            </p>
+          </div>
+          <div className={styles.actions} data-analytics-placement="home-hero">
             {hasAppearances ? <ActionLink href="#appearances">See Daniel live <span aria-hidden="true">↘</span></ActionLink> : null}
             <ActionLink href="/video-gallery" variant={hasAppearances ? 'secondary' : 'primary'}>Watch Daniel</ActionLink>
             {!hasAppearances ? <ActionLink href="/booking" variant="secondary">Booking inquiries</ActionLink> : null}
           </div>
         </div>
-        <Photo
-          className={styles.heroPhoto}
-          src={heroPhoto.originalPath}
-          srcSet={srcSet}
-          alt={heroPhoto.alt}
-          width={heroPhoto.dimensions.width}
-          height={heroPhoto.dimensions.height}
-          crop="cover"
-          frameRatio={hasAppearances ? '352 / 332' : 1}
-          objectPosition="50% 15%"
-          sizes={hasAppearances ? liveHeroImageSizes : homeHeroImageSizes}
-          loading="eager"
-          fetchPriority="high"
-          caption={hasAppearances ? 'ACTOR. COMEDIAN. STORYTELLER.' : undefined}
-        />
+        <div className={styles.heroMarquee}>
+          <Photo
+            className={styles.heroPhoto}
+            src={heroPhoto.originalPath}
+            srcSet={srcSet}
+            alt={heroPhoto.alt}
+            width={heroPhoto.dimensions.width}
+            height={heroPhoto.dimensions.height}
+            crop="cover"
+            frameRatio={hasAppearances ? '352 / 332' : 1}
+            objectPosition="50% 15%"
+            sizes={hasAppearances ? liveHeroImageSizes : homeHeroImageSizes}
+            loading="eager"
+            fetchPriority="high"
+            caption={hasAppearances ? 'ACTOR. COMEDIAN. STORYTELLER.' : undefined}
+          />
+          <span className={styles.curtainLight} aria-hidden="true" />
+        </div>
       </Container>
     </Section>
   )

@@ -71,7 +71,7 @@ function EventDetailContent({ event, delayed, jsonLd }: { event: AppearanceEvent
   }[event.ticketStatus]
 
   return (
-    <Section className={styles.eventSection}>
+    <Section className={styles.eventSection} data-analytics-placement="event-details">
       {jsonLd ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} /> : null}
       <Container>
         <Link className={styles.backLink} href="/calendar">← All appearances</Link>
@@ -97,7 +97,7 @@ function EventDetailContent({ event, delayed, jsonLd }: { event: AppearanceEvent
           {event.description ? <p className={styles.description}>{event.description}</p> : null}
           {delayed ? <p className={styles.notice} role="status">Event updates are delayed. Ticket actions are paused until the schedule is current.</p> : null}
           <div className={styles.actions}>
-            {ticketAction ? <ActionLink href={ticketAction.href}>{ticketAction.label}</ActionLink> : <span className={styles.actionNote}>{getNeutralActionLabel(event, delayed)}</span>}
+            {ticketAction ? <ActionLink href={ticketAction.href} data-analytics-ticket-id={event.id} data-analytics-ticket-status={event.ticketStatus}>{ticketAction.label}</ActionLink> : <span className={styles.actionNote}>{getNeutralActionLabel(event, delayed)}</span>}
           </div>
         </article>
       </Container>

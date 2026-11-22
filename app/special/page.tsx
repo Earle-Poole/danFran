@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { ActionLink, Container, Section } from '@/components/ui'
+import { MiniDiscArtwork } from '@/components/special/MiniDiscArtwork'
 import { cameoProfile } from 'lib/content/contacts'
 import { specialTeaserPosterPath } from 'lib/content/downloads'
 import { featuredHeadshots } from 'lib/content/photos'
@@ -62,7 +63,7 @@ export default function SpecialPage() {
             <p className="mt-2 max-w-[26rem] text-[#eee3e9]">
               Thanks for celebrating with me. Here’s a first look at my new comedy special, starting with the opening number.
             </p>
-            <a className={styles.teaserLink} href="#opening-number">
+            <a className={styles.teaserLink} href="#opening-number" data-analytics-placement="special-hero">
               Watch the teaser
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false" className="shrink-0">
                 <path d="M12 4v15m-6-6 6 6 6-6" />
@@ -84,7 +85,7 @@ export default function SpecialPage() {
           <p className="mb-6 mt-2 text-muted">Your first look at <i>It’s Not Easy</i>.</p>
           <div className={styles.screeningLayout}>
             <TeaserPlayer embedUrl={vimeoPlayerUrl} watchUrl={vimeoUrl}>
-              <Image src={specialTeaserPosterPath} alt="" width={1280} height={720} className="aspect-video w-full object-cover" />
+              <MiniDiscArtwork className={styles.playerArtwork} />
             </TeaserPlayer>
 
             <aside className={styles.releaseCard} aria-labelledby="release-title">
@@ -93,14 +94,14 @@ export default function SpecialPage() {
                 {youtubeUrl ? 'Watch the full special' : 'Get the release link'}
               </h3>
               {youtubeUrl ? (
-                <ActionLink className="mt-3 self-start" href={youtubeUrl}>Watch on YouTube</ActionLink>
+                <ActionLink className="mt-3 self-start" href={youtubeUrl} data-analytics-release-action="full-special">Watch on YouTube</ActionLink>
               ) : (
                 <>
                   <p className="text-muted">Sign up with Chronicle Cinema for an email when the full special is available.</p>
-                  <ActionLink className="mt-4 self-start" href={signupUrl}>Notify me</ActionLink>
+                  <ActionLink className="mt-4 self-start" href={signupUrl} data-analytics-release-action="notify-me">Notify me</ActionLink>
                 </>
               )}
-              <CopySpecialLink url={youtubeUrl ?? specialUrl} label={youtubeUrl ? 'Copy video link' : 'Copy page link'} />
+              <CopySpecialLink url={youtubeUrl ?? specialUrl} label={youtubeUrl ? 'Copy video link' : 'Copy page link'} target={youtubeUrl ? 'video' : 'page'} />
             </aside>
           </div>
           <section className="mt-6 max-w-[48rem]" aria-labelledby="about-special-title">
@@ -117,7 +118,7 @@ export default function SpecialPage() {
           <section className="py-6 medium:pr-6" aria-labelledby="photos-title">
             <h2 id="photos-title" className={styles.extraTitle}>Premiere Photos</h2>
             {photosUrl ? (
-              <ActionLink className="mt-1" variant="text" href={photosUrl}>View the LA premiere photos</ActionLink>
+              <ActionLink className="mt-1" variant="text" href={photosUrl} data-analytics-release-action="premiere-photos">View the LA premiere photos</ActionLink>
             ) : (
               <p className="mt-2 text-muted">Check back for photos from the LA red carpet.</p>
             )}
@@ -125,7 +126,7 @@ export default function SpecialPage() {
           <section className="py-6 medium:pl-8" aria-labelledby="cameo-title">
             <h2 id="cameo-title" className={styles.extraTitle}>A Cameo from Danny</h2>
             <p className="mt-2 text-muted">{cameoProfile.giftCopy}</p>
-            <ActionLink variant="text" href={cameoProfile.url}>{cameoProfile.giftLabel}</ActionLink>
+            <ActionLink variant="text" href={cameoProfile.url} data-analytics-placement="special-fan-services">{cameoProfile.giftLabel}</ActionLink>
           </section>
         </div>
       </Container>

@@ -5,6 +5,7 @@ import { usePathname, useSearchParams } from 'next/navigation'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import type { VideoCategory, VideoRecord } from 'lib/content/types'
 import { selectVideosByCategory, videos } from 'lib/content/videos'
+import { trackEvent } from 'lib/analytics'
 import { ActionLink, Button, Container, Section, Status } from '@/components/ui'
 import { NewsletterSection } from '@/components/newsletter'
 import styles from './video.module.css'
@@ -134,6 +135,7 @@ export function VideoGallery() {
   }, [])
 
   const selectVideo = (video: VideoRecord) => {
+    if (selectedId !== video.id) trackEvent('video_selected', { video_id: video.id })
     pendingPlayRef.current = null
     setSelectedId(video.id)
     setPlayingId(null)
@@ -142,7 +144,8 @@ export function VideoGallery() {
     focusPlayerHeading()
   }
 
-  const playVideo = (video: VideoRecord) => {
+  const playVideo = (video: VideoRecord, placement: 'featured' | 'library') => {
+    if (playingId !== video.id) trackEvent('gallery_video_requested', { video_id: video.id, placement })
     setSelectedId(video.id)
     setProviderErrorId(null)
     setPlayingId(video.id)
@@ -155,6 +158,7 @@ export function VideoGallery() {
   }
 
   const selectCategory = (nextCategory: VideoFilter) => {
+    if (category !== nextCategory) trackEvent('video_filter_changed', { category: nextCategory })
     pendingPlayRef.current = null
     setCategory(nextCategory)
     setPlayingId(null)
@@ -212,7 +216,7 @@ export function VideoGallery() {
                     <Button
                       className={styles.playButton}
                       variant="inverse"
-                      onClick={() => playVideo(selectedVideo)}
+                      onClick={() => playVideo(selectedVideo, 'featured')}
                       aria-label={`Play ${selectedVideo.title}`}
                     >
                       <span aria-hidden="true" className={styles.playIcon}>▶</span>
@@ -225,7 +229,7 @@ export function VideoGallery() {
               {providerErrorId === selectedVideo.id ? (
                 <Status variant="error" className={styles.playerStatus}>
                   This video player is unavailable here.{' '}
-                  <a href={selectedVideo.watchUrl} target="_blank" rel="noreferrer">
+                  <a href={selectedVideo.watchUrl} target="_blank" rel="noreferrer" data-analytics-video-id={selectedVideo.id} data-analytics-placement="featured-video">
                     Watch {selectedVideo.title} directly on YouTube
                   </a>
                   .
@@ -233,7 +237,7 @@ export function VideoGallery() {
               ) : (
                 <p className={styles.watchFallback}>
                   If the embedded player does not load,{' '}
-                  <a href={selectedVideo.watchUrl} target="_blank" rel="noreferrer">
+                  <a href={selectedVideo.watchUrl} target="_blank" rel="noreferrer" data-analytics-video-id={selectedVideo.id} data-analytics-placement="featured-video">
                     watch this video directly on YouTube
                   </a>
                   .
@@ -288,7 +292,7 @@ export function VideoGallery() {
                 <div className={styles.cardActions}>
                   <Button
                     variant="primary"
-                    onClick={() => playVideo(video)}
+                    onClick={() => playVideo(video, 'library')}
                     aria-label={`Play ${video.title}`}
                   >
                     <span aria-hidden="true" className={styles.playIcon}>▶</span>
@@ -299,6 +303,8 @@ export function VideoGallery() {
                     target="_blank"
                     rel="noreferrer"
                     variant="text"
+                    data-analytics-video-id={video.id}
+                    data-analytics-placement="video-library"
                     aria-label={`Watch ${video.title} directly on YouTube`}
                   >
                     Watch on YouTube

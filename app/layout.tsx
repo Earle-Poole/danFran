@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
-import { Analytics } from '@vercel/analytics/react'
 import '../styles/globals.css'
 import { AppearanceProvider } from '@/components/appearances/AppearanceProvider'
 import SiteShell from '@/components/site/SiteShell'
+import { SiteAnalytics } from '@/components/site/SiteAnalytics'
 
 export const metadata: Metadata = {
   title: 'Daniel Franzese | Actor, Comedian & Activist',
@@ -21,7 +21,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <AppearanceProvider>
           <SiteShell>{children}</SiteShell>
         </AppearanceProvider>
-        <Analytics />
+        <SiteAnalytics />
       </body>
     </html>
   )

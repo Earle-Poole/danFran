@@ -11,7 +11,7 @@
     "test:e2e": "node node_modules/@playwright/test/cli.js test"
   },
   "dependencies": {
-    "@vercel/analytics": "2.0.1",
+    "@vimeo/player": "2.30.4",
     "classnames": "2.5.1",
     "next": "16.4.6",
     "react": "19.2.8",

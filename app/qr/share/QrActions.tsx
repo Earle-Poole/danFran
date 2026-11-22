@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { ActionLink, Button } from '@/components/ui'
+import { trackEvent } from 'lib/analytics'
 
 export function QrActions({ imageUrl, filename }: { imageUrl: string; filename: string }) {
   const imageFile = useRef<File | null>(null)
@@ -34,6 +35,7 @@ export function QrActions({ imageUrl, filename }: { imageUrl: string; filename: 
         const title = 'Daniel Franzese QR code'
         const data = files.length && navigator.canShare?.({ files }) ? { title, files } : { title, url }
         await navigator.share(data)
+        trackEvent('qr_shared', { method: 'files' in data ? 'file' : 'link' })
         return
       } catch (error) {
         if (error instanceof DOMException && ['AbortError', 'InvalidStateError'].includes(error.name)) return
@@ -42,6 +44,7 @@ export function QrActions({ imageUrl, filename }: { imageUrl: string; filename: 
 
     try {
       await navigator.clipboard.writeText(url)
+      trackEvent('qr_shared', { method: 'clipboard' })
       setFeedback({ copied: true, url })
     } catch {
       setFeedback({ copied: false, url })
@@ -50,7 +53,7 @@ export function QrActions({ imageUrl, filename }: { imageUrl: string; filename: 
 
   return (
     <>
-      <div className="flex flex-wrap justify-center gap-3">
+      <div className="flex flex-wrap justify-center gap-3" data-analytics-placement="qr-share">
         <ActionLink href={imageUrl} download={filename}>Download PNG</ActionLink>
         <Button className="[html:not([data-js-enabled=true])_&]:hidden" variant="secondary" onClick={share}>
           Share QR code

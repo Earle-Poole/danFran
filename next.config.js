@@ -39,7 +39,7 @@ module.exports = {
   reactStrictMode: true,
   poweredByHeader: false,
   redirects() {
-    return [{ source: '/qr', destination: '/', permanent: false }]
+    return [{ source: '/qr', destination: '/?utm_source=qr&utm_medium=offline', permanent: false }]
   },
   images: {
     remotePatterns: [
@@ -67,11 +67,11 @@ module.exports = {
               "default-src 'self'",
               "base-uri 'self'",
               "object-src 'none'",
-              "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com",
+              "script-src 'self' 'unsafe-inline' https://cloud.umami.is",
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: https://img.youtube.com",
               "font-src 'self'",
-              "connect-src 'self' https://vitals.vercel-insights.com",
+              "connect-src 'self' https://gateway.umami.is",
               "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com",
               "form-action 'self' https://udsterleads.us10.list-manage.com",
               "frame-ancestors 'self'",

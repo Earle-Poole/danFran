@@ -39,6 +39,8 @@ export function NewsletterSection({ id }: NewsletterSectionProps) {
             method="post"
             target="_blank"
             className={styles.form}
+            data-analytics-newsletter
+            data-analytics-placement={id ?? 'newsletter'}
           >
             <Field
               id={inputId}

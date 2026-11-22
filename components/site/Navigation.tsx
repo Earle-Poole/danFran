@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react'
 import { routeById } from 'lib/content'
+import { trackEvent } from 'lib/analytics'
 import { shopEnabled, urls } from 'lib/constants'
 import styles from './site.module.css'
 import { useAppearanceFeed } from '@/components/appearances'
@@ -35,6 +36,7 @@ const Navigation = forwardRef<NavigationHandle, NavigationProps>(function Naviga
   const aboutActive = currentPath === '/about' || (hasHydrated && currentPath === '/' && currentHash.includes('#about'))
   const pressPath = routeById('press-kit')?.path ?? '/press-kit'
   const pressActive = isActivePath(currentPath, pressPath)
+  const specialActive = isActivePath(currentPath, '/special')
   const bookingActive = currentPath === '/booking' || (hasHydrated && currentHash.includes('#contact'))
   const appearancesAvailable = feed?.status === 'ready' && feed.events.length > 0
 
@@ -85,6 +87,10 @@ const Navigation = forwardRef<NavigationHandle, NavigationProps>(function Naviga
     onNavigate?.()
   }
 
+  const specialLink = (
+    <Link className={`${styles.navLink} ${specialActive ? styles.navLinkActive : ''}`} href="/special" aria-current={specialActive ? 'page' : undefined} onClick={navigate}>Special</Link>
+  )
+
   const fanLink = shopEnabled ? (
     <a className={styles.navLink} href={urls.STORE} onClick={navigate}>Shop</a>
   ) : (
@@ -95,7 +101,7 @@ const Navigation = forwardRef<NavigationHandle, NavigationProps>(function Naviga
 
   if (compact) {
     return (
-      <nav aria-label="Primary" className={styles.compactMenu}>
+      <nav aria-label="Primary" className={styles.compactMenu} data-analytics-placement="mobile-menu">
         <ul className={styles.compactNavList}>
           <li className={styles.workLabel}>Work</li>
           {workRoutes.map(({ id, label }) => {
@@ -103,6 +109,7 @@ const Navigation = forwardRef<NavigationHandle, NavigationProps>(function Naviga
             const active = isActivePath(currentPath, href)
             return <li key={id}><Link className={`${styles.navLink} ${active ? styles.navLinkActive : ''}`} href={href} aria-current={active ? 'page' : undefined} onClick={navigate}>{label}</Link></li>
           })}
+          <li>{specialLink}</li>
           <li><Link className={`${styles.navLink} ${aboutActive ? styles.navLinkActive : ''}`} href="/about" aria-current={aboutActive ? 'page' : undefined} onClick={navigate}>About</Link></li>
           {appearancesAvailable ? <li><Link className={styles.navLink} href="/calendar" onClick={navigate}>Live dates</Link></li> : null}
           <li><Link className={`${styles.navLink} ${pressActive ? styles.navLinkActive : ''}`} href={pressPath} aria-current={pressActive ? 'page' : undefined} onClick={navigate}>Press</Link></li>
@@ -114,11 +121,14 @@ const Navigation = forwardRef<NavigationHandle, NavigationProps>(function Naviga
   }
 
   return (
-    <nav aria-label="Primary" className={styles.desktopNav}>
+    <nav aria-label="Primary" className={styles.desktopNav} data-analytics-placement="desktop-nav">
       <ul className={styles.desktopNavList}>
         <li ref={workRef} className={styles.workItem}>
-          <button type="button" className={`${styles.disclosureButton} ${workActive ? styles.navLinkActive : ''}`} aria-expanded={workOpen} aria-controls="work-navigation" onClick={() => setWorkOpen((open) => !open)}>Work <span aria-hidden="true">⌄</span></button>
-          <ul id="work-navigation" className={`${styles.workList} ${workOpen ? styles.workListOpen : ''}`}>
+          <button type="button" className={`${styles.disclosureButton} ${workActive ? styles.navLinkActive : ''}`} aria-expanded={workOpen} aria-controls="work-navigation" onClick={() => {
+            if (!workOpen) trackEvent('navigation_menu_opened', { menu: 'work' })
+            setWorkOpen(!workOpen)
+          }}>Work <span aria-hidden="true">⌄</span></button>
+          <ul id="work-navigation" className={`${styles.workList} ${workOpen ? styles.workListOpen : ''}`} data-analytics-placement="work-menu">
             {workRoutes.map(({ id, label }) => {
               const href = getRoutePath(id)
               const active = isActivePath(currentPath, href)
@@ -127,6 +137,7 @@ const Navigation = forwardRef<NavigationHandle, NavigationProps>(function Naviga
             <li><Link className={styles.navLink} href="/about#selected-work" onClick={navigate}>Selected screen work</Link></li>
           </ul>
         </li>
+        <li>{specialLink}</li>
         <li><Link className={`${styles.navLink} ${aboutActive ? styles.navLinkActive : ''}`} href="/about" aria-current={aboutActive ? 'page' : undefined} onClick={navigate}>About</Link></li>
         {appearancesAvailable ? <li><Link className={styles.navLink} href="/calendar" onClick={navigate}>Live dates</Link></li> : null}
         <li><Link className={`${styles.navLink} ${pressActive ? styles.navLinkActive : ''}`} href={pressPath} aria-current={pressActive ? 'page' : undefined} onClick={navigate}>Press</Link></li>

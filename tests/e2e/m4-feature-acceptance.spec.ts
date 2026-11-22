@@ -35,9 +35,10 @@ test.describe('M4 Home, About and Booking journeys', () => {
     await expect(page.getByRole('link', { name: /booking inquiries/i })).toHaveAttribute('href', '/booking')
     const homeAssets = originalAssetReferences(await imageAttributeValues(page))
     expect(homeAssets).toContain('/assets/headshots-2026/daniel-franzese-striped-shirt.webp')
-    expect(homeAssets).toContain('/assets/headshots-2026/daniel-franzese-patterned-shirt-smile.webp')
-    expect(homeAssets).toContain('/assets/headshots-2026/daniel-franzese-flat-cap.webp')
-    expect(homeAssets).toContain('/assets/headshots-2026/daniel-franzese-white-blazer.webp')
+    const destinations = page.locator('section[aria-labelledby="destinations-heading"]')
+    await expect(destinations.getByRole('link', { name: /About Daniel/ }).locator('img')).toHaveAttribute('src', '/assets/headshots-2026/daniel-franzese-brick-wall.webp')
+    await expect(destinations.getByRole('link', { name: /Portrait gallery/ }).locator('img')).toHaveAttribute('src', '/assets/headshots-2026/daniel-franzese-night-portrait.webp')
+    await expect(destinations.getByRole('link', { name: /Press kit/ }).locator('img')).toHaveAttribute('src', '/assets/headshots-2026/daniel-franzese-patterned-shirt.webp')
     expect(homeAssets.every((asset) => !asset.includes('/output/') && !asset.includes('concept'))).toBe(true)
 
     await page.goto('/about')

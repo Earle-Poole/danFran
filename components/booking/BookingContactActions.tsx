@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Button } from '@/components/ui'
+import { trackEvent } from 'lib/analytics'
 
 export function BookingContactActions({
   email,
@@ -31,6 +32,7 @@ export function BookingContactActions({
     try {
       await navigator.clipboard.writeText(email)
       setCopyState('copied')
+      trackEvent('booking_email_copied')
     } catch {
       setCopyState('failed')
     }
@@ -38,7 +40,7 @@ export function BookingContactActions({
 
   return (
     <>
-      <div className={className}>
+      <div className={className} data-analytics-placement="booking-contact">
         <a className={linkClassName} href={emailHref} aria-label={`Email booking contact at ${email}`}>{email}</a>
         <Button variant="secondary" onClick={copyEmail} aria-describedby="copy-email-status">Copy email</Button>
         <a className={linkClassName} href={phoneHref} aria-label={`Call booking contact at ${phone}`}>{phone}</a>

@@ -3,6 +3,7 @@
 import { useRef, useState } from 'react'
 import { Container, Photo } from '@/components/ui'
 import type { PhotoRecord } from 'lib/content'
+import { trackEvent } from 'lib/analytics'
 import PhotoDialog from './PhotoDialog'
 import styles from './PhotoGallery.module.css'
 
@@ -24,13 +25,14 @@ export default function PhotoGallery({
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const returnFocusRef = useRef<HTMLElement | null>(null)
 
-  const openPhoto = (id: string, trigger: HTMLElement) => {
+  const openPhoto = (photo: PhotoRecord, trigger: HTMLElement) => {
     returnFocusRef.current = trigger
-    setSelectedId(id)
+    setSelectedId(photo.id)
+    trackEvent('gallery_photo_opened', { photo_id: photo.id, collection: photo.collection })
   }
 
   return (
-    <section id={id} className={styles.gallerySection} aria-labelledby={`${id}-heading`}>
+    <section id={id} className={styles.gallerySection} aria-labelledby={`${id}-heading`} data-analytics-placement={id}>
       <Container>
         <div className={styles.galleryIntro}>
           <div>
@@ -46,7 +48,7 @@ export default function PhotoGallery({
                 type="button"
                 className={styles.trigger}
                 aria-label={`Open photo ${index + 1}: ${photo.alt}`}
-                onClick={(event) => openPhoto(photo.id, event.currentTarget)}
+                onClick={(event) => openPhoto(photo, event.currentTarget)}
               >
                 <div className={styles.photoFrame}>
                   <Photo

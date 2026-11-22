@@ -17,7 +17,7 @@ export default function Footer() {
           <h2 className={styles.footerHeading} id="footer-booking-heading">Let’s make a scene.</h2>
           <p className={styles.footerCopy}>For appearances, speaking and creative collaborations.</p>
         </div>
-        <div className={styles.footerActions}>
+        <div className={styles.footerActions} data-analytics-placement="footer-booking">
           <Link className={styles.inverseButton} href="/booking#booking-details">Book Daniel</Link>
           <Link className={styles.inverseTextLink} href={pressPath}>Press kit</Link>
           <a className={styles.inverseTextLink} href={bookingContact.email.destination}>Email booking contact</a>

@@ -28,3 +28,9 @@ corepack yarn test:e2e
 - Set calendar variables from [.env.example](.env.example) in `.env.local` or in Vercel. The Google service account needs read access to the calendar. Keep its credentials server-side. When there are no upcoming appearances, the homepage schedule and its navigation links are hidden.
 - `/qr` temporarily redirects to the destination in [next.config.js](next.config.js). `/qr/share` displays and downloads the QR graphic, which encodes `https://www.whatsupdanny.com/qr`.
 - For Vercel production, set `NEXT_PUBLIC_DEPLOYMENT_ENV=production` and `NEXT_PUBLIC_SITE_URL` to the public HTTPS origin. Set `NEXT_PUBLIC_DEPLOYMENT_ENV=preview` on Preview deployments to keep them out of search indexes.
+
+## Analytics
+
+View production traffic and visitor journeys in the [Daniel Franzese Umami dashboard](https://cloud.umami.is/analytics/us/websites/8471c1a8-46e3-418a-9cf2-363986d5d075).
+
+Umami records page views and site interactions on `whatsupdanny.com` and `www.whatsupdanny.com`. Local and Preview traffic is excluded. Visits through `/qr` appear with `utm_source=qr` and `utm_medium=offline`.

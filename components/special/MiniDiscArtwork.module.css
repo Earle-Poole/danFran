@@ -1,0 +1,50 @@
+.artwork {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 66% 38%, #7b305a, #35172e 56%, #1b141c 90%);
+}
+
+.disc {
+  position: absolute;
+  top: 11%;
+  left: 40%;
+  width: 44%;
+  aspect-ratio: 1;
+  border: 1px solid #fff4f9;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, #261b2b 0 6%, #b7a7b3 6.5% 10%, #fffdf6 10.5% 11%, transparent 11.5%),
+    repeating-radial-gradient(circle, rgb(255 255 255 / 24%) 0 1px, transparent 1.5px 4px),
+    conic-gradient(from 22deg, #fdeaf6, #b1a8c7, #fffdf0, #fba3cf, #b7d4e9, #fff9ee, #c3a0b3, #fdeaf6);
+  box-shadow: 0.4rem 0.65rem 1.5rem rgb(0 0 0 / 45%);
+  transform: translateX(var(--disc-offset, 0%)) rotate(var(--disc-angle, 0deg));
+}
+
+.sleeve {
+  position: absolute;
+  inset: 12% auto 15% 12%;
+  display: grid;
+  align-items: center;
+  width: 48%;
+  padding: 3%;
+  border: 1px solid #ffbfd9;
+  background: linear-gradient(130deg, #ff93bf, var(--color-pink) 63%, #a91d55);
+  box-shadow: 0.6rem 0.8rem 1.8rem rgb(0 0 0 / 50%);
+  transform: rotate(-7deg);
+}
+
+.sleeve img {
+  width: 100%;
+  height: auto;
+  border: 1px solid rgb(255 255 255 / 60%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .disc { transition: transform 380ms var(--motion-ease); }
+}
+
+@media (forced-colors: active) {
+  .disc, .sleeve { border-color: CanvasText; }
+}

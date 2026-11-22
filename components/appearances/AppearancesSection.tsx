@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { Container, Section } from '@/components/ui'
+import { HomepageSectionAnalytics } from '@/components/site/HomepageSectionAnalytics'
 import { useAppearanceFeed } from './AppearanceProvider'
 import { AppearanceList } from './AppearanceList'
 import { AppearanceFilterBar, getActiveAppearanceFilter, type AppearanceFilter } from './AppearanceFilterBar'
@@ -17,7 +18,8 @@ export function AppearancesSection() {
   const visibleEvents = activeFilter === 'all' ? sourceEvents : sourceEvents.filter((event) => event.category === activeFilter)
 
   return (
-    <Section id="appearances" className={styles.appearancesSection} aria-labelledby="appearances-heading">
+    <Section id="appearances" className={styles.appearancesSection} aria-labelledby="appearances-heading" data-analytics-placement="home-appearances">
+      <HomepageSectionAnalytics sectionId="appearances" />
       <Container>
         <div className={styles.sectionHeader}>
           <div>
@@ -28,7 +30,7 @@ export function AppearancesSection() {
         </div>
         {delayed ? <p className={styles.delayedNotice} role="status">Event updates are delayed. Ticket actions are paused until the schedule is current.</p> : null}
         <AppearanceFilterBar events={sourceEvents} value={filter} onChange={setFilter} />
-        <AppearanceList events={visibleEvents} delayed={delayed} />
+        <AppearanceList events={visibleEvents} delayed={delayed} featuredEventId={sourceEvents[0].id} />
         <div className={styles.sectionBottom}>
           <p className={styles.timezoneNote}>All times are local to the venue.</p>
           <Link className={styles.scheduleLink} href="/calendar">View full schedule <span aria-hidden="true">→</span></Link>

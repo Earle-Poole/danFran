@@ -2,6 +2,7 @@
   width: min(100vw - 2rem, 90rem);
   max-width: none;
   max-height: calc(100dvh - 2rem);
+  height: min(57rem, calc(100dvh - 2rem));
   margin: auto;
   padding: 0;
   border: 0;
@@ -15,9 +16,9 @@
 
 .dialogBody {
   display: grid;
-  grid-template-rows: auto 1fr auto;
-  max-height: calc(100dvh - 2rem);
-  min-height: min(30rem, calc(100dvh - 2rem));
+  grid-template-rows: auto minmax(9rem, 1fr) auto auto;
+  min-width: 0;
+  height: 100%;
 }
 
 .toolbar,
@@ -70,6 +71,7 @@
 
 .imageRegion {
   display: grid;
+  grid-template: minmax(0, 1fr) / minmax(0, 1fr);
   min-height: 0;
   place-items: center;
   padding: var(--space-4);
@@ -77,13 +79,54 @@
   background: var(--color-ink);
 }
 
+.imageRegion > * { grid-area: 1 / 1; }
+
 .image {
   display: block;
   width: auto;
   max-width: 100%;
-  max-height: min(68dvh, 52rem);
+  max-height: 100%;
   height: auto;
   object-fit: contain;
+  touch-action: pan-y pinch-zoom;
+}
+
+.image[hidden] { display: none; }
+
+.contactSheet {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  padding: var(--space-2) var(--space-4);
+  border-top: 1px solid rgb(246 241 232 / 35%);
+  background: #261d23;
+  scrollbar-color: #ee81af #261d23;
+}
+
+.thumbnail {
+  position: relative;
+  flex: 0 0 auto;
+  min-width: 3.625rem;
+  min-height: 3rem;
+  padding: 0.125rem;
+  border: 2px solid #94838d;
+  border-radius: var(--radius-control);
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.thumbnail[aria-pressed='true'] { border-color: #ff8fbd; box-shadow: inset 0 0 0 1px #ff8fbd; }
+.thumbnail:focus-visible { outline-color: var(--color-paper); outline-offset: 1px; }
+.thumbnail img { display: block; width: 3.75rem; height: 2.75rem; object-fit: cover; object-position: center 28%; }
+.thumbnail span {
+  position: absolute;
+  inset: auto 0.125rem 0.125rem auto;
+  padding-inline: 0.25rem;
+  background: var(--color-ink);
+  font-size: 0.6875rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.4;
 }
 
 .loading,
@@ -136,6 +179,8 @@
   display: block;
 }
 
+.counter { font-size: var(--text-caption); color: #ffa8cc; }
+
 .visuallyHidden {
   position: absolute;
   width: 1px;
@@ -152,19 +197,13 @@
   .dialog {
     width: 100vw;
     max-height: 100dvh;
-  }
-
-  .dialogBody {
-    max-height: 100dvh;
+    height: 100dvh;
   }
 
   .imageRegion {
     padding: var(--space-2);
   }
 
-  .image {
-    max-height: 60dvh;
-  }
 }
 
 @media (forced-colors: active) {
@@ -172,7 +211,8 @@
   .dialog::backdrop,
   .toolbar,
   .imageRegion,
-  .captionBar {
+  .captionBar,
+  .contactSheet {
     background: Canvas;
     color: CanvasText;
   }
@@ -180,9 +220,12 @@
   .toolbar button,
   .toolbar a,
   .errorActions button,
-  .errorActions a {
+  .errorActions a,
+  .thumbnail {
     border-color: ButtonText;
     background: ButtonFace;
     color: ButtonText;
   }
+
+  .thumbnail[aria-pressed='true'] { border-color: Highlight; }
 }

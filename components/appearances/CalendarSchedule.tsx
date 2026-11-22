@@ -28,7 +28,7 @@ export function CalendarSchedule() {
   }
 
   return (
-    <Section className={styles.calendarSection} aria-labelledby="calendar-title">
+    <Section className={styles.calendarSection} aria-labelledby="calendar-title" data-analytics-placement="calendar-schedule">
       <Container>
         <div className={styles.calendarHeader}>
           <p className={styles.eyebrow}>Daniel Franzese / Live dates</p>

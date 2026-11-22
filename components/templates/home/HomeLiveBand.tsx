@@ -16,7 +16,7 @@ export function HomeLiveBand() {
           <h2 id="updates-heading" className={styles.updatesHeading}>Your city. His next stop.</h2>
           <p className={styles.updatesCopy}>Get new appearance announcements and updates from Daniel.</p>
         </div>
-        <ActionLink href="#home-newsletter" variant="inverse">Keep me in the loop <span aria-hidden="true">→</span></ActionLink>
+        <ActionLink href="#home-newsletter" variant="inverse" data-analytics-placement="home-updates">Keep me in the loop <span aria-hidden="true">→</span></ActionLink>
       </Container>
     </Section>
   ) : (

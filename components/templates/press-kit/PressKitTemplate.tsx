@@ -33,7 +33,7 @@ const PressKitTemplate = () => {
         id="current-headshots"
       />
 
-      <section id="press-resources" className={styles.biography} aria-labelledby="press-resources-heading">
+      <section id="press-resources" className={styles.biography} aria-labelledby="press-resources-heading" data-analytics-placement="press-resources">
         <Container>
           <h2 id="press-resources-heading" className={styles.sectionHeading}>Start with the downloads.</h2>
           <ul className={styles.resourceList}>
@@ -77,7 +77,7 @@ const PressKitTemplate = () => {
 
       <PressGallery />
 
-      <section className={styles.contact} aria-labelledby="press-contact-heading">
+      <section className={styles.contact} aria-labelledby="press-contact-heading" data-analytics-placement="press-contact">
         <Container>
           <h2 id="press-contact-heading" className={styles.sectionHeading}>Press inquiries</h2>
           <p className={styles.contactIntro}>For interviews, invites and press materials, contact the representation listed below. Current representation and usage rights should be confirmed before release.</p>

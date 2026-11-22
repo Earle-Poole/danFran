@@ -3,6 +3,7 @@
 import { useRef, useState } from 'react'
 import { Container, Photo } from '@/components/ui'
 import { pressPhotos, downloadById, type PhotoRecord } from 'lib/content'
+import { trackEvent } from 'lib/analytics'
 import PhotoDialog from '@/components/gallery/PhotoDialog'
 import styles from './PressGallery.module.css'
 import { pressPreviewByDownloadId } from './pressPreviews'
@@ -16,14 +17,15 @@ export default function PressGallery() {
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const returnFocusRef = useRef<HTMLElement | null>(null)
 
-  const openPhoto = (id: string, trigger: HTMLElement) => {
+  const openPhoto = (photo: PhotoRecord, trigger: HTMLElement) => {
     returnFocusRef.current = trigger
-    setSelectedId(id)
+    setSelectedId(photo.id)
+    trackEvent('gallery_photo_opened', { photo_id: photo.id, collection: photo.collection })
   }
 
   return (
     <>
-      <section id="photography" className={styles.section} aria-labelledby="press-photography-heading">
+      <section id="photography" className={styles.section} aria-labelledby="press-photography-heading" data-analytics-placement="press-photography">
         <Container>
           <h2 id="press-photography-heading" className={styles.heading}>Press photography</h2>
           <p className={styles.intro}>
@@ -39,7 +41,7 @@ export default function PressGallery() {
                     type="button"
                     className={styles.photoButton}
                     aria-label={`Preview ${pressPhotoLabel(photo)}`}
-                    onClick={(event) => openPhoto(photo.id, event.currentTarget)}
+                    onClick={(event) => openPhoto(photo, event.currentTarget)}
                   >
                     <Photo
                       src={preview?.previewPath ?? photo.previewPath ?? photo.originalPath}
@@ -59,7 +61,7 @@ export default function PressGallery() {
                     <button
                       type="button"
                       className={styles.previewLink}
-                      onClick={(event) => openPhoto(photo.id, event.currentTarget)}
+                      onClick={(event) => openPhoto(photo, event.currentTarget)}
                     >
                       Preview
                     </button>
@@ -109,6 +111,7 @@ export default function PressGallery() {
 
       <PhotoDialog
         photos={pressPhotos}
+        getThumbnail={(photo) => pressPreviewByDownloadId[photo.downloadId]?.previewPath}
         selectedId={selectedId}
         onClose={() => setSelectedId(null)}
         onSelectionChange={setSelectedId}
